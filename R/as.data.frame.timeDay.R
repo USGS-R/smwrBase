@@ -1,0 +1,35 @@
+#'Data Frames
+#'
+#'Convert an object to class "data.frame."
+#'
+#'
+#'@usage \method{as.data.frame}{timeDay}(x, row.names = NULL, optional = FALSE,
+#'..., nm = deparse(substitute(x)))
+#'@param x the object to be converted.
+#'@param row.names \code{NULL} or a character vector giving the row names for
+#'the data frame. Missing values are not allowed.
+#'@param optional logical. If \code{TRUE}, setting row names and converting
+#'column names to syntactic names is optional.
+#'@param \dots additional arguments to be passed to or from methods.
+#'@param nm the column name to create for \code{x}.
+#'@return A data frame is created containing the data in \code{x}.
+#'@seealso \code{\link{as.data.frame}}
+#'@keywords manip
+
+as.data.frame.timeDay <- function(x, row.names = NULL, optional = FALSE,
+                                  ..., nm = deparse(substitute(x))) {
+  force(nm)
+  nrows <- length(x)
+  if(is.null(row.names)) {
+    if(nrows == 0L) 
+      row.names <- character(0L)
+    else
+      row.names <- .set_row_names(nrows)
+  }
+  retval <- list(x)
+  if(!optional) 
+    names(retval) <- make.names(nm)
+  attr(retval, "row.names") <- row.names
+  class(retval) <- "data.frame"
+  retval
+}

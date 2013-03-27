@@ -1,0 +1,82 @@
+Package: USGSwsBase
+Version: 0.6
+Date: 2013-02-15
+Title: Functions to import and manipulate hydrologic data
+Author: Dave Lorenz <lorenz@usgs.gov>
+Maintainer: Dave Lorenz <lorenz@usgs.gov>
+Depends: lubridate, methods, XML
+Suggests: USGSwsData (>= 0.6)
+Description: This package has data import and export functions for specialized
+    formats used within the U.S. Geological Survey. It also contains
+    several functions that are useful for managing or manipulating
+    hydrologic and other data.
+License: file LICENSE
+LazyLoad: yes
+Collate:
+    '00setclass.R'
+    'anomalies.R'
+    'Arith-methods.R'
+    'as.character.timeDay.R'
+    'as.data.frame.timeDay.R'
+    'as.timeDay-methods.R'
+    'baseDay.R'
+    'boxCox.R'
+    'c.timeDay.R'
+    'coalesce.R'
+    'conc.meq.R'
+    'conc2meq.R'
+    'daysInMonth.R'
+    'dectime.R'
+    'dectime2Date.R'
+    'dms2dd.R'
+    'eventProcessing.R'
+    'eventSeries.R'
+    'exportCSV.R'
+    'exportRDB.R'
+    'fillMissing.R'
+    'format.timeDay.R'
+    'fourier.R'
+    'group2row.R'
+    'hyperbolic.R'
+    'hysteresis.R'
+    'importCSV.R'
+    'importRDB.R'
+    'is.na.timeDay.R'
+    'isLike.R'
+    'length.timeDay.R'
+    'LogPearsonIII.R'
+    'makeMeta.R'
+    'Math-methods.R'
+    'mergeNearest.R'
+    'mergeQ.R'
+    'movingAve.R'
+    'movingDiff.R'
+    'na2miss.R'
+    'peaks.R'
+    'PearsonIII.R'
+    'print.timeDay.R'
+    'quadratic.R'
+    'readList.R'
+    'readNWIS.R'
+    'recode.R'
+    'regularSeries.R'
+    'renCol.R'
+    'scaleRng.R'
+    'screenData.R'
+    'seasons.R'
+    'select.R'
+    'seqCollapse.R'
+    'setFileType.R'
+    'setTZ.R'
+    'shiftData.R'
+    'show-methods.R'
+    'sumComposition.R'
+    'timeDay-class.R'
+    'untable.R'
+    'USGSwsBase-package.R'
+    'waterYear.R'
+    'whatUV.R'
+    'whichRowCol.R'
+    'z%cn%.R'
+    'z[.timeDay.R'
+    'zeropad.R'
