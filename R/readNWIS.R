@@ -150,7 +150,7 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   else
     retval <- importRDB(myurl, convert.type=convert.type)
   close(myurl)
-  if(!convert.type) { #Do not force conversion if requested not to
+  if(convert.type) { #Do not force conversion if requested not to
     ## In some cases, columns ending in _va are not always numeric, but should be
     for(i in grep("_va$", names(retval), value=TRUE))
       retval[[i]] <- as.numeric(retval[[i]])
