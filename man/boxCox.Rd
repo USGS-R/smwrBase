@@ -1,0 +1,83 @@
+\name{boxCox}
+\alias{boxCox}
+\alias{IboxCox}
+\title{Box-Cox Power Transform}
+\usage{
+  boxCox(x, GM, lambda = 1, alpha = 0)
+
+  IboxCox(x, GM, lambda = 1, alpha = 0)
+
+  IboxCox(x, GM, lambda = 1, alpha = 0)
+}
+\arguments{
+  \item{x}{a numeric vector to be transformed by
+  \code{boxCox} or back-transformed by \code{IboxCox}. Must
+  be strictly positive for the forward trasnformation---the
+  argument \code{alpha} can be used to force positive
+  values. Missing values are allowed and result in
+  corresponding missing value in the output. See
+  \bold{Details}.}
+
+  \item{GM}{the value to use for the geometric mean of
+  \code{x}. If not supplied, then compute the geometric
+  mean (\code{boxCox} only).}
+
+  \item{lambda}{the power term in the Box-Cox
+  transformation. The value of 1 is a linear transform, the
+  value of 0 results in a natural log transform.}
+
+  \item{alpha}{an offset value for \code{x}.}
+}
+\value{
+  A numeric vector of the transformed or back-transformed
+  values in \code{x} with an attribute "GM" of the
+  geometric mean.
+}
+\description{
+  Functions for transforming and back-transforming data
+  using the Box-Cox power transform, with options to
+  preserve the measurement units.
+}
+\details{
+  If \code{x} contains missing values, then \code{GM} is
+  computed after omitting the missing values and the output
+  vector has a missing value wherever \code{x} has a
+  missing value.\cr
+
+  The function \code{boxCox} computes the forward transform
+  and the function \code{IboxCox} computes the
+  back-transform.
+}
+\note{
+  The original power transform described by Box and Cox
+  (1964) is adjusted by a power transform of the geometric
+  mean to retain the correct dimensional units of the
+  original data.
+}
+\examples{
+boxCox(1:3)
+## Should return
+# [1] 0 1 2
+# attr(,"GM")
+# [1] 1.817121
+boxCox(1:3, lambda=0)
+## Should return
+#[1] 0.000000 1.259532 1.996311
+#attr(,"GM")
+#[1] 1.817121
+IboxCox(boxCox(1:3, lambda=0), lambda=0) # verify the back-transform
+## Should return
+# [1] 1 2 3
+# attr(,"GM")
+# [1] 1.817121
+}
+\references{
+  Box, G.E.P. and Cox, D.R., 1964, An Analysis of
+  Transformations: Journal of the Royal Statistical
+  Society, v. 26, Series B, p. 211-243.
+}
+\seealso{
+  \code{\link{hyperbolic}}
+}
+\keyword{manip}
+

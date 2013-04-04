@@ -1,0 +1,41 @@
+\name{waterYear}
+\alias{waterYear}
+\title{Water Year}
+\usage{
+  waterYear(x, numeric = FALSE)
+}
+\arguments{
+  \item{x}{an object of class "Date" or "POSIXt." Missing
+  values are permittied and reesult in corresponding
+  missing values in the output.}
+
+  \item{numeric}{a logical value that indicates whether the
+  returned values should be numeric \code{TRUE} or an
+  ordered factor \code{FALSE}. The default value is
+  \code{FALSE}.}
+}
+\value{
+  An ordered factor or numeric vector corresponding to the
+  water year.
+}
+\description{
+  Create an ordered factor or numeric values from a vector
+  of dates based on the water year.
+}
+\note{
+  The water year is defined as the period from October 1 to
+  September 30. The water year is designated by the
+  calendar year in which it ends. Thus, the year ending
+  September 30, 1999, is the "1999 water year."
+}
+\examples{
+library(USGSwsData)
+data(QW05078470)
+## Return an ordered factor
+waterYear(QW05078470$DATES)
+}
+\seealso{
+  \code{\link{year}}
+}
+\keyword{manip}
+

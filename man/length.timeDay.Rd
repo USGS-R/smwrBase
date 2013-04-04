@@ -1,0 +1,21 @@
+\name{length.timeDay}
+\alias{length.timeDay}
+\title{Length of an Object}
+\usage{
+  \method{length}{timeDay}(x)
+}
+\arguments{
+  \item{x}{a time-of-day object.}
+}
+\value{
+  An integer of length 1 indicating the number of elements
+  in \code{x}.
+}
+\description{
+  Get the length of time-of-day objects.
+}
+\examples{
+length(as.timeDay(c("10:30", "11:00")))
+}
+\keyword{attribute}
+
