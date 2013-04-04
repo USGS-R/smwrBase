@@ -43,6 +43,7 @@
 #'capabilities added by Dave Lorenz \email{lorenz@@usgs.gov}.
 #'@seealso \code{\link{importRDB}}
 #'@keywords manip IO
+#'@export
 #'@examples
 #'\dontrun{
 #'# Get the first 5 days in 2010 for USGS station identifier
@@ -52,8 +53,6 @@
 #'# from a well south of Bend, Ore.
 #'readNWIS("434400121275801", "gwl", begin.date="2010-01-01")
 #'}
-#'
-
 readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
                      param=NULL, convert.type=TRUE) {
   ## Coding history:
