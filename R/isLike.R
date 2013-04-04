@@ -27,14 +27,13 @@
 #'@seealso \code{\link{class}}, \code{\link{is.numeric}},
 #'\code{\link{is.factor}}, \code{\link{is.character}},
 #'\code{\link{is.integer}}, \code{\link{is.logical}}
+#'@export
 #'@keywords manip
 #'@examples
 #'
 #'## The first should be FALSE and the second TRUE
 #'isDateLike(32)
 #'isDateLike(as.Date("2004-12-31"))
-#'
-
 isDateLike <- function(x)
   ## some objects may have multiple classes, so any is needed
   any(class(x) %in% c("Date", "POSIXt"))

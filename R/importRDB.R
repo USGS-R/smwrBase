@@ -33,13 +33,12 @@
 #'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
 #'\code{\link{comment}}
 #'@keywords manip IO
+#'@export
 #'@examples
 #'
 #'## These datasets are available in USGSwsData as text files
 #'TestDir <- system.file("misc", package="USGSwsData")
 #'TestFull <- importRDB(file.path(TestDir, "TestFull.rdb"))
-#'
-
 importRDB <- function(file.name="", date.format=NULL, convert.type=TRUE) {
   ## Coding history:
   ##    2000Feb03 DMierzeski (MathSoft) Original Coding

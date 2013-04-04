@@ -20,6 +20,7 @@
 #'adequately describe that variation.
 #'@seealso \code{\link{dectime}},
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'# compute the sine and cosine terms for quarters of 2002
@@ -31,9 +32,6 @@
 #'# [4,] -1.00000e+000 -3.78606e-013
 #'# attr(, "k.max"):
 #'# [1] 1
-#'
-
-
 fourier <- function(x, k.max=1) {
   ## Coding history:
   ##    2004Nov16 DLLorenz Original

@@ -60,6 +60,7 @@
 #'the sampled data may not give a reliable estimate of loads.
 #'@seealso \code{\link{mergeNearest}},
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'library(USGSwsData)
@@ -83,9 +84,6 @@
 #'#                   Example 4
 #'# Note quotes required for station identifiers
 #'mergeQ(QWall, "05078470"=Q05078470, "05078770"=Q05078770, Plot=FALSE)
-#'
-#'
-
 mergeQ <- function(QWdata, STAID="STAID", FLOW="FLOW", DATES="DATES",
                    Qdata=NULL, Prefix=NULL, Plot=TRUE, ...) {
   ## Coding history:
