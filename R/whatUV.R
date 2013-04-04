@@ -28,7 +28,7 @@ whatUV <- function(gage) {
   if(class(retval) == "try-error" || length(retval) < 8L)
     stop("no unit value data found for gage: ", gage)
   ## Get the data and proceed
-  retval <- retval[[7L]] # That is the one
+  retval <- retval[[8L]] # That is the one
   retval <- retval[-1L, -1L] # Remove the all available row and empty column 1
   names(retval)[2:3] <- c("StartDate", "EndDate")
   ## Fix the columns
