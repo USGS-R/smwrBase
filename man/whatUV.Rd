@@ -10,12 +10,15 @@
 }
 \value{
   A data frame containing the columns Available Parameters,
-  StartDate, and EndDate.
+  StartDate, ,EndDate,pCode, and name.
 }
 \description{
   Gets a description of unit-value data available for a
   USGS station and the beginning and ending dates of each
   parameter.
+}
+\examples{
+UVavailable <- whatUV("04027000")
 }
 \references{
   Refer to NWIS web?
