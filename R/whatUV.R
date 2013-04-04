@@ -7,10 +7,13 @@
 #'@usage whatUV(gage)
 #'@param gage a single USGS station identifier as a character string.
 #'@return A data frame containing the columns Available Parameters, StartDate,
-#'and EndDate.
+#',EndDate,pCode, and name.
 #'@seealso \code{\link{readNWIS}}
 #'@references Refer to NWIS web?
 #'@keywords DataIO
+#'@export
+#'@examples
+#'UVavailable <- whatUV("04027000")
 whatUV <- function(gage) {
   ## Coding history:
   ##    2012Dec20 DLLorenz original Coding
@@ -31,5 +34,8 @@ whatUV <- function(gage) {
   ## Fix the columns
   retval$StartDate=as.Date(retval$StartDate, format="%Y-%m-%d")
   retval$EndDate=as.Date(retval$EndDate, format="%Y-%m-%d")
+  retval$pCode <- sapply(strsplit(retval[,1], " "),function(x)x[1])
+  retval$name <- sapply(strsplit(retval[,1], " "),function(x) paste(x[2:length(x)],collapse=" "))
+  
   return(retval)
 }
