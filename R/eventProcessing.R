@@ -32,18 +32,12 @@
 #'\code{eventno} indicating the sequence number of each element in the the
 #'event.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## Notice the difference caused by setting reset to TRUE
 #'eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE))
 #'eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE)
-#'eventLen(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE))
-#'## This is an example of the summary option
-#'eventLen(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE), summary=TRUE)
-#'eventSeq(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE)))
-#'eventSeq(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE))
-#'
-
 eventNum <- function(event, reset=FALSE, na.fix=FALSE) {
   ## Coding history:
   ##    2005????? DLLorenz Initial coding.
@@ -77,6 +71,13 @@ eventNum <- function(event, reset=FALSE, na.fix=FALSE) {
   return(ret.val)
 }
 
+#'@rdname eventProcessing
+#'@export
+#'@examples
+#'
+#'## Notice the difference caused by setting reset to TRUE
+#'eventSeq(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE)))
+#'eventSeq(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE))
 eventSeq <- function(eventno) {
   ## Compute the sequence number within an event
   ret.val <- as.vector(unlist(apply(as.matrix(rle(eventno)$lengths),
@@ -85,6 +86,14 @@ eventSeq <- function(eventno) {
   return(ret.val)
 }
 
+#'@rdname eventProcessing
+#'@export
+#'@examples
+#'
+#'## Notice the difference caused by setting reset to TRUE
+#'eventLen(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE))
+#'## This is an example of the summary option
+#'eventLen(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE), summary=TRUE)
 eventLen <- function(eventno, summary=FALSE) {
   ## Compute the length of each event
   ## if summary is desired, then return named vector of lengths

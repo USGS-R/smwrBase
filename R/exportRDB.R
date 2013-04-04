@@ -21,7 +21,6 @@
 #'@return The file name is returned.
 #'@seealso \code{\link{write.table}}, \code{\link{importRDB}}
 #'@keywords manip IO
-
 exportRDB <- function(x, file.name="data.rdb", col.names=NULL, meta=FALSE,
                       code.rule=10) {
   ## Coding history:

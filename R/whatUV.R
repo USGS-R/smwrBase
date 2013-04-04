@@ -11,15 +11,6 @@
 #'@seealso \code{\link{readNWIS}}
 #'@references Refer to NWIS web?
 #'@keywords DataIO
-#'@examples
-#'
-#'\dontrun{
-#'# What has been collected at
-#'# 04067500 MENOMINEE RIVER NEAR MC ALLISTER, WI
-#'readNWIS("04067500")
-#'}
-#'
-
 whatUV <- function(gage) {
   ## Coding history:
   ##    2012Dec20 DLLorenz original Coding

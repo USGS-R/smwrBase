@@ -17,6 +17,7 @@
 #'Missing values are returned whereever either \code{x}, \code{minutes}, or
 #'\code{seconds} is missing.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'dms2dd(983206) # using a numeric value
@@ -27,8 +28,6 @@
 #'# should be [1] 98.535
 #'dms2dd("98:32", split=":") # Note missing seconds
 #'# should be [1] 98.53333
-#'
-
 dms2dd <- function(x, minutes=NULL, seconds=0, split="") {
   ## Coding history:
   ##    2006Dec12 DLLorenz Original coding

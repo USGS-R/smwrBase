@@ -11,7 +11,6 @@
 #'information about column formatting.
 #'@seealso \code{\link{write.table}}, \code{\link{importCSV}}
 #'@keywords manip IO
-
 exportCSV <- function(x, file.name="") {
   ## Coding history:
   ##    2011Feb25 DLLorenz Origial Coding

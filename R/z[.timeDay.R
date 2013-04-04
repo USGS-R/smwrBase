@@ -10,7 +10,6 @@
 #'@return The subset of \code{x} indicated by \code{i}.
 #'@seealso \code{\link{Extract}}
 #'@keywords manip
-
 "[.timeDay" <- function(x, i) {
   x@time <- x$time[i]
   return(x)

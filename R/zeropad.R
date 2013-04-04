@@ -17,6 +17,7 @@
 #'is returned.
 #'@seealso \code{\link{format}},
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'zeropad(10^(-3:6))
@@ -28,8 +29,6 @@
 #'zeropad(c(""," ","a","bb","ccc","dddd","eeeee","ffffff"),5)
 #'# [1] "00000"  "0000 "  "0000a"  "000bb"  "00ccc"  "0dddd"  "eeeee" 
 #'# [8] "ffffff"
-#'
-
 zeropad <- function(x, LEN=0) {
   ## Coding history:
   ##    2002Dec04 DLLorenz Initial coding.

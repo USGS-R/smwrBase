@@ -19,14 +19,13 @@
 #'@return A vector like \code{x}, with data shifted in position.
 #'@seealso \code{\link{lag}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'shiftData(1:5, k=1)
 #'# [1] NA  1  2  3  4
 #'shiftData(1:5, k=1, circ=TRUE)
 #'# [1] 5 1 2 3 4
-#'
-
 shiftData <- function(x, k=1, fill=NA, circular=FALSE) {
   ## Coding history:
   ##    2005Mar18 DLLorenz Original
