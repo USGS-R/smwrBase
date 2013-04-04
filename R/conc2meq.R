@@ -32,12 +32,11 @@
 #'@references Hem, J.D., 1985, Study and interpretation of the chemical
 #'characteristics of natural water: USGS Water-Supply Paper 2254, 263 p.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'conc2meq(c(1,2,3), "Nitrate")
 #'# should be: [1] 0.07139 0.14278 0.21417
-#'
-
 conc2meq <- function(conc, constituent) {
   ## Coding history:
   ##    2002Jun13 DLLorenz Original coding.

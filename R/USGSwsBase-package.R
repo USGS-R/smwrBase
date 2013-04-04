@@ -21,5 +21,4 @@
 #'@references Lorenz, D.L., in preparation, USGSwsBase---an R package for managing
 #'hydrologic data, version 0.6
 #'@keywords package
-
 NULL
