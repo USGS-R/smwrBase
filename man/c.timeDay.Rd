@@ -16,5 +16,8 @@
 \description{
   Combine data into a single vector.
 }
+\examples{
+\dontrun{}
+}
 \keyword{manip}
 

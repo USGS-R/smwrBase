@@ -8,7 +8,9 @@
 #'@param recursive required for other methods.
 #'@return A single vector of class "timeDay."
 #'@keywords manip
-
+#'@export
+#'@examples
+#'\dontrun{}
 c.timeDay <- function (..., recursive=FALSE) {
   all.tod <- lapply(list(...), as.timeDay)
   times <- unlist(lapply(all.tod, function(x) x@time))

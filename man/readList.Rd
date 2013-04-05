@@ -31,6 +31,9 @@
 \description{
   Imports data arranged on lines into a list.
 }
+\examples{
+\dontrun{}
+}
 \seealso{
   \code{\link{as}}
 }

@@ -17,5 +17,8 @@
 \description{
   Convert to object of type "character."
 }
+\examples{
+\dontrun{}
+}
 \keyword{character}
 

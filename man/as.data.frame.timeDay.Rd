@@ -27,6 +27,9 @@
 \description{
   Convert an object to class "data.frame."
 }
+\examples{
+\dontrun{}
+}
 \seealso{
   \code{\link{as.data.frame}}
 }

@@ -18,6 +18,9 @@
 \section{Side Effect}{
   The object \code{x} is printed
 }
+\examples{
+\dontrun{}
+}
 \seealso{
   \code{\link{timeDay-class}}
 }

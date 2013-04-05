@@ -2,10 +2,10 @@
 \name{as.timeDay-methods}
 \alias{as.timeDay}
 \alias{as.timeDay-methods}
-\alias{as.timeDay,character,character-method}
-\alias{as.timeDay,character,missing-method}
-\alias{as.timeDay,numeric,missing-method}
-\alias{as.timeDay,timeDay,missing-method}
+\alias{as.timeDay-methods,as.timeDay,missing-method}
+\alias{as.timeDay-methods,character,character-method}
+\alias{as.timeDay-methods,character,missing-method}
+\alias{as.timeDay-methods,numeric,missing-method}
 \title{Methods for Function \code{as.timeDay}}
 \description{
   Valid conversion for function \code{as.timeDay}.

@@ -25,6 +25,7 @@
 #'\item{list("signature(e1 = \"timeDay\", e2 = \"POSIXt\")")}{ Addition is
 #'permissible for these data. } }
 #'@keywords methods manip
+#'@exportMethod Arith
 setMethod("Arith", signature(e1="timeDay", e2="POSIXt"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
