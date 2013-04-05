@@ -11,6 +11,7 @@
 #'the data were converted from date and time data.
 #'@seealso \code{\link{dectime}}, \code{\link{as.Date}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'dectime("02/07/2013", date.format="%m/%d/%Y")
@@ -18,8 +19,6 @@
 #'dectime2Date(2013.101)
 #'# Convert a more precise value:
 #'dectime2Date(2013.1013699)
-#'
-
 dectime2Date <- function(x) {
   ## Add about 1 minute to the data to prevent truncation errors
   x <- x + 2.e-6

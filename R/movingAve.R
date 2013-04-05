@@ -30,14 +30,13 @@
 #'@references Wood, L.C. and Hockens, S.N., 1970, Least squares smoothing
 #'operators: Geophysics v. 35, no. 6, p. 1005-1019.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## Construct a simple valley
 #'movingData <- abs(seq(-5, 5))
 #'movingAve(movingData, span=5)
 #'movingAve(movingData, span=5, order=2)
-#'
-
 movingAve <- function(x, span=3, order=0, pos="center") {
   ## Coding history:
   ##    2009Aug17 DLLorenz Original Coding

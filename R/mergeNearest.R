@@ -31,6 +31,7 @@
 #'time, but having a different time stamp.
 #'@seealso \code{\link{mergeQ}},
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'library(USGSwsData)
@@ -41,8 +42,6 @@
 #'mergeNearest(QW05078470, right=Q05078470)
 #'# Notice the difference in selected dates
 #'mergeNearest(QW05078470, right=Q05078470, Date.noon=FALSE)
-#'
-
 mergeNearest <- function(left, dates.left="DATES", all.left=FALSE,
                          suffix.left="left",
                          right, dates.right="DATES",

@@ -26,14 +26,13 @@
 #'column of alkalinity may be desired when there are multiple columns of
 #'alkalinity determined by various methods.
 #'@keywords manip
+#' @export
 #'@examples
 #'
 #'coalesce(c(1,NA,NA,3), c(2,2,NA,2))
 #'# should be: [1]  1  2 NA  3
 #'coalesce(c(1,NA,NA,3), c(2,2,NA,2), 0)
 #'# should be: [1] 1 2 0 3
-#'
-
 coalesce <- function(mat, ...) {
   ## Coding history:
   ##    2003Jun06 DLLorenz Original version.

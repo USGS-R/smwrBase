@@ -27,23 +27,43 @@
 #'@seealso \code{\link{class}}, \code{\link{is.numeric}},
 #'\code{\link{is.factor}}, \code{\link{is.character}},
 #'\code{\link{is.integer}}, \code{\link{is.logical}}
+#'@export
 #'@keywords manip
 #'@examples
 #'
 #'## The first should be FALSE and the second TRUE
 #'isDateLike(32)
 #'isDateLike(as.Date("2004-12-31"))
-#'
-
 isDateLike <- function(x)
   ## some objects may have multiple classes, so any is needed
   any(class(x) %in% c("Date", "POSIXt"))
 
+#'@rdname isLike
+#'@export
+#'@examples
+#'
+#'## The first should be FALSE and the second TRUE
+#'isNumberLike(as.Date("2004-12-31"))
+#'isNumberLike(32)
 isNumberLike <- function(x)
   is.integer(x) || is.double(x) || (class(x) == "Date")
 
+#'@rdname isLike
+#'@export
+#'@examples
+#'
+#'## The first should be FALSE and the second TRUE
+#'isGroupLike(as.Date("2004-12-31"))
+#'isGroupLike(32)
 isGroupLike <- function(x)
   is.factor(x) || is.character(x) || is.integer(x) ||  is.logical(x)
 
+#'@rdname isLike
+#'@export
+#'@examples
+#'
+#'## The first should be FALSE and the second TRUE
+#'isCharLike(as.Date("2004-12-31"))
+#'isCharLike("32")
 isCharLike <- function(x)
   is.factor(x) || is.character(x)

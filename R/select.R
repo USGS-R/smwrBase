@@ -26,6 +26,7 @@
 #'\code{test} rather than by a single value.
 #'@seealso \code{\link{ifelse}}, \code{\link{switch}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## create the test vector
@@ -36,8 +37,6 @@
 #'    ifelse(testselect == 3, 5, NA)))
 #'## Results by select:
 #'select(testselect, 1, 3, 5)
-#'
-
 select <- function(test,..., .pass=test, na=NA) {
   ## Coding history:
   ##    2006Jun06 DLLorenz Initial coding

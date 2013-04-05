@@ -19,14 +19,12 @@
 #'\code{order} equal 0 or 1 give the same result.\cr 
 #'@seealso \code{\link{filter}}, \code{\link{diff}}, \code{\link{movingAve}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## Construct a simple valley
 #'movingData <- abs(seq(-5, 5))
 #'movingDiff(movingData, span=1)
-#'
-
-
 movingDiff <- function(x, span=1, pos="end") {
   ## Coding history:
   ##   2009Aug17 DLLorenz Original Coding

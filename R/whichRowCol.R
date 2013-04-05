@@ -15,6 +15,7 @@
 #'
 #'@seealso \code{\link{row}}, \code{\link{col}}, \code{\link{which}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'# Simple case to find a single value
@@ -23,8 +24,6 @@
 #'library(USGSwsData)
 #'data(MenomineeMajorIons)
 #'whichRowCol(sapply(MenomineeMajorIons, is.na))
-#'
-
 whichRowCol <- function(x, which="both") {
   ## Coding history:
   ##    2003Oct23 DLLorenz Initial coding

@@ -11,12 +11,11 @@
 #'whether \code{pattern} is found in the element of \code{x} or not.
 #'@seealso \code{\link{\%in\%}}, \code{\link{regexpr}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## A simple example
 #'c("abc", "def") %cn% 'c'
-#'
-
 "%cn%" <- function(x, pattern)
   ## Coding history:
   ##    2009Feb13 DLLorenz Original Coding

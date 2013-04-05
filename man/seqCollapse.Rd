@@ -1,0 +1,40 @@
+\name{seqCollapse}
+\alias{seqCollapse}
+\title{Collapse a Sequence}
+\usage{
+  seqCollapse(x, sequential = "-", skips = ",")
+}
+\arguments{
+  \item{x}{an integer vector, missing values and repeated
+  values are permitted and removed before collapsing.}
+
+  \item{sequential}{the separator for sequential values.}
+
+  \item{skips}{the separator for gaps in the sequence}
+}
+\value{
+  A character string that represents that data in \code{x}
+  in a compact form. If \code{x} is empty, then "" is
+  returned.
+}
+\description{
+  Collapse a numeric sequence into a compact form that
+  represents continuous ranges and discontinuous values.
+}
+\note{
+  This function is commonly used to express years in a
+  compact form.
+}
+\examples{
+# A single value
+seqCollapse(1968)
+# A singe continuous range of values
+seqCollapse(1968:1992)
+# A collection of continuous and individual values
+seqCollapse(c(1968:1992, 1998, 2002, 2006:2012))
+}
+\seealso{
+  \code{\link{paste}}
+}
+\keyword{manip}
+

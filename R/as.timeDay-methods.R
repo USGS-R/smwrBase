@@ -24,7 +24,7 @@
 #'\item{list("signature(time = \"timeDay\", format = \"missing\")")}{ No change
 #'to "timeDay" objects. } }
 #'@keywords methods manip
-
+#'@exportMethod as.timeDay
 setGeneric("as.timeDay", function(time, format) standardGeneric("as.timeDay")
 )
 

@@ -14,12 +14,11 @@
 #'@return A factor of seasonal categories.
 #'@seealso \code{\link{month}}
 #'@keywords chron manip category
+#'@export
 #'@examples
 #'
 #'## Just two seasons
 #'seasons(as.Date(c("2001-03-31", "2001-09-30")), breaks=c("June", "December"))
-#'
-
 seasons <- function(x, breaks, Names=paste("Season Ending ", breaks, sep="")) {
   ## Coding history:
   ##    2006Apr05 DLLorenz Initial coding

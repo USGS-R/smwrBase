@@ -25,21 +25,19 @@
 #'@return Either the density (\code{dpearsonIII}), cumulative probability
 #'(\code{ppearsonIII}), quantile (\code{qpearsonIII}), or random sample
 #'(\code{rpearsonIII}) for the described distribution.
+#'@export
 #'@note The log-Pearson Type III distribtuion is used extensitvely in flood-
 #'frequency analysis in the United States. The Pearson Type III forms the basis
 #'for that distribution.
 #'@seealso \code{\link{dlpearsonIII}}, \code{\link{dnorm}}
 #'@keywords manip distribution
 #'@examples
-#'
 #'## Simple examples
-#'qpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+#'dpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
 #'## compare to normal
 #'qnorm(c(.5, .75, .9), 1.5, .25)
 #'## Make a skewed distribution
-#'qpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
-#'
-
+#'dpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
 dpearsonIII <- function(x, mean = 0, sd = 1, skew = 0) {
   ## Coding history:
   ##    2009Aug12 DLLorenz Initial version with combined code
@@ -61,6 +59,15 @@ dpearsonIII <- function(x, mean = 0, sd = 1, skew = 0) {
   return(dgamma(x, shape, rate))
 }
 
+#'@rdname PearsonIII
+#'@export
+#'@examples
+#'## Simple examples
+#'ppearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+#'## compare to normal
+#'qnorm(c(.5, .75, .9), 1.5, .25)
+#'## Make a skewed distribution
+#'ppearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
 ppearsonIII <- function(q, mean = 0, sd = 1, skew = 0) {
   ## the Pearson Type III distribution is simply a generalized gamma distribution
   ## therefore, use the dgamma function or the dnorm function to return the
@@ -79,6 +86,15 @@ ppearsonIII <- function(q, mean = 0, sd = 1, skew = 0) {
   }
 }
 
+#'@rdname PearsonIII
+#'@export
+#'@examples
+#'## Simple examples
+#'qpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+#'## compare to normal
+#'qnorm(c(.5, .75, .9), 1.5, .25)
+#'## Make a skewed distribution
+#'qpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
 qpearsonIII <- function(p, mean = 0, sd = 1, skew = 0) {
   ## the Pearson Type III distribution is simply a generalized gamma distribution
   ## therefore, use the qgamma function or the qnorm function to return the
@@ -96,6 +112,11 @@ qpearsonIII <- function(p, mean = 0, sd = 1, skew = 0) {
   return(q * sd + mean)
 }
 
+#'@rdname PearsonIII
+#'@export
+#'@examples
+#' # Simple examples
+#'rpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
 rpearsonIII <- function(n, mean = 0, sd = 1, skew = 0) {
   ## the Pearson Type III distribution is simply a generalized gamma distribution
   ## therefore, use the qgamma function or the qnorm function to return the

@@ -15,12 +15,11 @@
 #'Missing values are returned whereever either \code{month} or \code{year} is
 #'missing.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## Check February on a leap year and regular year.
 #'daysInMonth(c(2,2), c(2000, 2001))
-#'
-
 daysInMonth <- function(month, year, cum=FALSE) {
   ## Coding history:
   ##    2001Sep07 DLLorenz Initial coding
