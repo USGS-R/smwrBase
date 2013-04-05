@@ -19,7 +19,9 @@
 
   \item{begin.date}{the data to use for the earliest value.
   Not used for \code{dtype} = "peak." If, "", then retrieve
-  beginning with the first record in the database.}
+  beginning with the first record in the database for
+  "swdv" and "gwdv". If, "" for "uv", one week of data is
+  returned.}
 
   \item{end.date}{the data to use for the latest value. Not
   used for \code{dtype} = "peak." If "", then retrieve the
