@@ -20,15 +20,14 @@
 #'U.S. Geological Survey Scientific Investigations Report 2012--5240, 61 9.
 #'Wang, P., and Linker, L.C., 2008, Improvement of regression simulation in fluvial sediment 
 #'loads: Journal of Hydraulic Engineering, v. 134, no. 10, p. 1,527--1,531.
+#'@export
 #'@keywords manip
 #'@examples
 #'
 #'library(USGSwsData)
 #'data(Q05078770)
 #'# Plot flow and hysteresis to show looping 
-#'with(Q05078770, plot(log(FLOW), hystersis(log(FLOW), 3), type='l'))
-#'
-
+#'with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type='l'))
 hysteresis <- function(x, step=3) {
   ## Coding history:
   ##    2013Jan10 DLLorenz Original

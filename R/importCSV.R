@@ -24,13 +24,12 @@
 #'@seealso \code{\link{read.csv}}, \code{\link{scan}},
 #'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
 #'@keywords manip IO
+#'@export
 #'@examples
 #'
 #'## These datasets are available in USGSwsData as text files
 #'TestDir <- system.file("misc", package="USGSwsData")
 #'TestPart <- importCSV(file.path(TestDir, "TestPart.csv"))
-#'
-
 importCSV <- function(file.name="") {
   ## Coding history:
   ##    2011Feb25 DLLorenz Origial Coding

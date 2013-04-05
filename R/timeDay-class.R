@@ -9,9 +9,5 @@
 #'\code{as.timeDay(time, format)}.
 #'@references Lorenz, D.L., 2013, The USGSwsBase package
 #'@keywords classes
-#'@examples
-#'
-#'showClass("timeDay")
-#'
-
+#'@exportClass timeDay
 NULL

@@ -1,0 +1,41 @@
+\name{whichRowCol}
+\alias{whichRowCol}
+\title{Identify Rows and Columns}
+\usage{
+  whichRowCol(x, which = "both")
+}
+\arguments{
+  \item{x}{a logical matrix. Missing values are treated as
+  \code{FALSE}}
+
+  \item{which}{a character string indicating what should be
+  returned.}
+}
+\value{
+  A matrix of the row and column number if \code{which} is
+  "both." Otherwise a named vector of the row number, if
+  \code{which} is "row," or column number, if \code{which}
+  is "col."  Only the first character is needed.
+}
+\description{
+  Identifies the row and column numbers (indexes) of
+  \code{TRUE} values in a matrix.
+}
+\note{
+  Some comparisons, \code{\%in\%} for example, will return
+  a vector rather than a matrix and cause whichRowCol to
+  fail.
+}
+\examples{
+# Simple case to find a single value
+whichRowCol(matrix(1:20, ncol=4) == 16)
+# Where are the missing values in a data set?
+library(USGSwsData)
+data(MenomineeMajorIons)
+whichRowCol(sapply(MenomineeMajorIons, is.na))
+}
+\seealso{
+  \code{\link{row}}, \code{\link{col}}, \code{\link{which}}
+}
+\keyword{manip}
+

@@ -4,7 +4,8 @@ Date: 2013-02-15
 Title: Functions to import and manipulate hydrologic data
 Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
-Depends: lubridate, methods, XML
+Depends: lubridate, XML
+Imports: methods
 Suggests: USGSwsData (>= 0.6)
 Description: This package has data import and export functions for specialized
     formats used within the U.S. Geological Survey. It also contains

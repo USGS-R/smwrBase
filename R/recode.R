@@ -22,22 +22,17 @@
 #'complete text.
 #'@seealso \code{\link{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}},
 #'@keywords manip
-#'@examples
-#'
-#'## Construct simple substitutions
-#'recode(c(1, 2, 3, -99999, 5, 6), from=-99999, to=0)
-#'
-
-# Recode distinct values
-#
-
-recode <- function (x, from, to)
+#'@method recode
+recode <- function (x, from, to){
   ## Coding history:
   ##    2012Feb17 DLLorenz Original coding.
   ##    2012Feb17          This version.
   ##
   UseMethod("recode")
+}
 
+#' @rdname recode
+#' @export
 recode.factor <- function (x, from, to)  {
   ## Also valid for ordered
   from <- as.character(from)
@@ -48,12 +43,18 @@ recode.factor <- function (x, from, to)  {
   return(factor(x, levels=levs, labels=labs))
 }
 
+#' @rdname recode
+#' @export
 recode.integer <- function (x, from, to)
   return(ifelse(x == from, to, x))
 
+#' @rdname recode
+#' @export
 recode.character <- function (x, from, to)
   return(ifelse(x == from, to, x))
 
+#' @rdname recode
+#' @export
 recode.numeric <- function (x, from, to) {
   ## Be prepared for small differences due to computations
   tol <- max(abs(from) * .Machine$double.eps * 10, .Machine$double.eps*4)

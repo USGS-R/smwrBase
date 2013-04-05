@@ -17,13 +17,12 @@
 #'@return A vector representation of the data in decimal format--year and
 #'decimal fraction.
 #'@seealso \code{\link{hm}}, \code{\link{strptime}}
+#'@export
 #'@keywords manip
 #'@examples
 #'
 #'dectime("11/11/1918", date.format="%m/%d/%Y")
 #'dectime(1988:1990)
-#'
-
 dectime <- function(dates, times, time.format, date.format) {
   ## Coding history:
   ##    2004Nov16 DLLorenz Original

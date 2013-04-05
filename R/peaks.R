@@ -24,6 +24,7 @@
 #'identifying peaks with sequential tied values.
 #'@seealso \code{\link{max}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'# Note the effect of missing values
@@ -32,8 +33,6 @@
 #'# Note the effect of ties
 #'peaks(c(1:6,6,6,5,4,3,4,6,9))
 #'peaks(c(1:6,6,6,5,4,3,4,6,9), ties="none")
-#'
-
 peaks <- function(x, span=3, ties='first', ends=TRUE) {
   ## Coding history:
   ##    2010Dec14 DLLorenz Original Coding

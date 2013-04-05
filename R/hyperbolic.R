@@ -38,6 +38,7 @@
 #'1969, A working model for the variation in stream water chemistry at the
 #'Hubbard Brook Experimental Forest, New Hampshire: Water Resources Research,
 #'v. 5, no. 6, p. 1353-1363.
+#'@export
 #'@keywords manip
 #'@examples
 #'
@@ -46,8 +47,6 @@
 #'# [1] 0.3333333 0.5000000 0.6000000
 #'# attr(,"scale")
 #'# [1] 2
-#'
-
 hyperbolic <- function(x, factor = 0, scale = mean(x, na.rm=TRUE)) {
   ## Coding history:
   ##    2010Mar24 DLLorenz First dated version

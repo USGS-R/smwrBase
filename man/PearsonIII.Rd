@@ -1,0 +1,87 @@
+\name{dpearsonIII}
+\alias{dpearsonIII}
+\alias{PearsonIII}
+\alias{ppearsonIII}
+\alias{qpearsonIII}
+\alias{rpearsonIII}
+\title{Pearson Type III distribution}
+\usage{
+  dpearsonIII(x, mean = 0, sd = 1, skew = 0)
+
+  ppearsonIII(q, mean = 0, sd = 1, skew = 0)
+
+  qpearsonIII(p, mean = 0, sd = 1, skew = 0)
+
+  rpearsonIII(n, mean = 0, sd = 1, skew = 0)
+
+  ppearsonIII(q, mean = 0, sd = 1, skew = 0)
+
+  qpearsonIII(p, mean = 0, sd = 1, skew = 0)
+
+  rpearsonIII(n, mean = 0, sd = 1, skew = 0)
+}
+\arguments{
+  \item{x,q}{vector of quantiles.}
+
+  \item{p}{vector of probabilities.}
+
+  \item{n}{number of observations. If length(n) > 1, then
+  the length is taken to be the number required.}
+
+  \item{mean}{vector of means of the distribution of the
+  data.}
+
+  \item{sd}{vector of standard deviation of the
+  distribution of the data.}
+
+  \item{skew}{vector of skewness of the distribution of the
+  data.}
+}
+\value{
+  Either the density (\code{dpearsonIII}), cumulative
+  probability (\code{ppearsonIII}), quantile
+  (\code{qpearsonIII}), or random sample
+  (\code{rpearsonIII}) for the described distribution.
+}
+\description{
+  Density, cumulative probability, quantiles and random
+  generation for the Pearson Type III distribution.
+}
+\details{
+  Elements of x, q, or p that are missing will result in
+  missing values in the retruned data.
+}
+\note{
+  The log-Pearson Type III distribtuion is used
+  extensitvely in flood- frequency analysis in the United
+  States. The Pearson Type III forms the basis for that
+  distribution.
+}
+\examples{
+## Simple examples
+dpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+## compare to normal
+qnorm(c(.5, .75, .9), 1.5, .25)
+## Make a skewed distribution
+dpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
+## Simple examples
+ppearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+## compare to normal
+qnorm(c(.5, .75, .9), 1.5, .25)
+## Make a skewed distribution
+ppearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
+## Simple examples
+qpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+## compare to normal
+qnorm(c(.5, .75, .9), 1.5, .25)
+## Make a skewed distribution
+qpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
+# Simple examples
+rpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+}
+\seealso{
+  \code{\link{dlpearsonIII}}, \code{\link{dnorm}}
+}
+\keyword{distribution}
+\keyword{manip}
+

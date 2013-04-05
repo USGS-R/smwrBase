@@ -20,6 +20,7 @@
 #'analysis functions that require a data frame rather than a contingency table.
 #'To convert a column from factor to ordered use the ordered function.
 #'@seealso \code{\link{ordered}}
+#'@export
 #'@keywords manip
 #'@examples
 #'
@@ -27,8 +28,6 @@
 #'mdat <- matrix(seq(6), nrow = 2, ncol=3,
 #'    dimnames = list(c("row1", "row2"), c("C.1", "C.2", "C.3")))
 #'untable(mdat)
-#'
-
 untable <- function(x, rows="Rows", cols="Columns", counts=FALSE) {
   ## Coding history:
   ##    2008Jan04 DLLorenz Original Coding

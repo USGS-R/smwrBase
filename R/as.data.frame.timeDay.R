@@ -15,7 +15,9 @@
 #'@return A data frame is created containing the data in \code{x}.
 #'@seealso \code{\link{as.data.frame}}
 #'@keywords manip
-
+#'@export
+#'@examples
+#'\dontrun{}
 as.data.frame.timeDay <- function(x, row.names = NULL, optional = FALSE,
                                   ..., nm = deparse(substitute(x))) {
   force(nm)

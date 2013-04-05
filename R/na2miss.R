@@ -20,12 +20,11 @@
 #'indicate missing values.\cr
 #'@seealso \code{\link{is.na}}, \code{\link{sub}}
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## Construct simple substitutions
 #'na2miss(c(1, 2, 3, NA, 5, 6))
-#'
-
 na2miss <- function (x, to = -99999) {
   ## Coding history:
   ##    2000Oct26 JRSlack  Original coding.

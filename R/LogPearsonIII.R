@@ -30,8 +30,40 @@
 #'(\code{rlpearsonIII}) for the described distribution.
 #'@note The log-Pearson Type III distribtuion is used extensitvely in flood-
 #'frequency analysis in the United States.
+#'@export
 #'@seealso \code{\link{dpearsonIII}}, \code{\link{dlnorm}}
 #'@keywords manip distribution
+#'@examples
+#'
+#'## Simple examples
+#'dlpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+#'## compare to normal
+#'qlnorm(c(.5, .75, .9), 1.5, .25)
+#'## Make a skewed distribution
+#'dlpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
+dlpearsonIII <- function(x, meanlog = 0, sdlog = 1, skew = 0) {
+  retval <- dpearsonIII(log(x), meanlog, sdlog, skew)/x
+  return(ifelse(x == 0, 0, retval))
+}
+
+#'@rdname LogPearsonIII
+#'@export
+#'@examples
+#'
+#'## Simple examples
+#'plpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+#'## compare to normal
+#'qlnorm(c(.5, .75, .9), 1.5, .25)
+#'## Make a skewed distribution
+#'plpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
+plpearsonIII <- function(q, meanlog = 0, sdlog = 1, skew = 0) {
+  if(skew == 0)
+    return(plnorm(q, meanlog, sdlog))
+  return(ppearsonIII(log(q), meanlog, sdlog, skew))
+}
+
+#'@rdname LogPearsonIII
+#'@export
 #'@examples
 #'
 #'## Simple examples
@@ -40,23 +72,20 @@
 #'qlnorm(c(.5, .75, .9), 1.5, .25)
 #'## Make a skewed distribution
 #'qlpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
-#'
-
-dlpearsonIII <- function(x, meanlog = 0, sdlog = 1, skew = 0) {
-  retval <- dpearsonIII(log(x), meanlog, sdlog, skew)/x
-  return(ifelse(x == 0, 0, retval))
-}
-
-plpearsonIII <- function(q, meanlog = 0, sdlog = 1, skew = 0) {
-  if(skew == 0)
-    return(plnorm(q, meanlog, sdlog))
-  return(ppearsonIII(log(q), meanlog, sdlog, skew))
-}
-
 qlpearsonIII <- function(p, meanlog = 0, sdlog = 1, skew = 0) {
   return(exp(qpearsonIII(p, meanlog, sdlog, skew)))
 }
 
+#'@rdname LogPearsonIII
+#'@export
+#'@examples
+#'
+#'## Simple examples
+#'rlpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
+#'## compare to normal
+#'qlnorm(c(.5, .75, .9), 1.5, .25)
+#'## Make a skewed distribution
+#'rlpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
 rlpearsonIII <- function(n, meanlog = 0, sdlog = 1, skew = 0) {
   return(exp(rpearsonIII(n, meanlog, sdlog, skew)))
 }

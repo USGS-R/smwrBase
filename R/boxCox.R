@@ -34,6 +34,7 @@
 #'@references Box, G.E.P. and Cox, D.R., 1964, An Analysis of Transformations:
 #'Journal of the Royal Statistical Society, v. 26, Series B, p. 211-243.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'boxCox(1:3)
@@ -46,13 +47,6 @@
 #'#[1] 0.000000 1.259532 1.996311
 #'#attr(,"GM")
 #'#[1] 1.817121
-#'IboxCox(boxCox(1:3, lambda=0), lambda=0) # verify the back-transform
-#'## Should return
-#'# [1] 1 2 3
-#'# attr(,"GM")
-#'# [1] 1.817121
-#'
-
 boxCox <- function(x, GM, lambda=1, alpha=0) {
   ## Coding history:
   ##    2008Apr28 DLLorenz Original Coding
@@ -84,6 +78,14 @@ boxCox <- function(x, GM, lambda=1, alpha=0) {
   return(retval)
 }
 
+#'@rdname boxCox
+#'@export
+#'@examples
+#'IboxCox(boxCox(1:3, lambda=0), lambda=0) # verify the back-transform
+#'## Should return
+#'# [1] 1 2 3
+#'# attr(,"GM")
+#'# [1] 1.817121
 IboxCox <- function(x, GM, lambda=1, alpha=0) {
   if(missing(GM)) # get the attribute if GM is missing
     GM <- attr(x, "GM")

@@ -40,6 +40,7 @@
 #'Elshorbagy, A.A., Panu, U.S., Simonovic, S.P., 2000, Group-based estimation
 #'of missing hydrological data: I. Approach and general methodology,
 #'Hydrological Sciences Journal, v. 45, no. 6, p. 849-866.
+#'@export
 #'@keywords manip
 #'@examples
 #'
@@ -56,8 +57,6 @@
 #'with(Q05078470[109:111, ], points(DATES, FlowFill))
 #'with(Q05078470[190:210, ], plot(DATES, FLOW, type='l'))
 #'with(Q05078470[198:201, ], points(DATES, FlowFill))
-#'
-
 fillMissing <- function(x, span=10) {
   ## Coding history:
   ##    2012May31 DLLorenz Initial version, based on tsSmooth

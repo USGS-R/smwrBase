@@ -13,13 +13,12 @@
 #'The function \code{scaleRng} will do that and can be used to back-transform
 #'the data.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## simple case with back-transform
 #'scaleRng(c(1.2, 2.3, 3.4, 5.6))
 #'scaleRng(c(0.00, 0.25, 0.50, 1.00), Min=1.2, Max=5.6)
-#'
-
 scaleRng <- function(x, Min=0, Max=1, x.range=range(x)) { 
   ## Coding history:
   ##    2011Jun21 DLLorenz Original Coding

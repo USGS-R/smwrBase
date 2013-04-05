@@ -18,6 +18,7 @@
 #'@references Rutledge, A.T., 2007, Program user Guide for Recess:
 #'\url{http://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
 #'@keywords missing
+#'@export
 #'@examples
 #'library(USGSwsData)
 #'data(Q05078770)
@@ -25,8 +26,6 @@
 #'with(Q05078770, screenData(DATES, FLOW))
 #'# There should be missing values shown for the two water years.
 #'with(Q05078770, screenData(DATES, FLOW, year="w"))
-#'
-
 screenData <- function(dates, values, type="DV", year="calendar", printit=TRUE) {
   ## Coding history:
   ##    2005Sep29 DLLorenz Initial coding.

@@ -13,14 +13,13 @@
 #'proportions.
 #'@return A matrix with columns matching all of the data in \code{x} and
 #'\code{\dots{}} with rows summing to \code{Range}.
+#'@export
 #'@keywords manip array
 #'@examples
 #'
 #'# Create tiny dataset
 #'TinyCations <- data.frame(Ca=c(32, 47, 28), Mg=c(10,12,15), Na=c(7, 5, 7))
 #'sumComposition(TinyCations)
-#'
-
 sumComposition <- function(x, ..., Range=100) {
   ## Coding history:
   ##    2008Oct27 DLLorenz Original Code

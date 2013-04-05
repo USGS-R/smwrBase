@@ -41,15 +41,13 @@
 #'@seealso Refer to the documentation for \code{seaken} in the USGSwsStats
 #'package if it is installed.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'library(USGSwsData)
 #'data(QW05078470)
 #'with(QW05078470, regularSeries(P00665, DATES))
 #'# there should be no values for season numbers 2, 5, or 10
-#'
-
-
 regularSeries <- function(x, times, period="month", which = "middle",
                           begin, end, k.period=1) {
   ## Coding history:

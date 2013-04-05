@@ -7,6 +7,7 @@
 #'output.
 #'
 #'@name Arith-methods
+#'@rdname Arith-methods
 #'@aliases Arith-methods Arith,Date,timeDay-method Arith,POSIXt,timeDay-method
 #'Arith,timeDay,Date-method Arith,timeDay,POSIXt-method
 #'@docType methods
@@ -24,8 +25,7 @@
 #'\item{list("signature(e1 = \"timeDay\", e2 = \"POSIXt\")")}{ Addition is
 #'permissible for these data. } }
 #'@keywords methods manip
-
-
+#'@exportMethod Arith
 setMethod("Arith", signature(e1="timeDay", e2="POSIXt"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
@@ -35,6 +35,8 @@ setMethod("Arith", signature(e1="timeDay", e2="POSIXt"), function(e1, e2) {
   retval}
           )
 
+#'@rdname Arith-methods
+#'@aliases Arith,POSIXt,timeDay
 setMethod("Arith", signature( e1="POSIXt", e2="timeDay"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
@@ -43,7 +45,8 @@ setMethod("Arith", signature( e1="POSIXt", e2="timeDay"), function(e1, e2) {
   retval <- e1 + e2@time
   retval}
           )
-
+#'@rdname Arith-methods
+#'@aliases Arith,timeDay,Date
 setMethod("Arith", signature(e1="timeDay", e2="Date"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
@@ -54,7 +57,8 @@ setMethod("Arith", signature(e1="timeDay", e2="Date"), function(e1, e2) {
   retval <- e2 + e1@time
   retval}
           )
-
+#'@rdname Arith-methods
+#'@aliases Arith,Date,timeDay
 setMethod("Arith", signature( e1="Date", e2="timeDay"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
