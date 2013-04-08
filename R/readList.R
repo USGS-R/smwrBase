@@ -16,7 +16,9 @@
 #'@return A list with one component for each \code{nlines} in the input file.
 #'@seealso \code{\link{as}}
 #'@keywords manip IO
-
+#'@export
+#'@examples
+#'\dontrun{}
 readList <- function(file, names=TRUE, sep="", nlines=1, convert=NULL) {
   ## Coding history:
   ##    2013Feb01 DLLorenz Original coding

@@ -24,14 +24,13 @@
 #'warning is issued.
 #'@seealso \code{\link{as.POSIXct}}
 #'@keywords chron manip
+#'@export
 #'@examples
 #'
 #'TestDts <- as.POSIXct(c("2010-05-28 09:50:00", "2010-11-29 15:20:00"))
 #'setTZ(TestDts, c("PDT", "PST"))
 #'# Try setting to different Time zones
 #'setTZ(TestDts, c("PDT", "CST"))
-#'
-
 setTZ <- function(x, TZ, force.stz=FALSE) {
   ## Coding History
   ##    2012Aug21 DLLorenz Original Coding

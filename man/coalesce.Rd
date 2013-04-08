@@ -1,0 +1,50 @@
+\name{coalesce}
+\alias{coalesce}
+\alias{index.coalesce}
+\title{Replace missing values}
+\usage{
+  coalesce(mat, ...)
+
+  index.coalesce(mat, ...)
+}
+\arguments{
+  \item{mat}{a vector or matrix.}
+
+  \item{\dots}{additional vectors or matrices, must have
+  the same number of rows as mat. The last argument can be
+  a constant that would substitute for all remaining
+  missing values.}
+}
+\value{
+  For coalesce, a vector in which each element is
+  determined by selecting the first non-missing value in
+  the order in which they are specified in the argument
+  list. The first step is to construct a matrix from all
+  arguments. The output is initially set to column 1, for
+  any missing value in column, the data from column 2 is
+  used and so on until all columns have been searched or
+  all missing values replaced.\cr
+
+  For index.coalesce, an integer vector indicating which
+  column from mat or vector or constant produced the result
+  in coalesce.
+}
+\description{
+  Construct a vector with as few missing values as possible
+  from a selected sequence of vectors.
+}
+\note{
+  This function is most useful for creating a column in a
+  dataset from related columns that represent different
+  methods. For example, a single column of alkalinity may
+  be desired when there are multiple columns of alkalinity
+  determined by various methods.
+}
+\examples{
+coalesce(c(1,NA,NA,3), c(2,2,NA,2))
+# should be: [1]  1  2 NA  3
+coalesce(c(1,NA,NA,3), c(2,2,NA,2), 0)
+# should be: [1] 1 2 0 3
+}
+\keyword{manip}
+

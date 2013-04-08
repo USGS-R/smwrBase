@@ -8,6 +8,8 @@
 #'@param \dots further arguments passed to or from other methods.
 #'@return The values in \code{x} converted to a character representation.
 #'@keywords character
-
+#' @export
+#'@examples
+#'\dontrun{}
 as.character.timeDay <- function(x, ...)
   format(x) # Easy!

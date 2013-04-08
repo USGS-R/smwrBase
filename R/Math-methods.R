@@ -11,7 +11,7 @@
 #'\item{list("signature(x = \"timeDay\")")}{ Any call to a mathematical
 #'function will generate an error. } }
 #'@keywords methods
-
+#'@exportMethod Math
 setMethod("Math", "timeDay", function(x)
           stop(gettextf("'%s' not defined for lcens objects", .Generic),
                domain=NA)

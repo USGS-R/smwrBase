@@ -1,0 +1,60 @@
+\name{peaks}
+\alias{peaks}
+\title{Find Local Maxima}
+\usage{
+  peaks(x, span = 3, ties = "first", ends = TRUE)
+}
+\arguments{
+  \item{x}{any numeric vector. Missing values are
+  permitted, but supress identifying peaks within
+  \code{span}.}
+
+  \item{span}{The window width, the default value is 3,
+  meaning compare each value to both of its neighbors. The
+  value for \code{span} must be odd and if set to an even
+  value, then it is increased to the next largest odd
+  value.}
+
+  \item{ties}{a character indicating how to handle ties.
+  See \bold{Details}.}
+
+  \item{ends}{a logical value indicating whether or not to
+  include either the first or last observations in the
+  sequence if it is a local maximum.}
+}
+\value{
+  A vector matching \code{x} of logical values indicating
+  wether the corresponding element is a local maxiumum or
+  not.
+}
+\description{
+  Find the local maxima in a vector.
+}
+\details{
+  Possible values for \code{ties} are "none" treat
+  sequential tied values as individual values; all other
+  values can be thought of as collapsing sequential tied
+  values--"first," "middle," or "last" identify the first,
+  middle, or last of a sequence of ties as the peak if
+  appropriate.
+}
+\note{
+  A peak is defined as an element in a sequence which is
+  strctly greater than all other elements within a window
+  of width \code{span} centered at that element. As such,
+  setting \code{ties} to "none" has the effect of not
+  identifying peaks with sequential tied values.
+}
+\examples{
+# Note the effect of missing values
+peaks(c(1:6,5,4,NA,4,6,9,NA))
+peaks(c(1:6,NA,5,4,NA,4,6,9,NA))
+# Note the effect of ties
+peaks(c(1:6,6,6,5,4,3,4,6,9))
+peaks(c(1:6,6,6,5,4,3,4,6,9), ties="none")
+}
+\seealso{
+  \code{\link{max}}
+}
+\keyword{manip}
+

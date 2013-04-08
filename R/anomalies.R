@@ -52,14 +52,12 @@
 #'@references Vecchia, A.V., 2000, Water-quality trend analysis and sampling
 #'design for the Souris River, Saskatchewan, North Dakota, and Manitoba: U.S.
 #'Geological Survey Water-Reources Investigations Report 00-4019, 77 p.
+#'@export
 #'@keywords manip
 #'@examples
-#'
 #'library(USGSwsData)
 #'data(Q05078770)
 #'anomalies(log(Q05078770$FLOW), A3mo=90)
-#'
-
 anomalies <- function(x, ...) {
   ## Coding history:
   ##    2004Nov16 DLLorenz Original

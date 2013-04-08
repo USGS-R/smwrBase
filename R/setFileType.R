@@ -13,7 +13,6 @@
 #'functions.
 #'@author Dave Lorenz, original coding by Jim Slack, retired.
 #'@keywords MANIP
-
 setFileType <- function(filename, type="tmp", replace=FALSE) {
   ## Coding History:
   ##    2002Nov06 JRSlack  Original coding by modifying asFileType.

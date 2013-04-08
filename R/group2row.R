@@ -35,13 +35,12 @@
 #'@param collectColumns the names of the columns to be collected. See
 #'\bold{Details}.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'library(USGSwsData)
 #'data(QWstacked)
 #'group2row(QWstacked, c("site_no", "sample_dt", "sample_tm"), "parm_cd", c("result_va", "remark_cd"))
-#'
-
 group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   ## Coding history:
   ##    2002Apr30 DLLorenz Original coding.

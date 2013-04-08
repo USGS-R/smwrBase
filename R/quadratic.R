@@ -26,12 +26,11 @@
 #'loads entering Chesapeake Bay: Water Resources research, v. 28, no. 5, p.
 #'937--942.
 #'@keywords manip
+#'@export
 #'@examples
 #'
 #'## first and second orthogonal polynomials for the sequence from 1 to 10
 #'quadratic(seq(10))
-#'
-
 quadratic <- function(x, center=NULL) {
   ## Coding history:
   ##    2009Apr17 DLLorenz Original coding

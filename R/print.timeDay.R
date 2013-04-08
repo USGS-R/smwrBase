@@ -11,6 +11,8 @@
 #'@section Side Effect: The object \code{x} is printed
 #'@seealso \code{\link{timeDay-class}}
 #'@keywords print
-
+#' @export
+#'@examples
+#'\dontrun{}
 print.timeDay <- function(x, ...)
   print(format(x), quote=FALSE)
