@@ -16,12 +16,15 @@
 #'periods of missing values. If \code{span} is set to any number less than 4,
 #'then simple linear interpolation will be used to replace missing values.
 #'
-#'@usage fillMissing(x, span=10)
+#'@usage fillMissing(x, span = 10, Dates = NULL, max.fill = 10)
 #'@param x the sequence of observations. Missing values are permitted and will
 #'be replaced.
 #'@param span the maximum number of observations on each side of each range of
 #'missing values to use in constructing the time series model. See
 #'\bold{Details}.
+#'@param Dates an optional vector of dates/times associated weith each value 
+#'in \code{x}. Useful if there are gaps in dates/times.
+#'@param max.fill the maximum gap to fill.
 #'@return The observations in \code{x} with missing values replaced by
 #'interpolation.
 #'@note The method used to interpolate missing values is based on
@@ -43,7 +46,7 @@
 #'@export
 #'@keywords manip
 #'@examples
-#'
+#'\dontrun{
 #'library(USGSwsData)
 #'data(Q05078470)
 #'# Create missing values in flow, the first sequence is a peak and the second is a recession
@@ -57,7 +60,8 @@
 #'with(Q05078470[109:111, ], points(DATES, FlowFill))
 #'with(Q05078470[190:210, ], plot(DATES, FLOW, type='l'))
 #'with(Q05078470[198:201, ], points(DATES, FlowFill))
-fillMissing <- function(x, span=10) {
+#'}
+fillMissing <- function(x, span=10, Dates=NULL, max.fill=10) {
   ## Coding history:
   ##    2012May31 DLLorenz Initial version, based on tsSmooth
   ##    2012Aug11 DLLorenz Integer fixes
@@ -70,8 +74,23 @@ fillMissing <- function(x, span=10) {
   ck <- sum(is.na(x))
   if(ck == 0L || ck == length(x))
     return(x) # Nothing to do
+  ## Check on sequence gaps
+  if(is.null(Dates))
+    ckDt <- rep(0, length(x))
+  else
+    ckDt <- c(0, diff(as.numeric(Dates), differences=2), 0)
+  ## Check on max fill
+  fill.evnt <- eventNum(is.na(x), reset=TRUE)
+  fill.len <- eventLen(fill.evnt)
+  dont.fill <- fill.len > max.fill
+  ## Add to max fill those missing values were there are gaps
+  gap.evnt <- unique(fill.evnt[ckDt !=0 & fill.evnt != 0L])
+  if(length(gap.evnt))
+    dont.fill[fill.evnt %in% gap.evnt] <- TRUE
   if(span < 4) { # simple linear interpolation
     xseq <- seq(along=x)
+    ## Set output to NA where dont.fill
+    xseq[dont.fill] <- NA
     notna <- !is.na(x)
     return(approx(xseq[notna], x[notna], xout=xseq)$y)
   }
@@ -87,6 +106,8 @@ fillMissing <- function(x, span=10) {
     x <- x[-length(x)]
   }
   sel <- is.na(x)
+  ## Rather than checking each fill period, we'll just reset the output
+  ## Probably less effecient, but less disruptive to code
   if(any(sel)) {
     if(span < 99) {
       ## Break up each time period of missing values so that there
@@ -125,5 +146,7 @@ fillMissing <- function(x, span=10) {
       x[sel] <- fill[sel, 1L]
     }
   }
-  return(c(xlead, x, xtail))
+  retval <- c(xlead, x, xtail)
+  retval[dont.fill] <- NA
+  return(retval)
 }

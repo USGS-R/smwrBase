@@ -45,6 +45,7 @@ na2miss <- function (x, to = -99999) {
   return(x)
 }
 
+#'@export
 miss2na <- function (x, from = -99999) {
   ## Special instructions for a factor:
   if(inherits(x, 'factor')) {

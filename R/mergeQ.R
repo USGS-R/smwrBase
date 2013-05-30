@@ -1,21 +1,22 @@
-#'Merge Flow with Water-quality Data
+#'Merge Flow into another Dataset
 #'
 #'Merges the FLOW (or other data) column from one or many daily-value datasets
-#'into a water-quality dataset with one or more stations.
+#'into a another dataset with one or more stations.
 #'
 #'More than one column can be specified for \code{FLOW} when merging a single
 #'station and the flow data are speciifed in \code{Qdata}.
 #'
 #'@usage mergeQ(QWdata, STAID = "STAID", FLOW = "FLOW", DATES = "DATES", Qdata
 #'= NULL, Prefix = NULL, Plot = TRUE, ...)
-#'@param QWdata a data frame.
+#'@param QWdata a data frame with at least a date column on which to merge.
 #'@param STAID a character string of the name of the station-identifier column.
-#'The column name must agree in water-quality and flow datasets.
+#'The column name must agree in the \code{QWdata} and flow datasets.
 #'@param FLOW a character string of the name of the flow column. The column
-#'name must agree in flow datasets and will be the name of the FLOW column in
+#'name must agree in flow datasets and will be the column name in
 #'the merged dataset. See \bold{Details}
 #'@param DATES a character string of the name of the column containing the date
-#'information.The column name must agree in water-quality and flow datasets.
+#'information. The column name must agree in \code{QWdata} and flow datasets.
+#'All datasets must be sorted by date.
 #'@param Qdata a data frame containing daily-flow values.
 #'@param Prefix a character string indicating the prefix of the names of
 #'datasets containing daily flow values.
@@ -24,29 +25,31 @@
 #'the plot.
 #'@param \dots defines the dataset containing daily flow values for each
 #'station identifier.
-#'@return A data frame like QWdata with an attached flow column.
+#'@return A data frame like \code{QWdata} with an attached flow column(s).
 #'@note The station-identifier columns must be of class character.\cr
 #'
 #'The are fours ways to merge flow and water-quality data:\cr
 #'
-#'A water-quality dataset that contains data for a single site does not require
-#'a STAID column.  Qdata must be supplied. See Example 1.\cr
+#'A dataset that contains data for a single site does not require
+#'a STAID column.  Qdata must be supplied. This case must be used if
+#'the flow record is incomplete or does not cover the range of dates in
+#'\code{QWdata} all other methods will fail if that is the case. See Example 1.\cr
 #'
-#'A water-quality dataset that contains data for one or more sites can be
+#'A dataset that contains data for one or more sites can be
 #'merged with a dataset that contains flow data for the sites in that
-#'water-quality dataset. This method will fail if there is not a complete list
+#'first dataset. This method will fail if there is not a complete list
 #'of station identifiers in the flow dataset. See Example 2. \cr
 #'
-#'A water-quality data set that contains data for one or more sites can be
+#'A data set that contains data for one or more sites can be
 #'merged with flow data sets that have names based on STAID. The structure of
 #'the name must be some common prefix followed by the station identifier. The
-#'station identifier must conform to a valid S-PLUS name.  This method will
+#'station identifier must conform to a valid name.  This method will
 #'fill in missing values (NAs) if a dataset corresponding to a station
 #'identifier is not available. See Example 3. \cr
 #'
-#'A water-quality dataset that contains data for one or more sites can be
+#'A dataset that contains data for one or more sites can be
 #'merged with flow datasets that have arbitrary names. Station identifiers that
-#'do not conform to valid S-PLUS names must be quoted. This method will fail if
+#'do not conform to valid names must be quoted. This method will fail if
 #'there is not a complete list of station identifiers supplied as arguments.
 #'See Example 4. \cr
 #'
@@ -62,7 +65,7 @@
 #'@keywords manip
 #'@export
 #'@examples
-#'
+#'\dontrun{
 #'library(USGSwsData)
 #'data(Q05078470)
 #'data(Q05078770)
@@ -84,6 +87,7 @@
 #'#                   Example 4
 #'# Note quotes required for station identifiers
 #'mergeQ(QWall, "05078470"=Q05078470, "05078770"=Q05078770, Plot=FALSE)
+#'}
 mergeQ <- function(QWdata, STAID="STAID", FLOW="FLOW", DATES="DATES",
                    Qdata=NULL, Prefix=NULL, Plot=TRUE, ...) {
   ## Coding history:
@@ -94,6 +98,8 @@ mergeQ <- function(QWdata, STAID="STAID", FLOW="FLOW", DATES="DATES",
   ##    2012Jun05 DLLorenz For single station allow multiple columns
   ##    2012Aug11 DLLorenz Integer fixes
   ##    2013Feb03 DLLorenz Prep for gitHub
+  ##    2013Apr25 DLLorenz Partial fix for incomplete match of flow
+  ##                       for a single station using Qdata
   ##
   ## Get station ids
   STAs <- unique(QWdata[[STAID]])
@@ -106,9 +112,16 @@ mergeQ <- function(QWdata, STAID="STAID", FLOW="FLOW", DATES="DATES",
     QWdt <- as.integer(as.Date(QWdata[[DATES]]))
     Qdt <- as.integer(as.Date(Qdata[[DATES]]))
     sel <- Qdt %in% QWdt
+    bsel <- QWdt %in% Qdt
     for(i in FLOW) {
       flowvar <- i
-      QWdata[[flowvar]] <- Qdata[[flowvar]][sel]
+      flowvals <- Qdata[[flowvar]][sel]
+      if(any(!bsel)) { # Need to fill missing matches
+        flowtmp <- rep(NA_real_, length(bsel))
+        flowtmp[bsel] <- flowvals
+        flowvals <- flowtmp
+      }
+      QWdata[[flowvar]] <- flowvals
       if(Plot) {
         par(ask=TRUE)
         xQ <- QWdata[[flowvar]]

@@ -3,13 +3,6 @@
 #'Converts a specified value to another value.
 #'
 #'
-#'@aliases recode recode.factor recode.integer recode.character recode.numeric
-#'@usage recode(x, from, to)
-#'
-#'\method{recode}{factor}(x, from, to) 
-#'\method{recode}{integer}(x, from, to)
-#'\method{recode}{character}(x, from, to) 
-#'\method{recode}{numeric}(x, from, to)
 #'@param x a vector. Missing values \code{NA}s are allowed.
 #'@param to the replacement value.
 #'@param from the target value to match and replace.
@@ -22,7 +15,10 @@
 #'complete text.
 #'@seealso \code{\link{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}},
 #'@keywords manip
-#'@method recode
+#'@examples
+#'XT <- c(1, 2, 0, 4)
+#'recode(XT, 0, 3)
+#'@export
 recode <- function (x, from, to){
   ## Coding history:
   ##    2012Feb17 DLLorenz Original coding.
@@ -32,7 +28,8 @@ recode <- function (x, from, to){
 }
 
 #' @rdname recode
-#' @export
+#' @method recode factor
+#' @S3method recode factor
 recode.factor <- function (x, from, to)  {
   ## Also valid for ordered
   from <- as.character(from)
@@ -44,17 +41,20 @@ recode.factor <- function (x, from, to)  {
 }
 
 #' @rdname recode
-#' @export
+#' @method recode integer
+#' @S3method recode integer
 recode.integer <- function (x, from, to)
   return(ifelse(x == from, to, x))
 
 #' @rdname recode
-#' @export
+#' @method recode character
+#' @S3method recode character
 recode.character <- function (x, from, to)
   return(ifelse(x == from, to, x))
 
 #' @rdname recode
-#' @export
+#' @method recode numeric
+#' @S3method recode numeric
 recode.numeric <- function (x, from, to) {
   ## Be prepared for small differences due to computations
   tol <- max(abs(from) * .Machine$double.eps * 10, .Machine$double.eps*4)

@@ -2,7 +2,7 @@
 \alias{fillMissing}
 \title{Fill Missing Values}
 \usage{
-  fillMissing(x, span=10)
+  fillMissing(x, span = 10, Dates = NULL, max.fill = 10)
 }
 \arguments{
   \item{x}{the sequence of observations. Missing values are
@@ -11,6 +11,12 @@
   \item{span}{the maximum number of observations on each
   side of each range of missing values to use in
   constructing the time series model. See \bold{Details}.}
+
+  \item{Dates}{an optional vector of dates/times associated
+  weith each value in \code{x}. Useful if there are gaps in
+  dates/times.}
+
+  \item{max.fill}{the maximum gap to fill.}
 }
 \value{
   The observations in \code{x} with missing values replaced
@@ -53,6 +59,7 @@
   Elshorbagy and others (2000).
 }
 \examples{
+\dontrun{
 library(USGSwsData)
 data(Q05078470)
 # Create missing values in flow, the first sequence is a peak and the second is a recession
@@ -66,6 +73,7 @@ with(Q05078470[100:120, ], plot(DATES, FLOW, type='l'))
 with(Q05078470[109:111, ], points(DATES, FlowFill))
 with(Q05078470[190:210, ], plot(DATES, FLOW, type='l'))
 with(Q05078470[198:201, ], points(DATES, FlowFill))
+}
 }
 \references{
   Beauchamp, J.J., 1989, Comparison of regression and

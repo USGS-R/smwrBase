@@ -6,12 +6,10 @@
 #'@name show-methods
 #'@aliases show-methods show,timeDay-method
 #'@docType methods
-#'@section Methods: \describe{
-#'
-#'\item{list("signature(object = \"timeDay\")")}{ Display to time of day in the
-#'default format. } }
-#'@keywords methods ~~ other possible keyword(s) ~~
-#'@method show
+#'@param object the object to be printed.
+#'@return The object is printed and returned invisibly.
+#'@keywords methods
+#'@exportMethod show
 setMethod("show",  "timeDay", function(object)
           print(object)
           )

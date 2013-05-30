@@ -2,7 +2,7 @@
 \alias{c.timeDay}
 \title{Concatenate Data}
 \usage{
-  \method{c}{timeDay}(..., recursive = FALSE)
+  \method{c}{timeDay} (..., recursive = FALSE)
 }
 \arguments{
   \item{\dots}{any number of objects that can be converted
@@ -15,9 +15,6 @@
 }
 \description{
   Combine data into a single vector.
-}
-\examples{
-\dontrun{}
 }
 \keyword{manip}
 

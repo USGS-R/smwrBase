@@ -13,6 +13,10 @@
 #'functions.
 #'@author Dave Lorenz, original coding by Jim Slack, retired.
 #'@keywords MANIP
+#'@examples
+#'# Replace the .dat suffixze with .txt
+#'setFileType("TestName.dat", "txt", replace=TRUE)
+#'@export
 setFileType <- function(filename, type="tmp", replace=FALSE) {
   ## Coding History:
   ##    2002Nov06 JRSlack  Original coding by modifying asFileType.

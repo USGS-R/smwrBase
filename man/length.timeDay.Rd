@@ -2,7 +2,7 @@
 \alias{length.timeDay}
 \title{Length of an Object}
 \usage{
-  \method{length}{timeDay}(x)
+  \method{length}{timeDay} (x)
 }
 \arguments{
   \item{x}{a time-of-day object.}

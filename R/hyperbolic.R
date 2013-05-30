@@ -68,6 +68,7 @@ hyperbolic <- function(x, factor = 0, scale = mean(x, na.rm=TRUE)) {
   return(retval)
 }
 
+#'@export
 Ihyperbolic <- function(x, factor = 0, scale) {
   if(missing(scale)) # get the attribute if scale is missing
     scale <- attr(x, "scale")
