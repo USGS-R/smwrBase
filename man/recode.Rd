@@ -8,18 +8,13 @@
 \usage{
   recode(x, from, to)
 
-  \method{recode}{factor}(x, from, to)
-    \method{recode}{integer}(x, from, to)
-    \method{recode}{character}(x, from, to)
-    \method{recode}{numeric}(x, from, to)
+  \method{recode}{factor} (x, from, to)
 
-  recode.factor(x, from, to)
+  \method{recode}{integer} (x, from, to)
 
-  recode.integer(x, from, to)
+  \method{recode}{character} (x, from, to)
 
-  recode.character(x, from, to)
-
-  recode.numeric(x, from, to)
+  \method{recode}{numeric} (x, from, to)
 }
 \arguments{
   \item{x}{a vector. Missing values \code{NA}s are
@@ -42,6 +37,10 @@
   to avoid mismatches due to computations.\cr The function
   \code{sub} offers greater flexibility than \code{recode}
   for replacing parts of text instead of the complete text.
+}
+\examples{
+XT <- c(1, 2, 0, 4)
+recode(XT, 0, 3)
 }
 \seealso{
   \code{\link{sub}}, \code{\link{na2miss}},

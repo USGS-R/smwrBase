@@ -51,6 +51,7 @@ mergeNearest <- function(left, dates.left="DATES", all.left=FALSE,
   ##    2012Jun05 DLLorenz Initial verion
   ##    2012Aug11 DLLorenz Integer fixes
   ##    2013Feb03 DLLorenz Prep for gitHub
+  ##    2013Jun05 DLLorenz Modify for data containing "qw" columns
   ##
   ## The matching function, find the value in x closest to targ subject to
   ##  the distance being less that maxd:
@@ -63,6 +64,9 @@ mergeNearest <- function(left, dates.left="DATES", all.left=FALSE,
       return(0)
     return(which(distm == distx)[1])
   }
+  ## Create dummy rbindQW if necessary
+  if(!exists("rbindQW"))
+    rbindQW <- rbind
   ## Check to verify that the dates are in POSIXt:
   ##  the converstion to character forces the date to be in local time
   if(inherits(left[[dates.left]], "Date"))
@@ -96,7 +100,7 @@ mergeNearest <- function(left, dates.left="DATES", all.left=FALSE,
   pck <- sapply(as.numeric(left[[dates.left]]), pickNear,
                 x=as.numeric(right[[dates.right]]), maxd=max.diff)
   if(all.left) {
-    right <- rbind(right, NA) # add a row of missings
+    right <- rbindQW(right, NA) # add a row of missings
     pck <- recode(pck, 0, nrow(right))
   }
   else {

@@ -45,9 +45,6 @@
   This function read information from the header to rename
   those columns to be more meaningful to humans.
 }
-\examples{
-\dontrun{}
-}
 \seealso{
   \code{\link{readNWIS}}
 }

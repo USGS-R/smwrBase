@@ -18,7 +18,9 @@
 #'@keywords manip IO
 #'@export
 #'@examples
-#'\dontrun{}
+#'# Make a small example dataset, and read it
+#'cat("A 1 2 3 4\nB 5 6 7\nC 8 9\n", file="readList.test")
+#'readList("readList.test")
 readList <- function(file, names=TRUE, sep="", nlines=1, convert=NULL) {
   ## Coding history:
   ##    2013Feb01 DLLorenz Original coding

@@ -18,9 +18,10 @@
 #'@param gage a single USGS station identifier as a character string.
 #'@param dtype the type of data, must be "swdv" for surface-water daily values,
 #'"peak" for annual peaks, "measurements" for discharge measurements, "gwdv"
-#'for groundwater daily values, or "gwlevels" for groundwater level
-#'measurements or"uv" for unit values. Only the first letter is required,
-#'except to distinguish between "gwdv" and "gwlevels."
+#'for groundwater daily values,  "gwlevels" for groundwater level
+#'measurements, "uv" for unit values, "gage" for streamgage information, or
+#'"well" for well information. Only the first letter is required,
+#'except to distinguish between "gwdv," "gwlevels," and "gage."
 #'@param begin.date the data to use for the earliest value. Not used for
 #'\code{dtype} = "peak." If, "", then retrieve beginning with the first record
 #'in the database for "swdv" and "gwdv". If, "" for "uv", one week of data is returned.
@@ -125,7 +126,7 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   if(dtype %in% c("swdv", "gwdv"))
     dtype <- substring(dtype, 3L, 4L)
   if(dtype == "uv")
-    myurl <- url(paste("http://nwis.waterdata.usgs.gov/usa/nwis/", typeadd, sep=""))
+    myurl <- url(paste("http://waterdata.usgs.gov/usa/nwis/", typeadd, sep=""))
   else if(dtype == "gage")
     myurl <- url(paste("http://waterdata.usgs.gov/nwis/measurements?",
                        typeadd, sep=""))
@@ -133,7 +134,7 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
     myurl <- url(paste("http://waterdata.usgs.gov/nwis/dv?referred_module=gw",
                        typeadd, sep=""))
   else
-    myurl <- url(paste("http://nwis.waterdata.usgs.gov/nwis/",
+    myurl <- url(paste("http://waterdata.usgs.gov/nwis/",
                        dtype,
                        "?site_no=",
                        gage,

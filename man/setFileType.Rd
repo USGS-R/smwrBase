@@ -23,6 +23,10 @@
   This function is designed as a support function for many
   USGS functions.
 }
+\examples{
+# Replace the .dat suffixze with .txt
+setFileType("TestName.dat", "txt", replace=TRUE)
+}
 \author{
   Dave Lorenz, original coding by Jim Slack, retired.
 }

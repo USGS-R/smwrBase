@@ -3,8 +3,6 @@
 #'Returns a vector like the input, but with the position of the data shifted up
 #'or down.
 #'
-#'
-#'@usage shiftData(x, k = 1, fill = NA, circular = FALSE)
 #'@param x any vector.
 #'@param k a positive or negative whole number of positions to shift the data.
 #'Positive values shift data to a higher position and negative values shift
@@ -40,6 +38,12 @@ shiftData <- function(x, k=1, fill=NA, circular=FALSE) {
   ## otherwise, they are shifted up (fill at the end)
   ## unless circular is TRUE, then the data are treated as a circular
   ## buffer
+  ##
+  ## Required to paste NAs at the beginning, this logic works for most data types
+  fill.temp <- fill
+  fill <- x[1L]
+  fill[1L] <- fill.temp
+  ## OK do it
   k <- as.integer(k)
   if(k == 0L) return(x)
   N <- length(x)

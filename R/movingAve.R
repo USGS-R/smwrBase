@@ -61,7 +61,9 @@ movingAve <- function(x, span=3, order=0, pos="center") {
   }
   else
     filMat <- matrix(1/span, ncol=span, nrow=span)
-  if(pos == "center")
+  if(span > length(x)) # need to protect against failure in filter
+    retval <- rep(NA_real_, length(x))
+  else if(pos == "center")
     retval <- filter(x, filMat[span + 1 - trunc((span + 1)/2),])
   else if(pos == "begin")
     retval <- rev(filter(rev(x), filMat[1L,], sides=1))

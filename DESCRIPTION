@@ -1,12 +1,17 @@
 Package: USGSwsBase
-Version: 0.6
-Date: 2013-02-15
+Version: 0.7
+Date: 2013-08-05
 Title: Functions to import and manipulate hydrologic data
 Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
-Depends: lubridate, XML
-Imports: methods
-Suggests: USGSwsData (>= 0.6)
+Depends:
+    stats,
+    lubridate (>= 1.3),
+    XML
+Imports:
+    methods
+Suggests:
+    USGSwsData (>= 0.6)
 Description: This package has data import and export functions for specialized
     formats used within the U.S. Geological Survey. It also contains
     several functions that are useful for managing or manipulating
@@ -81,3 +86,6 @@ Collate:
     'z%cn%.R'
     'z[.timeDay.R'
     'zeropad.R'
+    'makepredictcall.R'
+    'more.R'
+Packaged: 2013-08-05 13:36:37 UTC; lorenz

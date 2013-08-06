@@ -32,7 +32,9 @@
   Imports data arranged on lines into a list.
 }
 \examples{
-\dontrun{}
+# Make a small example dataset, and read it
+cat("A 1 2 3 4\\nB 5 6 7\\nC 8 9\\n", file="readList.test")
+readList("readList.test")
 }
 \seealso{
   \code{\link{as}}

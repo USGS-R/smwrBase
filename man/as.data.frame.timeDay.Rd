@@ -2,7 +2,7 @@
 \alias{as.data.frame.timeDay}
 \title{Data Frames}
 \usage{
-  \method{as.data.frame}{timeDay}(x, row.names = NULL,
+  \method{as.data.frame}{timeDay} (x, row.names = NULL,
     optional = FALSE, ..., nm = deparse(substitute(x)))
 }
 \arguments{
@@ -26,9 +26,6 @@
 }
 \description{
   Convert an object to class "data.frame."
-}
-\examples{
-\dontrun{}
 }
 \seealso{
   \code{\link{as.data.frame}}

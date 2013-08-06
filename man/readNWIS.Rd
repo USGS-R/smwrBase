@@ -12,10 +12,11 @@
   \item{dtype}{the type of data, must be "swdv" for
   surface-water daily values, "peak" for annual peaks,
   "measurements" for discharge measurements, "gwdv" for
-  groundwater daily values, or "gwlevels" for groundwater
-  level measurements or"uv" for unit values. Only the first
-  letter is required, except to distinguish between "gwdv"
-  and "gwlevels."}
+  groundwater daily values, "gwlevels" for groundwater
+  level measurements, "uv" for unit values, "gage" for
+  streamgage information, or "well" for well information.
+  Only the first letter is required, except to distinguish
+  between "gwdv," "gwlevels," and "gage."}
 
   \item{begin.date}{the data to use for the earliest value.
   Not used for \code{dtype} = "peak." If, "", then retrieve

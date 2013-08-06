@@ -2,7 +2,7 @@
 \alias{[.timeDay}
 \title{Extract Parts of an Object}
 \usage{
-  \method{[}{timeDay}(x, i)
+  \method{[}{timeDay} (x, i)
 }
 \arguments{
   \item{x}{the object.}

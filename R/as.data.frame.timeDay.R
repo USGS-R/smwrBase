@@ -3,8 +3,6 @@
 #'Convert an object to class "data.frame."
 #'
 #'
-#'@usage \method{as.data.frame}{timeDay}(x, row.names = NULL, optional = FALSE,
-#'..., nm = deparse(substitute(x)))
 #'@param x the object to be converted.
 #'@param row.names \code{NULL} or a character vector giving the row names for
 #'the data frame. Missing values are not allowed.
@@ -15,9 +13,8 @@
 #'@return A data frame is created containing the data in \code{x}.
 #'@seealso \code{\link{as.data.frame}}
 #'@keywords manip
-#'@export
-#'@examples
-#'\dontrun{}
+#'@method as.data.frame timeDay
+#'@S3method as.data.frame timeDay
 as.data.frame.timeDay <- function(x, row.names = NULL, optional = FALSE,
                                   ..., nm = deparse(substitute(x))) {
   force(nm)

@@ -3,14 +3,12 @@
 #'Combine data into a single vector.
 #'
 #'
-#'@usage \method{c}{timeDay}(..., recursive = FALSE)
 #'@param \dots any number of objects that can be converted to class "timeDay."
 #'@param recursive required for other methods.
 #'@return A single vector of class "timeDay."
 #'@keywords manip
-#'@export
-#'@examples
-#'\dontrun{}
+#'@method c timeDay
+#'@S3method c timeDay
 c.timeDay <- function (..., recursive=FALSE) {
   all.tod <- lapply(list(...), as.timeDay)
   times <- unlist(lapply(all.tod, function(x) x@time))

@@ -7,7 +7,7 @@
 #'convenience of users in the United States, correct conversion is provided for
 #'EST, EDT, CST, CDT, MST, MDT, PST, PDT, AKST, AKDT, HAST, and HST. However,
 #'time zones data in states like Arizona, where savings time is never used
-#'whould use time zone information specified like "America/Phoenix" to avoid
+#'would use time zone information specified like "America/Phoenix" to avoid
 #'the possibility of setting savings time when it is not appropriate.
 #'
 #'@usage setTZ(x, TZ, force.stz = FALSE)
@@ -74,15 +74,15 @@ setTZ <- function(x, TZ, force.stz=FALSE) {
                  HST="America/Honolulu")
   }
   TZx <- unique(TZ)
-  if(length(TZx) == 1) 
-    return(as.POSIXct(x, tz=TZx))
+  if(length(TZx) == 1L) 
+    return(as.POSIXct(as.character(x), tz=TZx)) # Conversion to character is required
   ## Otherwise, must do one by one--really slow, and
   ## generates an warning because time zone is an attribute of the
   ## data not of the value.
   N <- length(x)
-  retval <- rep(as.POSIXct(x[1], tz=TZx[1]), N)
-  for(i in seq(2, N))
+  retval <- rep(as.POSIXct(x[1L], tz=TZx[1L]), N)
+  for(i in seq(2L, N))
     retval[i] <- as.POSIXct(x[i], tz=TZ[i])
-  warning("Mixed time zone information, time corrected and all set to ", TZx[1])
+  warning("Mixed time zone information, time corrected and all set to ", TZx[1L])
   return(retval)
 }

@@ -2,7 +2,7 @@
 \alias{is.na.timeDay}
 \title{Missing Values}
 \usage{
-  \method{is.na}{timeDay}(x)
+  \method{is.na}{timeDay} (x)
 }
 \arguments{
   \item{x}{the object to be tested.}
@@ -16,7 +16,7 @@
   Indicate which elemnts are missing.
 }
 \examples{
-is.na.timeDay(as.timeDay(c("10:30", "11:00")))
+is.na(as.timeDay(c("10:30", "11:00")))
 }
 \keyword{manip}
 

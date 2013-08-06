@@ -12,6 +12,7 @@
 #'user to redefine the column types actually needed for the data.
 #'@seealso \code{\link{importCSV}}
 #'@keywords IO
+#'@export
 makeMeta <- function(file.name="") {
   ## Coding history:
   ##    2012Nov05 DLLorenz Original Coding

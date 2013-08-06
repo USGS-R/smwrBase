@@ -30,7 +30,7 @@
   correct conversion is provided for EST, EDT, CST, CDT,
   MST, MDT, PST, PDT, AKST, AKDT, HAST, and HST. However,
   time zones data in states like Arizona, where savings
-  time is never used whould use time zone information
+  time is never used would use time zone information
   specified like "America/Phoenix" to avoid the possibility
   of setting savings time when it is not appropriate.
 }
