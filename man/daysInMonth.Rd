@@ -17,7 +17,7 @@
 }
 \value{
   A vector matching \code{month} of the requested number of
-  days. Missing values are returned whereever either
+  days. Missing values are returned wherever either
   \code{month} or \code{year} is missing.
 }
 \description{

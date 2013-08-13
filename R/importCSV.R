@@ -14,18 +14,16 @@
 #'\code{date.format} is "none," then conversion of the date information is
 #'supressed and the data are retained as character strings.
 #'
-#'@aliases importCSV 
-#'@usage importCSV(file.name = "") 
-#'@param file.name a character string specifying the name of the RDB file
+#' @param file.name a character string specifying the name of the RDB file
 #'containing the data to be imported. This should be changed to file.name
-#'@return A data frame with one column for each data column in the CSV
+#' @return A data frame with one column for each data column in the CSV
 #'file.
-#'@note A NULL data frame is created if there are no data in the file.\cr
-#'@seealso \code{\link{read.csv}}, \code{\link{scan}},
+#' @note A NULL data frame is created if there are no data in the file.\cr
+#' @seealso \code{\link{read.csv}}, \code{\link{scan}},
 #'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
-#'@keywords manip IO
-#'@export
-#'@examples
+#' @keywords manip IO
+#' @export
+#' @examples
 #'
 #'## These datasets are available in USGSwsData as text files
 #'TestDir <- system.file("misc", package="USGSwsData")

@@ -1,14 +1,14 @@
 #'Concatenate Data
 #'
-#'Combine data into a single vector.
+#'Combine time-of-day data into a single vector.
 #'
 #'
-#'@param \dots any number of objects that can be converted to class "timeDay."
-#'@param recursive required for other methods.
-#'@return A single vector of class "timeDay."
-#'@keywords manip
-#'@method c timeDay
-#'@S3method c timeDay
+#' @param \dots any number of objects that can be converted to class "timeDay."
+#' @param recursive required for other methods.
+#' @return A single vector of class "timeDay."
+#' @keywords manip
+#' @method c timeDay
+#' @S3method c timeDay
 c.timeDay <- function (..., recursive=FALSE) {
   all.tod <- lapply(list(...), as.timeDay)
   times <- unlist(lapply(all.tod, function(x) x@time))

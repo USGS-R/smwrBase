@@ -14,21 +14,18 @@
 #'period. If which is not one of these, then it should be the name of a
 #'function such as mean or median.\cr
 #'
-#'@aliases regularSeries
-#'@usage regularSeries(x, times, period = "month", which = "middle", begin,
-#'end, k.period = 1)
-#'@param x a vector of observations that represents a series.
-#'@param times a date like vector corresponding to data.
-#'@param period character string that is valid input to the the POSIXct method
+#' @param x a vector of observations that represents a series.
+#' @param times a date like vector corresponding to data.
+#' @param period character string that is valid input to the the POSIXct method
 #'for seq is OK, specifying the spacing between successive periods. For example
 #'"year," "month," or "day."
-#'@param which a character string indicating the method to use, or the name of
+#' @param which a character string indicating the method to use, or the name of
 #'a function. See \bold{Details} for options.
-#'@param begin the beginning date as POSIXt or as character.
-#'@param end the end date as POSIXt or as character.
-#'@param k.period the number of units of \code{period} in each period of the
+#' @param begin the beginning date as POSIXt or as character.
+#' @param end the end date as POSIXt or as character.
+#' @param k.period the number of units of \code{period} in each period of the
 #'output series.
-#'@return The function \code{regularSeries} returns a data frame with the
+#' @return The function \code{regularSeries} returns a data frame with the
 #'following columns:
 #'\item{Season}{the season number.}
 #'\item{SeasonStartDate}{the starting data of the corresponding season
@@ -38,11 +35,11 @@
 #'\item{ValueDate}{the date from \code{times} for the corresponding season
 #'number if \code{which} was one of "earliest," "middle," or "latest,"
 #'otherwise missing.}
-#'@seealso Refer to the documentation for \code{seaken} in the USGSwsStats
+#' @seealso Refer to the documentation for \code{seaken} in the USGSwsStats
 #'package if it is installed.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'library(USGSwsData)
 #'data(QW05078470)

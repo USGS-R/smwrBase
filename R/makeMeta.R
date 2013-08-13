@@ -4,15 +4,14 @@
 #'\code{importCSV} to define column types.
 #'
 #'
-#'@usage makeMeta(file.name = "")
-#'@param file.name the name of the csv file, which may include the path.
-#'@return The name of the meta file that was created.
-#'@note The meta file that is created will only contain column types of
+#' @param file.name the name of the csv file, which may include the path.
+#' @return The name of the meta file that was created.
+#' @note The meta file that is created will only contain column types of
 #'character, numeric, integer, and logical. It may need to be edited by the
 #'user to redefine the column types actually needed for the data.
-#'@seealso \code{\link{importCSV}}
-#'@keywords IO
-#'@export
+#' @seealso \code{\link{importCSV}}
+#' @keywords IO
+#' @export
 makeMeta <- function(file.name="") {
   ## Coding history:
   ##    2012Nov05 DLLorenz Original Coding

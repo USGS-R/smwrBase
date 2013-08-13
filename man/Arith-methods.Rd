@@ -11,8 +11,8 @@
 \alias{Arith,timeDay,POSIXt-method}
 \title{Arithmetic Methods for \code{timeDay} objects}
 \description{
-  Some limited arithemtic methods are possible and
-  well-defined for time-of-day data.
+  Addition of time-of-day data to either "Date" or "POSIXt"
+  classes.
 }
 \details{
   Missing values are permitted in either argument and

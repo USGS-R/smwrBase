@@ -5,17 +5,16 @@
 #'The default names for the seasons are of the form "Season Ending ...," where
 #'... is derived from \code{breaks}.
 #'
-#'@usage seasons(x, breaks, Names = paste("Season Ending ", breaks, sep = ""))
-#'@param x any vector of valid dates/times.
-#'@param breaks either month names of the end of the seasons or specific days
+#' @param x any vector of valid dates/times.
+#' @param breaks either month names of the end of the seasons or specific days
 #'in the form of "mm/dd," where mm is the 2-digit month and dd is the 2-digit
 #'day.
-#'@param Names optional names for the seasons.
-#'@return A factor of seasonal categories.
-#'@seealso \code{\link{month}}
-#'@keywords chron manip category
-#'@export
-#'@examples
+#' @param Names optional names for the seasons.
+#' @return A factor of seasonal categories.
+#' @seealso \code{\link{month}}
+#' @keywords chron manip category
+#' @export
+#' @examples
 #'
 #'## Just two seasons
 #'seasons(as.Date(c("2001-03-31", "2001-09-30")), breaks=c("June", "December"))

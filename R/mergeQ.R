@@ -6,27 +6,25 @@
 #'More than one column can be specified for \code{FLOW} when merging a single
 #'station and the flow data are speciifed in \code{Qdata}.
 #'
-#'@usage mergeQ(QWdata, STAID = "STAID", FLOW = "FLOW", DATES = "DATES", Qdata
-#'= NULL, Prefix = NULL, Plot = TRUE, ...)
-#'@param QWdata a data frame with at least a date column on which to merge.
-#'@param STAID a character string of the name of the station-identifier column.
+#' @param QWdata a data frame with at least a date column on which to merge.
+#' @param STAID a character string of the name of the station-identifier column.
 #'The column name must agree in the \code{QWdata} and flow datasets.
-#'@param FLOW a character string of the name of the flow column. The column
+#' @param FLOW a character string of the name of the flow column. The column
 #'name must agree in flow datasets and will be the column name in
 #'the merged dataset. See \bold{Details}
-#'@param DATES a character string of the name of the column containing the date
+#' @param DATES a character string of the name of the column containing the date
 #'information. The column name must agree in \code{QWdata} and flow datasets.
 #'All datasets must be sorted by date.
-#'@param Qdata a data frame containing daily-flow values.
-#'@param Prefix a character string indicating the prefix of the names of
+#' @param Qdata a data frame containing daily-flow values.
+#' @param Prefix a character string indicating the prefix of the names of
 #'datasets containing daily flow values.
-#'@param Plot a logical value indicating whether to plot the joint distribution
+#' @param Plot a logical value indicating whether to plot the joint distribution
 #'of sampled flows and observed flows.  See \bold{Notes} for a description of
 #'the plot.
-#'@param \dots defines the dataset containing daily flow values for each
+#' @param \dots defines the dataset containing daily flow values for each
 #'station identifier.
-#'@return A data frame like \code{QWdata} with an attached flow column(s).
-#'@note The station-identifier columns must be of class character.\cr
+#' @return A data frame like \code{QWdata} with an attached flow column(s).
+#' @note The station-identifier columns must be of class character.\cr
 #'
 #'The are fours ways to merge flow and water-quality data:\cr
 #'
@@ -61,10 +59,10 @@
 #'variability than points toward the center. A plot that shows the upper end
 #'trailing upward indicates that the largest flows have been under sampled and
 #'the sampled data may not give a reliable estimate of loads.
-#'@seealso \code{\link{mergeNearest}},
-#'@keywords manip
-#'@export
-#'@examples
+#' @seealso \code{\link{mergeNearest}},
+#' @keywords manip
+#' @export
+#' @examples
 #'\dontrun{
 #'library(USGSwsData)
 #'data(Q05078470)

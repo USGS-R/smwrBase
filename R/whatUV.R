@@ -3,16 +3,14 @@
 #'Gets a description of unit-value data available for a USGS station and the
 #'beginning and ending dates of each parameter.
 #'
-#'
-#'@usage whatUV(gage)
-#'@param gage a single USGS station identifier as a character string.
-#'@return A data frame containing the columns Available Parameters, StartDate,
+#' @param gage a single USGS station identifier as a character string.
+#' @return A data frame containing the columns Available Parameters, StartDate,
 #',EndDate,pCode, and name.
-#'@seealso \code{\link{readNWIS}}
-#'@references Refer to NWIS web?
-#'@keywords DataIO
-#'@export
-#'@examples
+#' @seealso \code{\link{readNWIS}}
+#' @references Refer to NWIS web?
+#' @keywords DataIO
+#' @export
+#' @examples
 #'UVavailable <- whatUV("04027000")
 whatUV <- function(gage) {
   ## Coding history:
@@ -28,14 +26,14 @@ whatUV <- function(gage) {
   if(class(retval) == "try-error" || length(retval) < 8L)
     stop("no unit value data found for gage: ", gage)
   ## Get the data and proceed
-  retval <- retval[[8L]] # That is the one
+  retval <- retval[["available_parameters_table"]] # That is the one
   retval <- retval[-1L, -1L] # Remove the all available row and empty column 1
-  names(retval)[2:3] <- c("StartDate", "EndDate")
+  names(retval)[1:3] <- c("Parameters", "StartDate", "EndDate")
   ## Fix the columns
   retval$StartDate=as.Date(retval$StartDate, format="%Y-%m-%d")
   retval$EndDate=as.Date(retval$EndDate, format="%Y-%m-%d")
   retval$pCode <- sapply(strsplit(retval[,1], " "),function(x)x[1])
   retval$name <- sapply(strsplit(retval[,1], " "),function(x) paste(x[2:length(x)],collapse=" "))
   
-  return(retval)
+  return(na.omit(retval)) # Strip missings
 }

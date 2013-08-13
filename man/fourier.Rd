@@ -33,7 +33,7 @@
   Water-quality data commonly follow a sinusoidal variation
   throughout a yearly cycle.  A Fourier series of order one
   to three is generally enough to adequately describe that
-  variation.
+  variation for many constituents.
 }
 \examples{
 # compute the sine and cosine terms for quarters of 2002

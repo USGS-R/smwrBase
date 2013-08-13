@@ -3,11 +3,9 @@
 \alias{IboxCox}
 \title{Box-Cox Power Transform}
 \usage{
-  boxCox(x, GM, lambda = 1, alpha = 0)
+  boxCox(x, lambda = 1, GM, alpha = 0)
 
-  IboxCox(x, GM, lambda = 1, alpha = 0)
-
-  IboxCox(x, GM, lambda = 1, alpha = 0)
+  IboxCox(x, lambda = 1, GM, alpha = 0)
 }
 \arguments{
   \item{x}{a numeric vector to be transformed by

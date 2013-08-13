@@ -35,26 +35,26 @@
 #'The remainder is the HFV. This procedure ensures that the sum of the
 #'anomalies plus the mean is equal to the original data.
 #'
-#'@usage anomalies(x, ...)
-#'@param x a time series (ts) or a vector of observations that represents a
+#' @usage anomalies(x, ...)
+#' @param x a time series (ts) or a vector of observations that represents a
 #'daily series. Missing values (NAs) are allowed only at the beginning and end
 #'of the series.
-#'@param \dots named anomalies and the length of the selected periods,
+#' @param \dots named anomalies and the length of the selected periods,
 #'generally in days. The anomalies must be specified in order of decreasing
 #'length.
-#'@return A matrix of the specified anomalies and HFV. The mean of x is
+#' @return A matrix of the specified anomalies and HFV. The mean of x is
 #'included as an attribute.
-#'@note The output matrix contains missing values in the beginning,
+#' @note The output matrix contains missing values in the beginning,
 #'corresponding to the length of the longest anomaly.\cr
 #'
 #'A long time-frame anomaly that users may be interested, include the 5-year
 #'anomaly, which is 1826 days.
-#'@references Vecchia, A.V., 2000, Water-quality trend analysis and sampling
+#' @references Vecchia, A.V., 2000, Water-quality trend analysis and sampling
 #'design for the Souris River, Saskatchewan, North Dakota, and Manitoba: U.S.
-#'Geological Survey Water-Reources Investigations Report 00-4019, 77 p.
-#'@export
-#'@keywords manip
-#'@examples
+#'Geological Survey Water-Resources Investigations Report 00-4019, 77 p.
+#' @export
+#' @keywords manip
+#' @examples
 #'library(USGSwsData)
 #'data(Q05078770)
 #'anomalies(log(Q05078770$FLOW), A3mo=90)

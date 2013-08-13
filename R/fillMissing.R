@@ -16,18 +16,17 @@
 #'periods of missing values. If \code{span} is set to any number less than 4,
 #'then simple linear interpolation will be used to replace missing values.
 #'
-#'@usage fillMissing(x, span = 10, Dates = NULL, max.fill = 10)
-#'@param x the sequence of observations. Missing values are permitted and will
+#' @param x the sequence of observations. Missing values are permitted and will
 #'be replaced.
-#'@param span the maximum number of observations on each side of each range of
+#' @param span the maximum number of observations on each side of each range of
 #'missing values to use in constructing the time series model. See
 #'\bold{Details}.
-#'@param Dates an optional vector of dates/times associated weith each value 
+#' @param Dates an optional vector of dates/times associated weith each value 
 #'in \code{x}. Useful if there are gaps in dates/times.
-#'@param max.fill the maximum gap to fill.
-#'@return The observations in \code{x} with missing values replaced by
+#' @param max.fill the maximum gap to fill.
+#' @return The observations in \code{x} with missing values replaced by
 #'interpolation.
-#'@note The method used to interpolate missing values is based on
+#' @note The method used to interpolate missing values is based on
 #'\code{tsSmooth} constructed using \code{StructTS} on \code{x} with
 #'\code{type} set to "trend." The smoothing method basically uses the
 #'information (slope) from two values previous to missing values and the two
@@ -35,17 +34,17 @@
 #'any change in slope. The group that is used to define the statistics that
 #'control the interpolation is very simply defined by \code{span} rather than
 #'the more in-depth measures described in Elshorbagy and others (2000).
-#'@seealso \code{\link{tsSmooth}}, \code{\link{StructTS}}
-#'@references Beauchamp, J.J., 1989, Comparison of regression and time-series
+#' @seealso \code{\link{tsSmooth}}, \code{\link{StructTS}}
+#' @references Beauchamp, J.J., 1989, Comparison of regression and time-series
 #'methods for synthesizing missing streamflow records, Water Resources
 #'Bulletin, v. 25, no. 5, p. 961-975.\cr
 #'
 #'Elshorbagy, A.A., Panu, U.S., Simonovic, S.P., 2000, Group-based estimation
 #'of missing hydrological data: I. Approach and general methodology,
 #'Hydrological Sciences Journal, v. 45, no. 6, p. 849-866.
-#'@export
-#'@keywords manip
-#'@examples
+#' @export
+#' @keywords manip
+#' @examples
 #'\dontrun{
 #'library(USGSwsData)
 #'data(Q05078470)

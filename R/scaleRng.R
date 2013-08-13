@@ -2,19 +2,17 @@
 #'
 #'Transforms numeric data to a specified range
 #'
-#'
-#'@usage scaleRng(x, Min = 0, Max = 1, x.range = range(x))
-#'@param x any numeric vector. Missing values are not permitted.
-#'@param Min the minimum of the output range.
-#'@param Max the maximum of the output range.
-#'@param x.range the input range to map to the output range.
-#'@return A numeric vector scaled to the specified range.
-#'@note Some applications suggest or require data scaled to a consistent range.
+#' @param x any numeric vector. Missing values are not permitted.
+#' @param Min the minimum of the output range.
+#' @param Max the maximum of the output range.
+#' @param x.range the input range to map to the output range.
+#' @return A numeric vector scaled to the specified range.
+#' @note Some applications suggest or require data scaled to a consistent range.
 #'The function \code{scaleRng} will do that and can be used to back-transform
 #'the data.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'## simple case with back-transform
 #'scaleRng(c(1.2, 2.3, 3.4, 5.6))

@@ -24,23 +24,23 @@
 #'the matched index. The index values are concatenated with the input column
 #'names of the collected columns to derive output column names.\cr
 #'
-#'@usage group2row(data, carryColumns, splitColumn, collectColumns)
-#'@param data a data frame containing the columns to be combined.
-#'@param carryColumns the names of the columns that form a row in the output
+#' @param data a data frame containing the columns to be combined.
+#' @param carryColumns the names of the columns that form a row in the output
 #'dataset. Each unique combination of values in these columns will be a new row
 #'in the output dataset.
-#'@param splitColumn the name of a single column. For each unique value in
+#' @param splitColumn the name of a single column. For each unique value in
 #'\code{splitColumn} and for each column in \code{collectColumns}, a new column
 #'is created in the output.
-#'@param collectColumns the names of the columns to be collected. See
+#' @param collectColumns the names of the columns to be collected. See
 #'\bold{Details}.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @examples
 #'
 #'library(USGSwsData)
 #'data(QWstacked)
 #'group2row(QWstacked, c("site_no", "sample_dt", "sample_tm"), "parm_cd", c("result_va", "remark_cd"))
+#'
+#' @export
 group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   ## Coding history:
   ##    2002Apr30 DLLorenz Original coding.
@@ -52,10 +52,14 @@ group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   ##    2005Dec01 DLLorenz Modified to associate columns together (like value and remark)
   ##    2011Mar14 DLLorenz Conversion to R
   ##    2012Aug11 DLLorenz Integer fixes
-  ##    2013Feb02 DLLorenz Prep for gitHib
+  ##    2013Feb02 DLLorenz Prep for gitHub
+  ##    2013Jul01 DLLorenz Bug fix for blanks and NAs
   ##
   ## The convert.chardata function:
   convert.chardata <- function(target, type, ...) {
+    ## Fix NA and revert blank strings
+    target <- miss2na(target, "NA")
+    target <- sub("_blank_string_", "", target, fixed=TRUE)
     if(type %in% c("factor", "ordered"))
       retval <-(do.call(type, list(x=target, ...)))
     else {  ## make it an as. call
@@ -74,16 +78,21 @@ group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   if(Type == "numeric") # get storage mode
     Type <- storage.mode(Col)
   return(list(Type=Type))
-}
-
+  }
+  ##
   ## Identify original classes of the carryColumns
-  carryClass <- lapply(data[1,carryColumns, drop=FALSE], get.col.type)
+  carryClass <- lapply(data[1L, carryColumns, drop=FALSE], get.col.type)
   ## First, make an index of all carryColumns
   group.index <- as.character(data[[carryColumns[1L]]])
   N <- length(carryColumns)
   if(N > 1L)
-    for(i in seq(2L, N))
-      group.index <- paste(group.index, as.character(data[[carryColumns[i]]]), sep="")
+    for(i in seq(2L, N)) {
+      ## This logic is required to protect against empty strings that do not 
+      ## get put together correctly in the call to strsplit later!
+      putin <- as.character(data[[carryColumns[i]]])
+      putin <- ifelse(putin == "", "_blank_string_", putin)
+      group.index <- paste(group.index, putin, sep="\001")
+    }
   group.table <- unique(group.index)
   group.index <- match(group.index, group.table)
   ## group.index now points to the row number in the target matrix, which is
@@ -95,7 +104,7 @@ group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   ##
   ## Now, create a data.frame of of the groups and convert back to
   ## original data type
-  df <- as.data.frame(matrix(unlist(strsplit(group.table, split="",
+  df <- as.data.frame(matrix(unlist(strsplit(group.table, split="\001",
                                              fixed=TRUE)),
                              ncol=length(carryColumns), byrow=TRUE),
                       stringsAsFactors=FALSE)

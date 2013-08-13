@@ -6,22 +6,19 @@
 #'contains a template that can be edited by the user to describe the contents
 #'of the file.
 #'
-#'@aliases exportRDB
-#'@usage exportRDB(x, file.name = "data.rdb",
-#'col.names = NULL, meta = FALSE, code.rule = 10)
-#'@param x the data frame to be written.
-#'@param file.name a character string naming the file for output.
-#'@param col.names a vector of colum names to use instead of the column names
+#' @param x the data frame to be written.
+#' @param file.name a character string naming the file for output.
+#' @param col.names a vector of colum names to use instead of the column names
 #'in \code{x}.
-#'@param meta a logical value indicating whether the header should include a
+#' @param meta a logical value indicating whether the header should include a
 #'meta-data template for documentation or not.
-#'@param code.rule an integer value indicating how many unique numeric values
+#' @param code.rule an integer value indicating how many unique numeric values
 #'should be included in the meta-data template for cases where each distinct
 #'value has a descriptive meaning rather than a numeric meaning.
-#'@return The file name is returned.
-#'@seealso \code{\link{write.table}}, \code{\link{importRDB}}
-#'@keywords manip IO
-#'@export
+#' @return The file name is returned.
+#' @seealso \code{\link{write.table}}, \code{\link{importRDB}}
+#' @keywords manip IO
+#' @export
 exportRDB <- function(x, file.name="data.rdb", col.names=NULL, meta=FALSE,
                       code.rule=10) {
   ## Coding history:

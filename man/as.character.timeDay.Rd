@@ -15,7 +15,7 @@
   representation.
 }
 \description{
-  Convert to object of type "character."
+  Convert the time-of-day object to a character string.
 }
 \keyword{character}
 

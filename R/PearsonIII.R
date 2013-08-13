@@ -6,32 +6,25 @@
 #'Elements of x, q, or p that are missing will result in missing values in the
 #'retruned data.
 #'
-#'@rdname PearsonIII
-#'@aliases PearsonIII dpearsonIII ppearsonIII qpearsonIII rpearsonIII
-#'@usage dpearsonIII(x, mean = 0, sd = 1, skew = 0) 
-#'
-#'ppearsonIII(q, mean = 0, sd = 1, skew = 0)
-#'
-#'qpearsonIII(p, mean = 0, sd = 1, skew = 0) 
-#'
-#'rpearsonIII(n, mean = 0, sd = 1, skew = 0)
-#'@param x,q vector of quantiles.
-#'@param p vector of probabilities.
-#'@param n number of observations. If length(n) > 1, then the length is taken
+#' @rdname PearsonIII
+#' @aliases PearsonIII dpearsonIII ppearsonIII qpearsonIII rpearsonIII
+#' @param x,q vector of quantiles.
+#' @param p vector of probabilities.
+#' @param n number of observations. If length(n) > 1, then the length is taken
 #'to be the number required.
-#'@param mean vector of means of the distribution of the data.
-#'@param sd vector of standard deviation of the distribution of the data.
-#'@param skew vector of skewness of the distribution of the data.
-#'@return Either the density (\code{dpearsonIII}), cumulative probability
+#' @param mean vector of means of the distribution of the data.
+#' @param sd vector of standard deviation of the distribution of the data.
+#' @param skew vector of skewness of the distribution of the data.
+#' @return Either the density (\code{dpearsonIII}), cumulative probability
 #'(\code{ppearsonIII}), quantile (\code{qpearsonIII}), or random sample
 #'(\code{rpearsonIII}) for the described distribution.
-#'@export
-#'@note The log-Pearson Type III distribtuion is used extensitvely in flood-
+#' @export
+#' @note The log-Pearson Type III distribtuion is used extensitvely in flood-
 #'frequency analysis in the United States. The Pearson Type III forms the basis
 #'for that distribution.
-#'@seealso \code{\link{dlpearsonIII}}, \code{\link{dnorm}}
-#'@keywords manip distribution
-#'@examples
+#' @seealso \code{\link{dlpearsonIII}}, \code{\link{dnorm}}
+#' @keywords manip distribution
+#' @examples
 #'## Simple examples
 #'dpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
 #'## compare to normal
@@ -59,9 +52,9 @@ dpearsonIII <- function(x, mean = 0, sd = 1, skew = 0) {
   return(dgamma(x, shape, rate))
 }
 
-#'@rdname PearsonIII
-#'@export
-#'@examples
+#' @rdname PearsonIII
+#' @export
+#' @examples
 #'## Simple examples
 #'ppearsonIII(c(.5, .75, .9), 1.5, .25, 0)
 #'## compare to normal
@@ -86,9 +79,9 @@ ppearsonIII <- function(q, mean = 0, sd = 1, skew = 0) {
   }
 }
 
-#'@rdname PearsonIII
-#'@export
-#'@examples
+#' @rdname PearsonIII
+#' @export
+#' @examples
 #'## Simple examples
 #'qpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
 #'## compare to normal
@@ -112,9 +105,9 @@ qpearsonIII <- function(p, mean = 0, sd = 1, skew = 0) {
   return(q * sd + mean)
 }
 
-#'@rdname PearsonIII
-#'@export
-#'@examples
+#' @rdname PearsonIII
+#' @export
+#' @examples
 #' # Simple examples
 #'rpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
 rpearsonIII <- function(n, mean = 0, sd = 1, skew = 0) {

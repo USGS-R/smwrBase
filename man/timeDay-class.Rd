@@ -3,7 +3,8 @@
 \alias{timeDay-class}
 \title{timeDay class}
 \description{
-  Some details about the timeDay class
+  The timeDay class is a simple representation of the time
+  of day. The data are stores as seconds since midnight.
 
   Class "timeDay" describes the time of day without any
   reference to the date.

@@ -4,19 +4,19 @@
 #'year to the end of the month.
 #'
 #'
-#'@usage daysInMonth(month, year, cum = FALSE)
-#'@param month the month number, must range in value from 1 to 12. Missing
+#' @usage daysInMonth(month, year, cum = FALSE)
+#' @param month the month number, must range in value from 1 to 12. Missing
 #'values are permitted.
-#'@param year the calendar year, replicated in length to match \code{month}.
+#' @param year the calendar year, replicated in length to match \code{month}.
 #'Missing values are permitted.
-#'@param cum a logical value to indicate whether the cumulative days in the
+#' @param cum a logical value to indicate whether the cumulative days in the
 #'year \code{cum=TRUE} is returned or the number of days in the month.
-#'@return A vector matching \code{month} of the requested number of days.
-#'Missing values are returned whereever either \code{month} or \code{year} is
+#' @return A vector matching \code{month} of the requested number of days.
+#'Missing values are returned wherever either \code{month} or \code{year} is
 #'missing.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'## Check February on a leap year and regular year.
 #'daysInMonth(c(2,2), c(2000, 2001))

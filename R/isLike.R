@@ -10,26 +10,19 @@
 #'"integer" or "logical." The function \code{isNumberLike} tests whether
 #'\code{x} is of type "numeric" or of class "Date."
 #'
-#'@rdname isLike
-#'@aliases isCharLike isDateLike isGroupLike isNumberLike
-#'@usage isCharLike(x)
-#'
-#'isDateLike(x)
-#'
-#'isGroupLike(x)
-#'
-#'isNumberLike(x)
-#'@param x any object.
-#'@return A logical value \code{TRUE} if \code{x} meets the criteria, or
+#' @rdname isLike
+#' @aliases isCharLike isDateLike isGroupLike isNumberLike
+#' @param x any object.
+#' @return A logical value \code{TRUE} if \code{x} meets the criteria, or
 #'\code{FALSE} if it does not.
-#'@note This function is most useful within other functions to control how that
+#' @note This function is most useful within other functions to control how that
 #'function handles a particular argument.
-#'@seealso \code{\link{class}}, \code{\link{is.numeric}},
+#' @seealso \code{\link{class}}, \code{\link{is.numeric}},
 #'\code{\link{is.factor}}, \code{\link{is.character}},
 #'\code{\link{is.integer}}, \code{\link{is.logical}}
-#'@export
-#'@keywords manip
-#'@examples
+#' @export
+#' @keywords manip
+#' @examples
 #'
 #'## The first should be FALSE and the second TRUE
 #'isDateLike(32)
@@ -38,9 +31,9 @@ isDateLike <- function(x)
   ## some objects may have multiple classes, so any is needed
   any(class(x) %in% c("Date", "POSIXt"))
 
-#'@rdname isLike
-#'@export
-#'@examples
+#' @rdname isLike
+#' @export
+#' @examples
 #'
 #'## The first should be FALSE and the second TRUE
 #'isNumberLike(as.Date("2004-12-31"))
@@ -48,9 +41,9 @@ isDateLike <- function(x)
 isNumberLike <- function(x)
   is.integer(x) || is.double(x) || (class(x) == "Date")
 
-#'@rdname isLike
-#'@export
-#'@examples
+#' @rdname isLike
+#' @export
+#' @examples
 #'
 #'## The first should be FALSE and the second TRUE
 #'isGroupLike(as.Date("2004-12-31"))
@@ -58,9 +51,9 @@ isNumberLike <- function(x)
 isGroupLike <- function(x)
   is.factor(x) || is.character(x) || is.integer(x) ||  is.logical(x)
 
-#'@rdname isLike
-#'@export
-#'@examples
+#' @rdname isLike
+#' @export
+#' @examples
 #'
 #'## The first should be FALSE and the second TRUE
 #'isCharLike(as.Date("2004-12-31"))

@@ -2,8 +2,8 @@
 \alias{eventSeries}
 \title{Regular Series}
 \usage{
-  eventSeries(times, period="hour", which = "cumsum",
-    begin, end, k.period=1)
+  eventSeries(times, period = "hour", which = "cumsum",
+    begin, end, k.period = 1)
 }
 \arguments{
   \item{times}{a date like vector corresponding to data.}

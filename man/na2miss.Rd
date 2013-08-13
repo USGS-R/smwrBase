@@ -21,8 +21,8 @@
   the specified value.
 }
 \description{
-  Converts missing values to or from a user specified value
-  o.
+  Converts missing values (\code{NA}s) to or from a user
+  specified value.
 }
 \note{
   The function \code{na2miss} converts missing values

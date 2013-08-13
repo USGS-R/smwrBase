@@ -2,7 +2,8 @@
 \alias{dectime}
 \title{Decimal Time}
 \usage{
-  dectime(dates, times, time.format, date.format)
+  dectime(dates, times, time.format, date.format,
+    Date.noon = TRUE)
 }
 \arguments{
   \item{dates}{a vector of a valid date object, or
@@ -19,20 +20,26 @@
 
   \item{date.format}{format to convert \code{dates} if
   character.}
+
+  \item{Date.noon}{set time to noon for \code{dates} of
+  class "Date?" See \bold{Details}.}
 }
 \value{
   A vector representation of the data in decimal
   format--year and decimal fraction.
 }
 \description{
-  Convert time data to be expressed as year and fractional
-  part of year. This can be useful for plotting or
-  representing time in a regression model.
+  Convert date/time data to be expressed as year and
+  fractional part of year. This can be useful for plotting
+  or representing time in a regression model.
 }
 \details{
   The format for \code{times} must be one of "hm," "hms,"
   or "ms." Note that this is actually a conversion
-  function, see \bold{Seealso}.
+  function, see \bold{Seealso}. If \code{times} is missing,
+  \code{dates} is class "Date," and \code{Date.noon} is
+  \code{TRUE}, then set the time to 12:00, so that the
+  decimal time represents the center of the day.
 }
 \examples{
 dectime("11/11/1918", date.format="\%m/\%d/\%Y")

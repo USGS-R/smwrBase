@@ -12,7 +12,7 @@
   in \code{x}.
 }
 \description{
-  Get the length of time-of-day objects.
+  Get the length of a time-of-day object.
 }
 \examples{
 length(as.timeDay(c("10:30", "11:00")))

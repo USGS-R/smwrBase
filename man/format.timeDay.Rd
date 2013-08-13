@@ -2,7 +2,7 @@
 \alias{format.timeDay}
 \title{Encode in a Common Format}
 \usage{
-  format.timeDay(x, format, ...)
+  \method{format}{timeDay} (x, format, ...)
 }
 \arguments{
   \item{x}{the object to be formatted to type "character."}
@@ -22,9 +22,5 @@
 \seealso{
   \code{\link{strptime}}
 }
-\keyword{format}
 \keyword{manip}
-\keyword{method}
-\keyword{S3method}
-\keyword{timeDay}
 

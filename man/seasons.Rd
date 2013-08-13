@@ -2,8 +2,8 @@
 \alias{seasons}
 \title{Seasonal Categories}
 \usage{
-  seasons(x, breaks, Names = paste("Season Ending ",
-    breaks, sep = ""))
+  seasons(x, breaks,
+    Names = paste("Season Ending ", breaks, sep = ""))
 }
 \arguments{
   \item{x}{any vector of valid dates/times.}

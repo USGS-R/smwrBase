@@ -5,23 +5,23 @@
 #'function read information from the header to rename those columns to be more meaningful
 #'to humans.
 #'
-#'@param data the daily- or unit-values datset retrieved from NWISweb.
-#'@param p00010 the base name for parameter code 00010.
-#'@param p00045 the base name for parameter code 00045.
-#'@param p00060 the base name for parameter code 00060.
-#'@param p00065 the base name for parameter code 00065.
-#'@param p00095 the base name for parameter code 00095.
-#'@param p00300 the base name for parameter code 00300.
-#'@param p00400 the base name for parameter code 00400.
-#'@param p62611 the base name for parameter code 62611.
-#'@param p63680 the base name for parameter code 63680.
-#'@param p72019 the base name for parameter code 72019.
-#'@param \dots named arguments for the base name for any other parameter code. The
+#' @param data the daily- or unit-values datset retrieved from NWISweb.
+#' @param p00010 the base name for parameter code 00010.
+#' @param p00045 the base name for parameter code 00045.
+#' @param p00060 the base name for parameter code 00060.
+#' @param p00065 the base name for parameter code 00065.
+#' @param p00095 the base name for parameter code 00095.
+#' @param p00300 the base name for parameter code 00300.
+#' @param p00400 the base name for parameter code 00400.
+#' @param p62611 the base name for parameter code 62611.
+#' @param p63680 the base name for parameter code 63680.
+#' @param p72019 the base name for parameter code 72019.
+#' @param \dots named arguments for the base name for any other parameter code. The
 #'form of the name must be like pXXXXXX, where XXXXX is the parameter code.
-#'@return A dataset like \code{data} with selected columns renamed.
-#'@seealso \code{\link{readNWIS}}
-#'@keywords manip IO
-#'@export
+#' @return A dataset like \code{data} with selected columns renamed.
+#' @seealso \code{\link{readNWIS}}
+#' @keywords manip IO
+#' @export
 renCol <- function(data, p00010="Wtemp", p00045="Precip",
                    p00060="Flow", p00065="GH", p00095="SpecCond", p00300="DO",
                    p00400="pH", p62611="GWL", p63680="Turb", p72019="WLBLS",

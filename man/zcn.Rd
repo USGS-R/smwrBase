@@ -2,7 +2,7 @@
 \alias{\%cn\%}
 \title{Partial Value Matching}
 \usage{
-  x \%cn\% pattern
+  %cn%(x, pattern)
 }
 \arguments{
   \item{x}{the character vector to be matched. Missing

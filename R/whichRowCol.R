@@ -3,20 +3,18 @@
 #'Identifies the row and column numbers (indexes) of \code{TRUE} values in a
 #'matrix.
 #'
-#'
-#'@usage whichRowCol(x, which = "both")
-#'@param x a logical matrix. Missing values are treated as \code{FALSE}
-#'@param which a character string indicating what should be returned.
-#'@return A matrix of the row and column number if \code{which} is "both."
+#' @param x a logical matrix. Missing values are treated as \code{FALSE}
+#' @param which a character string indicating what should be returned.
+#' @return A matrix of the row and column number if \code{which} is "both."
 #'Otherwise a named vector of the row number, if \code{which} is "row," or
 #'column number, if \code{which} is "col."  Only the first character is needed.
-#'@note Some comparisons, \code{\%in\%} for example, will return a vector rather
+#' @note Some comparisons, \code{\%in\%} for example, will return a vector rather
 #'than a matrix and cause whichRowCol to fail.
 #'
-#'@seealso \code{\link{row}}, \code{\link{col}}, \code{\link{which}}
-#'@keywords manip
-#'@export
-#'@examples
+#' @seealso \code{\link{row}}, \code{\link{col}}, \code{\link{which}}
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'# Simple case to find a single value
 #'whichRowCol(matrix(1:20, ncol=4) == 16)

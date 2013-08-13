@@ -7,29 +7,27 @@
 #'is set to 0 if \code{which} is "sum" and the value previous period if
 #'\code{which} is "cumsum." The initial value of the series is always 0.
 #'
-#'@aliases eventSeries
-#'@usage eventSeries(times, period="hour", which = "cumsum", begin, end, k.period=1)
-#'@param times a date like vector corresponding to data.
-#'@param period character string that is valid input to the the POSIXct method
+#' @param times a date like vector corresponding to data.
+#' @param period character string that is valid input to the the POSIXct method
 #'for seq is OK, specifying the spacing between successive periods. For example
 #'"year," "month," or "day."
-#'@param which a character string indicating the method to use. 
+#' @param which a character string indicating the method to use. 
 #'See \bold{Details} for options.
-#'@param begin the beginning date as POSIXt or as character.
-#'@param end the end date as POSIXt or as character.
-#'@param k.period the number of units of \code{period} in each period of the
+#' @param begin the beginning date as POSIXt or as character.
+#' @param end the end date as POSIXt or as character.
+#' @param k.period the number of units of \code{period} in each period of the
 #'output series.
-#'@return The function \code{eventSeries} returns a data frame with two columns:
+#' @return The function \code{eventSeries} returns a data frame with two columns:
 #'\item{DateTime}{the date and time.}
 #'\item{Sum}{the sum of the number of events in the period if \code{which}
 #'is "sum" or}
 #'\item{CumSum}{the cumulative sum of the number of events up to and
 #'including the period if \code{which} is "cumsum."}
-#'@seealso Refer to the documentation for \code{seaken} in the USGSstats
+#' @seealso Refer to the documentation for \code{seaken} in the USGSstats
 #'package if it is installed.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'library(USGSwsData)
 #'data(QW05078470)

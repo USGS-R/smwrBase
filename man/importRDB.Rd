@@ -2,8 +2,8 @@
 \alias{importRDB}
 \title{Import Files}
 \usage{
-  importRDB(file.name = "", date.format =NULL, convert.type
-    = TRUE)
+  importRDB(file.name = "", date.format = NULL,
+    convert.type = TRUE)
 }
 \arguments{
   \item{file.name}{a character string specifying the name
@@ -42,7 +42,7 @@
 }
 \note{
   A NULL data frame is created if there are no data in the
-  file.\cr
+  file.
 
   The header information contained in the RDB file is
   retained in the output dataset as \code{comment}.

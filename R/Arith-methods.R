@@ -1,17 +1,16 @@
 #'Arithmetic Methods for \code{timeDay} objects
 #'
-#'Some limited arithemtic methods are possible and well-defined for time-of-day
-#'data.
+#'Addition of time-of-day data to either "Date" or "POSIXt" classes.
 #'
 #'Missing values are permitted in either argument and result in a missing value in the 
 #'output.
 #'
-#'@name Arith-methods
-#'@rdname Arith-methods
-#'@aliases Arith-methods Arith,Date,timeDay-method Arith,POSIXt,timeDay-method
+#' @name Arith-methods
+#' @rdname Arith-methods
+#' @aliases Arith-methods Arith,Date,timeDay-method Arith,POSIXt,timeDay-method
 #'Arith,timeDay,Date-method Arith,timeDay,POSIXt-method
-#'@docType methods
-#'@section Methods: \describe{
+#' @docType methods
+#' @section Methods: \describe{
 #'
 #'\item{list("signature(e1 = \"Date\", e2 = \"timeDay\")")}{ Addition is
 #'permissible for these data. }
@@ -24,8 +23,8 @@
 #'
 #'\item{list("signature(e1 = \"timeDay\", e2 = \"POSIXt\")")}{ Addition is
 #'permissible for these data. } }
-#'@keywords methods manip
-#'@exportMethod Arith
+#' @keywords methods manip
+#' @exportMethod Arith
 setMethod("Arith", signature(e1="timeDay", e2="POSIXt"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
@@ -35,8 +34,8 @@ setMethod("Arith", signature(e1="timeDay", e2="POSIXt"), function(e1, e2) {
   retval}
           )
 
-#'@rdname Arith-methods
-#'@aliases Arith,POSIXt,timeDay
+#' @rdname Arith-methods
+#' @aliases Arith,POSIXt,timeDay
 setMethod("Arith", signature( e1="POSIXt", e2="timeDay"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
@@ -45,8 +44,8 @@ setMethod("Arith", signature( e1="POSIXt", e2="timeDay"), function(e1, e2) {
   retval <- e1 + e2@time
   retval}
           )
-#'@rdname Arith-methods
-#'@aliases Arith,timeDay,Date
+#' @rdname Arith-methods
+#' @aliases Arith,timeDay,Date
 setMethod("Arith", signature(e1="timeDay", e2="Date"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")
@@ -57,8 +56,8 @@ setMethod("Arith", signature(e1="timeDay", e2="Date"), function(e1, e2) {
   retval <- e2 + e1@time
   retval}
           )
-#'@rdname Arith-methods
-#'@aliases Arith,Date,timeDay
+#' @rdname Arith-methods
+#' @aliases Arith,Date,timeDay
 setMethod("Arith", signature( e1="Date", e2="timeDay"), function(e1, e2) {
   ## Only addition allowed
   if(.Generic != "+")

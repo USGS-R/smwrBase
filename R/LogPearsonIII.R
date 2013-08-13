@@ -6,34 +6,27 @@
 #'Elements of x, q, or p that are missing will result in missing values in the
 #'retruned data.
 #'
-#'@rdname LogPearsonIII
-#'@aliases LogPearsonIII dlpearsonIII plpearsonIII qlpearsonIII rlpearsonIII
-#'@usage dlpearsonIII(x, meanlog = 0, sdlog = 1, skew = 0)
-#'
-#' plpearsonIII(q, meanlog = 0, sdlog = 1, skew = 0)
-#'
-#' qlpearsonIII(p, meanlog = 0, sdlog = 1, skew = 0)
-#'
-#' rlpearsonIII(n, meanlog = 0, sdlog = 1, skew = 0)
-#'@param x,q vector of quantiles.
-#'@param p vector of probabilities.
-#'@param n number of observations. If length(n) > 1, then the length is taken
+#' @rdname LogPearsonIII
+#' @aliases LogPearsonIII dlpearsonIII plpearsonIII qlpearsonIII rlpearsonIII
+#' @param x,q vector of quantiles.
+#' @param p vector of probabilities.
+#' @param n number of observations. If length(n) > 1, then the length is taken
 #'to be the number required.
-#'@param meanlog vector of means of the distribution of the log-transformed
+#' @param meanlog vector of means of the distribution of the log-transformed
 #'data.
-#'@param sdlog vector of standard deviation of the distribution of the
+#' @param sdlog vector of standard deviation of the distribution of the
 #'log-transformed data.
-#'@param skew vector of skewness of the distribution of the log-transformed
+#' @param skew vector of skewness of the distribution of the log-transformed
 #'data.
-#'@return Either the density (\code{dlpearsonIII}), cumulative probability
+#' @return Either the density (\code{dlpearsonIII}), cumulative probability
 #'(\code{plpearsonIII}), quantile (\code{qlpearsonIII}), or random sample
 #'(\code{rlpearsonIII}) for the described distribution.
-#'@note The log-Pearson Type III distribtuion is used extensitvely in flood-
+#' @note The log-Pearson Type III distribtuion is used extensitvely in flood-
 #'frequency analysis in the United States.
-#'@export
-#'@seealso \code{\link{dpearsonIII}}, \code{\link{dlnorm}}
-#'@keywords manip distribution
-#'@examples
+#' @export
+#' @seealso \code{\link{dpearsonIII}}, \code{\link{dlnorm}}
+#' @keywords manip distribution
+#' @examples
 #'
 #'## Simple examples
 #'dlpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
@@ -46,9 +39,9 @@ dlpearsonIII <- function(x, meanlog = 0, sdlog = 1, skew = 0) {
   return(ifelse(x == 0, 0, retval))
 }
 
-#'@rdname LogPearsonIII
-#'@export
-#'@examples
+#' @rdname LogPearsonIII
+#' @export
+#' @examples
 #'
 #'## Simple examples
 #'plpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
@@ -62,9 +55,9 @@ plpearsonIII <- function(q, meanlog = 0, sdlog = 1, skew = 0) {
   return(ppearsonIII(log(q), meanlog, sdlog, skew))
 }
 
-#'@rdname LogPearsonIII
-#'@export
-#'@examples
+#' @rdname LogPearsonIII
+#' @export
+#' @examples
 #'
 #'## Simple examples
 #'qlpearsonIII(c(.5, .75, .9), 1.5, .25, 0)
@@ -76,9 +69,9 @@ qlpearsonIII <- function(p, meanlog = 0, sdlog = 1, skew = 0) {
   return(exp(qpearsonIII(p, meanlog, sdlog, skew)))
 }
 
-#'@rdname LogPearsonIII
-#'@export
-#'@examples
+#' @rdname LogPearsonIII
+#' @export
+#' @examples
 #'
 #'## Simple examples
 #'rlpearsonIII(c(.5, .75, .9), 1.5, .25, 0)

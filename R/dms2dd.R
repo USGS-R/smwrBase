@@ -2,23 +2,21 @@
 #'
 #'Convert data in degrees, minutes, and seconds format to decimal degrees.
 #'
-#'
-#'@usage dms2dd(x, minutes = NULL, seconds = 0, split = "")
-#'@param x a character or numeric vector coded as degrees, minutes, and seconds
+#' @param x a character or numeric vector coded as degrees, minutes, and seconds
 #'or a numeric vector of degrees.  The character string may contain a leading
 #'zero for values less than 100. Missing values are permitted and result in
 #'missing values in the output.
-#'@param minutes a vector of minutes. If supplied, then \code{x} is assumed to
+#' @param minutes a vector of minutes. If supplied, then \code{x} is assumed to
 #'be a numeric vector of degrees.  Missing values are permitted.
-#'@param seconds a vector of seconds. Assumed to be 0 if not supplied. Missing
+#' @param seconds a vector of seconds. Assumed to be 0 if not supplied. Missing
 #'values are permitted.
-#'@param split the delimiter for \code{x} if \code{x} is character.
-#'@return A numeric vector of decimal degrees the same length as \code{x}.
+#' @param split the delimiter for \code{x} if \code{x} is character.
+#' @return A numeric vector of decimal degrees the same length as \code{x}.
 #'Missing values are returned whereever either \code{x}, \code{minutes}, or
 #'\code{seconds} is missing.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'dms2dd(983206) # using a numeric value
 #'# should be [1] 98.535

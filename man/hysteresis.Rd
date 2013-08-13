@@ -2,7 +2,7 @@
 \alias{hysteresis}
 \title{Compute Hysteresis}
 \usage{
-  hysteresis(x, step=3)
+  hysteresis(x, step = 3)
 }
 \arguments{
   \item{x}{the sequence of observations. Missing values are
@@ -37,10 +37,12 @@ with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type='l'))
   select constituents from major tributaries of the
   Mississippi and Missouri Rivers in Iowa, water years
   2004-2008: U.S. Geological Survey Scientific
-  Investigations Report 2012--5240, 61 9. Wang, P., and
-  Linker, L.C., 2008, Improvement of regression simulation
-  in fluvial sediment loads: Journal of Hydraulic
-  Engineering, v. 134, no. 10, p. 1,527--1,531.
+  Investigations Report 2012--5240, 61 9.
+
+  Wang, P., and Linker, L.C., 2008, Improvement of
+  regression simulation in fluvial sediment loads: Journal
+  of Hydraulic Engineering, v. 134, no. 10, p.
+  1,527--1,531.
 }
 \seealso{
   \code{\link{anomalies}}

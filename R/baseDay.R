@@ -6,16 +6,15 @@
 #'The 'base' day is computed so that all dates have the same reference value
 #'regardless of whether the year is a leap year or not.
 #'
-#'@usage baseDay(x, numeric = TRUE)
-#'@param x a vector of class POSIXt, Dates, or character that represents a
+#' @param x a vector of class POSIXt, Dates, or character that represents a
 #'date. Missing values are permitted.
-#'@param numeric a vector of class POSIXt, Dates, or character that represents
+#' @param numeric a vector of class POSIXt, Dates, or character that represents
 #'a date. Missing values are permitted.
-#'@return An integer value representing the 'base' day number if \code{numeric}
+#' @return An integer value representing the 'base' day number if \code{numeric}
 #'is \code{TRUE}. Otherwise a factor with levels for every day of the year.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'# The default numeric result
 #'baseDay(c("2000-02-29", "2000-03-01", "2001-03-01"))

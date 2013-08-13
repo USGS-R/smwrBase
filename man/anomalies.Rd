@@ -79,7 +79,7 @@ anomalies(log(Q05078770$FLOW), A3mo=90)
   Vecchia, A.V., 2000, Water-quality trend analysis and
   sampling design for the Souris River, Saskatchewan, North
   Dakota, and Manitoba: U.S. Geological Survey
-  Water-Reources Investigations Report 00-4019, 77 p.
+  Water-Resources Investigations Report 00-4019, 77 p.
 }
 \keyword{manip}
 

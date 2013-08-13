@@ -4,36 +4,35 @@
 #'liter.
 #'
 #'
-#'@usage conc2meq(conc, constituent)
-#'@param conc a numeric vector containing the concentration data in milligrams
+#' @param conc a numeric vector containing the concentration data in milligrams
 #'per liter.
-#'@param constituent the name of the constituent. Must be one of "aluminum,"
+#' @param constituent the name of the constituent. Must be one of "aluminum,"
 #'"ammonium," "bicarbonate," "bromide," "calcium," "carbonate," "chloride,"
 #'"fluoride," "iron," "magnesium," "manganese," "nitrate as n," "nitrite as n,"
 #'"phosphorus as p," "potassium," "sodium," "sulfate," or "sulfide." There must
 #'be enough characters in the name to uniquely identify the constituent. The
 #'case of the input name is ignored.
-#'@return Vector containing the milliequivalent values. Missing values
+#' @return Vector containing the milliequivalent values. Missing values
 #'\code{NA}s are returned if the constituent name is invalid.
-#'@note The user must verify that the units of concentration are mg/L. Only
+#' @note The user must verify that the units of concentration are mg/L. Only
 #'those constituents that are typically reported in mg/L (rather than
 #'micrograms per liter) are provided in this function. Aluminum, iron, and
 #'manganese and possibly sulfide are sometimes reported in micrograms per
-#'liter. Such values should be divided by 1000.0 before using this function.\cr
+#'liter. Such values should be divided by 1000.0 before using this function.
 #'
-#'The conversion for iron assumes that the dissolved iron is iron II.\cr
+#'The conversion for iron assumes that the dissolved iron is iron II.
 #'
 #'The conversion for phosphorus assumes that most of the phosphorus is
-#'divalent. The actual conversion for phosphorus is very dependent on pH.\cr
+#'divalent. The actual conversion for phosphorus is very dependent on pH.
 #'
 #'The conversion factors are taken from table 9 (page 56) of Hem (1985). The
-#'available conversion factors are stored in the list \code{conc.meq} in
-#'USGSbase.\cr
-#'@references Hem, J.D., 1985, Study and interpretation of the chemical
+#'available conversion factors are stored in the list created by \code{conc.meq} in
+#'USGSwsBase.\cr
+#' @references Hem, J.D., 1985, Study and interpretation of the chemical
 #'characteristics of natural water: USGS Water-Supply Paper 2254, 263 p.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'conc2meq(c(1,2,3), "Nitrate")
 #'# should be: [1] 0.07139 0.14278 0.21417

@@ -1,9 +1,9 @@
-#'Hyperbolic transform
+#' Hyperbolic transform
 #'
-#'Functions for transforming and back-transforming data using a hyperbolic
+#' Functions for transforming and back-transforming data using a hyperbolic
 #'function.
 #'
-#'If \code{x} contains missing values, then \code{scale} is computed after
+#' If \code{x} contains missing values, then \code{scale} is computed after
 #'omitting the missing values and the output vector has a missing value
 #'wherever \code{x} has a missing value.\cr
 #'
@@ -14,44 +14,43 @@
 #'The function \code{hyperbolic} computes the forward transform and the
 #'function \code{Ihyperbolic} computes the back-transform.
 #'
-#'@aliases hyperbolic Ihyperbolic
-#'@usage hyperbolic(x, factor = 0, scale = mean(x, na.rm=TRUE)) Ihyperbolic(x,
-#'factor = 0, scale)
-#'@param x a numeric vector to be transformed by \code{hyperbolic} or
+#' @aliases hyperbolic Ihyperbolic
+#' @param x a numeric vector to be transformed by \code{hyperbolic} or
 #'back-trasnformed by \code{Ihyperbolic}. Must be strictly positive. Missing
 #'values are allowed. See \bold{Details}.
-#'@param factor the hyperbolic adjustement term in the hyperbolic equation.
-#'@param scale the scaling factor for the data.
-#'@return A numeric vector of the transformed or back-transformed values in
+#' @param factor the hyperbolic adjustement term in the hyperbolic equation.
+#' @param scale the scaling factor for the data.
+#' @return A numeric vector of the transformed or back-transformed values in
 #'\code{x} with an attribute "scale" of the values used for \code{scale}.
-#'@note The original hyperbolic transform used a linear factor. The version in
+#' @note The original hyperbolic transform used a linear factor. The version in
 #'these functions uses the common log of the factor to make the factors easier
 #'to use.\cr
 #'
 #'When used with the default value for \code{scale}, \code{factor} values
 #'outside the range of +/- 3 have very little effect on the transform.
-#'@seealso \code{\link{boxCox}}
-#'@references The use of a variable hyperbolic transform to help model the
+#' @seealso \code{\link{boxCox}}
+#' @references The use of a variable hyperbolic transform to help model the
 #'relations between stream water chemistry and flow was first described in:
 #'
 #'Johnson, N.M., Likens, G.E., Borman, F.H., Fisher, D.W., and Pierce, R.S.,
 #'1969, A working model for the variation in stream water chemistry at the
 #'Hubbard Brook Experimental Forest, New Hampshire: Water Resources Research,
 #'v. 5, no. 6, p. 1353-1363.
-#'@export
-#'@keywords manip
-#'@examples
+#' @keywords manip
+#' @examples
 #'
 #'hyperbolic(1:3) # accept the defaults
 #'## Should return
 #'# [1] 0.3333333 0.5000000 0.6000000
 #'# attr(,"scale")
 #'# [1] 2
+#' @export
 hyperbolic <- function(x, factor = 0, scale = mean(x, na.rm=TRUE)) {
   ## Coding history:
   ##    2010Mar24 DLLorenz First dated version
   ##    2012Aug17 DLLorenz Allow NAs
   ##    2013Feb02 DLLorenz Prep for gitHub
+  ##    2013Jun12 DLLorenz Added class, necessary for safe predictions
   ##
   ## Use common logs for factor--easier to understand
   retval <- 1/(1 + (10^factor * x)/scale)
@@ -65,10 +64,12 @@ hyperbolic <- function(x, factor = 0, scale = mean(x, na.rm=TRUE)) {
   ## reverse sense so that increase in x is increase in retval
   retval <- 1 - retval
   attr(retval, "scale") <- scale
+  class(retval) <- "hyperbolic"
   return(retval)
 }
 
-#'@export
+#' @rdname hyperbolic
+#' @export
 Ihyperbolic <- function(x, factor = 0, scale) {
   if(missing(scale)) # get the attribute if scale is missing
     scale <- attr(x, "scale")

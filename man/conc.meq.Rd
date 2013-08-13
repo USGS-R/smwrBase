@@ -6,14 +6,15 @@
 }
 \value{
   A list containing necessary information for the function
-  \code{con2meq}.
+  \code{conc2meq}.
 }
 \description{
-  Function to supply data for functions within USGSwsBase
+  Function to supply data for functions within USGSwsBase.
 }
 \note{
-  The user may choose to make local copies of data with the
-  same name to change or add to each list.
+  The user may choose to make local copies of the data with
+  the same name (conc.meq) to be able to change or add to
+  the list.
 }
 \seealso{
   \code{\link{conc2meq}}

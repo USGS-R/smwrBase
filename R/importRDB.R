@@ -14,27 +14,25 @@
 #'\code{date.format} is "none," then conversion of the date information is
 #'supressed and the data are retained as character strings.
 #'
-#'@aliases  importRDB
-#'@usage importRDB(file.name = "", date.format =NULL, convert.type = TRUE)
-#'@param file.name a character string specifying the name of the RDB file
+#' @param file.name a character string specifying the name of the RDB file
 #'containing the data to be imported. This should be changed to file.name
-#'@param date.format a character string specifying the format of all date
+#' @param date.format a character string specifying the format of all date
 #'columns.
-#'@param convert.type convert data according to the format line? Setting
+#' @param convert.type convert data according to the format line? Setting
 #'\code{convert.type} to \code{FALSE} forces all data to be imported as
 #'character.
-#'@return A data frame with one column for each data column in the RDB or CSV
+#' @return A data frame with one column for each data column in the RDB or CSV
 #'file.
-#'@note A NULL data frame is created if there are no data in the file.\cr
+#' @note A NULL data frame is created if there are no data in the file.
 #'
 #'The header information contained in the RDB file is retained in the output
 #'dataset as \code{comment}.
-#'@seealso \code{\link{scan}},
+#' @seealso \code{\link{scan}},
 #'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
 #'\code{\link{comment}}
-#'@keywords manip IO
-#'@export
-#'@examples
+#' @keywords manip IO
+#' @export
+#' @examples
 #'
 #'## These datasets are available in USGSwsData as text files
 #'TestDir <- system.file("misc", package="USGSwsData")

@@ -13,12 +13,6 @@
   qlpearsonIII(p, meanlog = 0, sdlog = 1, skew = 0)
 
   rlpearsonIII(n, meanlog = 0, sdlog = 1, skew = 0)
-
-  plpearsonIII(q, meanlog = 0, sdlog = 1, skew = 0)
-
-  qlpearsonIII(p, meanlog = 0, sdlog = 1, skew = 0)
-
-  rlpearsonIII(n, meanlog = 0, sdlog = 1, skew = 0)
 }
 \arguments{
   \item{x,q}{vector of quantiles.}

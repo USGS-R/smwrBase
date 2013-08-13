@@ -13,12 +13,6 @@
   qpearsonIII(p, mean = 0, sd = 1, skew = 0)
 
   rpearsonIII(n, mean = 0, sd = 1, skew = 0)
-
-  ppearsonIII(q, mean = 0, sd = 1, skew = 0)
-
-  qpearsonIII(p, mean = 0, sd = 1, skew = 0)
-
-  rpearsonIII(n, mean = 0, sd = 1, skew = 0)
 }
 \arguments{
   \item{x,q}{vector of quantiles.}

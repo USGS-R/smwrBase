@@ -2,22 +2,19 @@
 #'
 #'Imports data arranged on lines into a list.
 #'
-#'@aliases  readList
-#'@usage readList(file, names = TRUE, sep = "", nlines = 1,
-#'convert=NULL)
-#'@param file a character string specifying the name of the file.
-#'@param names take component names from the first entry in the line? 
+#' @param file a character string specifying the name of the file.
+#' @param names take component names from the first entry in the line? 
 #'If \code{FALSE}, then the components are sequentially numbered.
-#'@param sep the separator character for the data in each line. If a blank
+#' @param sep the separator character for the data in each line. If a blank
 #'string (the default), then any whaite space is take as the separator.
-#'@param nlines the number of lines that represent a single collection of data,
-#'@param convert character string indicating how to convert the data. Must be
+#' @param nlines the number of lines that represent a single collection of data,
+#' @param convert character string indicating how to convert the data. Must be
 #'a valid value for the \code{Class} arguemnt of \code{as}.
-#'@return A list with one component for each \code{nlines} in the input file.
-#'@seealso \code{\link{as}}
-#'@keywords manip IO
-#'@export
-#'@examples
+#' @return A list with one component for each \code{nlines} in the input file.
+#' @seealso \code{\link{as}}
+#' @keywords manip IO
+#' @export
+#' @examples
 #'# Make a small example dataset, and read it
 #'cat("A 1 2 3 4\nB 5 6 7\nC 8 9\n", file="readList.test")
 #'readList("readList.test")

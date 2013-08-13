@@ -2,7 +2,7 @@
 \alias{select}
 \title{Conditional Element Selection}
 \usage{
-  select(test, ..., .pass=test, na = NA)
+  select(test, ..., .pass = test, na = NA)
 }
 \arguments{
   \item{test}{a logical, numeric or character vector that
@@ -44,7 +44,11 @@
   expressions. See \bold{Examples}. It is different from
   \code{switch} in that the value selected from the
   possible alternatives is selected by the values in
-  \code{test} rather than by a single value.
+  \code{test} rather than by a single value.\cr There is a
+  function in the \code{MASS} package that is also called
+  select. If \code{MASS} is loaded after \code{USGSwsBase},
+  then this version of \code{select} will not be available
+  to the user.
 }
 \examples{
 ## create the test vector

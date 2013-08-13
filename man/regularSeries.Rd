@@ -2,8 +2,8 @@
 \alias{regularSeries}
 \title{Regular Series}
 \usage{
-  regularSeries(x, times, period = "month", which =
-    "middle", begin, end, k.period = 1)
+  regularSeries(x, times, period = "month",
+    which = "middle", begin, end, k.period = 1)
 }
 \arguments{
   \item{x}{a vector of observations that represents a

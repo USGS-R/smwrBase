@@ -7,25 +7,24 @@
 #'sequential tied values--"first," "middle," or "last" identify the first,
 #'middle, or last of a sequence of ties as the peak if appropriate.
 #'
-#'@usage peaks(x, span = 3, ties = "first", ends = TRUE)
-#'@param x any numeric vector. Missing values are permitted, but supress
+#' @param x any numeric vector. Missing values are permitted, but supress
 #'identifying peaks within \code{span}.
-#'@param span The window width, the default value is 3, meaning compare each
+#' @param span The window width, the default value is 3, meaning compare each
 #'value to both of its neighbors. The value for \code{span} must be odd and if
 #'set to an even value, then it is increased to the next largest odd value.
-#'@param ties a character indicating how to handle ties. See \bold{Details}.
-#'@param ends a logical value indicating whether or not to include either the
+#' @param ties a character indicating how to handle ties. See \bold{Details}.
+#' @param ends a logical value indicating whether or not to include either the
 #'first or last observations in the sequence if it is a local maximum.
-#'@return A vector matching \code{x} of logical values indicating wether the
+#' @return A vector matching \code{x} of logical values indicating wether the
 #'corresponding element is a local maxiumum or not.
-#'@note A peak is defined as an element in a sequence which is strctly greater
+#' @note A peak is defined as an element in a sequence which is strctly greater
 #'than all other elements within a window of width \code{span} centered at that
 #'element. As such, setting \code{ties} to "none" has the effect of not
 #'identifying peaks with sequential tied values.
-#'@seealso \code{\link{max}}
-#'@keywords manip
-#'@export
-#'@examples
+#' @seealso \code{\link{max}}
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'# Note the effect of missing values
 #'peaks(c(1:6,5,4,NA,4,6,9,NA))

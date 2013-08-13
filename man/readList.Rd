@@ -3,7 +3,7 @@
 \title{Import Data}
 \usage{
   readList(file, names = TRUE, sep = "", nlines = 1,
-    convert=NULL)
+    convert = NULL)
 }
 \arguments{
   \item{file}{a character string specifying the name of the

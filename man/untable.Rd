@@ -2,8 +2,8 @@
 \alias{untable}
 \title{Contingency Table}
 \usage{
-  untable(x, rows = "Rows", cols = "Columns", counts =
-    FALSE)
+  untable(x, rows = "Rows", cols = "Columns",
+    counts = FALSE)
 }
 \arguments{
   \item{x}{a contingency table. Missing values are not

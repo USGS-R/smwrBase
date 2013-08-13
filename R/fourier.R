@@ -7,21 +7,20 @@
 #'which case it will be converted to anual decimal time using the
 #'\code{dectime} function.
 #'
-#'@usage fourier(x, k.max = 1)
-#'@param x a numeric vector where one unit specifies the period. See
+#' @param x a numeric vector where one unit specifies the period. See
 #'\bold{Details}. Missing values are permitted.
-#'@param k.max the maximum number of paired sine and cosine terms specifying
+#' @param k.max the maximum number of paired sine and cosine terms specifying
 #'the order of the Fourier series.
-#'@return A matrix of the sine and cosine terms corresponding to the
+#' @return A matrix of the sine and cosine terms corresponding to the
 #'value---two terms are computed for each value of k from 1 to k.max: sine(k 2
 #'pi x) and cosine(k 2 pi x). The value of k.max is included as an attribute.
-#'@note Water-quality data commonly follow a sinusoidal variation throughout a
+#' @note Water-quality data commonly follow a sinusoidal variation throughout a
 #'yearly cycle.  A Fourier series of order one to three is generally enough to
-#'adequately describe that variation.
-#'@seealso \code{\link{dectime}},
-#'@keywords manip
-#'@export
-#'@examples
+#'adequately describe that variation for many constituents.
+#' @seealso \code{\link{dectime}},
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'# compute the sine and cosine terms for quarters of 2002
 #'fourier(2002 + (0:3)/4)

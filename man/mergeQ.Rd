@@ -2,8 +2,9 @@
 \alias{mergeQ}
 \title{Merge Flow into another Dataset}
 \usage{
-  mergeQ(QWdata, STAID = "STAID", FLOW = "FLOW", DATES =
-    "DATES", Qdata = NULL, Prefix = NULL, Plot = TRUE, ...)
+  mergeQ(QWdata, STAID = "STAID", FLOW = "FLOW",
+    DATES = "DATES", Qdata = NULL, Prefix = NULL,
+    Plot = TRUE, ...)
 }
 \arguments{
   \item{QWdata}{a data frame with at least a date column on

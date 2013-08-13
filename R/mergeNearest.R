@@ -6,33 +6,30 @@
 #'description of the time span. The time span must be one of "secs," "mins,"
 #'"hours,", "days," or "weeks" for seconds, minutes, hours, days, or weeks.
 #'
-#'@usage mergeNearest(left, dates.left = "DATES", all.left = FALSE, suffix.left
-#'= "left", right, dates.right = "DATES", suffix.right = "right", Date.noon =
-#'TRUE, max.diff = "7 days")
-#'@param left the left-hand dataset.
-#'@param dates.left the name of the column of dates in the left-hand dataset.
-#'@param all.left include all rows from the left-hand dataset regardless of
+#' @param left the left-hand dataset.
+#' @param dates.left the name of the column of dates in the left-hand dataset.
+#' @param all.left include all rows from the left-hand dataset regardless of
 #'whether there is a matching row in the right-hand dataset?
-#'@param suffix.left the suffix to apply to common column names in the
+#' @param suffix.left the suffix to apply to common column names in the
 #'left-hand dataset.
-#'@param right the right-hand dataset.
-#'@param dates.right the name of the column of dates in the right-hand dataset.
-#'@param suffix.right the suffix to apply to common column names in the
+#' @param right the right-hand dataset.
+#' @param dates.right the name of the column of dates in the right-hand dataset.
+#' @param suffix.right the suffix to apply to common column names in the
 #'right-hand dataset.
-#'@param Date.noon adjust columns of class "Date" to represent a noon
+#' @param Date.noon adjust columns of class "Date" to represent a noon
 #'observation rather than 12 AM?
-#'@param max.diff the maximum allowable difference in time for a match. See
+#' @param max.diff the maximum allowable difference in time for a match. See
 #'\bold{Details}.
-#'@return A data.frame of the merged data with common column names renamed by
+#' @return A data.frame of the merged data with common column names renamed by
 #'the \code{suffix} arguments to avoid conflict.
-#'@note Water-quality data taken at a specific time frequently need to be
+#' @note Water-quality data taken at a specific time frequently need to be
 #'merged with daily flow data or merged with other water-quality data such as
 #'replicate samples or samples of a different medium taken at about the same
 #'time, but having a different time stamp.
-#'@seealso \code{\link{mergeQ}},
-#'@keywords manip
-#'@export
-#'@examples
+#' @seealso \code{\link{mergeQ}},
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'library(USGSwsData)
 #'data(Q05078470)
@@ -51,6 +48,7 @@ mergeNearest <- function(left, dates.left="DATES", all.left=FALSE,
   ##    2012Jun05 DLLorenz Initial verion
   ##    2012Aug11 DLLorenz Integer fixes
   ##    2013Feb03 DLLorenz Prep for gitHub
+  ##    2013Jun05 DLLorenz Modify for data containing "qw" columns
   ##
   ## The matching function, find the value in x closest to targ subject to
   ##  the distance being less that maxd:
@@ -63,6 +61,9 @@ mergeNearest <- function(left, dates.left="DATES", all.left=FALSE,
       return(0)
     return(which(distm == distx)[1])
   }
+  ## Create dummy rbindQW if necessary
+  if(!exists("rbindQW"))
+    rbindQW <- rbind
   ## Check to verify that the dates are in POSIXt:
   ##  the converstion to character forces the date to be in local time
   if(inherits(left[[dates.left]], "Date"))
@@ -96,7 +97,7 @@ mergeNearest <- function(left, dates.left="DATES", all.left=FALSE,
   pck <- sapply(as.numeric(left[[dates.left]]), pickNear,
                 x=as.numeric(right[[dates.right]]), maxd=max.diff)
   if(all.left) {
-    right <- rbind(right, NA) # add a row of missings
+    right <- rbindQW(right, NA) # add a row of missings
     pck <- recode(pck, 0, nrow(right))
   }
   else {

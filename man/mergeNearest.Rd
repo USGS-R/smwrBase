@@ -2,10 +2,10 @@
 \alias{mergeNearest}
 \title{Merge Datasets}
 \usage{
-  mergeNearest(left, dates.left = "DATES", all.left =
-    FALSE, suffix.left = "left", right, dates.right =
-    "DATES", suffix.right = "right", Date.noon = TRUE,
-    max.diff = "7 days")
+  mergeNearest(left, dates.left = "DATES",
+    all.left = FALSE, suffix.left = "left", right,
+    dates.right = "DATES", suffix.right = "right",
+    Date.noon = TRUE, max.diff = "7 days")
 }
 \arguments{
   \item{left}{the left-hand dataset.}

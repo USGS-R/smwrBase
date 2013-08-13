@@ -14,7 +14,7 @@
   A single vector of class "timeDay."
 }
 \description{
-  Combine data into a single vector.
+  Combine time-of-day data into a single vector.
 }
 \keyword{manip}
 

@@ -5,13 +5,7 @@
 \alias{isNumberLike}
 \title{Test whether an object can be treated in a particular way}
 \usage{
-  isCharLike(x)
-
   isDateLike(x)
-
-  isGroupLike(x)
-
-  isNumberLike(x)
 
   isNumberLike(x)
 

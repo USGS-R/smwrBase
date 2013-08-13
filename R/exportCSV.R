@@ -2,16 +2,14 @@
 #'
 #'Exports a data frame to a text-based file.
 #'
-#'@aliases exportCSV 
-#'@usage exportCSV(x, file.name = "") 
-#'@param x the data frame to be written.
-#'@param file.name a character string naming the file for output.
-#'@return The file name is returned.
-#'@note The function \code{exportCSV} also writes a meta file that contins
+#' @param x the data frame to be written.
+#' @param file.name a character string naming the file for output.
+#' @return The file name is returned.
+#' @note The function \code{exportCSV} also writes a meta file that contins
 #'information about column formatting.
-#'@seealso \code{\link{write.table}}, \code{\link{importCSV}}
-#'@keywords manip IO
-#'@export
+#' @seealso \code{\link{write.table}}, \code{\link{importCSV}}
+#' @keywords manip IO
+#' @export
 exportCSV <- function(x, file.name="") {
   ## Coding history:
   ##    2011Feb25 DLLorenz Origial Coding

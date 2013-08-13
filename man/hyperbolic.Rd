@@ -3,8 +3,9 @@
 \alias{Ihyperbolic}
 \title{Hyperbolic transform}
 \usage{
-  hyperbolic(x, factor = 0, scale = mean(x, na.rm=TRUE))
-    Ihyperbolic(x, factor = 0, scale)
+  hyperbolic(x, factor = 0, scale = mean(x, na.rm = TRUE))
+
+  Ihyperbolic(x, factor = 0, scale)
 }
 \arguments{
   \item{x}{a numeric vector to be transformed by

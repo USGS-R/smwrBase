@@ -1,27 +1,24 @@
 #'Recode Data
 #'
-#'Converts missing values to or from a user specified value o.
+#'Converts missing values (\code{NA}s) to or from a user specified value.
 #'
 #'
-#'@aliases na2miss miss2na 
-#'@usage na2miss(x, to = -99999)
-#'
-#'miss2na(x, from = -99999) 
-#'@param x a vector. Missing values \code{NA}s are allowed.
-#'@param to the replacement value for \code{NA}.
-#'@param from the target value to match and replace with \code{NA}.
-#'@return An object like vector with each target value replaced by the
+#' @aliases na2miss miss2na 
+#' @param x a vector. Missing values \code{NA}s are allowed.
+#' @param to the replacement value for \code{NA}.
+#' @param from the target value to match and replace with \code{NA}.
+#' @return An object like vector with each target value replaced by the
 #'specified value.
-#'@note The function \code{na2miss} converts missing values (\code{NA}) to the
+#' @note The function \code{na2miss} converts missing values (\code{NA}) to the
 #'value \code{to} and is useful to prepare a vector for export and subsequent
 #'use by software external to R that does not handle NAs.\cr The function
 #'\code{miss2na} converts the value \code{from} to \code{NA} and can be used to
 #'recode data imported from external software that uses a special value to
 #'indicate missing values.\cr
-#'@seealso \code{\link{is.na}}, \code{\link{sub}}
-#'@keywords manip
-#'@export
-#'@examples
+#' @seealso \code{\link{is.na}}, \code{\link{sub}}
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'## Construct simple substitutions
 #'na2miss(c(1, 2, 3, NA, 5, 6))
@@ -45,7 +42,8 @@ na2miss <- function (x, to = -99999) {
   return(x)
 }
 
-#'@export
+#' @rdname na2miss
+#' @export
 miss2na <- function (x, from = -99999) {
   ## Special instructions for a factor:
   if(inherits(x, 'factor')) {

@@ -19,11 +19,19 @@
   \code{Range}.
 }
 \description{
-  Compute percentage, or proportional, composition
+  Compute percentage or proportion of elements in a
+  composition
 }
 \details{
   Missing values are permitted in \code{x} or \code{\dots}
-  and result in missing values in the output.
+  and result in missing values for the row in the output.
+}
+\note{
+  This function is designed to meet a very simple need in
+  some applications like constructing data for Piper or
+  trilinear diagrams. For more in-depth manipulations of
+  compositional data, the user is directed to the
+  \code{compositions} or other similar package.
 }
 \examples{
 # Create tiny dataset

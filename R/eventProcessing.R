@@ -4,23 +4,23 @@
 #'\code{eventlen} or the sequence number for individual observations within an
 #'event \code{eventSeq}.
 #'
-#'@rdname eventProcessing
-#'@aliases eventLen eventNum eventSeq
-#'@usage eventNum(event, reset = FALSE, na.fix = FALSE) 
+#' @rdname eventProcessing
+#' @aliases eventLen eventNum eventSeq
+#' @usage eventNum(event, reset = FALSE, na.fix = FALSE) 
 #'
 #' eventLen(eventno, summary = FALSE) 
 #'
 #' eventSeq(eventno)
-#'@param event a logical vector where \code{TRUE} indicates that an event
+#' @param event a logical vector where \code{TRUE} indicates that an event
 #'occurred. Missing values are treated as instructed by \code{na.fix}.
-#'@param reset a logical value indicating whether the event is assumed to
+#' @param reset a logical value indicating whether the event is assumed to
 #'continue until the next event, or only while event is \code{TRUE}.
-#'@param na.fix the value to use where event has missing values (\code{NA}s).
-#'@param eventno an integer vector indicating the event number. Generally the
+#' @param na.fix the value to use where event has missing values (\code{NA}s).
+#' @param eventno an integer vector indicating the event number. Generally the
 #'output from the \code{eventNum} function.
-#'@param summary a logical value, controlling output. See \bold{Value} for
+#' @param summary a logical value, controlling output. See \bold{Value} for
 #'details.
-#'@return The function \code{eventNum} returns an integer vector the same
+#' @return The function \code{eventNum} returns an integer vector the same
 #'length as \code{event} indicating the event sequence number.\cr
 #'
 #'The function \code{eventLen} returns an integer vector the same length as
@@ -31,9 +31,9 @@
 #'The function \code{eventSeq} returns an integer vector the same length as
 #'\code{eventno} indicating the sequence number of each element in the the
 #'event.
-#'@keywords manip
-#'@export
-#'@examples
+#' @keywords manip
+#' @export
+#' @examples
 #'
 #'## Notice the difference caused by setting reset to TRUE
 #'eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE))
@@ -71,9 +71,9 @@ eventNum <- function(event, reset=FALSE, na.fix=FALSE) {
   return(ret.val)
 }
 
-#'@rdname eventProcessing
-#'@export
-#'@examples
+#' @rdname eventProcessing
+#' @export
+#' @examples
 #'
 #'## Notice the difference caused by setting reset to TRUE
 #'eventSeq(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE)))
@@ -86,9 +86,9 @@ eventSeq <- function(eventno) {
   return(ret.val)
 }
 
-#'@rdname eventProcessing
-#'@export
-#'@examples
+#' @rdname eventProcessing
+#' @export
+#' @examples
 #'
 #'## Notice the difference caused by setting reset to TRUE
 #'eventLen(eventNum(c(TRUE,TRUE,FALSE,FALSE,TRUE,FALSE), reset=TRUE))

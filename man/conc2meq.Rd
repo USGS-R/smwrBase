@@ -33,18 +33,19 @@
   in this function. Aluminum, iron, and manganese and
   possibly sulfide are sometimes reported in micrograms per
   liter. Such values should be divided by 1000.0 before
-  using this function.\cr
+  using this function.
 
   The conversion for iron assumes that the dissolved iron
-  is iron II.\cr
+  is iron II.
 
   The conversion for phosphorus assumes that most of the
   phosphorus is divalent. The actual conversion for
-  phosphorus is very dependent on pH.\cr
+  phosphorus is very dependent on pH.
 
   The conversion factors are taken from table 9 (page 56)
   of Hem (1985). The available conversion factors are
-  stored in the list \code{conc.meq} in USGSbase.\cr
+  stored in the list created by \code{conc.meq} in
+  USGSwsBase.\cr
 }
 \examples{
 conc2meq(c(1,2,3), "Nitrate")
