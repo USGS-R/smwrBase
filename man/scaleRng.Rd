@@ -2,11 +2,13 @@
 \alias{scaleRng}
 \title{Scale Data}
 \usage{
-  scaleRng(x, Min = 0, Max = 1, x.range = range(x))
+  scaleRng(x, Min = 0, Max = 1,
+    x.range = range(x, na.rm = TRUE))
 }
 \arguments{
-  \item{x}{any numeric vector. Missing values are not
-  permitted.}
+  \item{x}{any numeric vector. Missing values are permitted
+  and result in missing values in the corresponding
+  output.}
 
   \item{Min}{the minimum of the output range.}
 
@@ -30,6 +32,9 @@
 ## simple case with back-transform
 scaleRng(c(1.2, 2.3, 3.4, 5.6))
 scaleRng(c(0.00, 0.25, 0.50, 1.00), Min=1.2, Max=5.6)
+## now set the expected ranges
+scaleRng(c(1.2, 2.3, 3.4, 5.6), x.range=c(1, 6))
+scaleRng(c(0.04, 0.26, 0.48, 0.92), Min=1, Max=6, x.range=c(0,1))
 }
 \keyword{manip}
 
