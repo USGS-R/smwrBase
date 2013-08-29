@@ -131,6 +131,14 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   else if(dtype == "well")
     myurl <- url(paste("http://waterdata.usgs.gov/nwis/dv?referred_module=gw",
                        typeadd, sep=""))
+  else if(dtype == "peak")
+    myurl <- url(paste("http://nwis.waterdata.usgs.gov/usa/nwis/",
+                       dtype,
+                       "/?site_no=",
+                       gage,
+                       "&range_selection=date_range&format=rdb",
+                       typeadd,
+                       sep=""))
   else
     myurl <- url(paste("http://waterdata.usgs.gov/nwis/",
                        dtype,
