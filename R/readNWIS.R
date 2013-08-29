@@ -110,10 +110,8 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
                     peak=NULL,
                     gwlevels=paste("&begin_date=", begin.date,"&end_date=",
                       end.date, sep=""),
-                    uv=paste("uv?", paste("cb_", param, "=on&", sep="", collapse=""),
-                      "format=rdb&period=&begin_date=",
-                      begin.date, "&end_date=", end.date, "&site_no=", gage,
-                      sep=""),
+                    uv=paste("?format=rdb,1.0&sites=", gage,"&startDT=",begin.date, 
+                      "&endDT=", end.date, "&parameterCd=", param, sep=""),
                     gage=paste("&search_site_no=", gage,
                       "&search_site_no_match_type=exact&sort_key=site_no&group_key=NONE&format=sitefile_output&sitefile_output_format=rdb&column_name=agency_cd&column_name=site_no&column_name=station_nm&column_name=site_tp_cd&column_name=lat_va&column_name=long_va&column_name=dec_lat_va&column_name=dec_long_va&column_name=coord_meth_cd&column_name=coord_acy_cd&column_name=coord_datum_cd&column_name=dec_coord_datum_cd&column_name=district_cd&column_name=state_cd&column_name=county_cd&column_name=country_cd&column_name=land_net_ds&column_name=map_nm&column_name=map_scale_fc&column_name=alt_va&column_name=alt_meth_cd&column_name=alt_acy_va&column_name=alt_datum_cd&column_name=huc_cd&column_name=basin_cd&column_name=topo_cd&column_name=data_types_cd&column_name=instruments_cd&column_name=construction_dt&column_name=inventory_dt&column_name=drain_area_va&column_name=contrib_drain_area_va&column_name=tz_cd&column_name=local_time_fg&column_name=reliability_cd&column_name=project_no&column_name=rt_bol&column_name=peak_begin_date&column_name=peak_end_date&column_name=peak_count_nu&column_name=qw_begin_date&column_name=qw_end_date&column_name=qw_count_nu&column_name=sv_begin_date&column_name=sv_end_date&column_name=sv_count_nu&range_selection=days&period=365&date_format=YYYY-MM-DD&rdb_compression=file&list_of_search_criteria=search_site_no",
                       sep=""),
@@ -124,7 +122,7 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   if(dtype %in% c("swdv", "gwdv"))
     dtype <- substring(dtype, 3L, 4L)
   if(dtype == "uv")
-    myurl <- url(paste("http://waterdata.usgs.gov/usa/nwis/", typeadd, sep=""))
+    myurl <- url(paste("http://waterservices.usgs.gov/nwis/iv/", typeadd, sep=""))
   else if(dtype == "gage")
     myurl <- url(paste("http://waterdata.usgs.gov/nwis/measurements?",
                        typeadd, sep=""))
