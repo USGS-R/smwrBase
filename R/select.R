@@ -64,7 +64,8 @@ select <- function(test,..., .pass=test, na=NA) {
   }
   testr <- seq(along=test)
   ## get the data
-  retval <- sapply(testr, function(i) dots[i, test[i]])
+  retval <- sapply(testr, function(i) dots[i, test[i]], simplify=FALSE)
   retval[is.na(test)] <- na
+  retval <- unlist(retval)
   retval
 }
