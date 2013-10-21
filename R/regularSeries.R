@@ -52,18 +52,22 @@ regularSeries <- function(x, times, period="month", which = "middle",
   ##    2008Dec05 DLLorenz Bug fix and added to USGS library
   ##    2011May27 DLLorenz Conversion to R
   ##    2012Aug11 DLLorenz Integer fixes
-  ##    2013Feb02 DLLorenz USe POSIXlt rather than ct
+  ##    2013Feb02 DLLorenz Use POSIXlt rather than ct
+  ##    2013Sep05 DLLorenz Bug fix of begin and end
   ## 
   ## Force times to POSIXlt format
   times <- as.POSIXlt(times)
-  if(missing(begin))
+  if(missing(begin)) {
     begin <- floor_date(min(times, na.rm=TRUE), unit=period)
+  } else
+    begin <- as.POSIXlt(begin)
   if(missing(end)) {
     end <- floor_date(max(times, na.rm=TRUE), unit=period)
     ## This construct is needed because there is no way to represent a difftime in units
     ## of a month or a year (differing number of seconds in those periods).
     end <- seq(end, by=period, length=k.period+1)[k.period+1]
-  }
+  } else
+    end <- as.POSIXlt(end)
   ## Remove the missing values in x from consideration
   drop <- is.na(x)
   if(any(drop)) {

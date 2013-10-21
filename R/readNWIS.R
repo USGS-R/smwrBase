@@ -27,6 +27,10 @@
 #'\code{dtype} = "peak." If "", then retrieve the most recent values in the
 #'database.
 #' @param param the parameter code to retrieve. See \bold{Details}.
+#' @param stat the statistic codes or name of code to retrieve for \code{dtype}
+#'"swdv" or "gwdv." If \code{NULL}, then retrieve all. Otherwise, must be the 
+#'5-digit code or one of "maximum,", "minimum,", "mean," or "median." May be
+#'uniquely abbreviated.
 #' @param convert.type Convert data to types indicated by the column type in the
 #'data or as indicated in \bold{Note}? See \bold{Details}.
 #' @return A data frame of the appropriate data. See
@@ -53,7 +57,7 @@
 #'readNWIS("434400121275801", "gwl", begin.date="2010-01-01")
 #'}
 readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
-                     param=NULL, convert.type=TRUE) {
+                     param=NULL, stat=NULL, convert.type=TRUE) {
   ## Coding history:
   ##    2005Oct25 TimCohn  Original
   ##    2009Dec30 TimCohn  Revisions
@@ -73,62 +77,89 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   ##    2012Dec20 DLLorenz Tweaks for unit values
   ##    2013Jan30 DLLorenz Added convert.type option to supress all type conversions
   ##    2013Jan30 DLLorenz Prep for gitHub
+  ##    2013Sep04 DLLorenz Modified for waterservices
   ##
+  ## Columns for gage and well:
+  GAGE <- c("agency_cd","site_no","station_nm","site_tp_cd","lat_va","long_va",
+         "dec_lat_va","dec_long_va","coord_meth_cd","coord_acy_cd",
+         "coord_datum_cd","dec_coord_datum_cd","district_cd","state_cd",
+         "county_cd","country_cd","land_net_ds","map_nm","map_scale_fc",
+         "alt_va","alt_meth_cd","alt_acy_va","alt_datum_cd","huc_cd",
+         "basin_cd","topo_cd","instruments_cd",
+         "construction_dt","inventory_dt","drain_area_va",
+         "contrib_drain_area_va","tz_cd","local_time_fg","reliability_cd",
+         "project_no")
+  WELL <- c("agency_cd","site_no","station_nm","site_tp_cd","lat_va","long_va",
+            "dec_lat_va","dec_long_va","coord_meth_cd","coord_acy_cd",
+            "coord_datum_cd","dec_coord_datum_cd","district_cd","state_cd",
+            "county_cd","country_cd","land_net_ds","map_nm","map_scale_fc",
+            "alt_va","alt_meth_cd","alt_acy_va","alt_datum_cd","huc_cd",
+            "basin_cd","topo_cd","instruments_cd",
+            "construction_dt","inventory_dt","tz_cd","local_time_fg",
+            "reliability_cd","gw_file_cd","nat_aqfr_cd","aqfr_cd",
+            "aqfr_type_cd","well_depth_va","hole_depth_va","depth_src_cd",
+            "project_no")
   ## Make sure dtype is valid
   dtype <- match.arg(dtype, c("swdv", "gwdv", "measurements", "peak",
                               "gwlevels", "uv", "gage", "well"))
+  setStat <- function(Stat) {
+    if(!is.null(Stat)) {
+      if(length(Stat) == 1L) {
+        xstat <- pmatch(Stat, c("maximum", "minimum", "mean", "median"),
+                        nomatch=0)
+        if(xstat > 0)
+          Stat <- select(xstat, "00001", "00002", "00003", "00008")
+      }
+      Stat <- paste(Stat, collapse=",")
+      Stat <- paste("&statCd=", Stat, sep="")
+    } else
+      Stat <- ""
+    return(Stat)
+  }
+  if(begin.date == "") # Fix needed to set earliest date
+    begin.date <- "1860-01-01"
+  if(end.date == "") # Fix neede to set today
+    end.date <- as.character(today())
   if(dtype == "swdv") {
     if(is.null(param))
-      param <- "&index_pmcode_00060=1"
+      param <- "00060"
     else if(param == "all")
       param <- NULL # Go figure the logic on this one! (force action to get all)
-    else
-      param <- paste("&index_pmcode_", param, "=1", sep="")
-    if(begin.date == "") # Fix needed to set earliest date
-      begin.date <- "1860-01-01"
   }
   else if(dtype == "gwdv") {
     if(is.null(param))
-      param <- "&index_pmcode_72019=1"
+      param <- "72019"
     else if(param == "all")
       param <- NULL
-    else
-      param <- paste("&index_pmcode_", param, "=1", sep="")
-    if(begin.date == "") # Fix needed to set earliest date
-      begin.date <- "1860-01-01"
   }
   else if(is.null(param) && dtype == "uv") {
-      stop("the param argument is required for dtype \"uv\"")
+    stop("the param argument is required for dtype \"uv\"")
   }
   typeadd <- switch(dtype,
-                    swdv=paste(param, "&begin_date=", begin.date,
-                      "&end_date=", end.date, "&referred_module=sw", sep=""),
-                    gwdv=paste(param, "&begin_date=", begin.date,
-                      "&end_date=", end.date, "&referred_module=gw", sep=""),
+                    swdv=paste("?format=rdb,1.0&sites=", gage,"&startDT=",begin.date, 
+                               "&endDT=", end.date, setStat(stat), "&parameterCd=", param, sep=""),
+                    gwdv=paste("?format=rdb,1.0&sites=", gage,"&startDT=",begin.date, 
+                               "&endDT=", end.date, setStat(stat), "&parameterCd=", param, sep=""),
                     measurements=paste("&begin_date=", begin.date,"&end_date=",
-                      end.date, sep=""),
+                                       end.date, sep=""),
                     peak=NULL,
-                    gwlevels=paste("&begin_date=", begin.date,"&end_date=",
-                      end.date, sep=""),
+                    gwlevels=paste("?format=rdb,1.0&sites=", gage,"&startDT=",begin.date, 
+                                   "&endDT=", end.date, sep=""),
                     uv=paste("?format=rdb,1.0&sites=", gage,"&startDT=",begin.date, 
-                      "&endDT=", end.date, "&parameterCd=", param, sep=""),
-                    gage=paste("&search_site_no=", gage,
-                      "&search_site_no_match_type=exact&sort_key=site_no&group_key=NONE&format=sitefile_output&sitefile_output_format=rdb&column_name=agency_cd&column_name=site_no&column_name=station_nm&column_name=site_tp_cd&column_name=lat_va&column_name=long_va&column_name=dec_lat_va&column_name=dec_long_va&column_name=coord_meth_cd&column_name=coord_acy_cd&column_name=coord_datum_cd&column_name=dec_coord_datum_cd&column_name=district_cd&column_name=state_cd&column_name=county_cd&column_name=country_cd&column_name=land_net_ds&column_name=map_nm&column_name=map_scale_fc&column_name=alt_va&column_name=alt_meth_cd&column_name=alt_acy_va&column_name=alt_datum_cd&column_name=huc_cd&column_name=basin_cd&column_name=topo_cd&column_name=data_types_cd&column_name=instruments_cd&column_name=construction_dt&column_name=inventory_dt&column_name=drain_area_va&column_name=contrib_drain_area_va&column_name=tz_cd&column_name=local_time_fg&column_name=reliability_cd&column_name=project_no&column_name=rt_bol&column_name=peak_begin_date&column_name=peak_end_date&column_name=peak_count_nu&column_name=qw_begin_date&column_name=qw_end_date&column_name=qw_count_nu&column_name=sv_begin_date&column_name=sv_end_date&column_name=sv_count_nu&range_selection=days&period=365&date_format=YYYY-MM-DD&rdb_compression=file&list_of_search_criteria=search_site_no",
-                      sep=""),
-                    well=paste("&search_site_no=", gage,
-                      "&search_site_no_match_type=exact&sort_key=site_no&group_key=NONE&format=sitefile_output&sitefile_output_format=rdb&column_name=agency_cd&column_name=site_no&column_name=station_nm&column_name=site_tp_cd&column_name=lat_va&column_name=long_va&column_name=dec_lat_va&column_name=dec_long_va&column_name=coord_meth_cd&column_name=coord_acy_cd&column_name=coord_datum_cd&column_name=dec_coord_datum_cd&column_name=district_cd&column_name=state_cd&column_name=county_cd&column_name=country_cd&column_name=land_net_ds&column_name=map_nm&column_name=map_scale_fc&column_name=alt_va&column_name=alt_meth_cd&column_name=alt_acy_va&column_name=alt_datum_cd&column_name=huc_cd&column_name=basin_cd&column_name=topo_cd&column_name=data_types_cd&column_name=instruments_cd&column_name=construction_dt&column_name=inventory_dt&column_name=tz_cd&column_name=local_time_fg&column_name=reliability_cd&column_name=gw_file_cd&column_name=nat_aqfr_cd&column_name=aqfr_cd&column_name=aqfr_type_cd&column_name=well_depth_va&column_name=hole_depth_va&column_name=depth_src_cd&column_name=project_no&column_name=rt_bol&column_name=qw_begin_date&column_name=qw_end_date&column_name=qw_count_nu&column_name=gw_begin_date&column_name=gw_end_date&column_name=gw_count_nu&column_name=sv_begin_date&column_name=sv_end_date&column_name=sv_count_nu&range_selection=days&period=365&date_format=YYYY-MM-DD&rdb_compression=file&list_of_search_criteria=search_site_no",
-                      sep=""))
-  ## Monthly, annual and others may require different url formats
-  if(dtype %in% c("swdv", "gwdv"))
-    dtype <- substring(dtype, 3L, 4L)
+                             "&endDT=", end.date, "&parameterCd=", param, sep=""),
+                    gage=paste("?format=rdb,1.0&sites=", gage, 
+                               "&siteOutput=expanded", sep=""),
+                    well=paste("?format=rdb,1.0&sites=", gage,  
+                               "&siteOutput=expanded", sep=""))
+
   if(dtype == "uv")
     myurl <- url(paste("http://waterservices.usgs.gov/nwis/iv/", typeadd, sep=""))
-  else if(dtype == "gage")
-    myurl <- url(paste("http://waterdata.usgs.gov/nwis/measurements?",
-                       typeadd, sep=""))
-  else if(dtype == "well")
-    myurl <- url(paste("http://waterdata.usgs.gov/nwis/dv?referred_module=gw",
-                       typeadd, sep=""))
+  else if(dtype %in% c("swdv", "gwdv"))
+    myurl <- url(paste("http://waterservices.usgs.gov/nwis/dv/", typeadd, sep=""))
+  else if(dtype == "gwlevels")
+    myurl <- url(paste("http://waterservices.usgs.gov/nwis/gwlevels/", typeadd, sep=""))
+  else if(dtype %in% c("gage", "well"))
+    myurl <- url(paste("http://waterservices.usgs.gov/nwis/site/", typeadd, sep=""))
   else if(dtype == "peak")
     myurl <- url(paste("http://nwis.waterdata.usgs.gov/usa/nwis/",
                        dtype,
@@ -153,6 +184,10 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
     retval <- importRDB(myurl, date.format="none", convert.type=convert.type) # not all are valid
   else
     retval <- importRDB(myurl, convert.type=convert.type)
+  if(dtype == "gage") {
+    retval <- retval[, GAGE]
+  } else if(dtype == "well")
+    retval <- retval[, WELL]
   close(myurl)
   if(convert.type) { #Do not force conversion if requested not to
     ## In some cases, columns ending in _va are not always numeric, but should be
