@@ -3,7 +3,8 @@
 \title{Import Data}
 \usage{
   readNWIS(gage, dtype = "swdv", begin.date = "",
-    end.date = "", param = NULL, convert.type = TRUE)
+    end.date = "", param = NULL, stat = NULL,
+    convert.type = TRUE)
 }
 \arguments{
   \item{gage}{a single USGS station identifier as a
@@ -30,6 +31,12 @@
 
   \item{param}{the parameter code to retrieve. See
   \bold{Details}.}
+
+  \item{stat}{the statistic codes or name of code to
+  retrieve for \code{dtype} "swdv" or "gwdv." If
+  \code{NULL}, then retrieve all. Otherwise, must be the
+  5-digit code or one of "maximum,", "minimum,", "mean," or
+  "median." May be uniquely abbreviated.}
 
   \item{convert.type}{Convert data to types indicated by
   the column type in the data or as indicated in

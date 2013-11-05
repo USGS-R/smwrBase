@@ -6,6 +6,8 @@ Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
 Depends:
     stats,
+    memoise,
+    digest,
     lubridate (>= 1.3),
     XML
 Imports:
@@ -88,4 +90,5 @@ Collate:
     'zeropad.R'
     'makepredictcall.R'
     'more.R'
+    'sCurve.R'
 Packaged: 2013-08-05 13:36:37 UTC; lorenz
