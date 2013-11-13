@@ -1,10 +1,10 @@
-#' Print Data
+#' Display Data
 #'
-#' Print the contents of an object by pages.
+#' Display the contents of an object by pages.
 #'
 #' @param x any valid object, generally a data frame, matrix or table.
-#'  @param n a positive integer indicating how many lines to print for a page.
-#'@param \dots additional arguments to be passed to methods for \code{head} or
+#' @param n a positive integer indicating how many lines to print for a page.
+#' @param \dots additional arguments to be passed to methods for \code{head} or
 #'\code{tail}.
 #'
 #' @return The object \code{x} is retruned invisibly.

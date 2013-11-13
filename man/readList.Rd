@@ -29,7 +29,7 @@
   input file.
 }
 \description{
-  Imports data arranged on lines into a list.
+  Import data arranged on lines into a list.
 }
 \examples{
 # Make a small example dataset, and read it

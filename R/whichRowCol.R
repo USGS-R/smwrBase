@@ -1,7 +1,7 @@
 #'Identify Rows and Columns
 #'
 #'Identifies the row and column numbers (indexes) of \code{TRUE} values in a
-#'matrix.
+#'logical matrix.
 #'
 #' @param x a logical matrix. Missing values are treated as \code{FALSE}
 #' @param which a character string indicating what should be returned.

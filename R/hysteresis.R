@@ -1,18 +1,19 @@
 #'Compute Hysteresis
 #'
-#'Compute a basis for estimating hysteresis in some variable rlated to
+#'Compute a basis for estimating hysteresis effects in some variable related to
 #'\code{x}.
 #'
 #' @param x the sequence of observations. Missing values are permitted and will
 #'be copied in the output.
 #' @param step the number of previous observations to use to compute the local
 #'mean. See \bold{Note}.
-#' @return The observations in \code{x} with missing values replaced by
-#'interpolation.
+#' @return A numeric vector that approximates the local trend in \code{x}.
 #' @note The basis for estimating hysterisis is the current value \code{x} minus
-#'the mena of the previous \code{step} values. The first \code{step} values in
+#'the mean of the previous \code{step} values. The first \code{step} values in
 #'the output will be missing, and each missing value will result in \code{step}
-#'plus 1 missing values.
+#'plus 1 missing values. This approximates the trend in \code{x}; if \code{x} is
+#'increasing in value over the previous \code{step} values, then the output will be positive
+#'and the greater the relative increase, the parger the output.
 #' @seealso \code{\link{anomalies}}
 #' @references Garrett, J.D., 2012, Concentrations, loads, and yields of select constituents 
 #'from major tributaries of the Mississippi and Missouri Rivers in Iowa, water years 2004-2008:
@@ -20,7 +21,6 @@
 #'
 #'Wang, P., and Linker, L.C., 2008, Improvement of regression simulation in fluvial sediment 
 #'loads: Journal of Hydraulic Engineering, v. 134, no. 10, p. 1,527--1,531.
-#' @export
 #' @keywords manip
 #' @examples
 #'
@@ -28,6 +28,7 @@
 #'data(Q05078770)
 #'# Plot flow and hysteresis to show looping 
 #'with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type='l'))
+#' @export
 hysteresis <- function(x, step=3) {
   ## Coding history:
   ##    2013Jan10 DLLorenz Original

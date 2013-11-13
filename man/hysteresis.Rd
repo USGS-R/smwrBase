@@ -12,19 +12,23 @@
   compute the local mean. See \bold{Note}.}
 }
 \value{
-  The observations in \code{x} with missing values replaced
-  by interpolation.
+  A numeric vector that approximates the local trend in
+  \code{x}.
 }
 \description{
-  Compute a basis for estimating hysteresis in some
-  variable rlated to \code{x}.
+  Compute a basis for estimating hysteresis effects in some
+  variable related to \code{x}.
 }
 \note{
   The basis for estimating hysterisis is the current value
-  \code{x} minus the mena of the previous \code{step}
+  \code{x} minus the mean of the previous \code{step}
   values. The first \code{step} values in the output will
   be missing, and each missing value will result in
-  \code{step} plus 1 missing values.
+  \code{step} plus 1 missing values. This approximates the
+  trend in \code{x}; if \code{x} is increasing in value
+  over the previous \code{step} values, then the output
+  will be positive and the greater the relative increase,
+  the parger the output.
 }
 \examples{
 library(USGSwsData)

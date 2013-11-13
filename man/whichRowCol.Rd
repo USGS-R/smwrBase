@@ -19,7 +19,7 @@
 }
 \description{
   Identifies the row and column numbers (indexes) of
-  \code{TRUE} values in a matrix.
+  \code{TRUE} values in a logical matrix.
 }
 \note{
   Some comparisons, \code{\%in\%} for example, will return

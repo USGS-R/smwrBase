@@ -1,6 +1,6 @@
 #'Import Data
 #'
-#'Imports data arranged on lines into a list.
+#'Import data arranged on lines into a list.
 #'
 #' @param file a character string specifying the name of the file.
 #' @param names take component names from the first entry in the line? 

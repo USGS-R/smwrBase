@@ -9,15 +9,14 @@
 #' @seealso \code{\link{readNWIS}}
 #' @references Refer to NWIS web?
 #' @keywords DataIO
-#' @export
 #' @examples
 #'UVavailable <- whatUV("04027000")
+#' @export
 whatUV <- function(gage) {
   ## Coding history:
   ##    2012Dec20 DLLorenz original Coding
   ##    2013Feb15 DLLorenz Prep for gitHub
   ##
-  require(XML)
   if(missing(gage))
     stop("gage is required")
   myurl <- paste("http://waterdata.usgs.gov/nwis/uv/?site_no=",

@@ -3,11 +3,7 @@
 #'Construct a vector with as few missing values as possible from a selected
 #'sequence of vectors.
 #'
-#'
 #' @aliases coalesce index.coalesce
-#' @usage coalesce(mat, ...) 
-#'
-#'index.coalesce(mat, ...)
 #' @param mat a vector or matrix.
 #' @param \dots additional vectors or matrices, must have the same number of
 #'rows as mat. The last argument can be a constant that would substitute for
@@ -26,13 +22,13 @@
 #'column of alkalinity may be desired when there are multiple columns of
 #'alkalinity determined by various methods.
 #' @keywords manip
-#' @export
 #' @examples
 #'
 #'coalesce(c(1,NA,NA,3), c(2,2,NA,2))
 #'# should be: [1]  1  2 NA  3
 #'coalesce(c(1,NA,NA,3), c(2,2,NA,2), 0)
 #'# should be: [1] 1 2 0 3
+#' @export
 coalesce <- function(mat, ...) {
   ## Coding history:
   ##    2003Jun06 DLLorenz Original version.
@@ -50,6 +46,8 @@ coalesce <- function(mat, ...) {
   return(ret.val)
 }
 
+#' @rdname coalesce
+#' @export
 index.coalesce <- function(mat, ...) {
   ##
   if(!missing(..1))

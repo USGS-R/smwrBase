@@ -1,6 +1,6 @@
 \name{more}
 \alias{more}
-\title{Print Data}
+\title{Display Data}
 \usage{
   more(x, n = 20L, ...)
 }
@@ -18,7 +18,7 @@
   The object \code{x} is retruned invisibly.
 }
 \description{
-  Print the contents of an object by pages.
+  Display the contents of an object by pages.
 }
 \note{
   The function \code{more} is intended for interactive

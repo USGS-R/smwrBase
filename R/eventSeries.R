@@ -26,12 +26,12 @@
 #' @seealso Refer to the documentation for \code{seaken} in the USGSstats
 #'package if it is installed.
 #' @keywords manip
-#' @export
 #' @examples
 #'
 #'library(USGSwsData)
 #'data(QW05078470)
 #'# there should be no values for season numbers 2, 5, or 10
+#' @export
 eventSeries <- function(times, period="hour", which = "cumsum",
                           begin, end, k.period=1) {
   ## Coding history:
@@ -50,7 +50,6 @@ eventSeries <- function(times, period="hour", which = "cumsum",
   else
     by <- period
   ## Force times to POSIXct format
-  require(lubridate)
   times <- as.POSIXct(times)
   if(missing(begin)) {
     if(k.period == 1)
