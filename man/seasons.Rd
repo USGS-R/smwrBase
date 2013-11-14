@@ -10,7 +10,9 @@
 
   \item{breaks}{either month names of the end of the
   seasons or specific days in the form of "mm/dd," where mm
-  is the 2-digit month and dd is the 2-digit day.}
+  is the 2-digit month and dd is the 2-digit day. Breaks in
+  the form of "mm/dd" indicate the last day of each
+  season.}
 
   \item{Names}{optional names for the seasons.}
 }
@@ -27,7 +29,9 @@
 }
 \examples{
 ## Just two seasons
-seasons(as.Date(c("2001-03-31", "2001-09-30")), breaks=c("June", "December"))
+seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("June", "December"))
+## The equivalent using mm/dd format
+seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("06/30", "12/31"))
 }
 \seealso{
   \code{\link{month}}

@@ -8,7 +8,8 @@
 #' @param x any vector of valid dates/times.
 #' @param breaks either month names of the end of the seasons or specific days
 #'in the form of "mm/dd," where mm is the 2-digit month and dd is the 2-digit
-#'day.
+#'day. Breaks in the form of "mm/dd" indicate the last day of each season.
+##Breaks must be in calendar order.
 #' @param Names optional names for the seasons.
 #' @return A factor of seasonal categories.
 #' @seealso \code{\link{month}}
@@ -17,7 +18,9 @@
 #' @examples
 #'
 #'## Just two seasons
-#'seasons(as.Date(c("2001-03-31", "2001-09-30")), breaks=c("June", "December"))
+#'seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("June", "December"))
+#'## The equivalent using mm/dd format
+#'seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("06/30", "12/31"))
 seasons <- function(x, breaks, Names=paste("Season Ending ", breaks, sep="")) {
   ## Coding history:
   ##    2006Apr05 DLLorenz Initial coding
@@ -27,17 +30,17 @@ seasons <- function(x, breaks, Names=paste("Season Ending ", breaks, sep="")) {
   ##    2011May25 DLLorenz Begin Conversion to R
   ##    2012Aug11 DLLorenz Integer fixes
   ##    2013Feb11 DLLorenz Prep for gitHub
+  ##    2013Nov13 DLLorenz Bug fix for mm/dd 
   ##
   ## First, extract Julian days in the year and adjust for leap years
-  Jdays <- as.POSIXlt(x)$yday + 1L # add to make counting
-  Jdays <- Jdays + (Jdays > 59L & !leap_year(x))
+  Jdays <- baseDay(x)
   Names <- Names
   Nseas <- length(Names)
   ## Break breaks into Julian Days
   match1 = pmatch(breaks, month.name)
   if(any(is.na(match1))) { # Alternanate format should be mm/dd
-    breaks1 <- paste(breaks, "1960", sep="/")
-    breaks1 <- as.integer(as.Date(breaks1, format="%m/%d/%Y"))
+    breaks1 <- paste(breaks, "1972", sep="/") # 1972 allows for leap year
+    breaks1 <- as.integer(as.Date(breaks1, format="%m/%d/%Y")) - 729L
   }
   else # Format is month name
     breaks1 <- apply(as.matrix(match1), 1L, function(j) daysInMonth(j, 1960, TRUE))
