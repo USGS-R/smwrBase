@@ -178,17 +178,25 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
                        sep=""))
   ## Use the date.format option according to the dtype
   URL <- summary(myurl)$description # keep for debugging below
-  if(dtype == "uv")
-    retval <- importRDB(myurl, date.format="%Y-%m-%d %H:%M", convert.type=convert.type)
-  else if(dtype == "peak")
-    retval <- importRDB(myurl, date.format="none", convert.type=convert.type) # not all are valid
-  else
-    retval <- importRDB(myurl, convert.type=convert.type)
+  warn <- options("warn")
+  options(warn=-1)
+  if(dtype == "uv") {
+    retval <- try(importRDB(myurl, date.format="%Y-%m-%d %H:%M", 
+                            convert.type=convert.type), silent=TRUE)
+  } else if(dtype == "peak") {
+    retval <- try(importRDB(myurl, date.format="none", 
+                            convert.type=convert.type), silent=TRUE) # not all are valid
+  } else
+    retval <- try(importRDB(myurl, convert.type=convert.type), silent=TRUE)
+  close(myurl)
+  options(warn)
+  if(class(retval) == "try-error") {
+    stop("one of the arguments is invalid, or not valid with a default")
+  }
   if(dtype == "gage") {
     retval <- retval[, GAGE]
   } else if(dtype == "well")
     retval <- retval[, WELL]
-  close(myurl)
   if(convert.type) { #Do not force conversion if requested not to
     ## In some cases, columns ending in _va are not always numeric, but should be
     for(i in grep("_va$", names(retval), value=TRUE))

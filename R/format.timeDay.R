@@ -16,5 +16,5 @@ format.timeDay <- function(x, format, ...) {
   if(missing(format))
     format <- x@format
   ## Easy way out--just use the functionality of POSIXt, origin is irrelevant
-  return(format(as.POSIXct(x@time, origin="2000-01-01"), format=format))
+  return(format(as.POSIXct(x@time, origin="2000-01-01", tz="GMT"), format=format))
 }
