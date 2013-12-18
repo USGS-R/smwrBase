@@ -2,12 +2,16 @@
 \alias{importCSV}
 \title{Import Files}
 \usage{
-  importCSV(file.name = "")
+  importCSV(file.name = "", tz = "")
 }
 \arguments{
   \item{file.name}{a character string specifying the name
   of the RDB file containing the data to be imported. This
   should be changed to file.name}
+
+  \item{tz}{a character string indicating the time zone
+  information for data imported as "POSIXct." The default
+  is to use the local setting.}
 }
 \value{
   A data frame with one column for each data column in the
@@ -23,14 +27,9 @@
   non-blank date in the column will be imported as
   \code{NA} (missing value). Dates imported as class "Date"
   using a 4-digit year, 2-digit month, and 2-digit day with
-  the period (.), hyphen (-), slash (/), or no
-  separator.\cr
-
-  If a valid \code{date.format} is supplied, then the data
-  are imported using \code{as.POSIXct} and time information
-  can be included in the the data. If \code{date.format} is
-  "none," then conversion of the date information is
-  supressed and the data are retained as character strings.
+  the period (.), hyphen (-), slash (/), or no separator.
+  Time and date data are imported as class "POSIXct" and
+  assumes the standard POSIX format for date and time.\cr
 }
 \note{
   A NULL data frame is created if there are no data in the
