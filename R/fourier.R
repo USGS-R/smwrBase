@@ -12,8 +12,8 @@
 #' @param k.max the maximum number of paired sine and cosine terms specifying
 #'the order of the Fourier series.
 #' @return A matrix of the sine and cosine terms corresponding to the
-#'value---two terms are computed for each value of k from 1 to k.max: sine(k 2
-#'pi x) and cosine(k 2 pi x). The value of k.max is included as an attribute.
+#'value---two terms are computed for each value of k from 1 to \code{k.max}: sine(k 2
+#'pi x) and cosine(k 2 pi x). The value of \code{k.max} is included as an attribute.
 #' @note Water-quality data commonly follow a sinusoidal variation throughout a
 #'yearly cycle.  A Fourier series of order one to three is generally enough to
 #'adequately describe that variation for many constituents.

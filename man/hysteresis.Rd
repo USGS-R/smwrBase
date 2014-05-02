@@ -31,10 +31,12 @@
   the parger the output.
 }
 \examples{
+\dontrun{
 library(USGSwsData)
 data(Q05078770)
 # Plot flow and hysteresis to show looping
-with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type='l'))
+with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type="l"))
+}
 }
 \references{
   Garrett, J.D., 2012, Concentrations, loads, and yields of

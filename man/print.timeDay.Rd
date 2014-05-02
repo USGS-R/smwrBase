@@ -10,16 +10,20 @@
   \item{\dots}{not used, required for other methods.}
 }
 \value{
-  The object \code{x} is returned invisibly
+  The object \code{x} is returned invisibly.
 }
 \description{
-  Print objects defined in the USGSbase package.
+  Print an object of class "timeDay."
+}
+\note{
+  The object is printed using the format that created the
+  object in \code{as.timeDay}.
 }
 \section{Side Effect}{
-  The object \code{x} is printed
+  The object \code{x} is printed.
 }
 \seealso{
-  \code{\link{timeDay-class}}
+  \code{\link{timeDay-class}}, \code{\link{as.timeDay}}
 }
 \keyword{print}
 

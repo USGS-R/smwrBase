@@ -9,12 +9,12 @@
   \item{file}{a character string specifying the name of the
   file.}
 
-  \item{names}{take component names from the first entry in
-  the line? If \code{FALSE}, then the components are
-  sequentially numbered.}
+  \item{names}{logical, if \code{TRUE}, then take component
+  names from the first entry in the line. If \code{FALSE},
+  then the components are sequentially numbered.}
 
   \item{sep}{the separator character for the data in each
-  line. If a blank string (the default), then any whaite
+  line. If a blank string (the default), then any white
   space is take as the separator.}
 
   \item{nlines}{the number of lines that represent a single
@@ -32,8 +32,9 @@
   Import data arranged on lines into a list.
 }
 \examples{
-# Make a small example dataset, and read it
+# Make a 3-line example dataset with component names A, B, and C.
 cat("A 1 2 3 4\\nB 5 6 7\\nC 8 9\\n", file="readList.test")
+# Read the example dataset
 readList("readList.test")
 }
 \seealso{

@@ -15,7 +15,9 @@
   for \code{head} or \code{tail}.}
 }
 \value{
-  The object \code{x} is retruned invisibly.
+  The object \code{x} is returned invisibly. Sections of
+  \code{x} of length \code{n} are displayed during the
+  execution of the function.
 }
 \description{
   Display the contents of an object by pages.
@@ -32,24 +34,33 @@
   the user; either upper or lower case letters are
   accepted.
 
-  q Quit
+  \code{q} Quit
 
-  t Go to top of \code{x}
+  \code{t} Go to top of \code{x}
 
-  b Go to bottom of \code{x}
+  \code{b} Go to bottom of \code{x}
 
-  u Go up 1/2 page
+  \code{u} Go up 1/2 page
 
-  p Go to previous page
+  \code{p} Go to previous page
 
-  d Go down 1/2 page
+  \code{d} Go down 1/2 page
 
-  h or ? Print help
+  \code{colName/pattern} Search for pattern in the column
+  named colName
 
-  any other letter Go down full page
+  \code{h} or \code{?} Print help
+
+  \code{any other letter} Go down full page
+
+  Searching for a pattern in a column uses \code{grep} to
+  search for the specified pattern in the character
+  representation of the data in the column. This makes it
+  possible to search columns that are not type character.
 }
 \seealso{
-  \code{\link{head}}
+  \code{\link{head}}, \code{\link{tail}},
+  \code{\link{grep}}
 }
 \keyword{print}
 

@@ -9,7 +9,7 @@
 #'than or equal to 1, then no padding is done. The default is 0.
 #' @return An optionally padded character vector representing the data in x.
 #' @note Although this function is specifically designed for formatting integer
-#'numbers, x can be a vector of any type.\cr
+#'numbers, \code{x} can be a vector of any type.\cr
 #'
 #'By default, no padding is done; only a character representation of the input
 #'is returned.

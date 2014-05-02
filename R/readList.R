@@ -3,10 +3,11 @@
 #'Import data arranged on lines into a list.
 #'
 #' @param file a character string specifying the name of the file.
-#' @param names take component names from the first entry in the line? 
-#'If \code{FALSE}, then the components are sequentially numbered.
+#' @param names logical, if \code{TRUE}, then take component names from the first 
+#'entry in the line. If \code{FALSE}, then the components are sequentially 
+#'numbered.
 #' @param sep the separator character for the data in each line. If a blank
-#'string (the default), then any whaite space is take as the separator.
+#'string (the default), then any white space is take as the separator.
 #' @param nlines the number of lines that represent a single collection of data,
 #' @param convert character string indicating how to convert the data. Must be
 #'a valid value for the \code{Class} arguemnt of \code{as}.
@@ -15,8 +16,9 @@
 #' @keywords manip IO
 #' @export
 #' @examples
-#'# Make a small example dataset, and read it
+#'# Make a 3-line example dataset with component names A, B, and C.
 #'cat("A 1 2 3 4\nB 5 6 7\nC 8 9\n", file="readList.test")
+#'# Read the example dataset
 #'readList("readList.test")
 readList <- function(file, names=TRUE, sep="", nlines=1, convert=NULL) {
   ## Coding history:

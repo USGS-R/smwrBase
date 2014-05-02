@@ -6,7 +6,7 @@
     optional = FALSE, ..., nm = deparse(substitute(x)))
 }
 \arguments{
-  \item{x}{the object to be converted.}
+  \item{x}{the time-of-day object to be converted.}
 
   \item{row.names}{\code{NULL} or a character vector giving
   the row names for the data frame. Missing values are not
@@ -16,8 +16,7 @@
   names and converting column names to syntactic names is
   optional.}
 
-  \item{\dots}{additional arguments to be passed to or from
-  methods.}
+  \item{\dots}{not used, required for other methods.}
 
   \item{nm}{the column name to create for \code{x}.}
 }

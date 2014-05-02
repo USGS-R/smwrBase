@@ -24,7 +24,7 @@
 }
 \value{
   A vector matching \code{x} of logical values indicating
-  wether the corresponding element is a local maxiumum or
+  wether the corresponding element is a local maximum or
   not.
 }
 \description{
@@ -40,7 +40,7 @@
 }
 \note{
   A peak is defined as an element in a sequence which is
-  strctly greater than all other elements within a window
+  strictly greater than all other elements within a window
   of width \code{span} centered at that element. As such,
   setting \code{ties} to "none" has the effect of not
   identifying peaks with sequential tied values.

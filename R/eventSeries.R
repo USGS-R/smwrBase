@@ -27,10 +27,12 @@
 #'package if it is installed.
 #' @keywords manip
 #' @examples
-#'
+#'\dontrun{
 #'library(USGSwsData)
 #'data(QW05078470)
-#'# there should be no values for season numbers 2, 5, or 10
+#'# Count the number of samples per month
+#'with(QW05078470, eventSeries(DATES, "month", which="sum"))
+#'}
 #' @export
 eventSeries <- function(times, period="hour", which = "cumsum",
                           begin, end, k.period=1) {

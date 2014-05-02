@@ -24,8 +24,8 @@
 }
 \note{
   Although this function is specifically designed for
-  formatting integer numbers, x can be a vector of any
-  type.\cr
+  formatting integer numbers, \code{x} can be a vector of
+  any type.\cr
 
   By default, no padding is done; only a character
   representation of the input is returned.

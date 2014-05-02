@@ -33,8 +33,7 @@
   within the range of \code{dates}.
 }
 \description{
-  Screens data for the completeness of record by calendar
-  or water year.
+  Screens data for completeness, by calendar or water year.
 }
 \details{
   Missing values are permitted in either \code{dates} or
@@ -46,7 +45,9 @@ library(USGSwsData)
 data(Q05078770)
 # this should indicate no missing values.
 with(Q05078770, screenData(DATES, FLOW))
-# There should be missing values shown for the two water years.
+# There should be missing values shown for:
+#months 10-12 in water year 2003 (October - December, 2002), and
+#months 1-9 of water year 2004.
 with(Q05078770, screenData(DATES, FLOW, year="w"))
 }
 \references{

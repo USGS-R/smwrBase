@@ -44,9 +44,12 @@
   value of the series is always 0.
 }
 \examples{
+\dontrun{
 library(USGSwsData)
 data(QW05078470)
-# there should be no values for season numbers 2, 5, or 10
+# Count the number of samples per month
+with(QW05078470, eventSeries(DATES, "month", which="sum"))
+}
 }
 \seealso{
   Refer to the documentation for \code{seaken} in the

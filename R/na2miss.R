@@ -7,7 +7,7 @@
 #' @param x a vector. Missing values \code{NA}s are allowed.
 #' @param to the replacement value for \code{NA}.
 #' @param from the target value to match and replace with \code{NA}.
-#' @return An object like vector with each target value replaced by the
+#' @return An object like \code{x} with each target value replaced by the
 #'specified value.
 #' @note The function \code{na2miss} converts missing values (\code{NA}) to the
 #'value \code{to} and is useful to prepare a vector for export and subsequent

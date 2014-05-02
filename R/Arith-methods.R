@@ -1,6 +1,8 @@
-#'Arithmetic Methods for \code{timeDay} objects
+#'Arithmetic Operators for \code{timeDay} objects
 #'
-#'Addition of time-of-day data to either "Date" or "POSIXt" classes.
+#'Addition of time-of-day data to either "Date" or "POSIXt" classes. 
+#'This is useful when dates and times are recorded in separate
+#'columns in a dataset.
 #'
 #'Missing values are permitted in either argument and result in a missing value in the 
 #'output.
@@ -12,18 +14,26 @@
 #' @docType methods
 #' @section Methods: \describe{
 #'
-#'\item{list("signature(e1 = \"Date\", e2 = \"timeDay\")")}{ Addition is
+#'\item{signature(e1 = "Date", e2 = "timeDay")}{ Only addition is
 #'permissible for these data. }
 #'
-#'\item{list("signature(e1 = \"POSIXt\", e2 = \"timeDay\")")}{ Addition is
+#'\item{signature(e1 = "POSIXt", e2 = "timeDay")")}{ Only addition is
 #'permissible for these data. }
 #'
-#'\item{list("signature(e1 = \"timeDay\", e2 = \"Date\")")}{ Addition is
+#'\item{signature(e1 = "timeDay", e2 = "Date")}{ Only addition is
 #'permissible for these data. }
 #'
-#'\item{list("signature(e1 = \"timeDay\", e2 = \"POSIXt\")")}{ Addition is
+#'\item{signature(e1 = "timeDay", e2 = "POSIXt")}{ Only addition is
 #'permissible for these data. } }
 #' @keywords methods manip
+#' @examples
+#'as.Date("2001-03-04") + as.timeDay("10:00")
+#'\dontrun{
+#'library(USGSwsData)
+#'data(QW05078470)
+#'# Note that the result is reported in the local time zone!
+#'QW05078470$DATES + as.timeDay(QW05078470$TIMES)
+#'}
 #' @exportMethod Arith
 setMethod("Arith", signature(e1="timeDay", e2="POSIXt"), function(e1, e2) {
   ## Only addition allowed

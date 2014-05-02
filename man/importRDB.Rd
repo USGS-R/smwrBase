@@ -7,8 +7,7 @@
 }
 \arguments{
   \item{file.name}{a character string specifying the name
-  of the RDB file containing the data to be imported. This
-  should be changed to file.name}
+  of the RDB file containing the data to be imported.}
 
   \item{date.format}{a character string specifying the
   format of all date columns.}
@@ -19,7 +18,7 @@
 }
 \value{
   A data frame with one column for each data column in the
-  RDB or CSV file.
+  RDB file.
 }
 \description{
   Imports a formatted, tab-delimited file to a data frame.
@@ -48,9 +47,11 @@
   retained in the output dataset as \code{comment}.
 }
 \examples{
-## These datasets are available in USGSwsData as text files
+\dontrun{
+## This dataset is available in USGSwsData as a text file
 TestDir <- system.file("misc", package="USGSwsData")
 TestFull <- importRDB(file.path(TestDir, "TestFull.rdb"))
+}
 }
 \seealso{
   \code{\link{scan}}, \code{\link{read.table}},

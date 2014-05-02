@@ -12,7 +12,7 @@
 #'the result for each observation, the default \code{counts} = \code{FALSE}, or
 #'whether there should be a column that contains the number of counts for each
 #'row and column class, \code{counts} = \code{TRUE}.
-#' @return A data frame containing two columns named from rows and cols and an
+#' @return A data frame containing two columns named from \code{rows} and \code{cols} and an
 #'optional column named "Counts" if \code{counts} is set to \code{TRUE}.
 #' @note The output for this function can be used for input to contingency table
 #'analysis functions that require a data frame rather than a contingency table.

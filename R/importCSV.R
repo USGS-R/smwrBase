@@ -10,8 +10,9 @@
 #'no separator. Time and date data are imported as class "POSIXct" and
 #'assumes the standard POSIX format for date and time.\cr
 #'
-#' @param file.name a character string specifying the name of the RDB file
-#'containing the data to be imported. This should be changed to file.name
+#' @param file.name a character string specifying the name of the comma separated variable file
+#'containing the data to be imported; \code{importCSV} requires \code{file.name}
+#'to be an readable file on the computer.
 #' @param tz a character string indicating the time zone information for data
 #'imported as "POSIXct." The default is to use the local setting.
 #' @return A data frame with one column for each data column in the CSV
@@ -22,10 +23,11 @@
 #' @keywords manip IO
 #' @export
 #' @examples
-#'
+#'\dontrun{
 #'## These datasets are available in USGSwsData as text files
 #'TestDir <- system.file("misc", package="USGSwsData")
 #'TestPart <- importCSV(file.path(TestDir, "TestPart.csv"))
+#'}
 importCSV <- function(file.name="", tz="") {
   ## Coding history:
   ##    2011Feb25 DLLorenz Origial Coding
@@ -35,6 +37,7 @@ importCSV <- function(file.name="", tz="") {
   ##    2012Aug11 DLLorenz Integer fixes
   ##    2012Nov03 DLLorenz Factor fix
   ##    2013Feb02 DLLorenz Prep for gitHub
+  ##    2014Apr15 DLLorenz Require file input
   ##
   ## This function needed to replace default because Excel changes the format
   ## of dates and does not have POSIX as an option (except as Sweden). 
@@ -80,12 +83,16 @@ importCSV <- function(file.name="", tz="") {
         return(rep(NA, N))
       }
     }
-   res <- if (missing(format)) 
+    res <- if (missing(format)) { 
       charToDate(x)
-    else strptime(x, format, tz = "GMT")
+    } else strptime(x, format, tz = tz)
     as.Date(res)
   }
   ## Start execution
+  ## Verify that file exists and is readable, file.access returns 0 (FALSE)
+  ## on success, and -1 (FALSE) on failure
+  if(file.access(file.name, mode=4))
+    stop("File ", file.name, " does not exist or is not readable.")
   MetaName <- setFileType(file.name, "meta", replace=TRUE)
   if(file.access(MetaName) < 0L) # No meta information
     return(read.csv(file.name))

@@ -1,9 +1,9 @@
 #'Rename Columns
 #'
-#'Renames columns in a dataset retrieved from NWIS web. Daily and unit value columns
+#'Renames columns in a dataset of daily or unit values retrieved from NWIS web. Daily and unit value columns
 #'have names derived from their data descriptor, parameter, and statistic codes. This
-#'function read information from the header to rename those columns to be more meaningful
-#'to humans.
+#'function reads information from the header and the arguments in the call to 
+#'\code{renCol} to rename those columns.
 #'
 #' @param data the daily- or unit-values datset retrieved from NWISweb.
 #' @param p00010 the base name for parameter code 00010.
@@ -17,7 +17,7 @@
 #' @param p63680 the base name for parameter code 63680.
 #' @param p72019 the base name for parameter code 72019.
 #' @param \dots named arguments for the base name for any other parameter code. The
-#'form of the name must be like pXXXXXX, where XXXXX is the parameter code.
+#'form of the name must be like pXXXXX, where XXXXX is the parameter code.
 #' @return A dataset like \code{data} with selected columns renamed.
 #' @seealso \code{\link{readNWIS}}
 #' @keywords manip IO

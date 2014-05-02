@@ -4,9 +4,12 @@
 #'
 #'
 #' @param \dots any number of objects that can be converted to class "timeDay."
-#' @param recursive required for other methods.
+#'The first must be a time-of-day object.
+#' @param recursive not used, required for other methods.
 #' @return A single vector of class "timeDay."
 #' @keywords manip
+#' @examples
+#'c(as.timeDay("10:00"), as.timeDay("3 PM", format="%I %p"))
 #' @method c timeDay
 #' @S3method c timeDay
 c.timeDay <- function (..., recursive=FALSE) {

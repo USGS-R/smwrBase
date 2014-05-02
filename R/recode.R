@@ -5,8 +5,8 @@
 #' @aliases recode recode.factor recode.integer recode.character
 #'recode.numeric
 #' @param x a vector. Missing values \code{NA}s are allowed.
-#' @param to the replacement value.
 #' @param from the target value to match and replace.
+#' @param to the replacement value.
 #' @return An object like vector with each target value replaced by the
 #'specified value.
 #' @note When used on numeric (type "double"), the recode

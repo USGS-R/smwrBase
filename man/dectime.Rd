@@ -36,10 +36,11 @@
 \details{
   The format for \code{times} must be one of "hm," "hms,"
   or "ms." Note that this is actually a conversion
-  function, see \bold{Seealso}. If \code{times} is missing,
-  \code{dates} is class "Date," and \code{Date.noon} is
-  \code{TRUE}, then set the time to 12:00, so that the
-  decimal time represents the center of the day.
+  function, see \bold{See Also}. If \code{times} is
+  missing, \code{dates} is class "Date," and
+  \code{Date.noon} is \code{TRUE}, then set the time to
+  12:00, so that the decimal time represents the center of
+  the day.
 }
 \examples{
 dectime("11/11/1918", date.format="\%m/\%d/\%Y")

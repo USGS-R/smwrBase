@@ -5,9 +5,7 @@
 #'The value for \code{param} must match a valid 5-digit USGS parameter code.
 #'Required only for \code{dtype} "swdv," "gwdv," and "uv." The default value
 #'for \code{dtype} = "swdv" is "00060" (daily streamflow) and for \code{dtype}
-#'= "gwdv" is "72019" (water level below land surface). If blank and
-#'\code{gage} has fewer than 15 characters, then \code{param} is set to
-#'"00060," otherwise "72019."\cr
+#'= "gwdv" is "72019" (water level below land surface).\cr
 #'In some cases, daily values data can be tagged with additional nonnumeric
 #'flags. In those cases, the data would be converted to \code{NA}, but setting
 #'\code{convert.type} to \code{FALSE} will preserve all data as character and
@@ -191,7 +189,8 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   close(myurl)
   options(warn)
   if(class(retval) == "try-error") {
-    stop("one of the arguments is invalid, or not valid with a default")
+    stop("one of the arguments is invalid, or not valid with a default, or data service is not available--check URL:\n",
+         URL)
   }
   if(dtype == "gage") {
     retval <- retval[, GAGE]

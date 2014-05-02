@@ -14,14 +14,16 @@
 
   \item{fill}{a scalar value like \code{x} used to fill in
   the first \code{k} positions or the last -\code{k}
-  positions if circular=FALSE. Ignored if circular=TRUE.
-  The default value is NA.}
+  positions if \]code{circular}=\code{FALSE}. Ignored if
+  \code{circular}=\code{TRUE}. The default value is
+  \code{NA}.}
 
-  \item{circular}{a logical value. If TRUE, then treat
-  \code{x} as a circular buffer, rotating values from the
-  end into the beginning if \code{k} is positive and vice
-  versa if \code{k} is negative. If FALSE, then use the
-  value of fill. The default value is FALSE.}
+  \item{circular}{a logical value. If \code{TRUE}, then
+  treat \code{x} as a circular buffer, rotating values from
+  the end into the beginning if \code{k} is positive and
+  vice versa if \code{k} is negative. If \code{FALSE}, then
+  use the value of fill. The default value is
+  \code{FALSE}.}
 }
 \value{
   A vector like \code{x}, with data shifted in position.

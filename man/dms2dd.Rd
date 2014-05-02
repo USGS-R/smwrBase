@@ -23,8 +23,8 @@
 }
 \value{
   A numeric vector of decimal degrees the same length as
-  \code{x}. Missing values are returned whereever either
-  \code{x}, \code{minutes}, or \code{seconds} is missing.
+  \code{x}. Missing values are returned whereever \code{x},
+  \code{minutes}, or \code{seconds} has a missing value.
 }
 \description{
   Convert data in degrees, minutes, and seconds format to
@@ -37,7 +37,7 @@ dms2dd("0983206") # using a character value
 # should be [1] 98.535
 dms2dd(98, 32, 6) # using numeric values for degrees, minutes and seconds
 # should be [1] 98.535
-dms2dd("98:32", split=":") # Note missing seconds
+dms2dd("98:32", split=":") # Note seconds not included in text
 # should be [1] 98.53333
 }
 \keyword{manip}

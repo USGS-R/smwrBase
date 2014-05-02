@@ -5,10 +5,9 @@
   \method{as.character}{timeDay} (x, ...)
 }
 \arguments{
-  \item{x}{the object ot be converted.}
+  \item{x}{the time-of-day object to be converted.}
 
-  \item{\dots}{further arguments passed to or from other
-  methods.}
+  \item{\dots}{not used, required for other methods.}
 }
 \value{
   The values in \code{x} converted to a character

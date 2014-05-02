@@ -3,18 +3,19 @@
 #'Matches partial values, such as substrings.
 #'
 #' @rdname zcn
+#' @usage x \%cn\% pattern
 #' @param x the character vector to be matched. Missing values are permitted.
 #' @param pattern the pattern to be matched against, may be a regular
 #'expression.
-#' @return A vector the same length as \code{x} of locical values indicating
+#' @return A vector the same length as \code{x} of logical values indicating
 #'whether \code{pattern} is found in the element of \code{x} or not.
 #' @seealso \code{\link{\%in\%}}, \code{\link{regexpr}}
 #' @keywords manip
-#' @export
 #' @examples
 #'
 #'## A simple example
-#'c("abc", "def") %cn% 'c'
+#'c("abc", "def") %cn% "c"
+#' @export
 "%cn%" <- function(x, pattern)
   ## Coding history:
   ##    2009Feb13 DLLorenz Original Coding

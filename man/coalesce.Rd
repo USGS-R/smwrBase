@@ -16,7 +16,7 @@
   missing values.}
 }
 \value{
-  For coalesce, a vector in which each element is
+  For \code{coalesce}, a vector in which each element is
   determined by selecting the first non-missing value in
   the order in which they are specified in the argument
   list. The first step is to construct a matrix from all
@@ -25,9 +25,9 @@
   used and so on until all columns have been searched or
   all missing values replaced.\cr
 
-  For index.coalesce, an integer vector indicating which
-  column from mat or vector or constant produced the result
-  in coalesce.
+  For \code{index.coalesce}, an integer vector indicating
+  which column from mat or vector or constant produced the
+  result in coalesce.
 }
 \description{
   Construct a vector with as few missing values as possible

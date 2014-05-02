@@ -8,7 +8,7 @@
 #'wherever \code{x} has a missing value.\cr
 #'
 #'The function \code{boxCox} computes the forward transform and the function
-#'\code{IboxCox} computes the back-transform.
+#'\code{IboxCox} computes the inverse [boxCox] transform, or back-transform.
 #'
 #' @rdname boxCox
 #' @param x a numeric vector to be transformed by \code{boxCox} or
@@ -16,10 +16,11 @@
 #'forward trasnformation---the argument
 #'\code{alpha} can be used to force positive values. Missing values are
 #'allowed and result in corresponding missing value in the output. See \bold{Details}.
-#' @param GM the value to use for the geometric mean of \code{x}. If not
-#'supplied, then compute the geometric mean (\code{boxCox} only).
 #' @param lambda the power term in the Box-Cox transformation. The value of 1 is
 #'a linear transform, the value of 0 results in a natural log transform.
+#' @param GM the value to use for the geometric mean of \code{x}. If not
+#'supplied, then compute the geometric mean (\code{boxCox}) or extract from
+#'the attributes of \code{x} (\code{IboxCox}).
 #' @param alpha an offset value for \code{x}.
 #' @return A numeric vector of the transformed or back-transformed values in
 #'\code{x} with an attribute "GM" of the geometric mean.

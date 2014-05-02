@@ -18,20 +18,23 @@
 \section{Methods}{
   \describe{
 
-  \item{list("signature(time = \"character\", format =
-  \"character\")")}{ Convert from character using a
-  specific format. }
-
-  \item{list("signature(time = \"character\", format =
-  \"missing\")")}{ Convert from character using a generic
+  \item{list(signature(time = character, format =
+  character))}{ Convert from character using a specific
   format. }
 
-  \item{list("signature(time = \"numeric\", format =
-  \"missing\")")}{ Convert from seconds storead as numeric
-  values. }
+  \item{list(signature(time = character, format =
+  missing))}{ Convert from character using a generic
+  format. }
 
-  \item{list("signature(time = \"timeDay\", format =
-  \"missing\")")}{ No change to "timeDay" objects. } }
+  \item{list(signature(time = numeric, format = missing))}{
+  Convert from seconds storead as numeric values. }
+
+  \item{list(signature(time = timeDay, format = missing))}{
+  No change to "timeDay" objects. } }
+}
+\examples{
+as.timeDay("10:00")
+as.timeDay("3 PM", format="\%I \%p")
 }
 \keyword{manip}
 \keyword{methods}

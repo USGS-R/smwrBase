@@ -40,7 +40,7 @@
 }
 \description{
   Merge two dataset based on the the nearest date between
-  each observation
+  each observation.
 }
 \details{
   The format for \code{max.diff} should be a numeric value

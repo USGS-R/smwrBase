@@ -24,9 +24,9 @@
   each row and column class, \code{counts} = \code{TRUE}.}
 }
 \value{
-  A data frame containing two columns named from rows and
-  cols and an optional column named "Counts" if
-  \code{counts} is set to \code{TRUE}.
+  A data frame containing two columns named from
+  \code{rows} and \code{cols} and an optional column named
+  "Counts" if \code{counts} is set to \code{TRUE}.
 }
 \description{
   Constructs a data frame from the count data in a

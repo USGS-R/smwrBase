@@ -15,8 +15,9 @@
 \value{
   A matrix of the sine and cosine terms corresponding to
   the value---two terms are computed for each value of k
-  from 1 to k.max: sine(k 2 pi x) and cosine(k 2 pi x). The
-  value of k.max is included as an attribute.
+  from 1 to \code{k.max}: sine(k 2 pi x) and cosine(k 2 pi
+  x). The value of \code{k.max} is included as an
+  attribute.
 }
 \description{
   Compute sine and cosine terms for describing annual or

@@ -8,28 +8,27 @@
 #'relation between flux, or concentration, and flow for time periods longer
 #'than a couple of years. Taking a very simple regression model:\cr
 #'
-#'C = B0 + B1 * Q + e,\cr
+#'\emph{C = B0 + B1 * Q + e},\cr
 #'
-#'where C is the concentration, B0 and B1 are the regression coefficients, Q is
-#'the flow, and e is the error. this can be re-expressed in terms of flow
-#'anomalies:\cr
+#'where \emph{C} is the concentration, \emph{B0} and \emph{B1} are the regression coefficients, \emph{Q} is
+#'the flow, and \emph{e} is the error. This can be re-expressed in terms of flow
+#'anomalies (for this example, 5- and 1-year anomalies are used, many others are possible):\cr
 #'
-#'C = B0 + B1 * Qbar + B1 * A5 + B1 * A1 + B1 * HVF + e,\cr
+#'\emph{C = B0 + B1 * Qbar + B1 * A5 + B1 * A1 + B1 * HFV + e},\cr
 #'
-#'where C, B0, B1, and e are the same as the simple regression, and Qbar is the
-#'mean flow, A5 is the 5-year anomaly, A1 is the 1-year anomaly, and HVF is the
+#'where \emph{C}, \emph{B0}, \emph{B1}, and \emph{e} are the same as the simple regression, and \emph{Qbar} is the
+#'mean flow, \emph{A5} is the 5-year anomaly, \emph{A1} is the 1-year anomaly, and \emph{HFV} is the
 #'high-frequency variation. The simple regression model assumes that the
-#'regression coefficient (B1) is constant for all anomalies. Computing
+#'regression coefficient (\emph{B1}) is constant for all anomalies. Computing
 #'anomalies removes that constraint and is represented by this model:\cr
 #'
-#'C = B0 + B1 * A5 + B2 * A1 + B3 * HVF + e,\cr
+#'\emph{C = B0 + B1 * A5 + B2 * A1 + B3 * HFV + e},\cr
 #'
-#'where C, A5, A1, HVF, and e are the same as the re-expressed model, and B0,
-#'B1, B2, and B3 are regression coefficients (numerically different from the
-#'simple coefficients). Qbar is a constant and is not needed for the
-#'regression.\cr
+#'where \emph{C}, \emph{A5}, \emph{A1}, \emph{HFV}, and \emph{e} are the same as the re-expressed model, and \emph{B0},
+#'\emph{B1}, \emph{B2}, and \emph{B3} are regression coefficients (numerically different from the
+#'simple coefficients). \emph{Qbar} is a constant and is not needed for the regression.\cr
 #'
-#'Anomalies are computed sequentially. First the mean of x is computed and
+#'Anomalies are computed sequentially. First the mean of \code{x} is computed and
 #'subtracted from the data. Then for each anomaly, the running mean of the
 #'specified period is computed (the anomaly) and is subtracted from the data.
 #'The remainder is the HFV. This procedure ensures that the sum of the
@@ -55,9 +54,11 @@
 #' @export
 #' @keywords manip
 #' @examples
+#'\dontrun{
 #'library(USGSwsData)
 #'data(Q05078770)
 #'anomalies(log(Q05078770$FLOW), A3mo=90)
+#'}
 anomalies <- function(x, ...) {
   ## Coding history:
   ##    2004Nov16 DLLorenz Original

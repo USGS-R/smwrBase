@@ -2,15 +2,19 @@
 \alias{baseDay}
 \title{Base Day}
 \usage{
-  baseDay(x, numeric = TRUE)
+  baseDay(x, numeric = TRUE,
+    year = c("calendar", "water", "climate"))
 }
 \arguments{
   \item{x}{a vector of class POSIXt, Dates, or character
   that represents a date. Missing values are permitted.}
 
-  \item{numeric}{a vector of class POSIXt, Dates, or
-  character that represents a date. Missing values are
-  permitted.}
+  \item{numeric}{a logical value; \code{TRUE} means return
+  the numeric value of the day, \code{FALSE} means return a
+  factor.}
+
+  \item{year}{a character string indicating the basis of
+  the fator levels. See \bold{Details}.}
 }
 \value{
   An integer value representing the 'base' day number if
@@ -25,7 +29,11 @@
 \details{
   The 'base' day is computed so that all dates have the
   same reference value regardless of whether the year is a
-  leap year or not.
+  leap year or not. If \code{year} is "calendar," then the
+  factor levels begin on January 1; if \code{year} is
+  "water," then the factor levels begin on October 1; and
+  if \code{year} is "climate," then the factor levels begin
+  on April 1.
 }
 \examples{
 # The default numeric result

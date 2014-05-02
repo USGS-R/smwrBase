@@ -4,7 +4,7 @@
 #'can be useful for plotting or representing time in a regression model.
 #'
 #'The format for \code{times} must be one of "hm," "hms," or "ms." Note that
-#'this is actually a conversion function, see \bold{Seealso}. If \code{times}
+#'this is actually a conversion function, see \bold{See Also}. If \code{times}
 #'is missing, \code{dates} is class "Date," and \code{Date.noon} is \code{TRUE},
 #'then set the time to 12:00, so that the decimal time represents the center of
 #'the day.
@@ -44,7 +44,7 @@ dectime <- function(dates, times, time.format, date.format, Date.noon=TRUE) {
     ConvTime <- get(time.format)
     times <- ConvTime(times)
     dates <- dates + times
-  } else if(class(dates)[[1L]] == "Date")
+  } else if(class(dates)[[1L]] == "Date" && Date.noon)
     dates <- dates + hm("12:00")
   if(any(is.na(dates)))
     dates <- na2miss(dates, "0000-01-01") # Force to 0

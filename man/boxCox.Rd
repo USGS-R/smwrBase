@@ -16,13 +16,14 @@
   corresponding missing value in the output. See
   \bold{Details}.}
 
-  \item{GM}{the value to use for the geometric mean of
-  \code{x}. If not supplied, then compute the geometric
-  mean (\code{boxCox} only).}
-
   \item{lambda}{the power term in the Box-Cox
   transformation. The value of 1 is a linear transform, the
   value of 0 results in a natural log transform.}
+
+  \item{GM}{the value to use for the geometric mean of
+  \code{x}. If not supplied, then compute the geometric
+  mean (\code{boxCox}) or extract from the attributes of
+  \code{x} (\code{IboxCox}).}
 
   \item{alpha}{an offset value for \code{x}.}
 }
@@ -43,8 +44,8 @@
   missing value.\cr
 
   The function \code{boxCox} computes the forward transform
-  and the function \code{IboxCox} computes the
-  back-transform.
+  and the function \code{IboxCox} computes the inverse
+  [boxCox] transform, or back-transform.
 }
 \note{
   The original power transform described by Box and Cox

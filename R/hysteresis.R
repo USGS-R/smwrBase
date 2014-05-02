@@ -23,11 +23,12 @@
 #'loads: Journal of Hydraulic Engineering, v. 134, no. 10, p. 1,527--1,531.
 #' @keywords manip
 #' @examples
-#'
+#'\dontrun{
 #'library(USGSwsData)
 #'data(Q05078770)
 #'# Plot flow and hysteresis to show looping 
-#'with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type='l'))
+#'with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type="l"))
+#'}
 #' @export
 hysteresis <- function(x, step=3) {
   ## Coding history:

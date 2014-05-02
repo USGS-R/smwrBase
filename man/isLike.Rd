@@ -1,17 +1,17 @@
-\name{isDateLike}
+\name{isCharLike}
 \alias{isCharLike}
 \alias{isDateLike}
 \alias{isGroupLike}
 \alias{isNumberLike}
 \title{Test whether an object can be treated in a particular way}
 \usage{
-  isDateLike(x)
+  isCharLike(x)
 
-  isNumberLike(x)
+  isDateLike(x)
 
   isGroupLike(x)
 
-  isCharLike(x)
+  isNumberLike(x)
 }
 \arguments{
   \item{x}{any object.}
@@ -41,17 +41,17 @@
 }
 \examples{
 ## The first should be FALSE and the second TRUE
+isCharLike(as.Date("2004-12-31"))
+isCharLike("32")
+## The first should be FALSE and the second TRUE
 isDateLike(32)
 isDateLike(as.Date("2004-12-31"))
-## The first should be FALSE and the second TRUE
-isNumberLike(as.Date("2004-12-31"))
-isNumberLike(32)
 ## The first should be FALSE and the second TRUE
 isGroupLike(as.Date("2004-12-31"))
 isGroupLike(32)
 ## The first should be FALSE and the second TRUE
-isCharLike(as.Date("2004-12-31"))
-isCharLike("32")
+isNumberLike(as.Date("2004-12-31"))
+isNumberLike(32)
 }
 \seealso{
   \code{\link{class}}, \code{\link{is.numeric}},

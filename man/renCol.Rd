@@ -33,17 +33,18 @@
 
   \item{\dots}{named arguments for the base name for any
   other parameter code. The form of the name must be like
-  pXXXXXX, where XXXXX is the parameter code.}
+  pXXXXX, where XXXXX is the parameter code.}
 }
 \value{
   A dataset like \code{data} with selected columns renamed.
 }
 \description{
-  Renames columns in a dataset retrieved from NWIS web.
-  Daily and unit value columns have names derived from
-  their data descriptor, parameter, and statistic codes.
-  This function read information from the header to rename
-  those columns to be more meaningful to humans.
+  Renames columns in a dataset of daily or unit values
+  retrieved from NWIS web. Daily and unit value columns
+  have names derived from their data descriptor, parameter,
+  and statistic codes. This function reads information from
+  the header and the arguments in the call to \code{renCol}
+  to rename those columns.
 }
 \seealso{
   \code{\link{readNWIS}}

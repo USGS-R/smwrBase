@@ -6,8 +6,8 @@
 #' The basic equation for the s-curve is z/(1 + abs(z)^shape)^(1/shape),
 #'where z is scale*(x - location).\cr
 #'
-#'The function \code{hyperbolic} computes the forward transform and the
-#'function \code{Ihyperbolic} computes the back-transform.
+#'The function \code{sCurve} computes the forward transform and the
+#'function \code{IsCurve} computes the inverse [sCurve] transform, or back-transform.
 #'
 #' @aliases sCurve IsCurve
 #' @param x a numeric vector to be transformed by \code{sCurve} or
@@ -24,7 +24,7 @@
 #'function in that both can represent mixing models for flow in stream water 
 #'chemistry. The \code{sCurve} function is more flexible when there are 
 #'distinct upper and lower limits to the concentration. The \code{hyperbolic}
-#'function is more flexible for oipen-ended concentrations for either high
+#'function is more flexible for open-ended concentrations for either high
 #'or low flows. Also, \code{sCurve} would typically use log-transformed
 #'values for flow.
 #' @seealso \code{\link{hyperbolic}}

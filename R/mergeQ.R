@@ -4,7 +4,7 @@
 #'into a another dataset with one or more stations.
 #'
 #'More than one column can be specified for \code{FLOW} when merging a single
-#'station and the flow data are speciifed in \code{Qdata}.
+#'station and the flow data are specified in \code{Qdata}.
 #'
 #' @param QWdata a data frame with at least a date column on which to merge.
 #' @param STAID a character string of the name of the station-identifier column.
@@ -20,7 +20,7 @@
 #'datasets containing daily flow values.
 #' @param Plot a logical value indicating whether to plot the joint distribution
 #'of sampled flows and observed flows.  See \bold{Notes} for a description of
-#'the plot.
+#'the plot. Used only if a single column is specified in \code{FLOW}.
 #' @param \dots defines the dataset containing daily flow values for each
 #'station identifier.
 #' @return A data frame like \code{QWdata} with an attached flow column(s).
@@ -98,6 +98,7 @@ mergeQ <- function(QWdata, STAID="STAID", FLOW="FLOW", DATES="DATES",
   ##    2013Feb03 DLLorenz Prep for gitHub
   ##    2013Apr25 DLLorenz Partial fix for incomplete match of flow
   ##                       for a single station using Qdata
+  ##    2014Jan06 DLLorenz Error trap for repeated days in QWdata
   ##
   ## Get station ids
   STAs <- unique(QWdata[[STAID]])
@@ -111,6 +112,10 @@ mergeQ <- function(QWdata, STAID="STAID", FLOW="FLOW", DATES="DATES",
     Qdt <- as.integer(as.Date(Qdata[[DATES]]))
     sel <- Qdt %in% QWdt
     bsel <- QWdt %in% Qdt
+    ## Verify that the lengths are the same
+    if(sum(sel) != length(bsel)) {
+      stop("Cannot merge--probably because of replicated dates in QWdata")
+    }
     for(i in FLOW) {
       flowvar <- i
       flowvals <- Qdata[[flowvar]][sel]
@@ -169,7 +174,7 @@ mergeQ <- function(QWdata, STAID="STAID", FLOW="FLOW", DATES="DATES",
     Qsamp <- Qsta[as.integer(as.Date(Qsta[[DATES]])) %in% QWdt,] # get the matching dates
     Qsamp[[STAID]] <- rep(i, nrow(Qsamp))
     QDATA <- rbind(QDATA, Qsamp[,c(STAID, DATES, FLOW)])
-    if(Plot) {
+    if(Plot && length(FLOW) == 1L) {
       xQ <- Qsamp[[FLOW]]
       Qdt <- as.integer(as.Date(Qsta[[DATES]]))
       yQ <- Qsta[[FLOW]][Qdt >= min(QWdt) & Qdt <= max(QWdt)]

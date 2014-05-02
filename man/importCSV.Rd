@@ -6,8 +6,9 @@
 }
 \arguments{
   \item{file.name}{a character string specifying the name
-  of the RDB file containing the data to be imported. This
-  should be changed to file.name}
+  of the comma separated variable file containing the data
+  to be imported; \code{importCSV} requires
+  \code{file.name} to be an readable file on the computer.}
 
   \item{tz}{a character string indicating the time zone
   information for data imported as "POSIXct." The default
@@ -36,9 +37,11 @@
   file.\cr
 }
 \examples{
+\dontrun{
 ## These datasets are available in USGSwsData as text files
 TestDir <- system.file("misc", package="USGSwsData")
 TestPart <- importCSV(file.path(TestDir, "TestPart.csv"))
+}
 }
 \seealso{
   \code{\link{read.csv}}, \code{\link{scan}},

@@ -36,7 +36,10 @@
   dominates and the estimates are not smooth. If
   \code{span} is large, then the variance of level
   dominates and the estimates are linear interpolations.
-  See \bold{Note} for more information about the method.\cr
+  The variances of level and epsilon are components of the
+  state-space model used to interpolate values, see
+  \code{\link{StructTS}} for details. See \bold{Note} for
+  more information about the method.\cr
 
   If \code{span} is set larger than 99, then the entire
   time series is used to estimate all missing values.  This
@@ -57,6 +60,15 @@
   interpolation is very simply defined by \code{span}
   rather than the more in-depth measures described in
   Elshorbagy and others (2000).
+
+  If the data have gaps rather than missing values, then
+  fillMissing will return a vector longer than \code{x} if
+  \code{Dates} is given and the return data cannot be
+  inserted into the original data set. If \code{Dates} is
+  not given, then it will not recognize the gap and not
+  fill the sequence. The function \code{insertMissing} can
+  be used to create a data frame with the complete sequence
+  of dates.
 }
 \examples{
 \dontrun{
@@ -69,9 +81,9 @@ Q05078470$FlowMiss[c(109:111, 198:201)] <- NA
 Q05078470$FlowFill <- fillMissing(Q05078470$FlowMiss)
 # How did we do (line is actual, points are filled values)?
 par(mfrow=c(2,1), mar=c(5.1, 4.1, 1.1, 1.1))
-with(Q05078470[100:120, ], plot(DATES, FLOW, type='l'))
+with(Q05078470[100:120, ], plot(DATES, FLOW, type="l"))
 with(Q05078470[109:111, ], points(DATES, FlowFill))
-with(Q05078470[190:210, ], plot(DATES, FLOW, type='l'))
+with(Q05078470[190:210, ], plot(DATES, FLOW, type="l"))
 with(Q05078470[198:201, ], points(DATES, FlowFill))
 }
 }
@@ -87,7 +99,8 @@ with(Q05078470[198:201, ], points(DATES, FlowFill))
   Journal, v. 45, no. 6, p. 849-866.
 }
 \seealso{
-  \code{\link{tsSmooth}}, \code{\link{StructTS}}
+  \code{\link{tsSmooth}}, \code{\link{StructTS}},
+  \code{\link{insertMissing}}
 }
 \keyword{manip}
 

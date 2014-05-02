@@ -15,7 +15,9 @@
   rpearsonIII(n, mean = 0, sd = 1, skew = 0)
 }
 \arguments{
-  \item{x,q}{vector of quantiles.}
+  \item{x,q}{vector of quantiles. Missing values are
+  permitted and result in corresponding missing values in
+  the output.}
 
   \item{p}{vector of probabilities.}
 

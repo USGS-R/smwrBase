@@ -14,7 +14,7 @@
   \item{pos}{how to position the output data relative to
   the value returned; "center" means that the value
   represents the average or difference of the most central
-  value realtive to the \code{span}, "end" or "trailing"
+  value relative to the \code{span}, "end" or "trailing"
   means the the value is the average or difference or the
   preceding \code{span} values, and "begin" or "leading"
   means the value is the average or difference or the

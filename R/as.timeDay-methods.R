@@ -5,27 +5,30 @@
 #'Inconsistent formats for \code{time} will result in an error. Missing values in 
 #'\code{time} will result in missing values in the output.
 #'
-#'@name as.timeDay-methods
-#'@aliases as.timeDay-methods as.timeDay as.timeDay,character,character-method 
+#' @name as.timeDay-methods
+#' @aliases as.timeDay-methods as.timeDay as.timeDay,character,character-method 
 #'as.timeDay,character,missing-method as.timeDay,numeric,missing-method 
 #'as.timeDay,timeDay,missing-method
-#'@rdname as.timeDay-methods
-#'@docType methods
-#'@section Methods: \describe{
+#' @rdname as.timeDay-methods
+#' @docType methods
+#' @section Methods: \describe{
 #'
-#'\item{list("signature(time = \"character\", format = \"character\")")}{
+#'\item{list(signature(time = character, format = character))}{
 #'Convert from character using a specific format. }
 #'
-#'\item{list("signature(time = \"character\", format = \"missing\")")}{ Convert
+#'\item{list(signature(time = character, format = missing))}{ Convert
 #'from character using a generic format. }
 #'
-#'\item{list("signature(time = \"numeric\", format = \"missing\")")}{ Convert
+#'\item{list(signature(time = numeric, format = missing))}{ Convert
 #'from seconds storead as numeric values. }
 #'
-#'\item{list("signature(time = \"timeDay\", format = \"missing\")")}{ No change
+#'\item{list(signature(time = timeDay, format = missing))}{ No change
 #'to "timeDay" objects. } }
-#'@keywords methods manip
-#'@exportMethod as.timeDay
+#' @keywords methods manip
+#' @examples
+#'as.timeDay("10:00")
+#'as.timeDay("3 PM", format="%I %p")
+#' @exportMethod as.timeDay
 setGeneric("as.timeDay", function(time, format) standardGeneric("as.timeDay")
 )
 

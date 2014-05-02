@@ -15,13 +15,20 @@
   \item{Max}{the maximum of the output range.}
 
   \item{x.range}{the input range to map to the output
-  range.}
+  range. The default range is computed from the range of
+  \code{x} after removing missing values.}
 }
 \value{
   A numeric vector scaled to the specified range.
 }
 \description{
-  Transforms numeric data to a specified range
+  Transforms numeric data to a specified range.
+}
+\details{
+  The function \code{scaleRng} maps the minimum of
+  \code{x.range} to \code{Min} and the maximum of
+  \code{x.range} to \code{Max} and uses linear
+  interpolation for other values in \code{x}.
 }
 \note{
   Some applications suggest or require data scaled to a

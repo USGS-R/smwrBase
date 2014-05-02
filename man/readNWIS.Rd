@@ -58,13 +58,11 @@
   "swdv," "gwdv," and "uv." The default value for
   \code{dtype} = "swdv" is "00060" (daily streamflow) and
   for \code{dtype} = "gwdv" is "72019" (water level below
-  land surface). If blank and \code{gage} has fewer than 15
-  characters, then \code{param} is set to "00060,"
-  otherwise "72019."\cr In some cases, daily values data
-  can be tagged with additional nonnumeric flags. In those
-  cases, the data would be converted to \code{NA}, but
-  setting \code{convert.type} to \code{FALSE} will preserve
-  all data as character and the all data can be converted
+  land surface).\cr In some cases, daily values data can be
+  tagged with additional nonnumeric flags. In those cases,
+  the data would be converted to \code{NA}, but setting
+  \code{convert.type} to \code{FALSE} will preserve all
+  data as character and the all data can be converted
   manually by the user.
 }
 \note{

@@ -11,7 +11,7 @@
   \item{\dots}{any additional vectors or matrices.}
 
   \item{Range}{the output range, generally 100 for
-  percentages or 1 for proportions.}
+  percentages (the default) or 1 for proportions.}
 }
 \value{
   A matrix with columns matching all of the data in

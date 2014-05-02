@@ -12,8 +12,8 @@
 #'values are permitted.
 #' @param split the delimiter for \code{x} if \code{x} is character.
 #' @return A numeric vector of decimal degrees the same length as \code{x}.
-#'Missing values are returned whereever either \code{x}, \code{minutes}, or
-#'\code{seconds} is missing.
+#'Missing values are returned whereever  \code{x}, \code{minutes}, or
+#'\code{seconds} has a missing value.
 #' @keywords manip
 #' @export
 #' @examples
@@ -24,7 +24,7 @@
 #'# should be [1] 98.535
 #'dms2dd(98, 32, 6) # using numeric values for degrees, minutes and seconds
 #'# should be [1] 98.535
-#'dms2dd("98:32", split=":") # Note missing seconds
+#'dms2dd("98:32", split=":") # Note seconds not included in text
 #'# should be [1] 98.53333
 dms2dd <- function(x, minutes=NULL, seconds=0, split="") {
   ## Coding history:

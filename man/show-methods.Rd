@@ -1,7 +1,7 @@
 \docType{methods}
 \name{show-methods}
-\alias{show-methods}
 \alias{show,timeDay-method}
+\alias{show-methods}
 \title{Methods for Function \code{show} for time-of-day objects}
 \arguments{
   \item{object}{the object to be printed.}

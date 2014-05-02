@@ -7,7 +7,9 @@
 #' @param \dots additional arguments to be passed to methods for \code{head} or
 #'\code{tail}.
 #'
-#' @return The object \code{x} is retruned invisibly.
+#' @return The object \code{x} is returned invisibly. Sections of \code{x} of
+#'length \code{n} are displayed during the execution of the function.
+#'
 #' @note The function \code{more} is intended for interactive sessions. If used
 #'in a non-interactive session, it simply returns \code{x} invisibly.
 #'
@@ -16,22 +18,28 @@
 #'user input. Any of the following commands can be entered by the user; 
 #'either upper or lower case letters are accepted.
 #'
-#'q Quit
+#'\code{q} Quit
 #'
-#'t Go to top of \code{x}
+#'\code{t} Go to top of \code{x}
 #'
-#'b Go to bottom of \code{x}
+#'\code{b} Go to bottom of \code{x}
 #'
-#'u Go up 1/2 page
+#'\code{u} Go up 1/2 page
 #'
-#'p Go to previous page
+#'\code{p} Go to previous page
 #'
-#'d Go down 1/2 page
+#'\code{d} Go down 1/2 page
 #'
-#'h or ? Print help
+#'\code{colName/pattern} Search for pattern in the column named colName
 #'
-#'any other letter Go down full page
-#' @seealso \code{\link{head}}
+#'\code{h} or \code{?} Print help
+#'
+#'\code{any other letter} Go down full page
+#'
+#'Searching for a pattern in a column uses \code{grep} to search for the
+#'specified pattern in the character representation of the data in the column.
+#'This makes it possible to search columns that are not type character.
+#' @seealso \code{\link{head}}, \code{\link{tail}}, \code{\link{grep}}
 #' @keywords print
 #' @export
 more <- function(x, n=20L, ...) {
@@ -53,7 +61,35 @@ more <- function(x, n=20L, ...) {
     }
     skip <- FALSE # get here from help
     ck <- readline()
-    if(ck %in% c("t", "T")) { # goto top
+    if(nchar(ck) > 1L) {
+      # Set up to search column
+      cat("searching...\n")
+      sep <- regexpr("/", ck)
+      if(sep < 0) {
+        cat(ck, " is not understood\n", sep="")
+        skip <- TRUE
+      } else {
+        # Search for pattern in named column
+        colNm <- substring(ck, 1L, sep-1L)
+        pat <- substring(ck, sep+1L)
+        dta <- eval(x)[[colNm]]
+        if(is.null(dta)) {
+          cat("Column ", colNm, " not found in dataset\n", sep="")
+          skip <- TRUE
+        } else {
+          dta <- as.character(dta)
+          pos <- grep(pat, dta)
+          pos <- pos[pos > cur]
+          if(length(pos) == 0L) {
+            cat(pat, " not found in column ", colNm, "\n", sep="")
+            skip <- TRUE
+          } else {
+            # Finally found it
+            cur <- pos[1L]
+          }
+        }
+      }
+    } else if(ck %in% c("t", "T")) { # goto top
       cur <- 0L
     } else if(ck %in% c("b", "B")) { # goto bottom if possible
       bottom <- nrow(x)
@@ -74,9 +110,10 @@ more <- function(x, n=20L, ...) {
           "u or U         go up 1/2 page\n",
           "p or P         go up full page\n",
           "d or D         go down 1/2 page\n",
+          "col/pat        search for string pat in column col",
           "?, h, or H     Get this help\n",
           "q, Q, or <Esc> Quit\n", 
-          "any other      go down full page", sep="")
+          "otherwise      go down full page", sep="")
       skip <- TRUE
     }
   }

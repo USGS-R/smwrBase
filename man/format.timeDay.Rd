@@ -10,11 +10,11 @@
   \item{format}{the format to use for output. See
   \code{\link{strptime}} for supported format information.}
 
-  \item{\dots}{further arguments to be passed from or to
-  other methods.}
+  \item{\dots}{not used, required for other methods.}
 }
 \value{
-  A cahracter string representing the time of day.
+  A vector of character strings representing the time of
+  day values in \code{x}.
 }
 \description{
   Format an object of class "timeDay."

@@ -12,13 +12,13 @@
 #'in \code{factor}.\cr
 #'
 #'The function \code{hyperbolic} computes the forward transform and the
-#'function \code{Ihyperbolic} computes the back-transform.
+#'function \code{Ihyperbolic} computes the inverse [hyperbolic] transform, or back-transform.
 #'
 #' @aliases hyperbolic Ihyperbolic
 #' @param x a numeric vector to be transformed by \code{hyperbolic} or
 #'back-trasnformed by \code{Ihyperbolic}. Must be strictly positive. Missing
 #'values are allowed. See \bold{Details}.
-#' @param factor the hyperbolic adjustement term in the hyperbolic equation.
+#' @param factor the hyperbolic adjustment term in the hyperbolic equation.
 #' @param scale the scaling factor for the data.
 #' @return A numeric vector of the transformed or back-transformed values in
 #'\code{x} with an attribute "scale" of the values used for \code{scale}.

@@ -4,7 +4,7 @@
 #'log-Pearson Type III distribution.
 #'
 #'Elements of x, q, or p that are missing will result in missing values in the
-#'retruned data.
+#'returned data.
 #'
 #' @rdname LogPearsonIII
 #' @aliases LogPearsonIII dlpearsonIII plpearsonIII qlpearsonIII rlpearsonIII
@@ -50,8 +50,6 @@ dlpearsonIII <- function(x, meanlog = 0, sdlog = 1, skew = 0) {
 #'## Make a skewed distribution
 #'plpearsonIII(c(.5, .75, .9), 1.5, .25, 0.25)
 plpearsonIII <- function(q, meanlog = 0, sdlog = 1, skew = 0) {
-  if(skew == 0)
-    return(plnorm(q, meanlog, sdlog))
   return(ppearsonIII(log(q), meanlog, sdlog, skew))
 }
 

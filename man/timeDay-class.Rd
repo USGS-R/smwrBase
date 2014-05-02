@@ -7,14 +7,12 @@
   of day. The data are stores as seconds since midnight.
 
   Class "timeDay" describes the time of day without any
-  reference to the date.
+  reference to the date. The data are stored as seconds
+  since midnight.
 }
 \section{Objects from the Class}{
   Objects can be created by calls of the form
   \code{as.timeDay(time, format)}.
-}
-\references{
-  Lorenz, D.L., 2013, The USGSwsBase package
 }
 \keyword{classes}
 

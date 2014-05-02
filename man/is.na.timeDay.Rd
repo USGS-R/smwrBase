@@ -9,8 +9,8 @@
 }
 \value{
   A logical vector of the same length as its argument
-  \code{x}, containing TRUE for those elements marked NA
-  and FALSE otherwise.
+  \code{x}, containing \code{TRUE} for those elements
+  marked \code{NA} and code{FALSE} otherwise.
 }
 \description{
   Indicate which elemnts are missing.

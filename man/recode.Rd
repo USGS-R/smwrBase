@@ -20,9 +20,9 @@
   \item{x}{a vector. Missing values \code{NA}s are
   allowed.}
 
-  \item{to}{the replacement value.}
-
   \item{from}{the target value to match and replace.}
+
+  \item{to}{the replacement value.}
 }
 \value{
   An object like vector with each target value replaced by

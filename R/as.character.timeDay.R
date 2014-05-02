@@ -3,8 +3,8 @@
 #'Convert the time-of-day object to a character string.
 #'
 #'
-#' @param x the object ot be converted.
-#' @param \dots further arguments passed to or from other methods.
+#' @param x the time-of-day object to be converted.
+#' @param \dots not used, required for other methods.
 #' @return The values in \code{x} converted to a character representation.
 #' @keywords character
 #' @method as.character timeDay

@@ -15,13 +15,13 @@
 #'supressed and the data are retained as character strings.
 #'
 #' @param file.name a character string specifying the name of the RDB file
-#'containing the data to be imported. This should be changed to file.name
+#'containing the data to be imported. 
 #' @param date.format a character string specifying the format of all date
 #'columns.
 #' @param convert.type convert data according to the format line? Setting
 #'\code{convert.type} to \code{FALSE} forces all data to be imported as
 #'character.
-#' @return A data frame with one column for each data column in the RDB or CSV
+#' @return A data frame with one column for each data column in the RDB
 #'file.
 #' @note A NULL data frame is created if there are no data in the file.
 #'
@@ -33,10 +33,11 @@
 #' @keywords manip IO
 #' @export
 #' @examples
-#'
-#'## These datasets are available in USGSwsData as text files
+#'\dontrun{
+#'## This dataset is available in USGSwsData as a text file
 #'TestDir <- system.file("misc", package="USGSwsData")
 #'TestFull <- importRDB(file.path(TestDir, "TestFull.rdb"))
+#'}
 importRDB <- function(file.name="", date.format=NULL, convert.type=TRUE) {
   ## Coding history:
   ##    2000Feb03 DMierzeski (MathSoft) Original Coding

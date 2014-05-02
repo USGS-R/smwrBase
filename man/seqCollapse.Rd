@@ -28,7 +28,7 @@
 \examples{
 # A single value
 seqCollapse(1968)
-# A singe continuous range of values
+# A single, continuous range of values
 seqCollapse(1968:1992)
 # A collection of continuous and individual values
 seqCollapse(c(1968:1992, 1998, 2002, 2006:2012))

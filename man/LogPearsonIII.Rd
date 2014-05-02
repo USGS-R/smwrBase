@@ -43,7 +43,7 @@
 }
 \details{
   Elements of x, q, or p that are missing will result in
-  missing values in the retruned data.
+  missing values in the returned data.
 }
 \note{
   The log-Pearson Type III distribtuion is used

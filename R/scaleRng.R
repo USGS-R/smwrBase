@@ -1,12 +1,17 @@
-#'Scale Data
+#' Scale Data
 #'
-#'Transforms numeric data to a specified range
+#' Transforms numeric data to a specified range.
+#'
+#' The function \code{scaleRng} maps the minimum of \code{x.range} to \code{Min}
+#'and the maximum of \code{x.range} to \code{Max} and uses linear interpolation 
+#'for other values in \code{x}.
 #'
 #' @param x any numeric vector. Missing values are permitted and
 #'result in missing values in the corresponding output.
 #' @param Min the minimum of the output range.
 #' @param Max the maximum of the output range.
-#' @param x.range the input range to map to the output range.
+#' @param x.range the input range to map to the output range. The default range is 
+#'computed from the range of \code{x} after removing missing values.
 #' @return A numeric vector scaled to the specified range.
 #' @note Some applications suggest or require data scaled to a consistent range.
 #'The function \code{scaleRng} will do that and can be used to back-transform

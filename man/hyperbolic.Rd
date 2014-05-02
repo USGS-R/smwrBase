@@ -13,7 +13,7 @@
   \code{Ihyperbolic}. Must be strictly positive. Missing
   values are allowed. See \bold{Details}.}
 
-  \item{factor}{the hyperbolic adjustement term in the
+  \item{factor}{the hyperbolic adjustment term in the
   hyperbolic equation.}
 
   \item{scale}{the scaling factor for the data.}
@@ -39,7 +39,7 @@
 
   The function \code{hyperbolic} computes the forward
   transform and the function \code{Ihyperbolic} computes
-  the back-transform.
+  the inverse [hyperbolic] transform, or back-transform.
 }
 \note{
   The original hyperbolic transform used a linear factor.

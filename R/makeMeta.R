@@ -8,7 +8,8 @@
 #' @return The name of the meta file that was created.
 #' @note The meta file that is created will only contain column types of
 #'character, numeric, integer, and logical. It may need to be edited by the
-#'user to redefine the column types actually needed for the data.
+#'user to redefine the column types actually needed for the data, for example
+#'columns of class "Date," "POSIXct," or "factor."
 #' @seealso \code{\link{importCSV}}
 #' @keywords IO
 #' @export

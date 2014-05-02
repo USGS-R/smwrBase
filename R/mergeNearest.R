@@ -1,6 +1,6 @@
 #'Merge Datasets
 #'
-#'Merge two dataset based on the the nearest date between each observation
+#'Merge two dataset based on the the nearest date between each observation.
 #'
 #'The format for \code{max.diff} should be a numeric value followed by a
 #'description of the time span. The time span must be one of "secs," "mins,"

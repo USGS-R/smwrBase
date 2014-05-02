@@ -6,7 +6,8 @@
     Names = paste("Season Ending ", breaks, sep = ""))
 }
 \arguments{
-  \item{x}{any vector of valid dates/times.}
+  \item{x}{any vector of valid dates or date-time data of
+  class "Date" or "POSIXt."}
 
   \item{breaks}{either month names of the end of the
   seasons or specific days in the form of "mm/dd," where mm
@@ -32,6 +33,12 @@
 seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("June", "December"))
 ## The equivalent using mm/dd format
 seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("06/30", "12/31"))
+\dontrun{
+# Apply to a real dataset
+library(USGSwsData)
+data(QW05078470)
+transform(QW05078470, Seas=seasons(DATES, breaks=c("June", "December")))
+}
 }
 \seealso{
   \code{\link{month}}

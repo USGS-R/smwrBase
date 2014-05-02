@@ -31,7 +31,7 @@
 #' @export
 #' @examples
 #'
-#'## create the test vector
+#'## Create the test vector
 #'testselect <- c(1,2,3,1)
 #'## Nested ifelse
 #'ifelse(testselect == 1, 1,
@@ -39,6 +39,10 @@
 #'    ifelse(testselect == 3, 5, NA)))
 #'## Results by select:
 #'select(testselect, 1, 3, 5)
+#'## Create a test vector of character data
+#'testselect <- c("a","b","c","a")
+#'select(testselect, a=1, b=3, c=5)
+#'
 select <- function(test,..., .pass=test, na=NA) {
   ## Coding history:
   ##    2006Jun06 DLLorenz Initial coding

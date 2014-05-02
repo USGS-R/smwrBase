@@ -9,8 +9,8 @@
 #' @param x any numeric vector, matrix, or data frame containing only numeric
 #'columns.
 #' @param \dots any additional vectors or matrices.
-#' @param Range the output range, generally 100 for percentages or 1 for
-#'proportions.
+#' @param Range the output range, generally 100 for percentages 
+#'(the default) or 1 for proportions.
 #' @return A matrix with columns matching all of the data in \code{x} and
 #'\code{\dots{}} with rows summing to \code{Range}.
 #' @note This function is designed to meet a very simple need in some 

@@ -1,17 +1,18 @@
 \docType{methods}
 \name{Math-methods}
-\alias{Math-methods}
 \alias{Math,timeDay-method}
-\title{Mathematic Methods for \code{timeDay} objects}
+\alias{Math-methods}
+\title{Mathematical Functions for \code{timeDay} objects}
 \description{
-  No mathematic methods are allowed on time-of-day data. An
-  error results from trying to use any mathematic function
-  on objects of class "timeDay."
+  No mathematic functions, such as \code{log} or \code{exp}
+  are allowed on time-of-day data. An error results when
+  trying to use any mathematic function on objects of class
+  "timeDay."
 }
 \section{Methods}{
   \describe{
 
-  \item{list("signature(x = \"timeDay\")")}{ Any call to a
+  \item{signature(x = "timeDay")}{ Any call to a
   mathematical function will generate an error. } }
 }
 \keyword{methods}

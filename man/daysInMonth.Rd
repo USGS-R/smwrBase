@@ -11,9 +11,10 @@
   \item{year}{the calendar year, replicated in length to
   match \code{month}. Missing values are permitted.}
 
-  \item{cum}{a logical value to indicate whether the
-  cumulative days in the year \code{cum=TRUE} is returned
-  or the number of days in the month.}
+  \item{cum}{a logical value. If \code{TRUE}, then return
+  the cumulative days during the calendar year at the end
+  of each month. If \code{FALSE}, then return the number of
+  days in the month.}
 }
 \value{
   A vector matching \code{month} of the requested number of
@@ -25,7 +26,8 @@
   number of days in the year to the end of the month.
 }
 \examples{
-## Check February on a leap year and regular year.
+# Check February on a leap year and regular year.
+# Should return 29, 28
 daysInMonth(c(2,2), c(2000, 2001))
 }
 \keyword{manip}

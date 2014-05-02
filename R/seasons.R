@@ -5,7 +5,7 @@
 #'The default names for the seasons are of the form "Season Ending ...," where
 #'... is derived from \code{breaks}.
 #'
-#' @param x any vector of valid dates/times.
+#' @param x any vector of valid dates or date-time data of class "Date" or "POSIXt."
 #' @param breaks either month names of the end of the seasons or specific days
 #'in the form of "mm/dd," where mm is the 2-digit month and dd is the 2-digit
 #'day. Breaks in the form of "mm/dd" indicate the last day of each season.
@@ -21,6 +21,12 @@
 #'seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("June", "December"))
 #'## The equivalent using mm/dd format
 #'seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("06/30", "12/31"))
+#'\dontrun{
+#'# Apply to a real dataset
+#'library(USGSwsData)
+#'data(QW05078470)
+#'transform(QW05078470, Seas=seasons(DATES, breaks=c("June", "December")))
+#'}
 seasons <- function(x, breaks, Names=paste("Season Ending ", breaks, sep="")) {
   ## Coding history:
   ##    2006Apr05 DLLorenz Initial coding

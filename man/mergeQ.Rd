@@ -31,7 +31,9 @@
 
   \item{Plot}{a logical value indicating whether to plot
   the joint distribution of sampled flows and observed
-  flows.  See \bold{Notes} for a description of the plot.}
+  flows.  See \bold{Notes} for a description of the plot.
+  Used only if a single column is specified in
+  \code{FLOW}.}
 
   \item{\dots}{defines the dataset containing daily flow
   values for each station identifier.}
@@ -48,7 +50,7 @@
 \details{
   More than one column can be specified for \code{FLOW}
   when merging a single station and the flow data are
-  speciifed in \code{Qdata}.
+  specified in \code{Qdata}.
 }
 \note{
   The station-identifier columns must be of class
