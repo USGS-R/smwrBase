@@ -12,10 +12,10 @@
   A data frame containing the columns site_no, the USGS
   station identifier; parm_cd, the parameter code;
   description, a desciption of the parameter code;
-  begin_date, the earliest data available for the parameter
-  code data; end_date, the latest data available for the
+  begin_date, the earliest date available for the parameter
+  code data; end_date, the latest date available for the
   parameter code data; and count_nu, the number of values
-  avaialbel for the parameter code. ,EndDate, pCode, and
+  available for the parameter code. ,EndDate, pCode, and
   name.
 }
 \description{

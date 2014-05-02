@@ -17,8 +17,8 @@
   \code{NA}.}
 }
 \value{
-  An object like vector with each target value replaced by
-  the specified value.
+  An object like \code{x} with each target value replaced
+  by the specified value.
 }
 \description{
   Converts missing values (\code{NA}s) to or from a user
