@@ -10,8 +10,8 @@
 #' @seealso \code{\link{Extract}}
 #' @keywords manip
 #' @method [ timeDay
-#' @S3method [ timeDay
+#' @export
 "[.timeDay" <- function(x, i) {
-  x@time <- x$time[i]
+  x@time <- x@time[i]
   return(x)
 }

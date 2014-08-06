@@ -33,6 +33,8 @@ zeropad <- function(x, LEN=0) {
   ##    2011Jun07 DLLorenz Conversion to R
   ##    2013Feb15 DLLorenz Prep for gitHub
   ##
+  warning("zeropad is deprecated and will become unavailable in a future release of USGSwsBase.\n",
+          "Use zeroPad in the USGSwsDataRetrieval package instead.")
   x <- as.character(x)
   if(LEN <= 1) return(x)
   pattern <- paste(rep(0,LEN), collapse="")

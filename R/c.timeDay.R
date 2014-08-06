@@ -11,7 +11,7 @@
 #' @examples
 #'c(as.timeDay("10:00"), as.timeDay("3 PM", format="%I %p"))
 #' @method c timeDay
-#' @S3method c timeDay
+#' @export
 c.timeDay <- function (..., recursive=FALSE) {
   all.tod <- lapply(list(...), as.timeDay)
   times <- unlist(lapply(all.tod, function(x) x@time))

@@ -10,6 +10,6 @@
 #' @examples
 #'is.na(as.timeDay(c("10:30", "11:00")))
 #' @method is.na timeDay
-#' @S3method is.na timeDay
+#' @export
 is.na.timeDay <- function(x)
   return(is.na(x@time))

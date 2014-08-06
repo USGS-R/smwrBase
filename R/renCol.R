@@ -19,6 +19,22 @@
 #' @param \dots named arguments for the base name for any other parameter code. The
 #'form of the name must be like pXXXXX, where XXXXX is the parameter code.
 #' @return A dataset like \code{data} with selected columns renamed.
+#' @note The following statistics codes are converted by renCol. See 
+#'url{http://help.waterdata.usgs.gov/stat_cd_nm} for information about USGS statistics codes.
+#'\describe{
+#'\item{00001}{Maximum value, suffix: Max}
+#'\item{00002}{Minimum value, suffix: Min}
+#'\item{00003}{Mean value, no suffix}
+#'\item{00006}{Sum of values, suffix: Sum}
+#'\item{00007}{Modal value, suffix: Mode}
+#'\item{00008}{Median value, suffix: Median}
+#'\item{00011}{Instantaneous Value, suffix: Inst}
+#'\item{00012}{Equivalent mean value, suffix: EqMean}
+#'\item{00021}{Tidal high-high value, suffix: HiHiTide}
+#'\item{00022}{Tidal low-high value, suffix: LoHiTide}
+#'\item{00023}{Tidal high-low value, suffix: HiLoTide}
+#'\item{00024}{Tidal low-low value, suffix: LoLoTide}
+#'}
 #' @seealso \code{\link{readNWIS}}
 #' @keywords manip IO
 #' @export
@@ -30,6 +46,7 @@ renCol <- function(data, p00010="Wtemp", p00045="Precip",
   ##    2012Dec21 DLLorenz Original Coding, world did not end!
   ##    2013Feb11 DLLorenz Prep for gitHub
   ##
+  warning("renCol is deprecated in USGSwsBase and will be moved, and possibly renamed, to USGSwsDataRetrieval.")
   ## Create list of conversions
   Conv <- list(...)
   Conv$p00010 <- p00010
@@ -82,7 +99,15 @@ renCol <- function(data, p00010="Wtemp", p00045="Precip",
   Cnames <- sub("_00001", "_Max", Cnames)
   Cnames <- sub("_00002", "_Min", Cnames)
   Cnames <- sub("_00003", "", Cnames) # Leave mean blank
+  Cnames <- sub("_00006", "_Sum", Cnames)
+  Cnames <- sub("_00007", "_Mode", Cnames)
+  Cnames <- sub("_00008", "_Median", Cnames)
   Cnames <- sub("_00011", "_Inst", Cnames) # Why is this in dv?
+  Cnames <- sub("_00012", "_EqMean", Cnames)
+  Cnames <- sub("_00021", "_HiHiTide", Cnames)
+  Cnames <- sub("_00022", "_LoHiTide", Cnames)
+  Cnames <- sub("_00023", "_HiLoTide", Cnames)
+  Cnames <- sub("_00024", "_LoLoTide", Cnames)
   names(data) <- Cnames
   return(data)
 }

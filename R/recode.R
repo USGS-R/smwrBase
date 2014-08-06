@@ -30,7 +30,7 @@ recode <- function (x, from, to){
 
 #' @rdname recode
 #' @method recode factor
-#' @S3method recode factor
+#' @export
 recode.factor <- function (x, from, to)  {
   ## Also valid for ordered
   from <- as.character(from)
@@ -43,19 +43,19 @@ recode.factor <- function (x, from, to)  {
 
 #' @rdname recode
 #' @method recode integer
-#' @S3method recode integer
+#' @export
 recode.integer <- function (x, from, to)
   return(ifelse(x == from, to, x))
 
 #' @rdname recode
 #' @method recode character
-#' @S3method recode character
+#' @export
 recode.character <- function (x, from, to)
   return(ifelse(x == from, to, x))
 
 #' @rdname recode
 #' @method recode numeric
-#' @S3method recode numeric
+#' @export
 recode.numeric <- function (x, from, to) {
   ## Be prepared for small differences due to computations
   tol <- max(abs(from) * .Machine$double.eps * 10, .Machine$double.eps*4)

@@ -10,6 +10,6 @@
 #'
 #'length(as.timeDay(c("10:30", "11:00")))
 #' @method length timeDay
-#' @S3method length timeDay
+#' @export
 length.timeDay <- function(x)
   length(x@time)

@@ -13,7 +13,7 @@
 #' @seealso \code{\link{readNWIS}}
 #' @references Information about current water conditions in the United States
 #'and information about unit values can be obtained from 
-#'\code{\link{http://waterdata.usgs.gov/usa/nwis/rt}}.
+#'\url{http://waterdata.usgs.gov/usa/nwis/rt}.
 #' @keywords DataIO
 #' @examples
 #'\dontrun{

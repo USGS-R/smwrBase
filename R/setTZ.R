@@ -32,10 +32,10 @@
 #'setTZ(TestDts, c("PDT", "PST"))
 #'# Try setting to different Time zones
 #'setTZ(TestDts, c("PDT", "CST"))
-setTZ <- function(x, TZ, force.stz=TRUE) {
+setTZ <- function(x, TZ, force.stz=FALSE) {
   ## Coding History
   ##    2012Aug21 DLLorenz Original Coding
-  ##    2013Feb11 DLLorenz
+  ##    2014Jun10 DLLorenz Final setting of force.stz?
   ##
   ##  TZ timezone information:
   ##   if any standard US format, convert to proper

@@ -84,8 +84,8 @@ more <- function(x, n=20L, ...) {
             cat(pat, " not found in column ", colNm, "\n", sep="")
             skip <- TRUE
           } else {
-            # Finally found it
-            cur <- pos[1L]
+            # Finally found it, point to line above
+            cur <- pos[1L] - 1L
           }
         }
       }

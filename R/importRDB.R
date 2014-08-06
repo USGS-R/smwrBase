@@ -12,12 +12,31 @@
 #'If a valid \code{date.format} is supplied, then the data are imported using
 #'\code{as.POSIXct} and time information can be included in the the data. If
 #'\code{date.format} is "none," then conversion of the date information is
-#'supressed and the data are retained as character strings.
+#'supressed and the data are retained as character strings.\cr
+#'
+#'The value for \code{tz} should be a valid "Olson" format consisting typically 
+#'of a continent and city. See \code{\link{timezone}} for a description of 
+#'timezones. For the United States, use these time zone specifications where
+#'daylight savings time is used:
+#'\tabular{ll}{
+#'Eastern \tab "America/New_York" \cr
+#'Central \tab "America/Chicago" \cr
+#'Mountain \tab "America/Denver" \cr
+#'Pacific \tab "America/Los_Angeles" \cr
+#'Alaska \tab "America/Anchorage" \cr
+#'Hawii \tab "America/Honolulu" \cr}
+#'Use these time specifications where daylight savings time is not used:
+#'#'\tabular{ll}{
+#'Eastern \tab "America/Jamaica" \cr
+#'Central \tab "America/Managua" \cr
+#'Mountain \tab "America/Phoenix" \cr
+#'Pacific \tab "America/Metlakatla" \cr}
 #'
 #' @param file.name a character string specifying the name of the RDB file
 #'containing the data to be imported. 
 #' @param date.format a character string specifying the format of all date
-#'columns.
+#'columns. Required for columns that contain date and time.
+#' @param tz the time zone information of the data.
 #' @param convert.type convert data according to the format line? Setting
 #'\code{convert.type} to \code{FALSE} forces all data to be imported as
 #'character.
@@ -38,7 +57,8 @@
 #'TestDir <- system.file("misc", package="USGSwsData")
 #'TestFull <- importRDB(file.path(TestDir, "TestFull.rdb"))
 #'}
-importRDB <- function(file.name="", date.format=NULL, convert.type=TRUE) {
+importRDB <- function(file.name="", date.format=NULL, tz="", 
+                      convert.type=TRUE) {
   ## Coding history:
   ##    2000Feb03 DMierzeski (MathSoft) Original Coding
   ##    2000Aug08 JRSlack  Editorial cleanup
@@ -59,6 +79,9 @@ importRDB <- function(file.name="", date.format=NULL, convert.type=TRUE) {
   ##    2012Oct27 DLLorenz Added date.format "none" to suppress conversion
   ##    2013Jan30 DLLorenz Added convert.type option to supress all type conversions
   ##    2013Feb02 DLLorenz Prep for gitHub
+  ##    2014Jun10 DLLorenz added tz arg.
+  ##
+  warning("importRDB is deprecated in USGSwsBase and will be moved to USGSwsDataRetrieval.")
   ##
   if(missing(file.name)) stop("importRDB requires an RDB file name.")
   fileVecChar <- scan(file.name, what = "", sep = "\n", quiet=TRUE)
@@ -94,7 +117,7 @@ importRDB <- function(file.name="", date.format=NULL, convert.type=TRUE) {
         }
         else if(!is.null(date.format)) {
           if(date.format != "none")
-            mat[,i] <- as.POSIXct(as.character(mat[,i]),tz="UTC", format=date.format) # Date format specified
+            mat[,i] <- as.POSIXct(as.character(mat[,i]),tz=tz, format=date.format) # Date format specified
         }
         else if(regexpr("\\.",as.character(mat[,i][!empty][1])) > 0L) {
           mat[,i] <- as.Date(as.character(mat[,i]),zone="UTC", format="$Y.%m.%d") # Date with dots

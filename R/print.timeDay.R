@@ -11,6 +11,6 @@
 #' @seealso \code{\link{timeDay-class}}, \code{\link{as.timeDay}}
 #' @keywords print
 #' @method print timeDay
-#' @S3method print timeDay
+#' @export
 print.timeDay <- function(x, ...)
   print(format(x), quote=FALSE)

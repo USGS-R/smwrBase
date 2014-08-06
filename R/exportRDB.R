@@ -30,6 +30,7 @@ exportRDB <- function(x, file.name="data.rdb", col.names=NULL, meta=FALSE,
   ##    2012Aug11 DLLorenz Integer fixes
   ##    2013Feb02 DLLorenz Prep for gitHub
   ## 
+  warning("exportRDB is deprecated in USGSwsBase and will be moved to USGSwsDataRetrieval.")
   ## Fix file output name (postfix .rdb if not .txt)
   if(regexpr("\\.[tT][xX][tT]$", file.name) < 0L)
     file.name <- setFileType(file.name, "rdb", TRUE)

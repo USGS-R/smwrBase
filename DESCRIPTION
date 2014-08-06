@@ -1,6 +1,6 @@
 Package: USGSwsBase
-Version: 0.8.0
-Date: 2014-04-14
+Version: 0.8.1
+Date: 2014-08-05
 Title: Functions to import and manipulate hydrologic data
 Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
@@ -12,7 +12,8 @@ Depends:
 Imports:
     stats
 Suggests:
-    USGSwsData (>= 0.6)
+    USGSwsData (>= 0.6),
+    RODBC
 Description: This package has data import and export functions for specialized
     formats used within the U.S. Geological Survey. It also contains
     several functions that are useful for managing or manipulating
@@ -20,13 +21,18 @@ Description: This package has data import and export functions for specialized
 License: file LICENSE
 LazyLoad: yes
 Collate:
-    '00setclass.R'
+    'timeDay-class.R'
+    'Arith-timeDay.R'
+    'LogPearsonIII.R'
+    'Math-timeDay.R'
+    'PearsonIII.R'
+    'USGSwsBase-package.R'
     'anomalies.R'
-    'Arith-methods.R'
     'as.character.timeDay.R'
     'as.data.frame.timeDay.R'
-    'as.timeDay-methods.R'
+    'as.timeDay.R'
     'baseDay.R'
+    'baseDay2decimal.R'
     'boxCox.R'
     'c.timeDay.R'
     'coalesce.R'
@@ -41,6 +47,7 @@ Collate:
     'exportCSV.R'
     'exportRDB.R'
     'fillMissing.R'
+    'findSites.R'
     'format.timeDay.R'
     'fourier.R'
     'group2row.R'
@@ -48,19 +55,19 @@ Collate:
     'hysteresis.R'
     'importCSV.R'
     'importRDB.R'
+    'insertMissing.R'
     'is.na.timeDay.R'
     'isLike.R'
     'length.timeDay.R'
-    'LogPearsonIII.R'
     'makeMeta.R'
-    'Math-methods.R'
+    'makepredictcall.R'
     'mergeNearest.R'
     'mergeQ.R'
+    'more.R'
     'movingAve.R'
     'movingDiff.R'
     'na2miss.R'
     'peaks.R'
-    'PearsonIII.R'
     'print.timeDay.R'
     'quadratic.R'
     'readList.R'
@@ -68,6 +75,7 @@ Collate:
     'recode.R'
     'regularSeries.R'
     'renCol.R'
+    'sCurve.R'
     'scaleRng.R'
     'screenData.R'
     'seasons.R'
@@ -78,19 +86,11 @@ Collate:
     'shiftData.R'
     'show-methods.R'
     'sumComposition.R'
-    'timeDay-class.R'
     'untable.R'
-    'USGSwsBase-package.R'
     'waterYear.R'
     'whatUV.R'
     'whichRowCol.R'
     'z%cn%.R'
     'z[.timeDay.R'
     'zeropad.R'
-    'makepredictcall.R'
-    'more.R'
-    'sCurve.R'
-    'insertMissing.R'
-    'baseDay2decimal.R'
-    'findSites.R'
 Packaged: 2013-08-05 13:36:37 UTC; lorenz

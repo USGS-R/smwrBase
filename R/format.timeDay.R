@@ -11,7 +11,7 @@
 #' @seealso \code{\link{strptime}}
 #' @keywords manip
 #' @method format timeDay
-#' @S3method format timeDay
+#' @export
 format.timeDay <- function(x, format, ...) {
   if(missing(format))
     format <- x@format

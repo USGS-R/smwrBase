@@ -16,7 +16,7 @@
 #}
 
 #' @rdname makepredictcall
-#' @S3method makepredictcall quadratic
+#' @export
 #' @method makepredictcall quadratic
 makepredictcall.quadratic <- function(var, call) {
   if (as.character(call)[1L] != "quadratic") 
@@ -26,7 +26,7 @@ makepredictcall.quadratic <- function(var, call) {
 }
 
 #' @rdname makepredictcall
-#' @S3method makepredictcall hyperbolic
+#' @export
 #' @method makepredictcall hyperbolic
 makepredictcall.hyperbolic <- function(var, call) {
   if (as.character(call)[1L] != "hyperbolic") 
@@ -36,11 +36,23 @@ makepredictcall.hyperbolic <- function(var, call) {
 }
 
 #' @rdname makepredictcall
-#' @S3method makepredictcall boxCox
+#' @export
 #' @method makepredictcall boxCox
 makepredictcall.boxCox <- function(var, call) {
   if (as.character(call)[1L] != "boxCox") 
     return(call)
   call$GM <- attr(var, "GM")
+  return(call)
+}
+
+#' @rdname makepredictcall
+#' @export
+#' @method makepredictcall scaleRng
+makepredictcall.scaleRng <- function(var, call) {
+  if (as.character(call)[1L] != "scaleRng") 
+    return(call)
+  call$Min <- attr(var, "Min")
+  call$Max <- attr(var, "Max")
+  call$x.range <- attr(var, "x.range")
   return(call)
 }

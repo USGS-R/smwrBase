@@ -76,6 +76,7 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   ##    2013Jan30 DLLorenz Added convert.type option to supress all type conversions
   ##    2013Jan30 DLLorenz Prep for gitHub
   ##    2013Sep04 DLLorenz Modified for waterservices
+  ##    2014Jun23 DLLorenz Depricated for specific data types
   ##
   ## Columns for gage and well:
   GAGE <- c("agency_cd","site_no","station_nm","site_tp_cd","lat_va","long_va",
@@ -100,6 +101,12 @@ readNWIS <- function(gage, dtype="swdv", begin.date="", end.date="",
   ## Make sure dtype is valid
   dtype <- match.arg(dtype, c("swdv", "gwdv", "measurements", "peak",
                               "gwlevels", "uv", "gage", "well"))
+  ## print deprication warning
+  use <- c(swdv="readNWISdv", gwdv="readNWISdv", measurements="readNWISmeas",
+           peak="readNWISpeak", gwlevels="readNWISgwl", uv="readNWISuv",
+           gage="readNWISsite", well="readNWISsite")
+  warning("readNWIS is deprecated and will become unavailable in a future release of USGSwsBase.\nUse ",
+          use[dtype], " for dtype=", dtype, " data\n")
   setStat <- function(Stat) {
     if(!is.null(Stat)) {
       if(length(Stat) == 1L) {

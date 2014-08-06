@@ -14,7 +14,7 @@
 #' @seealso \code{\link{as.data.frame}}
 #' @keywords manip
 #' @method as.data.frame timeDay
-#' @S3method as.data.frame timeDay
+#' @export
 as.data.frame.timeDay <- function(x, row.names = NULL, optional = FALSE,
                                   ..., nm = deparse(substitute(x))) {
   force(nm)

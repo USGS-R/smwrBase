@@ -8,6 +8,6 @@
 #' @return The values in \code{x} converted to a character representation.
 #' @keywords character
 #' @method as.character timeDay
-#' @S3method as.character timeDay
+#' @export
 as.character.timeDay <- function(x, ...)
   format(x) # Easy!
