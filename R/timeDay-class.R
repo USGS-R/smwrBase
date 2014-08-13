@@ -12,4 +12,8 @@
 #'\code{as.timeDay(time, format)}.
 #' @keywords classes
 #' @exportClass timeDay
+#' @examples
+#'
+#'showClass("timeDay")
+#'
 setClass("timeDay", slots=list(time="numeric", format="character"))
