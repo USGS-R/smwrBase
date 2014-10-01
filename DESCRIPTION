@@ -1,10 +1,11 @@
 Package: USGSwsBase
-Version: 0.8.1
-Date: 2014-08-05
+Version: 0.8.3
+Date: 2014-09-30
 Title: Functions to import and manipulate hydrologic data
 Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
 Depends:
+    USGSwsDataRetrieval (>= 0.1.1),
     methods,
     memoise,
     digest,
@@ -57,7 +58,6 @@ Collate:
     'importRDB.R'
     'insertMissing.R'
     'is.na.timeDay.R'
-    'isLike.R'
     'length.timeDay.R'
     'makeMeta.R'
     'makepredictcall.R'
@@ -79,9 +79,7 @@ Collate:
     'scaleRng.R'
     'screenData.R'
     'seasons.R'
-    'select.R'
     'seqCollapse.R'
-    'setFileType.R'
     'setTZ.R'
     'shiftData.R'
     'show-methods.R'
@@ -93,4 +91,3 @@ Collate:
     'z%cn%.R'
     'z[.timeDay.R'
     'zeropad.R'
-Packaged: 2013-08-05 13:36:37 UTC; lorenz

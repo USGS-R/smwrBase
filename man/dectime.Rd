@@ -3,7 +3,8 @@
 \alias{dectime}
 \title{Decimal Time}
 \usage{
-dectime(dates, times, time.format, date.format, Date.noon = TRUE)
+dectime(dates, times, time.format, date.format, Date.noon = TRUE,
+  year.type = c("calendar", "water", "climate"))
 }
 \arguments{
 \item{dates}{a vector of a valid date object, or character representation of
@@ -15,10 +16,13 @@ permitted and produce corresponding missing values in the output.}
 
 \item{time.format}{format to convert \code{times}. See \bold{Details}.}
 
-\item{date.format}{format to convert \code{dates} if character.}
+\item{date.format}{format to convert \code{dates} is character.}
 
 \item{Date.noon}{set time to noon for \code{dates} of class "Date?"
 See \bold{Details}.}
+
+\item{year.type}{a charcter string indicating the type of year to determine the
+offset, must be one of "calendar," "water", or "climate."}
 }
 \value{
 A vector representation of the data in decimal format--year and

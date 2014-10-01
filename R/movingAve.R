@@ -1,6 +1,7 @@
-#'Moving Averages
+#' @title Moving Averages
 #'
-#'Filter a regular series of data to compute a moving average.
+#' @description Impliments the Savitzky-Golay filter on a regular series of data 
+#'to compute a moving average.
 #'
 #' @param x the data to be averaged or differenced. Missing values are permitted
 #'but result in missing values in the output.
@@ -20,12 +21,16 @@
 #'be set to "center" for polynomial orders greater than 1 to avoid strange
 #'behavior due to end effects.\cr
 #'
-#'The weights for the averages are computed based on linear model theory (Wood
-#'and Hockens, 1970). They also discuss some artifacts resulting from
-#'smoothing.
+#'The weights for the averages are computed based on linear model theory 
+#'(Savitzky and Golay, 1964 and Wood and Hockens, 1970). They latter 
+#'also discuss some artifacts resulting from smoothing.
 #' @seealso \code{\link{filter}}, \code{\link{diff}}, \code{\link{movingDiff}}
-#' @references Wood, L.C. and Hockens, S.N., 1970, Least squares smoothing
-#'operators: Geophysics v. 35, no. 6, p. 1005-1019.
+#' @references 
+#'Savitzky, A. and Golay, M.J.E., 1964, Smoothing and differentiation of data 
+#'by simplified least squares procedures: Analytical Chemistry v. 36, no. 8, p. 
+#'1627--1639\cr
+#'Wood, L.C. and Hockens, S.N., 1970, Least squares smoothing
+#'operators: Geophysics v. 35, no. 6, p. 1005--1019.
 #' @keywords manip
 #' @export
 #' @examples

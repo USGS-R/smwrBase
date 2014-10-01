@@ -18,5 +18,8 @@ The data are stored as seconds since midnight.
  Objects can be created by calls of the form
 \code{as.timeDay(time, format)}.
 }
+\examples{
+showClass("timeDay")
+}
 \keyword{classes}
 

@@ -36,6 +36,7 @@ dms2dd <- function(x, minutes=NULL, seconds=0, split="") {
   ##    2012Feb10 DLLorenz Added sep argument and logic
   ##    2012Aug11 DLLorenz Integer fixes
   ##    2013Feb02 DLLorenz Prep for gitHub
+  ##    2014Sep23 DLLorenz Bug fix for sign
   ##
   ## Split x if needed
   if(split != "") {
@@ -60,6 +61,6 @@ dms2dd <- function(x, minutes=NULL, seconds=0, split="") {
     seconds <- as.double(seconds)
     retval <- abs(x) + minutes / 60. + seconds / 3600.
   }
-  ifelse(signx, retval, -retval)
+  retval <- ifelse(signx, retval, -retval)
   return(retval)
 }

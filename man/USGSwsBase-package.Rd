@@ -11,8 +11,8 @@ manipulating hydrologic data.
 \details{
 \tabular{ll}{ Package: \tab USGSwsBase\cr
 Type: \tab Package\cr
-Version: \tab 0.8.1\cr
-Date: \tab 2014-08-05\cr
+Version: \tab 0.8.3\cr
+Date: \tab 2014-09-30\cr
 License: \tab File LICENSE\cr
 Depends: \tab stat, lubridate, methods\cr }
 This package contains functions that manage or manipipulate hydrologic data and
@@ -25,7 +25,7 @@ Maintainer: Dave Lorenz <lorenz@usgs.gov>
 }
 \references{
 Lorenz, D.L., in preparation, USGSwsBase---an R package for managing
-hydrologic data, version 0.8.1: U.S. Geological Survey Open File Report
+hydrologic data, version 0.8.2: U.S. Geological Survey Open File Report
 2014-XXXX, ?p.
 }
 \seealso{
