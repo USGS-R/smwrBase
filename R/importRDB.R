@@ -35,7 +35,13 @@
 #' @param file.name a character string specifying the name of the RDB file
 #'containing the data to be imported. 
 #' @param date.format a character string specifying the format of all date
-#'columns. Required for columns that contain date and time.
+#'columns. Required for columns that contain date and time. The default value,
+#'\code{NULL}, will read any valid date (not date and time) format. The special
+#'formats "none," which suppresses date conversion; and "varies," which can be 
+#'used when the date data included time data sometimes and sometimes not. 
+#'For the latter special format, the date and time data must be in POSIX format
+#'(YYYY-mm-dd HH:MM) with optional seconds. Fof dates missing time data, the time 
+#'will be set to midnight in the spcified or local time zone.
 #' @param tz the time zone information of the data.
 #' @param convert.type convert data according to the format line? Setting
 #'\code{convert.type} to \code{FALSE} forces all data to be imported as
@@ -46,6 +52,12 @@
 #'
 #'The header information contained in the RDB file is retained in the output
 #'dataset as \code{comment}.
+#'
+#'If \code{convert.type} is \code{TRUE}, then non-numeric values, other than blanks,
+#'are converted to \code{NaN} (not a number) rather than \code{NA} (missing value) 
+#'in numeric columns. \code{NaN} are treated like \code{NA} but can be identified 
+#'using the \code{is.nan} function.
+#'
 #' @seealso \code{\link{scan}},
 #'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
 #'\code{\link{comment}}
@@ -80,9 +92,24 @@ importRDB <- function(file.name="", date.format=NULL, tz="",
   ##    2013Jan30 DLLorenz Added convert.type option to supress all type conversions
   ##    2013Feb02 DLLorenz Prep for gitHub
   ##    2014Jun10 DLLorenz added tz arg.
+	##    2014Jul08 DLLOrenz Added numeric conversion to NaN for non-numbers
   ##
-  warning("importRDB is deprecated in USGSwsBase and will be moved to USGSwsDataRetrieval.")
-  ##
+	## The numeric converter
+	asNum <- function(x, colname) {
+		warn <- options("warn")
+		options(warn=-1) # suppress normal warnings
+		# Capture non-numeric values
+		NonNum <- grep("[^0-9\\. ]", x)
+		x <- as.numeric(x)
+		# recover warning and "fix" any non-numerics
+		options(warn)
+		if(length(NonNum)) {
+			x[NonNum] <- NaN
+			warning("Non-numeric values found in column ", colname, ", set to NaN", call.=FALSE)
+		}
+		return(x)
+	}
+	## Continue
   if(missing(file.name)) stop("importRDB requires an RDB file name.")
   fileVecChar <- scan(file.name, what = "", sep = "\n", quiet=TRUE)
   pndIndx<-regexpr("^#", fileVecChar)
@@ -116,11 +143,14 @@ importRDB <- function(file.name="", date.format=NULL, tz="",
           mat[,i] <- as.Date(NA)   # Empty date column
         }
         else if(!is.null(date.format)) {
-          if(date.format != "none")
-            mat[,i] <- as.POSIXct(as.character(mat[,i]),tz=tz, format=date.format) # Date format specified
+          if(date.format == "varies") {
+          	mat[,i] <- as.POSIXct(as.character(mat[,i]),tz=tz) # variable date format
+          } else if(date.format != "none") {
+          	mat[,i] <- as.POSIXct(as.character(mat[,i]),tz=tz, format=date.format) # Date format specified
+          }
         }
         else if(regexpr("\\.",as.character(mat[,i][!empty][1])) > 0L) {
-          mat[,i] <- as.Date(as.character(mat[,i]),zone="UTC", format="$Y.%m.%d") # Date with dots
+          mat[,i] <- as.Date(as.character(mat[,i]),zone="UTC", format="%Y.%m.%d") # Date with dots
         }   
         else if(regexpr("-",as.character(mat[,i][!empty][1])) > 0L) {
           mat[,i] <- as.Date(as.character(mat[,i]),zone="UTC ", format="%Y-%m-%d") # Date with dashes
@@ -145,7 +175,7 @@ importRDB <- function(file.name="", date.format=NULL, tz="",
     numcol <- regexpr("[nN]",unlist(strsplit(formatRow, split="\t", fixed=TRUE))) > 0L
     if(any(numcol))
       for(i in which(numcol)) 
-        temp.df.mixedtype[,i] <- as.double(temp.df.mixedtype[[i]])
+        temp.df.mixedtype[,i] <- asNum(temp.df.mixedtype[[i]], names(temp.df.mixedtype)[i])
     ## Fix rownames
     rownames(temp.df.mixedtype) <- as.character(seq(nrow(temp.df.mixedtype)))
     comment(temp.df.mixedtype) <- hdr
@@ -181,7 +211,7 @@ importRDB <- function(file.name="", date.format=NULL, tz="",
          }               
     }
     else if(regexpr("[nN]",formatRow) > 0L) {
-      temp.df[[1L]] <- as.double(temp.df[[1L]])
+      temp.df[[1L]] <- asNum(temp.df[[1L]], names(temp.df)[1L])
     } 
     names(temp.df) <- make.names(ColNames)
     comment(temp.df) <- hdr

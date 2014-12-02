@@ -26,10 +26,13 @@
 #'\code{x} with an attribute "GM" of the geometric mean.
 #' @note The original power transform described by Box and Cox (1964) is
 #'adjusted by a power transform of the geometric mean to retain the correct
-#'dimensional units of the original data.
+#'dimensional units of the original data as described in section 13.2 by 
+#'Draper and Smith (1998)
 #' @seealso \code{\link{hyperbolic}}
 #' @references Box, G.E.P. and Cox, D.R., 1964, An Analysis of Transformations:
-#'Journal of the Royal Statistical Society, v. 26, Series B, p. 211-243.
+#'Journal of the Royal Statistical Society, v. 26, Series B, p. 211-243.\cr
+#'Draper, N.R. and Smith, H., 1998, Applied regression analysis: John Wiley and Sons,
+#'New York, NY, 706 p.
 #' @keywords manip
 #' @examples
 #'
