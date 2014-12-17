@@ -21,16 +21,17 @@ These examples demonstrate how to compute selected summary statistics for daily 
 <<echo=TRUE>>=
 # Load the USGSwsBase package
 library(USGSwsBase)
+library(dataRetrieval)
 # Retrieve streamflow data for the Raccoon River at Van Meter, IA
 # for the 30-year period beginning 1980-10-01.
 # Use the renCol function to rename the streamflow column to Flow
-RRVM <- renCol(readNWIS("05484500", begin.date="1980-10-01", 
-                        end.date="2010-09-30"))
+RRVM <- renameNWISColumns(readNWISdv("05484500", "00060",startDate="1980-10-01", 
+                        endDate="2010-09-30"))
 # Print the first and last few rows of the data
 head(RRVM)
 tail(RRVM)
 # Check for missing values
-with(RRVM, screenData(datetime, Flow, year = "water"))
+with(RRVM, screenData(Date, Flow, year = "water"))
 @
 
 \eject
@@ -46,7 +47,7 @@ The following script demonstrates how to use the \texttt{tapply} and \texttt{bas
 # There are no missing values, so only need the basic 
 # 3 arguments for tapply
 RRVM.daily <- with(RRVM, tapply(Flow, 
-    baseDay(datetime, numeric=FALSE, year="water"), mean))
+    baseDay(Date, numeric=FALSE, year="water"), mean))
 # Print the first and last few values of the output
 head(RRVM.daily)
 tail(RRVM.daily)
@@ -59,7 +60,7 @@ The \texttt{tapply} function is very powerful and easy to use. But there are tim
 <<echo=TRUE>>=
 # There are no missing values
 RRVM.dailyDF <- aggregate(Flow ~ 
-    baseDay(datetime, numeric=FALSE, year="water"), 
+    baseDay(Date, numeric=FALSE, year="water"), 
     data=RRVM, FUN=mean)
 # Print the first and last few values of the output
 head(RRVM.dailyDF)
@@ -78,7 +79,7 @@ The example above can easily be expanded to any grouping that the user desires. 
 <<echo=TRUE>>=
 # There are no missing values
 RRVM.wyDF <- aggregate(Flow ~ 
-    waterYear(datetime), 
+    waterYear(Date), 
     data=RRVM, FUN=mean)
 # Change the name of the grouping column
 names(RRVM.wyDF)[1] <- "WaterYear"
@@ -95,7 +96,7 @@ Aggregation can also be done by multiple grouping variables. This example comput
 
 <<echo=TRUE>>=
 # There are no missing values
-RRVM.my <- aggregate(Flow ~ month(datetime, label=TRUE) + year(datetime), 
+RRVM.my <- aggregate(Flow ~ month(Date, label=TRUE) + year(Date), 
     data=RRVM, FUN=mean)
 # Rename columns 1 and 2
 names(RRVM.my)[1:2] <- c("Month", "Year")

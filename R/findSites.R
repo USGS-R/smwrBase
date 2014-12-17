@@ -41,7 +41,7 @@
 #'alt_acy_va \tab Altitude accuracy\cr
 #'alt_datum_cd \tab Altitude datum\cr
 #'huc_cd \tab Hydrologic unit code\cr }
-#' @seealso \code{\link{readNWIS}}
+#' @seealso \code{\link[dataRetrieval]{importRDB1}}
 #' @references Information about current water conditions in the United States
 #'and historical hydrologic data can be obtained from 
 #'\url{http://waterdata.usgs.gov}.\cr
@@ -57,13 +57,17 @@
 #'findSites(type="GW", county="31077", data.type="qw")
 #'}
 #' @export
+#' @importFrom dataRetrieval importRDB1
 findSites <- function(type=c("SW", "ST", "GW", "WE", "SP", "LK", "ES", "OC"),
                       state="", county="", huc="", box=list(),
                       name="", data.type=c("any", "iv", "dv", "gw", "qw")) {
-  ## Coding history:
-  ##    2014Apr24 DLLorenz original Coding
-  ##    2014May02 DLLorenz finish initial working version
-  warning("findSites is deprecated in USGSwsBase and will be moved, and possibly renamed, to USGSwsDataRetrieval.")
+
+  
+  
+  #   ## Coding history:
+#   ##    2014Apr24 DLLorenz original Coding
+#   ##    2014May02 DLLorenz finish initial working version
+  warning("findSites is deprecated in USGSwsBase and will be moved, and possibly renamed to whatNWISsites, to dataRetrieval.")
   type <- match.arg(type)
   if(type == "SW")
     type <- "ST" # fix for those who rely on SW rather than the code used
@@ -120,8 +124,8 @@ findSites <- function(type=c("SW", "ST", "GW", "WE", "SP", "LK", "ES", "OC"),
   data.type <- match.arg(data.type)
   if(data.type != "any")
     myurl <- paste(myurl, "&hasDataTypeCd=", data.type, sep="")
-  retval <- importRDB(myurl)
-  # Keep only the good stuff
+  retval <- dataRetrieval::importRDB1(myurl)
+#   # Keep only the good stuff
   if(name != "") {
     name <- paste("^", name, sep="")
     picks <- grep(name, retval$station_nm, ignore.case=TRUE)

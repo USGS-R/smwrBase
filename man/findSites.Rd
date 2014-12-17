@@ -76,7 +76,7 @@ County FIPS codes can be obtained from
 \url{http://www.epa.gov/enviro/html/codes/state.html}.\cr
 }
 \seealso{
-\code{\link{readNWIS}}
+\code{\link[dataRetrieval]{importRDB1}}
 }
 \keyword{DataIO}
 
