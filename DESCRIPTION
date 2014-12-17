@@ -10,10 +10,10 @@ Depends:
     digest,
     lubridate (>= 1.3)
 Imports:
-    stats
+    stats,
+    dataRetrieval (>= 2.0.1)
 Suggests:
     USGSwsData (>= 0.6),
-    dataRetrieval (>= 2.0.1),
     RODBC
 Description: This package has data import and export functions for specialized
     formats used within the U.S. Geological Survey. It also contains
