@@ -96,6 +96,5 @@
 #'hydrologic data, version 0.9.0: U.S. Geological Survey Open File Report
 #'2014-XXXX, ?p.
 #' @keywords package
-#' @import USGSwsDataRetrieval
 #% Check citation too
 NULL
