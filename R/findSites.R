@@ -41,7 +41,7 @@
 #'alt_acy_va \tab Altitude accuracy\cr
 #'alt_datum_cd \tab Altitude datum\cr
 #'huc_cd \tab Hydrologic unit code\cr }
-#' @seealso \code{\link{readNWIS}}
+#' @seealso \code{\link[dataRetrieval]{importRDB1}}
 #' @references Information about current water conditions in the United States
 #'and historical hydrologic data can be obtained from 
 #'\url{http://waterdata.usgs.gov}.\cr
@@ -67,7 +67,7 @@ findSites <- function(type=c("SW", "ST", "GW", "WE", "SP", "LK", "ES", "OC"),
   #   ## Coding history:
 #   ##    2014Apr24 DLLorenz original Coding
 #   ##    2014May02 DLLorenz finish initial working version
-  warning("findSites is deprecated in USGSwsBase and will be moved, and possibly renamed, to dataRetrieval.")
+  warning("findSites is deprecated in USGSwsBase and will be moved, and possibly renamed to whatNWISsites, to dataRetrieval.")
   type <- match.arg(type)
   if(type == "SW")
     type <- "ST" # fix for those who rely on SW rather than the code used
