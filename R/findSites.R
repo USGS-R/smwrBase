@@ -67,7 +67,7 @@ findSites <- function(type=c("SW", "ST", "GW", "WE", "SP", "LK", "ES", "OC"),
   #   ## Coding history:
 #   ##    2014Apr24 DLLorenz original Coding
 #   ##    2014May02 DLLorenz finish initial working version
-#   warning("findSites is deprecated in USGSwsBase and will be moved, and possibly renamed, to USGSwsDataRetrieval.")
+  warning("findSites is deprecated in USGSwsBase and will be moved, and possibly renamed, to dataRetrieval.")
   type <- match.arg(type)
   if(type == "SW")
     type <- "ST" # fix for those who rely on SW rather than the code used
