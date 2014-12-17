@@ -44,9 +44,9 @@ setTZ <- function(x, TZ, force.stz=FALSE) {
   ## Note for Arizona or any other place that does not use
   ## DST, you must specify the standard timezone name, like "America/Phoenix"
   x <- format(x, usetz=FALSE)
-  if(force.stz) {
-    TZ <- select(TZ,
-                 EST="America/Jamaica",
+    
+  if(force.stz) {      
+    TZnames <- c(EST="America/Jamaica",
                  EDT="America/New_York",
                  CST="America/Managua",
                  CDT="America/Chicago",
@@ -58,10 +58,10 @@ setTZ <- function(x, TZ, force.stz=FALSE) {
                  AKDT="America/Anchorage",
                  HAST="America/Honolulu",
                  HST="America/Honolulu")
-  }
-  else {
-    TZ <- select(TZ,
-                 EST="America/New_York",
+    
+    TZ <- TZnames[TZ]
+  } else {
+    TZnames <- c(EST="America/New_York",
                  EDT="America/New_York",
                  CST="America/Chicago",
                  CDT="America/Chicago",
@@ -73,6 +73,8 @@ setTZ <- function(x, TZ, force.stz=FALSE) {
                  AKDT="America/Anchorage",
                  HAST="America/Honolulu",
                  HST="America/Honolulu")
+
+    TZ <- TZnames[TZ] #Not sure what's different here
   }
   TZx <- unique(TZ)
   if(length(TZx) == 1L) 
