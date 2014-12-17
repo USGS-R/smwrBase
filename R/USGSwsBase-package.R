@@ -24,11 +24,11 @@
 #'baseDay \tab Computes the 'base' day of the year, a reference value that can be used to group days for the computation of summary statistics.\cr
 #'boxCox \tab Apply a Box-Cox power transformation.\cr
 #'coalesce \tab Merge a matrix or list of vectors selecting the first non missing value.\cr
-#'conc.meq \tab Support function for conc2meq—produces a data frame read by conc2meq.\cr
+#'conc.meq \tab Support function for conc2meq produces a data frame read by conc2meq.\cr
 #'conc2meq \tab Convert concentration in milligrams per liter to milli-equivalents per liter.\cr
 #'daysInMonth \tab The number of days in a month.\cr
 #'dectime \tab Convert dates and times to decimal time in years. \cr
-#'dectime2Date \tab Convert decimal time in years to and object of class “Date.”\cr
+#'dectime2Date \tab Convert decimal time in years to and object of class "Date."\cr
 #'dlpearsonIII \tab The density of the log-Pearson Type III distribution.\cr
 #'dms2dd \tab Convert data in degrees, minutes and seconds to decimal degrees.\cr
 #'dpearsonIII \tab The density of the Pearson Type III distribution.\cr
@@ -96,5 +96,5 @@
 #'hydrologic data, version 0.9.0: U.S. Geological Survey Open File Report
 #'2014-XXXX, ?p.
 #' @keywords package
-#% Check citation too
+#' Check citation too
 NULL
