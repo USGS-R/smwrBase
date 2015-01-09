@@ -36,7 +36,7 @@
 #' @keywords manip
 #' @examples
 #'
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(QWstacked)
 #'group2row(QWstacked, c("site_no", "sample_dt", "sample_tm"), "parm_cd", c("result_va", "remark_cd"))
 #'

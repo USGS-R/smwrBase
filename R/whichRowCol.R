@@ -19,7 +19,7 @@
 #'# Simple case to find a single value
 #'whichRowCol(matrix(1:20, ncol=4) == 16)
 #'# Where are the missing values in a data set?
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(MenomineeMajorIons)
 #'whichRowCol(sapply(MenomineeMajorIons, is.na))
 whichRowCol <- function(x, which="both") {

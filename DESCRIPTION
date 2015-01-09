@@ -1,6 +1,6 @@
-Package: USGSwsBase
-Version: 0.9.0
-Date: 2014-09-30
+Package: smwrBase
+Version: 1.0.0
+Date: 2014-12-02
 Title: Functions to import and manipulate hydrologic data
 Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
@@ -12,7 +12,7 @@ Depends:
 Imports:
     stats
 Suggests:
-    USGSwsData (>= 0.6),
+    smwrData (>= 0.6),
     dataRetrieval (>= 2.0.1),
     RODBC
 Description: This package has data import and export functions for specialized
@@ -27,7 +27,6 @@ Collate:
     'LogPearsonIII.R'
     'Math-timeDay.R'
     'PearsonIII.R'
-    'USGSwsBase-package.R'
     'anomalies.R'
     'as.character.timeDay.R'
     'as.data.frame.timeDay.R'
@@ -48,7 +47,6 @@ Collate:
     'exportCSV.R'
     'exportRDB.R'
     'fillMissing.R'
-    'findSites.R'
     'format.timeDay.R'
     'fourier.R'
     'group2row.R'
@@ -69,6 +67,7 @@ Collate:
     'movingDiff.R'
     'na2miss.R'
     'peaks.R'
+    'pick.R'
     'print.timeDay.R'
     'quadratic.R'
     'readList.R'
@@ -83,6 +82,7 @@ Collate:
     'setTZ.R'
     'shiftData.R'
     'show-methods.R'
+    'smwrBase-package.R'
     'sumComposition.R'
     'untable.R'
     'waterYear.R'

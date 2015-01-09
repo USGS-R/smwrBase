@@ -28,7 +28,7 @@
 #' @keywords manip
 #' @examples
 #'\dontrun{
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(QW05078470)
 #'# Count the number of samples per month
 #'with(QW05078470, eventSeries(DATES, "month", which="sum"))

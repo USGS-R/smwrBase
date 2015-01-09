@@ -56,14 +56,14 @@ function such as mean or median.\cr
 }
 \examples{
 \dontrun{
-library(USGSwsData)
+library(smwrData)
 data(QW05078470)
 with(QW05078470, regularSeries(P00665, DATES))
 # there should be no values for season numbers 2, 5, or 10
 }
 }
 \seealso{
-Refer to the documentation for \code{seaken} in the USGSwsStats
+Refer to the documentation for \code{seaken} in the smwrStats
 package if it is installed.
 }
 \keyword{manip}

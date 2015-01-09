@@ -17,7 +17,7 @@
 #' @keywords manip
 #' @examples
 #'
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(QW05078470)
 #'## Return an ordered factor
 #'waterYear(QW05078470$DATES)

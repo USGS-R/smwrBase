@@ -36,12 +36,12 @@
 #'\item{ValueDate}{the date from \code{times} for the corresponding season
 #'number if \code{which} was one of "earliest," "middle," or "latest,"
 #'otherwise missing.}
-#' @seealso Refer to the documentation for \code{seaken} in the USGSwsStats
+#' @seealso Refer to the documentation for \code{seaken} in the smwrStats
 #'package if it is installed.
 #' @keywords manip
 #' @examples
 #'\dontrun{
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(QW05078470)
 #'with(QW05078470, regularSeries(P00665, DATES))
 #'# there should be no values for season numbers 2, 5, or 10

@@ -31,7 +31,7 @@ columns in a dataset.
 \examples{
 as.Date("2001-03-04") + as.timeDay("10:00")
 \dontrun{
-library(USGSwsData)
+library(smwrData)
 data(QW05078470)
 # Note that the result is reported in the local time zone!
 QW05078470$DATES + as.timeDay(QW05078470$TIMES)

@@ -35,7 +35,7 @@ Missing values are permitted in either \code{dates} or \code{values}.
 Those missing values are tallied in the completeness of record.
 }
 \examples{
-library(USGSwsData)
+library(smwrData)
 data(Q05078770)
 # this should indicate no missing values.
 with(Q05078770, screenData(DATES, FLOW))

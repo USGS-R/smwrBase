@@ -54,7 +54,7 @@
 #' @keywords manip
 #' @examples
 #'\dontrun{
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(Q05078470)
 #'# Create missing values in flow, the first sequence is a peak and the second is a recession
 #'Q05078470$FlowMiss <- Q05078470$FLOW

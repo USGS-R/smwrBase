@@ -23,7 +23,7 @@
 #'seasons(as.Date(c("2001-03-31", "2001-06-30", "2001-09-30")), breaks=c("06/30", "12/31"))
 #'\dontrun{
 #'# Apply to a real dataset
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(QW05078470)
 #'transform(QW05078470, Seas=seasons(DATES, breaks=c("June", "December")))
 #'}

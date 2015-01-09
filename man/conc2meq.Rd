@@ -38,7 +38,7 @@ divalent. The actual conversion for phosphorus is very dependent on pH.
 
 The conversion factors are taken from table 9 (page 56) of Hem (1985). The
 available conversion factors are stored in the list created by \code{conc.meq} in
-USGSwsBase.\cr
+smwrBase.\cr
 }
 \examples{
 conc2meq(c(1,2,3), "Nitrate")

@@ -8,8 +8,8 @@
 #'wherever \code{x} has a missing value.\cr
 #'
 #'The basic equation for the hyberbolic transform is 1/(1 + (10^factor * x)/
-#'scale). It is adjusted to produce fairly consistent values for small changes
-#'in \code{factor}.\cr
+#'scale). The basic equaiton is adjusted to produce fairly consistent values for small changes
+#'in \code{factor} and increase for increasing values in \code{x}.\cr
 #'
 #'The function \code{hyperbolic} computes the forward transform and the
 #'function \code{Ihyperbolic} computes the inverse [hyperbolic] transform, or back-transform.
@@ -21,7 +21,8 @@
 #' @param factor the hyperbolic adjustment term in the hyperbolic equation.
 #' @param scale the scaling factor for the data.
 #' @return A numeric vector of the transformed or back-transformed values in
-#'\code{x} with an attribute "scale" of the values used for \code{scale}.
+#'\code{x} with an attribute "scale" of the values used for \code{scale}. The range
+#'of the values returned from \code{hyperbolic} is between 0 and 2 times \code{scale}.
 #' @note The original hyperbolic transform used a linear factor. The version in
 #'these functions uses the common log of the factor to make the factors easier
 #'to use.\cr
@@ -41,7 +42,7 @@
 #'
 #'hyperbolic(1:3) # accept the defaults
 #'## Should return
-#'# [1] 0.3333333 0.5000000 0.6000000
+#'# [1] 1.333333 2.000000 2.400000
 #'# attr(,"scale")
 #'# [1] 2
 #' @export
@@ -51,18 +52,10 @@ hyperbolic <- function(x, factor = 0, scale = mean(x, na.rm=TRUE)) {
   ##    2012Aug17 DLLorenz Allow NAs
   ##    2013Feb02 DLLorenz Prep for gitHub
   ##    2013Jun12 DLLorenz Added class, necessary for safe predictions
+  ##    2014Dec12 DLLorenz Modified scaling
   ##
   ## Use common logs for factor--easier to understand
-  retval <- 1/(1 + (10^factor * x)/scale)
-  ## scale to'nice' range
-  if(factor < 0)
-    retval <-  1 - (1 - retval)*10^-factor
-  else if(factor < 1)
-    retval <- retval*10^(factor/2)
-  else
-    retval <- retval*10^(factor-.5)
-  ## reverse sense so that increase in x is increase in retval
-  retval <- 1 - retval
+  retval <- 2*scale*(1 - 1/(1 + (10^factor * x)/scale))
   attr(retval, "scale") <- scale
   class(retval) <- "hyperbolic"
   return(retval)
@@ -73,14 +66,8 @@ hyperbolic <- function(x, factor = 0, scale = mean(x, na.rm=TRUE)) {
 Ihyperbolic <- function(x, factor = 0, scale) {
   if(missing(scale)) # get the attribute if scale is missing
     scale <- attr(x, "scale")
-  ## rescale from 'nice' range
-  x <- 1 - x
-  if(factor < 0)
-    x <- 1 - (1 - x)*10^factor
-  else if(factor < 1)
-    x <- x*10^(-.5*factor)
-  else
-    x <- x*10^(0.5 - factor)
-  factor <- 10^factor # use common logs so that factor is interpretable
-  return(((1/x - 1) * scale)/factor)
+  if(missing(scale)) # get the attribute if scale is missing
+    scale <- attr(x, "scale")
+  retval <- scale*((1 - x/2/scale)^-1 - 1)/(10^factor)
+  return(as.vector(retval))
 }

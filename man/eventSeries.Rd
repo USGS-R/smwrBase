@@ -42,7 +42,7 @@ is set to 0 if \code{which} is "sum" and the value previous period if
 }
 \examples{
 \dontrun{
-library(USGSwsData)
+library(smwrData)
 data(QW05078470)
 # Count the number of samples per month
 with(QW05078470, eventSeries(DATES, "month", which="sum"))

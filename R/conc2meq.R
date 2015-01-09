@@ -27,7 +27,7 @@
 #'
 #'The conversion factors are taken from table 9 (page 56) of Hem (1985). The
 #'available conversion factors are stored in the list created by \code{conc.meq} in
-#'USGSwsBase.\cr
+#'smwrBase.\cr
 #' @references Hem, J.D., 1985, Study and interpretation of the chemical
 #'characteristics of natural water: USGS Water-Supply Paper 2254, 263 p.
 #' @keywords manip

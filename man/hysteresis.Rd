@@ -29,7 +29,7 @@ and the greater the relative increase, the parger the output.
 }
 \examples{
 \dontrun{
-library(USGSwsData)
+library(smwrData)
 data(Q05078770)
 # Plot flow and hysteresis to show looping
 with(Q05078770, plot(log(FLOW), hysteresis(log(FLOW), 3), type="l"))

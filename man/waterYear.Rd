@@ -26,7 +26,7 @@ The water year is designated by the calendar year in which it ends. Thus, the
 year ending September 30, 1999, is the "1999 water year."
 }
 \examples{
-library(USGSwsData)
+library(smwrData)
 data(QW05078470)
 ## Return an ordered factor
 waterYear(QW05078470$DATES)

@@ -34,8 +34,8 @@ A NULL data frame is created if there are no data in the file.\cr
 }
 \examples{
 \dontrun{
-## These datasets are available in USGSwsData as text files
-TestDir <- system.file("misc", package="USGSwsData")
+## These datasets are available in smwrData as text files
+TestDir <- system.file("misc", package="smwrData")
 TestPart <- importCSV(file.path(TestDir, "TestPart.csv"))
 }
 }

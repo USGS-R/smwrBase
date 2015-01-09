@@ -1,7 +1,7 @@
-USGSwsBase
+smwrBase
 ==========
 
-Base USGS water science R functions.
+Base R functions to support statistical methods in water resources.
 
 Disclaimer
 ----------
@@ -14,6 +14,6 @@ This software is provided "AS IS."
 Installation
 ----------
 
-    install.packages(c("USGSwsBase"), 
+    install.packages(c("smwrBase"), 
     repos=c("http://usgs-r.github.com","http://cran.us.r-project.org"), 
     dependencies=TRUE)

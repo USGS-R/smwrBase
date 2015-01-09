@@ -45,34 +45,34 @@ setTZ <- function(x, TZ, force.stz=FALSE) {
   ## DST, you must specify the standard timezone name, like "America/Phoenix"
   x <- format(x, usetz=FALSE)
   if(force.stz) {
-    TZ <- select(TZ,
-                 EST="America/Jamaica",
-                 EDT="America/New_York",
-                 CST="America/Managua",
-                 CDT="America/Chicago",
-                 MST="America/Phoenix",
-                 MDT="America/Denver",
-                 PST="America/Metlakatla",
-                 PDT="America/Los_Angeles",
-                 AKST="America/Anchorage",
-                 AKDT="America/Anchorage",
-                 HAST="America/Honolulu",
-                 HST="America/Honolulu")
+    TZ <- pick(TZ,
+               EST="America/Jamaica",
+               EDT="America/New_York",
+               CST="America/Managua",
+               CDT="America/Chicago",
+               MST="America/Phoenix",
+               MDT="America/Denver",
+               PST="America/Metlakatla",
+               PDT="America/Los_Angeles",
+               AKST="America/Anchorage",
+               AKDT="America/Anchorage",
+               HAST="America/Honolulu",
+               HST="America/Honolulu")
   }
   else {
-    TZ <- select(TZ,
-                 EST="America/New_York",
-                 EDT="America/New_York",
-                 CST="America/Chicago",
-                 CDT="America/Chicago",
-                 MST="America/Denver",
-                 MDT="America/Denver",
-                 PST="America/Los_Angeles",
-                 PDT="America/Los_Angeles",
-                 AKST="America/Anchorage",
-                 AKDT="America/Anchorage",
-                 HAST="America/Honolulu",
-                 HST="America/Honolulu")
+    TZ <- pick(TZ,
+               EST="America/New_York",
+               EDT="America/New_York",
+               CST="America/Chicago",
+               CDT="America/Chicago",
+               MST="America/Denver",
+               MDT="America/Denver",
+               PST="America/Los_Angeles",
+               PDT="America/Los_Angeles",
+               AKST="America/Anchorage",
+               AKDT="America/Anchorage",
+               HAST="America/Honolulu",
+               HST="America/Honolulu")
   }
   TZx <- unique(TZ)
   if(length(TZx) == 1L) 

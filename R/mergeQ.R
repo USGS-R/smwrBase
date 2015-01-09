@@ -64,7 +64,7 @@
 #' @export
 #' @examples
 #'\dontrun{
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(Q05078470)
 #'data(Q05078770)
 #'data(Qall)

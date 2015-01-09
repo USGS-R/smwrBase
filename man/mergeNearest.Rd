@@ -50,7 +50,7 @@ replicate samples or samples of a different medium taken at about the same
 time, but having a different time stamp.
 }
 \examples{
-library(USGSwsData)
+library(smwrData)
 data(Q05078470)
 data(QW05078470)
 # Set the actual time of sampling in QW05078470

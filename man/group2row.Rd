@@ -46,7 +46,7 @@ the matched index. The index values are concatenated with the input column
 names of the collected columns to derive output column names.\cr
 }
 \examples{
-library(USGSwsData)
+library(smwrData)
 data(QWstacked)
 group2row(QWstacked, c("site_no", "sample_dt", "sample_tm"), "parm_cd", c("result_va", "remark_cd"))
 }

@@ -10,7 +10,7 @@ A list containing necessary information for the function
 \code{conc2meq}.
 }
 \description{
-Function to supply data for functions within USGSwsBase.
+Support function to supply data for functions within smwrBase.
 }
 \note{
 The user may choose to make local copies of the data with the

@@ -1,6 +1,6 @@
 #'Special Data
 #'
-#'Function to supply data for functions within USGSwsBase.
+#'Support function to supply data for functions within smwrBase.
 #'
 #'
 #' @aliases conc.meq

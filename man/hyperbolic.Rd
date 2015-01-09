@@ -19,7 +19,8 @@ values are allowed. See \bold{Details}.}
 }
 \value{
 A numeric vector of the transformed or back-transformed values in
-\code{x} with an attribute "scale" of the values used for \code{scale}.
+\code{x} with an attribute "scale" of the values used for \code{scale}. The range
+of the values returned from \code{hyperbolic} is between 0 and 2 times \code{scale}.
 }
 \description{
 Functions for transforming and back-transforming data using a hyperbolic
@@ -31,8 +32,8 @@ omitting the missing values and the output vector has a missing value
 wherever \code{x} has a missing value.\cr
 
 The basic equation for the hyberbolic transform is 1/(1 + (10^factor * x)/
-scale). It is adjusted to produce fairly consistent values for small changes
-in \code{factor}.\cr
+scale). The basic equaiton is adjusted to produce fairly consistent values for small changes
+in \code{factor} and increase for increasing values in \code{x}.\cr
 
 The function \code{hyperbolic} computes the forward transform and the
 function \code{Ihyperbolic} computes the inverse [hyperbolic] transform, or back-transform.
@@ -48,7 +49,7 @@ outside the range of +/- 3 have very little effect on the transform.
 \examples{
 hyperbolic(1:3) # accept the defaults
 ## Should return
-# [1] 0.3333333 0.5000000 0.6000000
+# [1] 1.333333 2.000000 2.400000
 # attr(,"scale")
 # [1] 2
 }

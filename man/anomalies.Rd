@@ -63,7 +63,7 @@ anomaly, which is 1826 days.
 }
 \examples{
 \dontrun{
-library(USGSwsData)
+library(smwrData)
 data(Q05078770)
 anomalies(log(Q05078770$FLOW), A3mo=90)
 }

@@ -24,7 +24,7 @@
 #' @keywords missing
 #' @export
 #' @examples
-#'library(USGSwsData)
+#'library(smwrData)
 #'data(Q05078770)
 #'# this should indicate no missing values.
 #'with(Q05078770, screenData(DATES, FLOW))

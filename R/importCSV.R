@@ -24,8 +24,8 @@
 #' @export
 #' @examples
 #'\dontrun{
-#'## These datasets are available in USGSwsData as text files
-#'TestDir <- system.file("misc", package="USGSwsData")
+#'## These datasets are available in smwrData as text files
+#'TestDir <- system.file("misc", package="smwrData")
 #'TestPart <- importCSV(file.path(TestDir, "TestPart.csv"))
 #'}
 importCSV <- function(file.name="", tz="") {

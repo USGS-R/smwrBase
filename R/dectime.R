@@ -54,7 +54,7 @@ dectime <- function(dates, times, time.format, date.format, Date.noon=TRUE,
   retval <- decimal_date(dates)
   retval[retval == 0] <- NA
   year.type <- match.arg(year.type)
-  # These are the adjustments used in seasonPlot (USGSwsGraphs)
+  # These are the adjustments used in seasonPlot (smwrGraphs)
   if(year.type == "water")
     retval <- retval - 0.7485
   else if(year.type == "climate")
