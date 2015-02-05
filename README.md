@@ -14,6 +14,16 @@ This software is provided "AS IS."
 Installation
 ----------
 
-    install.packages(c("smwrBase"), 
+**for windows**:
+```R
+install.packages("smwrBase", 
     repos=c("http://usgs-r.github.com","http://cran.us.r-project.org"), 
     dependencies=TRUE)
+```
+
+**for mac**:
+```R
+install.packages("smwrBase", 
+    repos=c("http://usgs-r.github.com","http://cran.us.r-project.org"), 
+    dependencies=TRUE, type = "both")
+```
