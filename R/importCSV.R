@@ -10,16 +10,16 @@
 #'no separator. Time and date data are imported as class "POSIXct" and
 #'assumes the standard POSIX format for date and time.\cr
 #'
-#' @param file.name a character string specifying the name of the comma separated variable file
-#'containing the data to be imported; \code{importCSV} requires \code{file.name}
-#'to be an readable file on the computer.
-#' @param tz a character string indicating the time zone information for data
+#' @param file.name a character string specifying the name of the comma separated variable 
+#'(CSV) file containing the data to be imported; \code{importCSV} requires \code{file.name}
+#'to be a readable file on the computer.
+#' @param tz a character string indicating the time-zone information for data
 #'imported as "POSIXct." The default is to use the local setting.
 #' @return A data frame with one column for each data column in the CSV
 #'file.
 #' @note A NULL data frame is created if there are no data in the file.\cr
 #' @seealso \code{\link{read.csv}}, \code{\link{scan}},
-#'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
+#'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}}
 #' @keywords manip IO
 #' @export
 #' @examples
@@ -55,7 +55,7 @@ importCSV <- function(file.name="", tz="") {
       xx <- x[1]
       N <- length(x)
       j <- 1
-      while ((is.na(xx) || nchar(xx) < 10L) && (j <- j + 1L) <= N) 
+      while ((is.na(xx) || nchar(xx) < 8L) && (j <- j + 1L) <= N) 
         xx <- x[j]
       if(j <= N) {
         ## Find format

@@ -7,11 +7,11 @@ eventSeries(times, period = "hour", which = "cumsum", begin, end,
   k.period = 1)
 }
 \arguments{
-\item{times}{a date like vector corresponding to data.}
+\item{times}{a date-like vector corresponding to data.}
 
 \item{period}{character string that is valid input to the the POSIXct method
-for seq is OK, specifying the spacing between successive periods. For example
-"year," "month," or "day."}
+for the \code{seq} function is accepable, specifying the spacing between
+successive periods. For example "year," "month," or "day."}
 
 \item{which}{a character string indicating the method to use.
 See \bold{Details} for options.}

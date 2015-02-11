@@ -10,8 +10,8 @@ insertMissing(x, col, fill = FALSE)
 
 \item{col}{the name of the column that defines the sequence.}
 
-\item{fill}{logical, fill with many rows of data to match the sequence?
-Otherwise, insert only a single row. See \bold{Note}.}
+\item{fill}{logical (\code{TRUE} or \code{FALSE}), fill with many rows of data to
+match the sequence?  If \code{FALSE}, insert only a single row. See \bold{Note}.}
 }
 \value{
 A data frame like \code{x}, but with rows of missing values where

@@ -1,7 +1,7 @@
 #'Regular Series
 #'
 #'Some time-series analyses require data that are uniformly spaced in time.
-#'Theis function will construct a regular series from randomly spaced data
+#'This function will construct a regular series from randomly spaced data
 #'using any of several user-definable methods.
 #'
 #'For \code{regularSeries}, if there is no observation during a period, then that
@@ -15,10 +15,10 @@
 #'function such as mean or median.\cr
 #'
 #' @param x a vector of observations that represents a series.
-#' @param times a date like vector corresponding to data.
-#' @param period character string that is valid input to the the POSIXct method
-#'for seq is OK, specifying the spacing between successive periods. For example
-#'"year," "month," or "day."
+#' @param times a date-like vector corresponding to data.
+#' @param period character string that is valid input to the POSIXct method
+#'for the function \code{seq} is acceptable, specifying the spacing between 
+#'successive periods. For example "year," "month," or "day."
 #' @param which a character string indicating the method to use, or the name of
 #'a function. See \bold{Details} for options.
 #' @param begin the beginning date as POSIXt or as character.
@@ -29,12 +29,12 @@
 #'following columns:
 #'\item{Season}{the season number.}
 #'\item{SeasonStartDate}{the starting date of the corresponding season
-#'number--the season includes dates greater than or equal to this date.}
+#'number---the season includes dates greater than or equal to this date.}
 #'\item{SeasonEndDate}{the end date of the corresponding season number---the
 #'season includes dates strictly less than this date.}
 #'\item{Value}{the value from \code{x} for the corresponding season number.}
 #'\item{ValueDate}{the date from \code{times} for the corresponding season
-#'number if \code{which} was one of "earliest," "middle," or "latest,"
+#'number if \code{which} was one of "earliest," "middle," or "latest;"
 #'otherwise missing.}
 #' @seealso Refer to the documentation for \code{seaken} in the smwrStats
 #'package if it is installed.

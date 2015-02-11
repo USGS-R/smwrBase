@@ -19,7 +19,7 @@
 #' @param Date.noon set time to noon for \code{dates} of class "Date?"
 #'See \bold{Details}.
 #' @param year.type a charcter string indicating the type of year to determine the
-#'offset, must be one of "calendar," "water", or "climate."
+#'offset, must be one of "calendar," "water," or "climate."
 #' @return A vector representation of the data in decimal format--year and
 #'decimal fraction.
 #' @seealso \code{\link{hm}}, \code{\link{strptime}}

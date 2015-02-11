@@ -21,7 +21,7 @@ values are permitted.}
 }
 \value{
 A numeric vector of decimal degrees the same length as \code{x}.
-Missing values are returned whereever  \code{x}, \code{minutes}, or
+Missing values are returned wherever  \code{x}, \code{minutes}, or
 \code{seconds} has a missing value.
 }
 \description{

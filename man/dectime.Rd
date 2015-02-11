@@ -22,7 +22,7 @@ permitted and produce corresponding missing values in the output.}
 See \bold{Details}.}
 
 \item{year.type}{a charcter string indicating the type of year to determine the
-offset, must be one of "calendar," "water", or "climate."}
+offset, must be one of "calendar," "water," or "climate."}
 }
 \value{
 A vector representation of the data in decimal format--year and

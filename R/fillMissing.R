@@ -20,9 +20,9 @@
 #' @param x the sequence of observations. Missing values are permitted and will
 #'be replaced.
 #' @param span the maximum number of observations on each side of each range of
-#'missing values to use in constructing the time series model. See
+#'missing values to use in constructing the time-series model. See
 #'\bold{Details}.
-#' @param Dates an optional vector of dates/times associated weith each value 
+#' @param Dates an optional vector of dates/times associated with each value 
 #'in \code{x}. Useful if there are gaps in dates/times.
 #' @param max.fill the maximum gap to fill.
 #' @return The observations in \code{x} with missing values replaced by
@@ -32,23 +32,24 @@
 #'\code{type} set to "trend." The smoothing method basically uses the
 #'information (slope) from two values previous to missing values and the two
 #'values following missing values to smoothly interpolate values accounting for
-#'any change in slope. The group that is used to define the statistics that
+#'any change in slope. Beauchamp (1989) used time-series methods for synthesizing
+#'missing streamflow records. The group that is used to define the statistics that
 #'control the interpolation is very simply defined by \code{span} rather than
 #'the more in-depth measures described in Elshorbagy and others (2000).
 #'
 #'If the data have gaps rather than missing values, then fillMissing will return
 #'a vector longer than \code{x} if \code{Dates} is given and the return data
-#'cannot be inserted into the original data set. If \code{Dates} is not given,
+#'cannot be inserted into the original data frame. If \code{Dates} is not given,
 #'then it will not recognize the gap and not fill the sequence. The function
 #'\code{insertMissing} can be used to create a data frame with the complete
 #'sequence of dates.
 #' @seealso \code{\link{tsSmooth}}, \code{\link{StructTS}}, \code{\link{insertMissing}}
 #' @references Beauchamp, J.J., 1989, Comparison of regression and time-series
-#'methods for synthesizing missing streamflow records, Water Resources
+#'methods for synthesizing missing streamflow records: Water Resources
 #'Bulletin, v. 25, no. 5, p. 961-975.\cr
 #'
-#'Elshorbagy, A.A., Panu, U.S., Simonovic, S.P., 2000, Group-based estimation
-#'of missing hydrological data: I. Approach and general methodology,
+#'Elshorbagy, A.A., Panu, U.S., and Simonovic, S.P., 2000, Group-based estimation
+#'of missing hydrological data, I. Approach and general methodology:
 #'Hydrological Sciences Journal, v. 45, no. 6, p. 849-866.
 #' @export
 #' @keywords manip

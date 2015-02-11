@@ -12,8 +12,8 @@ manipulating hydrologic data.
 \details{
 \tabular{ll}{ Package: \tab smwrBase\cr
 Type: \tab Package\cr
-Version: \tab 1.0.0\cr
-Date: \tab 2014-12-02\cr
+Version: \tab 1.0.1\cr
+Date: \tab 2015-02-11\cr
 License: \tab File LICENSE\cr
 Depends: \tab stat, lubridate, methods\cr }
 
@@ -21,23 +21,22 @@ This package contains functions that import, manage, or manipipulate hydrologic 
 functions that apply specialized transforms used in hydrologic analyses amd modeling.
 A listing of the functions and their description is in the following table.
 
-\tabular{ll}{ Function \tab Description\cr
-%cn% \tab Identify character strings that contain the specified pattern.\cr
-IboxCox \tab Apply the inverse Box-Cox power transformation.\cr
-Ihyperbolic  \tab Apply the inverse hyperbolic transformation.\cr
-IsCurve  \tab Apply the inverse s-curve transformation.\cr
-anomalies \tab Break down time-series data into long- and short-term deviations (anomalies) and the high-frequency variation.\cr
+\tabular{ll}{Function \tab Description\cr
+\%cn\% \tab Identify character strings that contain the specified pattern.\cr
+anomalies \tab Break down time-series data into long- and short-term deviations (anomalies) \cr
+\tab and the high-frequency variation.\cr
 as.timeDay \tab Convert data to objects of class "timeDay."\cr
-baseDay \tab Computes the "base" day of the year, a reference value that can be used to group days for the computation of summary statistics.\cr
+baseDay \tab Computes the "base" day of the year, a reference value that can be used to \cr
+\tab group days for the computation of summary statistics.\cr
 boxCox \tab Apply a Box-Cox power transformation.\cr
 coalesce \tab Merge a matrix or list of vectors selecting the first non missing value.\cr
 conc.meq \tab Support function---produces a list of conversions read by \code{conc2meq}.\cr
 conc2meq \tab Convert concentration in milligrams per liter to milli-equivalents per liter.\cr
 daysInMonth \tab The number of days in a month.\cr
 dectime \tab Convert dates and times to decimal time in years. \cr
-dectime2Date \tab Convert decimal time in years to and object of class "Date."\cr
+dectime2Date \tab Convert decimal time in years to an object of class "Date."\cr
 dlpearsonIII \tab The density of the log-Pearson Type III distribution.\cr
-dms2dd \tab Convert data in degrees, minutes and seconds to decimal degrees.\cr
+dms2dd \tab Convert data in degrees, minutes, and seconds to decimal degrees.\cr
 dpearsonIII \tab The density of the Pearson Type III distribution.\cr
 eventLen \tab Compute the length or duration of an event.\cr
 eventNum \tab Compute the number of an event, identified by a TRUE value in a sequence.\cr
@@ -49,11 +48,15 @@ fillMissing \tab Interpolate missing values in a regular time-series of data.\cr
 fourier \tab Compute the Fourier series decomposition from date data.\cr
 group2row \tab Unstack data oriented in columns to rows of data.\cr
 hyperbolic \tab Apply a hyperbolic transformation.\cr
-hyseresis \tab Compute a basis for estimating hysteresis effect in some variable related to x.\cr
-importCSV \tab Import a data frame from a comma-separated values file.\cr\cr
+hysteresis \tab Compute a basis for estimating hysteresis effect in some variable related to \cr
+\tab the argument \code{x}.\cr
+IboxCox \tab Apply the inverse Box-Cox power transformation.\cr
+Ihyperbolic  \tab Apply the inverse hyperbolic transformation.\cr
+importCSV \tab Import a data frame from a comma-separated values file.\cr
 importRDB \tab Import a data frame from an ASCII relational-database file.\cr
 index.coalesce \tab Return the index column number instead of the values for the first non-missing value.\cr
 isCharLike \tab Determine whether the data be treated like character data.\cr
+IsCurve  \tab Apply the inverse s-curve transformation.\cr
 isDateLike \tab Deterimne whether the data be treated like date data.\cr
 isGroupLike \tab Determine whether the data be treated like grouping data.\cr
 isNumberLike \tab Determine whether the data be treated as numeric data.\cr
@@ -75,8 +78,8 @@ quadratic \tab Compute a basis for an orthogonal second order polynomial.\cr
 readList \tab Import data arranged on lines into a list.\cr
 recode \tab Recode distinct values.\cr
 regularSeries \tab Put data collected at arbitrary times into a regular time series.\cr
-rlpearsonIII \tab Compute the Random variates of the log-Pearson Type III distribution.\cr
-rpearsonIII \tab Compute the Random variates of the Pearson Type III distribution.\cr
+rlpearsonIII \tab Compute the random variates of the log-Pearson Type III distribution.\cr
+rpearsonIII \tab Compute the random variates of the Pearson Type III distribution.\cr
 sCurve \tab Apply the s-curve transformation.\cr
 scaleRng \tab Scale data to a specified range.\cr
 screenData \tab Screen data for missing values or gaps.\cr
@@ -84,9 +87,10 @@ seasons \tab Create seasonal categories from dates.\cr
 seqCollapse \tab Collapse a sequence of integers to a compact character string.\cr
 setFileType \tab Support function to manage file suffixes.\cr
 setTZ \tab Set the time zone information for dates and times.\cr
-shiftData \tab Shift a time-series forward or backward.\cr
+shiftData \tab Shift time-series data forward or backward.\cr
 sumComposition \tab Compute the percentages of data within a matrix.\cr
-timeDay \tab Various arithmetic methods for manipulating time-of-day data, including signature, as.character.timeDay, etc.\cr
+timeDay \tab Various arithmetic methods for manipulating time-of-day data, including signature, \cr
+\tab as.character.timeDay, etc.\cr
 untable \tab Expand a 2-dimensional table into the raw values.\cr
 waterYear \tab Compute the water year of date data. The water year ends on September 30 of the year.\cr
 whichRowCol \tab Identify the row and column indexes for TRUE values in a logical matrix.\cr
@@ -98,9 +102,9 @@ Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
 }
 \references{
-Lorenz, D.L., 2014, smwrBase---an R package for managing
-hydrologic data, version 1.0.0: U.S. Geological Survey Open File Report
-2014-XXXX, ? p.
+Lorenz, D.L., 2015, smwrBase---an R package for managing
+hydrologic data, version 1.0.1: U.S. Geological Survey Open File Report
+2015-XXXX, ? p.
 }
 \seealso{
 \code{\link[smwrData:smwrData-package]{smwrData}}

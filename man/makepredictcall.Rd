@@ -23,7 +23,7 @@
 A replacement for \code{call} for the prediction variable.
 }
 \description{
-A utility to help \code{\link{model.frame.default}} create the right matrices
+A utility to help \code{\link{model.frame.default}} create the correct matrices
 when predicting from models with \code{quadratic},
 \code{hyperbolic}, or \code{boxCox} terms. Used only internally.
 }

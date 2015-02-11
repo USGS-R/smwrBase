@@ -6,7 +6,7 @@
 #' @param x an integer vector, missing values and repeated values are permitted
 #'and removed before collapsing.
 #' @param sequential the separator for sequential values.
-#' @param skips the separator for gaps in the sequence
+#' @param skips the separator for gaps in the sequence.
 #' @return A character string that represents that data in \code{x} in a compact
 #'form. If \code{x} is empty, then "" is returned.
 #' @note This function is commonly used to express years in a compact form.

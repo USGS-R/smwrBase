@@ -10,16 +10,18 @@
 #' @param type the frequency of \code{values}. Only daily values ("DV") 
 #'and intermittent, or discrete, values ("IV") are accepted in this version.
 #'The whole text is required, but not case sensitive.
-#' @param year the type of year "calendar" or "water," which begins on October 1
+#' @param year the type of year: "calendar" or "water," which begins on October 1
 #'of the previous calendar year and ends on September 30.
-#' @param printit print the results in a pretty format?
+#' @param printit logical (\code{TRUE} or \code{FALSE}), print the results in a pretty format?
 #' @return For \code{type} = "DV," a matrix of the counts of \emph{missing} values,
-#'either coded as \code{NA} or not in the data set, for each month and each
+#'either coded as \code{NA} or not in the dataset, for each month and each
 #'year within the range of \code{dates}.
 #'
 #'For \code{type} = "DV," a matrix of the counts of \emph{observed} values 
 #'for each month and each year within the range of \code{dates}. 
-#' @references Rutledge, A.T., 2007, Program user Guide for Recess:
+#' @references This function is based on the screen program described in:\cr
+#' 
+#' Rutledge, A.T., 2007, Program user guide for RECESS:
 #'\url{http://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
 #' @keywords missing
 #' @export

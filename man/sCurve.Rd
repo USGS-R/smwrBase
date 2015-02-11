@@ -2,7 +2,7 @@
 \name{sCurve}
 \alias{IsCurve}
 \alias{sCurve}
-\title{S-Curve transform}
+\title{S-Curve Transform}
 \usage{
 sCurve(x, location = 0, scale = 1, shape = 1)
 
@@ -10,7 +10,7 @@ IsCurve(x, location = 0, scale = 1, shape = 1)
 }
 \arguments{
 \item{x}{a numeric vector to be transformed by \code{sCurve} or
-back-trasnformed by \code{IsCurve}. Missing
+back-transformed by \code{IsCurve}. Missing
 values are allowed and result in corresponding missing values in the output.}
 
 \item{location}{the transition point in the s-curve transform.}
@@ -30,8 +30,8 @@ Functions for transforming and back-transforming data using a s-shaped
 curve.
 }
 \details{
-The basic equation for the s-curve is z/(1 + abs(z)^shape)^(1/shape),
-where z is scale*(x - location).\cr
+The basic equation for the s-curve is \emph{z}/(1 + abs(\emph{z})^\code{shape})^(1/\code{shape}),
+where \emph{z} is \code{scale}*(\code{x}-\code{location}).\cr
 
 The function \code{sCurve} computes the forward transform and the
 function \code{IsCurve} computes the inverse [sCurve] transform, or back-transform.

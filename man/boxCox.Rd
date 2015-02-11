@@ -44,7 +44,7 @@ The function \code{boxCox} computes the forward transform and the function
 The original power transform described by Box and Cox (1964) is
 adjusted by a power transform of the geometric mean to retain the correct
 dimensional units of the original data as described in section 13.2 by
-Draper and Smith (1998)
+Draper and Smith (1998).
 }
 \examples{
 boxCox(1:3)
@@ -64,10 +64,10 @@ IboxCox(boxCox(1:3, lambda=0), lambda=0) # verify the back-transform
 # [1] 1.817121
 }
 \references{
-Box, G.E.P. and Cox, D.R., 1964, An Analysis of Transformations:
+Box, G.E.P., and Cox, D.R., 1964, An analysis of transformations:
 Journal of the Royal Statistical Society, v. 26, Series B, p. 211-243.\cr
-Draper, N.R. and Smith, H., 1998, Applied regression analysis: John Wiley and Sons,
-New York, NY, 706 p.
+Draper, N.R., and Smith, H., 1998, Applied regression analysis: New York, NY,
+John Wiley and Sons, 706 p.
 }
 \seealso{
 \code{\link{hyperbolic}}

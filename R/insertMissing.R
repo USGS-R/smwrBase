@@ -4,8 +4,8 @@
 #'
 #' @param x the data frame.
 #' @param col the name of the column that defines the sequence.
-#' @param fill logical, fill with many rows of data to match the sequence? 
-#'Otherwise, insert only a single row. See \bold{Note}.
+#' @param fill logical (\code{TRUE} or \code{FALSE}), fill with many rows of data to 
+#'match the sequence?  If \code{FALSE}, insert only a single row. See \bold{Note}.
 #' @return A data frame like \code{x}, but with rows of missing values where
 #'there is a break in the sequence in column \code{col}.
 #' @note Setting \code{fill} to \code{TRUE} is useful for setting up datasets

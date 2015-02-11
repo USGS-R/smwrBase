@@ -1,17 +1,17 @@
-#' S-Curve transform
+#' S-Curve Transform
 #'
 #' Functions for transforming and back-transforming data using a s-shaped
 #'curve.
 #'
-#' The basic equation for the s-curve is z/(1 + abs(z)^shape)^(1/shape),
-#'where z is scale*(x - location).\cr
+#' The basic equation for the s-curve is \emph{z}/(1 + abs(\emph{z})^\code{shape})^(1/\code{shape}),
+#'where \emph{z} is \code{scale}*(\code{x}-\code{location}).\cr
 #'
 #'The function \code{sCurve} computes the forward transform and the
 #'function \code{IsCurve} computes the inverse [sCurve] transform, or back-transform.
 #'
 #' @aliases sCurve IsCurve
 #' @param x a numeric vector to be transformed by \code{sCurve} or
-#'back-trasnformed by \code{IsCurve}. Missing
+#'back-transformed by \code{IsCurve}. Missing
 #'values are allowed and result in corresponding missing values in the output.
 #' @param location the transition point in the s-curve transform.
 #' @param scale the scaling factor for the data, the slope at the transition

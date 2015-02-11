@@ -3,7 +3,7 @@
 \name{show-methods}
 \alias{show,timeDay-method}
 \alias{show-methods}
-\title{Methods for Function \code{show} for time-of-day objects}
+\title{Methods for Function \code{show} for Time-of-Day Objects}
 \usage{
 \S4method{show}{timeDay}(object)
 }

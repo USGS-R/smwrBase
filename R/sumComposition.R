@@ -1,6 +1,6 @@
 #'Percentage Composition
 #'
-#'Compute percentage or proportion of elements in a composition
+#'Compute percentage or proportion of elements in a composition.
 #'
 #'Missing values are permitted in \code{x} or \code{\dots} and result in missing 
 #'values for the row in the output.
@@ -14,9 +14,12 @@
 #' @return A matrix with columns matching all of the data in \code{x} and
 #'\code{\dots{}} with rows summing to \code{Range}.
 #' @note This function is designed to meet a very simple need in some 
-#'applications like constructing data for Piper or trilinear diagrams.
+#'applications like constructing data for Piper (Piper, 1944) or trilinear diagrams.
 #'For more in-depth manipulations of compositional data, the user is directed
 #'to the \code{compositions} or other similar package.
+#' @references
+#'Piper, A.M., 1944, A graphical procedure in the geochemical interpretation 
+#'of water analyses: Transactions of the American Geophysical Union, v. 25, p. 914-923.
 #' @export
 #' @keywords manip array
 #' @examples

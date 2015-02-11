@@ -1,6 +1,5 @@
 \documentclass{article}
-\parskip 3pt
-\parindent 30pt
+\parskip 6pt
 \usepackage[margin=1.25in]{geometry}
 %\VignetteIndexEntry{Regression Modeling Strategies}
 %\VignetteDepends{smwrBase}
@@ -8,7 +7,7 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 \raggedright
-\parindent 30pt
+
 \title{Regression Modeling Strategies}
 
 \author{Dave Lorenz}
@@ -44,7 +43,7 @@ head(DF)
 \eject
 \section{Modeling Nonlinear Log-log Relations}
 
-Many hydrologic relations are linear and homoscedastic when both the response and the explanatory variables are log transformed (either common or natural logarithms can be used). However, the relation will occasionally have some nonlinearity that must be resolved as shown in figure 1.
+Many hydrologic relations are approximately linear and homoscedastic when both the response and the explanatory variables are log transformed (either common or natural logarithms can be used). However, the relation will occasionally have some nonlinearity that must be resolved as shown in figure 1.
 
 <<fig=TRUE, echo=FALSE>>=
 with(DF, plot(Flow, Y1, type='p', pch=16, tck=.02, log="xy", las=1))
@@ -55,7 +54,7 @@ abline(-1.1828,       0.3728)
 
 This example demonstrates three approaches for modeling the relation---adding a second order polynomial term, a ladder-of-powers transformation, and a hyperbolic transformation. No attempt is made to evaluate other linear regression model assumptions, but the residual sum of squares is minimized for the ladder-of-powers and hyperbolic transformations.
 
-A very common and easy to use approach to modeling the nonlinearity shown in figure 1 is to add second or higher-order polynomial terms for the explanatory variable. The \texttt{poly} in \texttt{stats} is distributed in base R, but it has options only for orthonormal terms, which cannot be directly interpreted, or raw terms, which can produce very large variance inflation factors. The function \texttt{quadratic} in \texttt{smwrBase} overcomes both of the limitations, but only produces the first- and second-order terms. Its use is straightforward, there is no need to specify the first-order term, use as shown in the code below. The fitted line is shown in figure 2.
+A very common and easy to use approach to modeling the nonlinearity shown in figure 1 is to add second or higher-order polynomial terms for the explanatory variable. The \texttt{poly} in \texttt{stats} is distributed in base R, but it has options only for orthonormal terms, which cannot be directly interpreted, or raw terms, which can produce very large variance inflation factors. The function \texttt{quadratic} in \texttt{smwrBase} overcomes both of the limitations, but only produces the first- and second-order terms. Its use is straightforward as there is no need to specify separate first- and second-order terms. Use as shown in the code below. The fitted line is shown in figure 2.
 
 <<echo=TRUE>>=
 # The model with a second-order polynomial term
@@ -73,11 +72,11 @@ curve(10^(-0.07486 + 0.37284*(log10(x) - 3.03898) +
 
 The names of the coefficients can be cumbersome, but they are derived from the name of the term in the formula, quadratic(log10(Flow)), followed by the centering value in parenthesis and the order, 1 for the first-order term and 2 for the second-order term. The centering value is subtracted from the values and produces orthogonal first- and second-order terms by default.
 
-The terms can be directly interpreted. For the quadratic function, the slope at the centering value is equal to the the coefficient for the first-order term, 0.37284 for these data. Because the sign of the second-order term is positive, the slope increases for increasing flow and decreases for decreasing flow. It is sometimes useful to know where the slope is 0. The equation is -2 divided by the coefficient for the second order term times the coefficient for the first order term plus the centering value. For this model: -2 / 0.13653 * 0.37284 + 3.03898 = -2.4227 in log units or about 0.004 when converted back to flow units.
+The coefficients can be directly interpreted. For the quadratic function, the slope at the centering value is equal to the the coefficient for the first-order term, 0.37284 for these data. Because the sign of the second-order term is positive, the slope increases for increasing flow and decreases for decreasing flow. It is sometimes useful to know where the slope is 0. The equation to find where the slope is zero is -2 divided by the coefficient for the second-order term times the coefficient for the first-order term plus the centering value. For this model: -2 / 0.13653 * 0.37284 + 3.03898 = -2.4227 in log units or about 0.004 when converted back to flow units.
 
-Second-order fits can occasionally produce hydrologically undesirable results, for example reversals in the response relation on either side of the zero-slope value, or extraordinarily large response values of extrapolated  outside of the calibration data. Helsel and Hirsch, 2002, discuss the ladder-of-powers transformation, which can sometimes be used to reduce the likelihood of the reversals. The \texttt{boxCox} function in \texttt{smwrBase} can be used to construct several candidate models, selecting the "best" fit for the power.
+Second-order fits can occasionally produce hydrologically undesirable results, for example reversals in the response relation on either side of the zero-slope value, or extraordinarily large response values of extrapolated  outside of the calibration data. Helsel and Hirsch (2002) discuss the ladder-of-powers transformation, which can sometimes be used to reduce the likelihood of the reversals. The \texttt{boxCox} function in \texttt{smwrBase} can be used to construct several candidate models, selecting the ``best'' fit for the power.
 
-For this example, the minimum sum of squared residuals will be used as the criterion for "best" fit. The \texttt{deviance} function in \texttt{stats} computes the model deviance, which for a linear regression model is the sum of the squared residuals. In general, the absolute "best" model is not necessarily desirable, but one need find a good, broadly applicable model (Helsel and Hirsch, 2002). This example will look at increments of .25 between 0 (equivalent to a log transform) and 1 (equivalent to linear) in the script below. The direction and range of the transforms to try can be inferred from Helsel and Hirsch, 2002.
+For this example, the minimum sum of squared residuals will be used as the criterion for ``best'' fit. The \texttt{deviance} function in \texttt{stats} computes the model deviance, which for a linear regression model is the sum of the squared residuals. In general, the minimum deviance model is not necessarily desirable, but one needs to find a good, broadly applicable model (Helsel and Hirsch, 2002). This example will look at increments of 0.25 between 0 (equivalent to a log transform) and 1 (equivalent to linear) in the script below. The direction and range of the transforms to try can be inferred from Helsel and Hirsch (2002).
 
 <<echo=TRUE>>=
 # Try models with ladder of powers between 0 and 1
@@ -88,7 +87,7 @@ deviance(lm(log10(Y1) ~ boxCox(Flow, 0.75), data=DF))
 deviance(lm(log10(Y1) ~ boxCox(Flow, 1.), data=DF))
 @
 
-The minimum sum of squared residuals was for the fourth-root transform (0.25). The printed results of the regression model is shown in the script below and the fitted line in figure 3.
+The minimum sum of squared residuals was for the fourth-root transform (0.25). The printed results of the regression model are shown in the script below, and the fitted line is shown in figure 3.
 
 <<echo=TRUE>>=
 # The model with fourth-root transform
@@ -101,11 +100,11 @@ curve(10^(-0.5956165 + 0.0001308 * boxCox(x, .25, GM=1262.052)),
       166, 7700, add=TRUE)
 @
 
-\textbf{Figure 3.} A curved log-log relation with a ladder-of-powers fit.
+\textbf{Figure 3.} A log-log plot with a curved ladder-of-powers fit.
 
-Another option for fitting data like this is the hyperbolic transform advocated by Johnson and others, 1969. The \texttt{hyperbolic} function in \texttt{smwrBase} can be used for this transform. The hyperbolic transform can be thought of as a way to model mixing of different concentrations at high or low flows. the data represented by Y1 can be though of as having a lower bound but increasing as flow increases. These are modeled by values for the \texttt{factor} argument less than 0. If the data can be thought of as having an upper bound at high flows and dilution at lower flows, then the values for \texttt{factor} argument should be greater than 0. In general, there is no reason for the value of \texttt{factor} to be greater than 3 or less than -3.
+Another option for fitting data like this is the hyperbolic transform advocated by Johnson and others (1969). The \texttt{hyperbolic} function in \texttt{smwrBase} can be used for this transform. The hyperbolic transform can be thought of as a way to model mixing of different concentrations at high and low flows. The data represented by Y1 can be thought of as having a lower bound but increasing as flow increases. These are modeled by values for the \texttt{factor} argument less than 0. If the data can be thought of as having an upper bound at high flows and dilution at lower flows, then the values for \texttt{factor} argument should be greater than 0. In general, there is no reason for the value of \texttt{factor} to be greater than 3 or less than -3.
 
-As with the ladder-of powers example, the "best" model will be selected as shown in the scripts below. It will be done in two sessions, the first to set the limits for the second.
+As with the ladder-of-powers example, the ``best'' model will be selected as shown in the scripts below. It will be done in two sessions, the first to set the limits for the second.
 
 <<echo=TRUE>>=
 # Try models with hyperbolic factors from 0 to -3
@@ -143,7 +142,7 @@ All of the models fit the data better than the simple, linear fit. The hyperboli
 \eject
 \section{Modeling Flow Mixture Relations}
 
-As described in the latter part of the previous section, there can be times when the flow-concentration relation represents a mixture model with different concentrations at high and low flows. The \texttt{sCurve} function in \texttt{smwrBase} is a very flexible transform for modeling flow mixture models. It is much more flexible than the \texttt{hyperbolic} function but requires the fitting or more arguments. The fitted arguments are \texttt{location}, which is the transition point in the curve; \texttt{scale}, which describes the rate of change at the transition point, and \texttt{shape}, which controls how quickly the curve approaches the limits. Both \texttt{scale} and \texttt{shape} must be greater than 0.
+As described in the latter part of the previous section, there can be times when the flow-concentration relation represents a mixture model with different source concentrations at high and low flows. The \texttt{sCurve} function in \texttt{smwrBase} is a very flexible transform for modeling flow mixture models. It is much more flexible than the \texttt{hyperbolic} function but requires the fitting of more arguments. The fitted arguments are \texttt{location}, which is the transition point in the curve; \texttt{scale}, which describes the rate of change at the transition point, and \texttt{shape}, which controls how quickly the curve approaches the limits. Both \texttt{scale} and \texttt{shape} must be greater than 0.
 
 The data in this case are Y2 in the DF dataset. Figure 5 shows the relation between flow and Y2 with a LOWESS smooth to help fit the curve. The sequence of scripts below show one manual approach to fitting the flow mixture model.
 
@@ -155,7 +154,7 @@ with(DF.smo, lines(exp(x), exp(y)))
 
 \textbf{Figure 5.} A flow mixture model relation.
 
-Inspection of figure 5 shows that the transition appears to be at a value a bit larger than 1,000 and less than 1,500. The first attempt at the model building will be to use 1,200 as the value for location. But the data are common-log transformed, so the location must also be common-log transformed. The fit is constructed in the script below and corresponding graph is shown in figure 6.
+Inspection of figure 5 shows that the transition appears to be at a flow value a bit larger than 1,000 and less than 1,500. The first attempt at the model building will be to use 1,200 as the value for location. Because the data are common-log transformed, the location must also be common-log transformed. The fit is constructed in the script below and corresponding graph is shown in figure 6.
 
 <<echo=TRUE>>=
 # The model with the hyperbolic transform
@@ -168,9 +167,9 @@ curve(10^(0.00196 + 0.90982 * sCurve(log10(x), location=log10(1200))),
       166, 7700, add=TRUE)
 @
 
-\textbf{Figure 6.} A curved log-log relation with a hyperbolic fit.
+\textbf{Figure 6.} A log-log relation with a curved fit.
 
-The slope at the transition point is much greater than 1, so increase scale and refit.
+The slope indicated by the data at the transition point in figure 6 is much greater than 1, so increase scale and refit.
 
 <<echo=TRUE>>=
 # The model with the sCurve transform
@@ -186,14 +185,14 @@ curve(10^( -0.004898 + 0.420611 * sCurve(log10(x), location=log10(1200),
 
 \textbf{Figure 7.} A flow-mixture modeled using the \texttt{sCurve} function.
 
-This is actually a very good fit to the data. There is no reason to pursue further modifications to the arguments to \texttt{sCurve}. The \texttt{sCurve} function is most sensitive to the \texttt{location} and \texttt{scale} arguments. The \texttt{shape} argument may only need to be adjusted when the scatter of the fit is small.
+The curve in figure 7 shows a very good fit to the data. There is no reason to pursue further modifications to the arguments to \texttt{sCurve}. The \texttt{sCurve} function is most sensitive to the \texttt{location} and \texttt{scale} arguments. The \texttt{shape} argument may only need to be adjusted when the scatter of the fit is small.
 
 \eject
 \section{Modeling Seasonal Variation}
 
-Helsel and Hirsch, 2002, describe multiple regression with periodic functions in section 12.4.3. They describe the approach by adding two variables, one for the sine and one for the cosine. The \texttt{fourier} function in \texttt{smwrBase} simplifies the addition of those variables by adding both transforms to the model. It also forces both or neither to be considered in best-subset selection procedures. The \texttt{k.max} argument can be used to add higher-order seasonal terms.
+Helsel and Hirsch (2002) describe multiple regression with periodic functions to model seasonal variability in section 12.4.3. They describe the approach by adding two variables, one for the sine and one for the cosine of annual time. The \texttt{fourier} function in \texttt{smwrBase} simplifies the addition of those variables by adding both sine and cosine transformations to the model. It also forces both or neither to be considered in best-subset selection procedures. The \texttt{k.max} argument can be used to add higher-order seasonal terms; the \texttt{k.max} argument is the number of cycles per year.
 
-This example uses column Y3 in the DF data set with Date as the explanatory variable. The script below shows how to construct the model and the fit is shown in figure 8.
+This example uses column Y3 in the DF dataset with Date as the explanatory variable. The script below shows how to construct the model, and the fit is shown in figure 8.
 
 <<echo=TRUE>>=
 # The model with fourier transform
@@ -214,7 +213,7 @@ The names of the coefficients can be cumbersome, but they are derived from the n
 \begin{thebibliography}{9}
 
 \bibitem{HH2}
-Helsel, D.R. and Hirsch, R.M., 2002, Statistical methods in water resources: U.S. Geological Survey Techniques of Water-Resources Investigations, book 4, chap. A3, 522 p.
+Helsel, D.R., and Hirsch, R.M., 2002, Statistical methods in water resources: U.S. Geological Survey Techniques of Water-Resources Investigations, book 4, chap. A3, 522 p. Available online at: http://pubs.usgs.gov/twri/twri4a3/pdf/twri4a3-new.pdf.
 
 \bibitem{JO}
 Johnson, N.M., Likens, G.E., Borman, F.H., Fisher, D.W., and Pierce, R.S., 1969, A working model for the variation in stream water chemistry at the Hubbard Brook Experimental Forest, New Hampshire: Water Resources Research, v. 5, no. 6, p. 1353-1363.

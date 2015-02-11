@@ -18,7 +18,7 @@ case of the input name is ignored.}
 }
 \value{
 Vector containing the milliequivalent values. Missing values
-\code{NA}s are returned if the constituent name is invalid.
+(\code{NA}s) are returned if the constituent name is invalid.
 }
 \description{
 Convert concentrations in milligrams per liter (mg/L) to milliequivalents per
@@ -46,7 +46,7 @@ conc2meq(c(1,2,3), "Nitrate")
 }
 \references{
 Hem, J.D., 1985, Study and interpretation of the chemical
-characteristics of natural water: USGS Water-Supply Paper 2254, 263 p.
+characteristics of natural water: U.S. Gelogical Survey Water-Supply Paper 2254, 263 p.
 }
 \keyword{manip}
 

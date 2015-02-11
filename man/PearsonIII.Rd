@@ -27,7 +27,7 @@ corresponding missing values in the output.}
 
 \item{p}{vector of probabilities.}
 
-\item{n}{number of observations. If length(n) > 1, then the length is taken
+\item{n}{number of observations. If length(\code{n}) > 1, then the length is taken
 to be the number required.}
 }
 \value{
@@ -36,16 +36,16 @@ Either the density (\code{dpearsonIII}), cumulative probability
 (\code{rpearsonIII}) for the described distribution.
 }
 \description{
-Density, cumulative probability, quantiles and random generation for the
+Density, cumulative probability, quantiles, and random generation for the
 Pearson Type III distribution.
 }
 \details{
-Elements of x, q, or p that are missing will result in missing values in the
-retruned data.
+Elements of \code{x}, \code{q}, or \code{p} that are missing will result in
+missing values in the returned data.
 }
 \note{
-The log-Pearson Type III distribtuion is used extensitvely in flood-
-frequency analysis in the United States. The Pearson Type III forms the basis
+The log-Pearson Type III distribution is used extensitvely in flood-frequency
+analysis in the United States. The Pearson Type III forms the basis
 for that distribution.
 }
 \examples{

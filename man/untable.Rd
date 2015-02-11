@@ -15,7 +15,7 @@ the data for the rows. The default column name is "Rows."}
 the data for the columns. The default column name is "Columns."}
 
 \item{counts}{a logical value indicating whether there should be one row in
-the result for each observation, the default \code{counts} = \code{FALSE}, or
+the result for each observation, which is the default \code{counts} = \code{FALSE}, or
 whether there should be a column that contains the number of counts for each
 row and column class, \code{counts} = \code{TRUE}.}
 }
@@ -30,7 +30,7 @@ column and row names as classes.
 \note{
 The output for this function can be used for input to contingency table
 analysis functions that require a data frame rather than a contingency table.
-To convert a column from factor to ordered use the ordered function.
+To convert a column from factor to ordered, use the ordered function.
 }
 \examples{
 ## Create a small synthetic data matrix

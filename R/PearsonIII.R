@@ -1,17 +1,17 @@
 #'Pearson Type III distribution
 #'
-#'Density, cumulative probability, quantiles and random generation for the
+#'Density, cumulative probability, quantiles, and random generation for the
 #'Pearson Type III distribution.
 #'
-#'Elements of x, q, or p that are missing will result in missing values in the
-#'retruned data.
+#'Elements of \code{x}, \code{q}, or \code{p} that are missing will result in 
+#'missing values in the returned data.
 #'
 #' @rdname PearsonIII
 #' @aliases PearsonIII dpearsonIII ppearsonIII qpearsonIII rpearsonIII
 #' @param x,q vector of quantiles. Missing values are permitted and result in
 #'corresponding missing values in the output.
 #' @param p vector of probabilities.
-#' @param n number of observations. If length(n) > 1, then the length is taken
+#' @param n number of observations. If length(\code{n}) > 1, then the length is taken
 #'to be the number required.
 #' @param mean vector of means of the distribution of the data.
 #' @param sd vector of standard deviation of the distribution of the data.
@@ -20,8 +20,8 @@
 #'(\code{ppearsonIII}), quantile (\code{qpearsonIII}), or random sample
 #'(\code{rpearsonIII}) for the described distribution.
 #' @export
-#' @note The log-Pearson Type III distribtuion is used extensitvely in flood-
-#'frequency analysis in the United States. The Pearson Type III forms the basis
+#' @note The log-Pearson Type III distribution is used extensitvely in flood-frequency 
+#'analysis in the United States. The Pearson Type III forms the basis
 #'for that distribution.
 #' @seealso \code{\link{dlpearsonIII}}, \code{\link{dnorm}}
 #' @keywords manip distribution

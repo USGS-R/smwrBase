@@ -7,15 +7,15 @@ baseDay2decimal(x)
 }
 \arguments{
 \item{x}{a vector of baseDay values, character or factors of the form month
-abbreviation and day number, genreally crated from \code{baseDay}. Missing
+abbreviation and day number, generally created from \code{baseDay}. Missing
 values are permitted and result in missing values in the output. Unmatched
 values also result in missing values in the output.}
 }
 \value{
-A numeric value representing the 'base' day.
+A numeric value representing the base day.
 }
 \description{
-Computes the decimal time representation of the 'base' day of the year.
+Computes the decimal time representation of the base day of the year.
 }
 \examples{
 # The baseDay ordered by calendar year

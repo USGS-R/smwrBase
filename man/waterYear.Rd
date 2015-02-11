@@ -6,8 +6,8 @@
 waterYear(x, numeric = FALSE)
 }
 \arguments{
-\item{x}{an object of class "Date" or "POSIXt." Missing values are permittied and
-reesult in corresponding missing values in the output.}
+\item{x}{an object of class "Date" or "POSIXt." Missing values are permitted and
+result in corresponding missing values in the output.}
 
 \item{numeric}{a logical value that indicates whether the returned values
 should be numeric \code{TRUE} or an ordered factor \code{FALSE}. The default

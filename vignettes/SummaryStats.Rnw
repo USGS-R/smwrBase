@@ -1,6 +1,5 @@
 \documentclass{article}
-\parskip 3pt
-\parindent 30pt
+\parskip 6pt
 \usepackage[margin=1.25in]{geometry}
 %\VignetteIndexEntry{Computing Summary Statistics for Daily Data}
 %\VignetteDepends{smwrBase}
@@ -8,7 +7,6 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 \raggedright
-\parindent 30pt
 
 \title{Computing Summary Statistics for Daily Data}
 
@@ -36,7 +34,7 @@ with(ChoptankFlow, screenData(datetime, Flow, year = "calendar"))
 
 The simplest and most straightforward way to compute summary statistics from arbitrarily grouped data is to use the \texttt{tapply} function. At its simplest, it requires only three arguments---\texttt{X}, the data to summarize; \texttt{INDEX}, the grouping data; and \texttt{FUN}, the summary statistic function.
 
-The \texttt{smwrBase} package contains the \texttt{baseDay} function that can be used to group data by day, so that all data for each day, including February 29, can be summarized. The output can be arranged so that the sequence represents the calendar-, water- or climate-year; beginning January 1, October 1, or April 1.
+The \texttt{smwrBase} package contains the \texttt{baseDay} function that can be used to group data by day, so that all data for each day, including February 29, can be summarized. The output can be arranged so that the sequence represents the calendar-, water- or climate-year; beginning January 1, October 1, or April 1, respectively.
 
 The following script demonstrates how to use the \texttt{tapply} and \texttt{baseDay} functions to compute the daily mean streamflow for the previously retrieved data. It uses the \texttt{with} function to facilitate referring to columns in the dataset.
 
@@ -52,7 +50,7 @@ tail(ChoptankFlow.daily)
 
 The output from \texttt{tapply} is an array. Because the output from this example is an array of one dimension, it is printed in the form of a named vector. Had the summary statistic function been \texttt{quantile}, for example, the output would have been a list.
 
-The \texttt{tapply} function is very powerful and easy to use. But there are times when we want the output in the form of a dataset rather than a vector or array. In those cases, the \texttt{aggregate} function is a better alternative. The \texttt{aggregate} function has several usage options. The script below demonstrates how to build a formula to compute the same statistics that we computed in the previous script. Early versions of \texttt{aggregate} required the output of the summary statistic function to be a scalar, but that is no longer a limitation.
+The \texttt{tapply} function is very powerful and easy to use however, there are times when we want the output in the form of a dataset rather than a vector or array. In those cases, the \texttt{aggregate} function is a better alternative than the \texttt{tapply} function. The \texttt{aggregate} function has several usage options. The script below demonstrates how to build a formula to compute the same statistics that we computed in the previous script. Early versions of \texttt{aggregate} required the output of the summary statistic function to be a scalar, but that is no longer a limitation.
 
 <<echo=TRUE>>=
 # There are no missing values
@@ -66,12 +64,12 @@ tail(ChoptankFlow.dailyDF)
 names(ChoptankFlow.dailyDF)[1] <- "Day"
 @
 
-Note that the grouping column, now called Day, is a factor. There are times when it would be better to be a simple character. It can easily be converted by the executing the expression:\newline \texttt{ChoptankFlow.dailyDF\$Day <- as.character(ChoptankFlow.dailyDF\$Day)}.
+Note that the grouping column, now called Day, is a factor. If character data are needed, executing the expression:\newline \texttt{ChoptankFlow.dailyDF\$Day <- as.character(ChoptankFlow.dailyDF\$Day)} will convert the column Day to character.
 
 \eject
 \section{Computing Annual Mean Values}
 
-The example above can easily be expanded to any grouping that the user desires. This example computes annual means by calendar year. The \texttt{year} function in \texttt{lubridate} is used to group the data by calendar year. The \texttt{waterYear} function in \texttt{smwrBase} can be used to group the data by water year.
+The previous example can easily be expanded to any grouping that the user desires. This example computes annual means by calendar year. The \texttt{year} function in \texttt{lubridate} is used to group the data by calendar year. The \texttt{waterYear} function in \texttt{smwrBase} can be used to group the data by water year.
 
 <<echo=TRUE>>=
 # There are no missing values
@@ -84,12 +82,12 @@ names(ChoptankFlow.yrDF)[1] <- "CalYear"
 head(ChoptankFlow.yrDF)
 @
 
-Other grouping functions include \texttt{month} (month) in \texttt{lubridate}, \texttt{seasons} (user-defined seasons) in \texttt{smwrBase}. Refer to the documentation for each of these function for a description of the arguments.
+Other grouping functions include \texttt{month} (month) in \texttt{lubridate}, \texttt{seasons} (user-defined seasons) in \texttt{smwrBase}. Refer to the documentation for each of these functions for a description of the arguments.
 
 \eject
-\section{Computing Year and Month Mean Values}
+\section{Computing yearly and monthly Mean Values}
 
-Aggregation can also be done by multiple grouping variables. This example computes the mean streamflow for each month by year. This example uses the  \texttt{year} and the \texttt{month} functions because the output is sorted by groups. The sequence of the groups in the call is important---the sorting is done in the order specified in the formula. For this example, the data are sorted by month and then by year, which in his case, keeps the order correct; grouping by water year would misplace October, November and December. For a calendar year table, the months are in the correct order.
+Aggregation can also be done by multiple grouping variables. This example computes the mean streamflow for each month by year. This example uses the  \texttt{year} and the \texttt{month} functions because the output is sorted by groups. The sequence of the groups in the call is important---the sorting is done in the order specified in the formula. For this example, the data are sorted by month and then by year, which in this case, keeps the order correct; grouping by water year would misplace October, November, and December. For a calendar year table, the months are in the correct order.
 
 <<echo=TRUE>>=
 # There are no missing values

@@ -43,7 +43,7 @@ XT <- c(1, 2, 0, 4)
 recode(XT, 0, 3)
 }
 \seealso{
-\code{\link{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}},
+\code{\link{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}}
 }
 \keyword{manip}
 

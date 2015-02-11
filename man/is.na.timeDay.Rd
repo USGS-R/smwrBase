@@ -10,10 +10,10 @@
 }
 \value{
 A logical vector of the same length as its argument \code{x},
-containing \code{TRUE} for those elements marked \code{NA} and code{FALSE} otherwise.
+containing \code{TRUE} for those elements marked \code{NA} and \code{FALSE} otherwise.
 }
 \description{
-Indicate which elemnts are missing.
+Indicate which elements are missing.
 }
 \examples{
 is.na(as.timeDay(c("10:30", "11:00")))

@@ -7,8 +7,8 @@ importRDB(file.name = "", date.format = NULL, tz = "",
   convert.type = TRUE)
 }
 \arguments{
-\item{file.name}{a character string specifying the name of the RDB file
-containing the data to be imported.}
+\item{file.name}{a character string specifying the name of the realtional database
+(RDB) file containing the data to be imported.}
 
 \item{date.format}{a character string specifying the format of all date
 columns. Required for columns that contain date and time. The default value,
@@ -16,14 +16,14 @@ columns. Required for columns that contain date and time. The default value,
 formats "none," which suppresses date conversion; and "varies," which can be
 used when the date data included time data sometimes and sometimes not.
 For the latter special format, the date and time data must be in POSIX format
-(YYYY-mm-dd HH:MM) with optional seconds. Fof dates missing time data, the time
-will be set to midnight in the spcified or local time zone.}
+(YYYY-mm-dd HH:MM) with optional seconds. For dates that areamissing time data, the time
+will be set to midnight in the specified or local time zone.}
 
 \item{tz}{the time zone information of the data.}
 
-\item{convert.type}{convert data according to the format line? Setting
-\code{convert.type} to \code{FALSE} forces all data to be imported as
-character.}
+\item{convert.type}{logical \code{TRUE} or \code{FALSE}, convert data according
+to the format line? Setting \code{convert.type} to \code{FALSE} forces all data
+to be imported as character.}
 }
 \value{
 A data frame with one column for each data column in the RDB
@@ -41,24 +41,22 @@ value). By default, dates are imported as class "Date" using a 4-digit year,
 no separator.\cr
 
 If a valid \code{date.format} is supplied, then the data are imported using
-\code{as.POSIXct} and time information can be included in the the data. If
+\code{as.POSIXct}, and time information can be included in the the data. If
 \code{date.format} is "none," then conversion of the date information is
 supressed and the data are retained as character strings.\cr
 
 The value for \code{tz} should be a valid "Olson" format consisting typically
 of a continent and city. See \code{\link{timezone}} for a description of
-timezones. For the United States, use these time zone specifications where
+timezones. For the United States, use these time-zone specifications where
 daylight savings time is used:
-\tabular{ll}{
-Eastern \tab "America/New_York" \cr
+\tabular{ll}{Eastern \tab "America/New_York" \cr
 Central \tab "America/Chicago" \cr
 Mountain \tab "America/Denver" \cr
 Pacific \tab "America/Los_Angeles" \cr
 Alaska \tab "America/Anchorage" \cr
 Hawii \tab "America/Honolulu" \cr}
 Use these time specifications where daylight savings time is not used:
-#'\tabular{ll}{
-Eastern \tab "America/Jamaica" \cr
+#'\tabular{ll}{Eastern \tab "America/Jamaica" \cr
 Central \tab "America/Managua" \cr
 Mountain \tab "America/Phoenix" \cr
 Pacific \tab "America/Metlakatla" \cr}
@@ -71,8 +69,8 @@ dataset as \code{comment}.
 
 If \code{convert.type} is \code{TRUE}, then non-numeric values, other than blanks,
 are converted to \code{NaN} (not a number) rather than \code{NA} (missing value)
-in numeric columns. \code{NaN} are treated like \code{NA} but can be identified
-using the \code{is.nan} function.
+in numeric columns. \code{NaN} values are treated like \code{NA} values but can
+be identified using the \code{is.nan} function.
 }
 \examples{
 \dontrun{

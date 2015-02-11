@@ -7,10 +7,10 @@
 #'is set to 0 if \code{which} is "sum" and the value previous period if
 #'\code{which} is "cumsum." The initial value of the series is always 0.
 #'
-#' @param times a date like vector corresponding to data.
+#' @param times a date-like vector corresponding to data.
 #' @param period character string that is valid input to the the POSIXct method
-#'for seq is OK, specifying the spacing between successive periods. For example
-#'"year," "month," or "day."
+#'for the \code{seq} function is accepable, specifying the spacing between 
+#'successive periods. For example "year," "month," or "day."
 #' @param which a character string indicating the method to use. 
 #'See \bold{Details} for options.
 #' @param begin the beginning date as POSIXt or as character.

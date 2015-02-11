@@ -14,14 +14,14 @@ screenData(dates, values, type = "DV", year = "calendar", printit = TRUE)
 and intermittent, or discrete, values ("IV") are accepted in this version.
 The whole text is required, but not case sensitive.}
 
-\item{year}{the type of year "calendar" or "water," which begins on October 1
+\item{year}{the type of year: "calendar" or "water," which begins on October 1
 of the previous calendar year and ends on September 30.}
 
-\item{printit}{print the results in a pretty format?}
+\item{printit}{logical (\code{TRUE} or \code{FALSE}), print the results in a pretty format?}
 }
 \value{
 For \code{type} = "DV," a matrix of the counts of \emph{missing} values,
-either coded as \code{NA} or not in the data set, for each month and each
+either coded as \code{NA} or not in the dataset, for each month and each
 year within the range of \code{dates}.
 
 For \code{type} = "DV," a matrix of the counts of \emph{observed} values
@@ -45,7 +45,9 @@ with(Q05078770, screenData(DATES, FLOW))
 with(Q05078770, screenData(DATES, FLOW, year="w"))
 }
 \references{
-Rutledge, A.T., 2007, Program user Guide for Recess:
+This function is based on the screen program described in:\cr
+
+Rutledge, A.T., 2007, Program user guide for RECESS:
 \url{http://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
 }
 \keyword{missing}

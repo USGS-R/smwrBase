@@ -1,13 +1,13 @@
 #'Base Day
 #'
-#'Computes the decimal time representation of the 'base' day of the year.
+#'Computes the decimal time representation of the base day of the year.
 #'
 #'
 #' @param x a vector of baseDay values, character or factors of the form month 
-#'abbreviation and day number, genreally crated from \code{baseDay}. Missing 
+#'abbreviation and day number, generally created from \code{baseDay}. Missing 
 #'values are permitted and result in missing values in the output. Unmatched 
 #'values also result in missing values in the output.
-#' @return A numeric value representing the 'base' day.
+#' @return A numeric value representing the base day.
 #' @keywords manip
 #' @seealso \code{\link{baseDay}}
 #' @examples

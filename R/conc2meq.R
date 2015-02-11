@@ -13,7 +13,7 @@
 #'be enough characters in the name to uniquely identify the constituent. The
 #'case of the input name is ignored.
 #' @return Vector containing the milliequivalent values. Missing values
-#'\code{NA}s are returned if the constituent name is invalid.
+#'(\code{NA}s) are returned if the constituent name is invalid.
 #' @note The user must verify that the units of concentration are mg/L. Only
 #'those constituents that are typically reported in mg/L (rather than
 #'micrograms per liter) are provided in this function. Aluminum, iron, and
@@ -29,7 +29,7 @@
 #'available conversion factors are stored in the list created by \code{conc.meq} in
 #'smwrBase.\cr
 #' @references Hem, J.D., 1985, Study and interpretation of the chemical
-#'characteristics of natural water: USGS Water-Supply Paper 2254, 263 p.
+#'characteristics of natural water: U.S. Gelogical Survey Water-Supply Paper 2254, 263 p.
 #' @keywords manip
 #' @export
 #' @examples

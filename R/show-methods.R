@@ -1,4 +1,4 @@
-#'Methods for Function \code{show} for time-of-day objects
+#'Methods for Function \code{show} for Time-of-Day Objects
 #'
 #'Display the time of day.
 #'

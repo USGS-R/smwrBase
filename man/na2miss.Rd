@@ -9,7 +9,7 @@ na2miss(x, to = -99999)
 miss2na(x, from = -99999)
 }
 \arguments{
-\item{x}{a vector. Missing values \code{NA}s are allowed.}
+\item{x}{a vector. Missing values (\code{NA}s) are allowed.}
 
 \item{to}{the replacement value for \code{NA}.}
 

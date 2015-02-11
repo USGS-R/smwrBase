@@ -5,14 +5,14 @@
 #'
 #' @param filename a single character string of the name of the file or object.
 #' @param type character string identifying the new suffix.
-#' @param replace logical: replace the current suffix?
-#' @return A character string like filename but with a new suffix.
+#' @param replace logical (\code{TRUE} or \code{FALSE}): replace the current suffix?
+#' @return A character string like \code{filename} but with a new suffix.
 #' @note This function is designed as a support function for many USGS
 #'functions.
 #' @author Dave Lorenz, original coding by Jim Slack, retired.
 #' @keywords MANIP
 #' @examples
-#'# Replace the .dat suffixze with .txt
+#'# Replace the .dat suffix with .txt
 #'setFileType("TestName.dat", "txt", replace=TRUE)
 #' @export
 setFileType <- function(filename, type="tmp", replace=FALSE) {

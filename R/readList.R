@@ -7,7 +7,7 @@
 #'entry in the line. If \code{FALSE}, then the components are sequentially 
 #'numbered.
 #' @param sep the separator character for the data in each line. If a blank
-#'string (the default), then any white space is take as the separator.
+#'string (the default), then any white space is taken as the separator.
 #' @param nlines the number of lines that represent a single collection of data,
 #' @param convert character string indicating how to convert the data. Must be
 #'a valid value for the \code{Class} arguemnt of \code{as}.

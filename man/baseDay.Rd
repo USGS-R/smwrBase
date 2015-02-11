@@ -16,15 +16,15 @@ of the day, \code{FALSE} means return a factor.}
 \bold{Details}.}
 }
 \value{
-An integer value representing the 'base' day number if \code{numeric}
+An integer value representing the base day number if \code{numeric}
 is \code{TRUE}. Otherwise a factor with levels for every day of the year.
 }
 \description{
-Computes the 'base' day of the year, a reference value that can be
+Computes the base day of the year, a reference value that can be
 used to group days for the computation of summary statistics.
 }
 \details{
-The 'base' day is computed so that all dates have the same reference value
+The base day is computed such that all dates have the same reference value
 regardless of whether the year is a leap year or not. If \code{year} is
 "calendar," then the factor levels begin on January 1; if \code{year} is
 "water," then the factor levels begin on October 1; and if \code{year} is

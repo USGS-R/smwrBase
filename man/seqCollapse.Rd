@@ -11,7 +11,7 @@ and removed before collapsing.}
 
 \item{sequential}{the separator for sequential values.}
 
-\item{skips}{the separator for gaps in the sequence}
+\item{skips}{the separator for gaps in the sequence.}
 }
 \value{
 A character string that represents that data in \code{x} in a compact

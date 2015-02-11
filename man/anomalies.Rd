@@ -15,13 +15,13 @@ generally in days. The anomalies must be specified in order of decreasing
 length.}
 }
 \value{
-A matrix of the specified anomalies and HFV. The mean of x is
+A matrix of the specified anomalies and HFV. The mean of \code{x} is
 included as an attribute.
 }
 \description{
 Decompose a series of observations into deviations (anomalies) from the mean
 for selected periods and the remainder (HFV or high frequency variation)
-using the method described in Appendix A of Vecchia(2000).
+using the method described in Appendix A of Vecchia (2000).
 }
 \details{
 The intent of computing anomalies is to give flexibility in fitting the
@@ -59,7 +59,7 @@ The output matrix contains missing values in the beginning,
 corresponding to the length of the longest anomaly.\cr
 
 A long time-frame anomaly that users may be interested, include the 5-year
-anomaly, which is 1826 days.
+anomaly, which is 1,826 days.
 }
 \examples{
 \dontrun{

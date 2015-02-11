@@ -12,7 +12,7 @@
 #'values are permitted.
 #' @param split the delimiter for \code{x} if \code{x} is character.
 #' @return A numeric vector of decimal degrees the same length as \code{x}.
-#'Missing values are returned whereever  \code{x}, \code{minutes}, or
+#'Missing values are returned wherever  \code{x}, \code{minutes}, or
 #'\code{seconds} has a missing value.
 #' @keywords manip
 #' @export

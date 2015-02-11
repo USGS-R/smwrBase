@@ -10,7 +10,7 @@ The data are stored as seconds since midnight.
 \section{Slots}{
 
 \describe{
-\item{\code{time}}{the time of day in second since midnight.}
+\item{\code{time}}{the time of day in seconds since midnight.}
 
 \item{\code{format}}{a character string indicating the format to disply the time of day.}
 }}

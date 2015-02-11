@@ -9,14 +9,14 @@
 #' @param cols a character string indicating the name of the column containing
 #'the data for the columns. The default column name is "Columns."
 #' @param counts a logical value indicating whether there should be one row in
-#'the result for each observation, the default \code{counts} = \code{FALSE}, or
+#'the result for each observation, which is the default \code{counts} = \code{FALSE}, or
 #'whether there should be a column that contains the number of counts for each
 #'row and column class, \code{counts} = \code{TRUE}.
 #' @return A data frame containing two columns named from \code{rows} and \code{cols} and an
 #'optional column named "Counts" if \code{counts} is set to \code{TRUE}.
 #' @note The output for this function can be used for input to contingency table
 #'analysis functions that require a data frame rather than a contingency table.
-#'To convert a column from factor to ordered use the ordered function.
+#'To convert a column from factor to ordered, use the ordered function.
 #' @seealso \code{\link{ordered}}
 #' @export
 #' @keywords manip

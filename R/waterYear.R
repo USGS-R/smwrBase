@@ -3,8 +3,8 @@
 #'Create an ordered factor or numeric values from a vector of dates based on
 #'the water year.
 #'
-#' @param x an object of class "Date" or "POSIXt." Missing values are permittied and
-#'reesult in corresponding missing values in the output.
+#' @param x an object of class "Date" or "POSIXt." Missing values are permitted and
+#'result in corresponding missing values in the output.
 #' @param numeric a logical value that indicates whether the returned values
 #'should be numeric \code{TRUE} or an ordered factor \code{FALSE}. The default
 #'value is \code{FALSE}.

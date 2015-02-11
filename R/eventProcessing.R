@@ -1,16 +1,11 @@
 #'Event Processing
 #'
 #'Computes the event number \code{eventNum}, the length of events
-#'\code{eventlen} or the sequence number for individual observations within an
+#'\code{eventLen} or the sequence number for individual observations within an
 #'event \code{eventSeq}.
 #'
 #' @rdname eventProcessing
 #' @aliases eventLen eventNum eventSeq
-#' @usage eventNum(event, reset = FALSE, na.fix = FALSE) 
-#'
-#' eventLen(eventno, summary = FALSE) 
-#'
-#' eventSeq(eventno)
 #' @param event a logical vector where \code{TRUE} indicates that an event
 #'occurred. Missing values are treated as instructed by \code{na.fix}.
 #' @param reset a logical value indicating whether the event is assumed to

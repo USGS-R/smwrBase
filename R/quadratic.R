@@ -10,7 +10,7 @@
 #' @return A matrix of two columns---the centered value of \code{x} and its
 #'square.
 #' @note If \code{center} is specified, then the polynomials will not
-#'necessairly be orthogonal. If used in a linear regression formula, then the
+#'necessarily be orthogonal. If used in a linear regression formula, then the
 #'coefficient of the linear term is the slope at \code{center}.\cr
 #'The function \code{quadratic} differs
 #'from \code{poly} in that the data are not scaled, so the regression

@@ -14,7 +14,7 @@
 #' @param x.range the input range to map to the output range. The default range is 
 #'computed from the range of \code{x} after removing missing values.
 #' @return A numeric vector scaled to the specified range.
-#' @note Some applications suggest or require data scaled to a consistent range.
+#' @note Some applications recommend or require data scaled to a consistent range.
 #'The function \code{scaleRng} will do that and can be used to back-transform
 #'the data.
 #' @keywords manip

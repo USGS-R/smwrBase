@@ -1,6 +1,6 @@
 #'Log-Pearson Type III distribution
 #'
-#'Density, cumulative probability, quantiles and random generation for the
+#'Density, cumulative probability, quantiles, and random generation for the
 #'log-Pearson Type III distribution.
 #'
 #'Elements of x, q, or p that are missing will result in missing values in the
@@ -10,7 +10,7 @@
 #' @aliases LogPearsonIII dlpearsonIII plpearsonIII qlpearsonIII rlpearsonIII
 #' @param x,q vector of quantiles.
 #' @param p vector of probabilities.
-#' @param n number of observations. If length(n) > 1, then the length is taken
+#' @param n number of observations. If length(\code{n}) > 1, then the length is taken
 #'to be the number required.
 #' @param meanlog vector of means of the distribution of the log-transformed
 #'data.
@@ -21,8 +21,8 @@
 #' @return Either the density (\code{dlpearsonIII}), cumulative probability
 #'(\code{plpearsonIII}), quantile (\code{qlpearsonIII}), or random sample
 #'(\code{rlpearsonIII}) for the described distribution.
-#' @note The log-Pearson Type III distribtuion is used extensitvely in flood-
-#'frequency analysis in the United States.
+#' @note The log-Pearson Type III distribution is used extensitvely in 
+#'flood-frequency analysis in the United States.
 #' @export
 #' @seealso \code{\link{dpearsonIII}}, \code{\link{dlnorm}}
 #' @keywords manip distribution

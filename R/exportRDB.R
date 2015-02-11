@@ -11,9 +11,9 @@
 #' @param col.names a vector of colum names to use instead of the column names
 #'in \code{x}.
 #' @param meta a logical value indicating whether the header should include a
-#'meta-data template for documentation or not.
+#'metadata template for documentation or not.
 #' @param code.rule an integer value indicating how many unique numeric values
-#'should be included in the meta-data template for cases where each distinct
+#'should be included in the metadata template for cases where each distinct
 #'value has a descriptive meaning rather than a numeric meaning.
 #' @return The file name is returned.
 #' @seealso \code{\link{write.table}}, \code{\link{importRDB}}

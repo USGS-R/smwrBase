@@ -7,10 +7,6 @@
 \usage{
 eventNum(event, reset = FALSE, na.fix = FALSE)
 
-eventLen(eventno, summary = FALSE)
-
-eventSeq(eventno)
-
 eventSeq(eventno)
 
 eventLen(eventno, summary = FALSE)
@@ -45,7 +41,7 @@ event.
 }
 \description{
 Computes the event number \code{eventNum}, the length of events
-\code{eventlen} or the sequence number for individual observations within an
+\code{eventLen} or the sequence number for individual observations within an
 event \code{eventSeq}.
 }
 \examples{

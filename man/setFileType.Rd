@@ -10,10 +10,10 @@ setFileType(filename, type = "tmp", replace = FALSE)
 
 \item{type}{character string identifying the new suffix.}
 
-\item{replace}{logical: replace the current suffix?}
+\item{replace}{logical (\code{TRUE} or \code{FALSE}): replace the current suffix?}
 }
 \value{
-A character string like filename but with a new suffix.
+A character string like \code{filename} but with a new suffix.
 }
 \description{
 Create a new file or object name from an old name with an optional new
@@ -24,7 +24,7 @@ This function is designed as a support function for many USGS
 functions.
 }
 \examples{
-# Replace the .dat suffixze with .txt
+# Replace the .dat suffix with .txt
 setFileType("TestName.dat", "txt", replace=TRUE)
 }
 \author{

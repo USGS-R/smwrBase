@@ -1,10 +1,10 @@
 #'Merge Flow into another Dataset
 #'
-#'Merges the FLOW (or other data) column from one or many daily-value datasets
+#'Merges the flow (or other data) column from one or many daily-value datasets
 #'into a another dataset with one or more stations.
 #'
 #'More than one column can be specified for \code{FLOW} when merging a single
-#'station and the flow data are specified in \code{Qdata}.
+#'station, and the flow data are specified in \code{Qdata}.
 #'
 #' @param QWdata a data frame with at least a date column on which to merge.
 #' @param STAID a character string of the name of the station-identifier column.
@@ -29,20 +29,20 @@
 #'The are fours ways to merge flow and water-quality data:\cr
 #'
 #'A dataset that contains data for a single site does not require
-#'a STAID column.  Qdata must be supplied. This case must be used if
+#'a \code{STAID} column.  \code{Qdata} must be supplied. This case must be used if
 #'the flow record is incomplete or does not cover the range of dates in
-#'\code{QWdata} all other methods will fail if that is the case. See Example 1.\cr
+#'\code{QWdata}; all other methods will fail if that is the case. See Example 1.\cr
 #'
 #'A dataset that contains data for one or more sites can be
 #'merged with a dataset that contains flow data for the sites in that
 #'first dataset. This method will fail if there is not a complete list
 #'of station identifiers in the flow dataset. See Example 2. \cr
 #'
-#'A data set that contains data for one or more sites can be
-#'merged with flow data sets that have names based on STAID. The structure of
+#'A dataset that contains data for one or more sites can be
+#'merged with flow datasets that have names based on \code{STAID}. The structure of
 #'the name must be some common prefix followed by the station identifier. The
 #'station identifier must conform to a valid name.  This method will
-#'fill in missing values (NAs) if a dataset corresponding to a station
+#'fill in missing values (\code{NA}s) if a dataset corresponding to a station
 #'identifier is not available. See Example 3. \cr
 #'
 #'A dataset that contains data for one or more sites can be
@@ -59,7 +59,7 @@
 #'variability than points toward the center. A plot that shows the upper end
 #'trailing upward indicates that the largest flows have been under sampled and
 #'the sampled data may not give a reliable estimate of loads.
-#' @seealso \code{\link{mergeNearest}},
+#' @seealso \code{\link{mergeNearest}}
 #' @keywords manip
 #' @export
 #' @examples

@@ -6,11 +6,11 @@
 importCSV(file.name = "", tz = "")
 }
 \arguments{
-\item{file.name}{a character string specifying the name of the comma separated variable file
-containing the data to be imported; \code{importCSV} requires \code{file.name}
-to be an readable file on the computer.}
+\item{file.name}{a character string specifying the name of the comma separated variable
+(CSV) file containing the data to be imported; \code{importCSV} requires \code{file.name}
+to be a readable file on the computer.}
 
-\item{tz}{a character string indicating the time zone information for data
+\item{tz}{a character string indicating the time-zone information for data
 imported as "POSIXct." The default is to use the local setting.}
 }
 \value{
@@ -41,7 +41,7 @@ TestPart <- importCSV(file.path(TestDir, "TestPart.csv"))
 }
 \seealso{
 \code{\link{read.csv}}, \code{\link{scan}},
-\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
+\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}}
 }
 \keyword{IO}
 \keyword{manip}

@@ -12,11 +12,12 @@ but result in missing values in the output.}
 \item{span}{the span of the differences.}
 
 \item{pos}{how to position the output data relative to the value returned;
-"center" means that the value represents the average or difference of the
-most central value relative to the \code{span}, "end" or "trailing" means the
-the value is the average or difference or the preceding \code{span} values,
-and "begin" or "leading" means the value is the average or difference or the
-following \code{span} values.}
+"center" means that value represents the difference between the
+preceding \code{span}/2 value and the following \code{span}/2 value,
+"end" or "trailing" means that value is the difference between the
+preceding \code{span} value and the current value, and "begin" or "leading"
+means that value is the difference between the current value and the
+following \code{span} value.}
 }
 \value{
 A vector of the same legnth as \code{x} containing the differences.
@@ -24,14 +25,12 @@ A vector of the same legnth as \code{x} containing the differences.
 \description{
 Filter a regular series of data to compute a moving difference.
 }
-\note{
-For odd values of \code{span} and \code{pos} equal to "center",
-\code{order} equal 0 or 1 give the same result.\cr
-}
 \examples{
-## Construct a simple valley
+# Construct a simple valley
 movingData <- abs(seq(-5, 5))
 movingDiff(movingData, span=1)
+# Compare to diff:
+diff(movingData)
 }
 \seealso{
 \code{\link{filter}}, \code{\link{diff}}, \code{\link{movingAve}}

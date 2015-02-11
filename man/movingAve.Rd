@@ -15,10 +15,10 @@ but result in missing values in the output.}
 \code{span}.}
 
 \item{pos}{how to position the output data relative to the value returned;
-"center" means that the value represents the average or difference of the
-most central value realtive to the \code{span}, "end" or "trailing" means the
-the value is the average or difference or the preceding \code{span} values,
-and "begin" or "leading" means the value is the average or difference or the
+"center" means that the value represents the average of the
+most central value relative to the \code{span}, "end" or "trailing" means the
+the value is the average of the preceding \code{span} values,
+and "begin" or "leading" means the value is the average of the
 following \code{span} values.}
 }
 \value{
@@ -29,14 +29,16 @@ Impliments the Savitzky-Golay filter on a regular series of data
 to compute a moving average.
 }
 \note{
-For odd values of \code{span} and \code{pos} equal to "center",
-\code{order} equal 0 or 1 give the same result.\cr In general, there is no
-reason to use polynomial orders greater than 2 and \code{pos} should always
+For odd values of \code{span} and \code{pos} equal to "center,"
+\code{order} equal to 0 or 1 gives the same result.\cr
+
+In general, there is no
+reason to use polynomial orders greater than 2, and \code{pos} should always
 be set to "center" for polynomial orders greater than 1 to avoid strange
 behavior due to end effects.\cr
 
 The weights for the averages are computed based on linear model theory
-(Savitzky and Golay, 1964 and Wood and Hockens, 1970). They latter
+(Savitzky and Golay, 1964; Wood and Hockens, 1970). Wood and Hockens (1970)
 also discuss some artifacts resulting from smoothing.
 }
 \examples{
@@ -46,11 +48,12 @@ movingAve(movingData, span=5)
 movingAve(movingData, span=5, order=2)
 }
 \references{
-Savitzky, A. and Golay, M.J.E., 1964, Smoothing and differentiation of data
-by simplified least squares procedures: Analytical Chemistry v. 36, no. 8, p.
-1627--1639\cr
-Wood, L.C. and Hockens, S.N., 1970, Least squares smoothing
-operators: Geophysics v. 35, no. 6, p. 1005--1019.
+Savitzky, A., and Golay, M.J.E., 1964, Smoothing and differentiation of data
+by simplified least squares procedures: Analytical Chemistry, v. 36, no. 8, p.
+1627--1639.\cr
+
+Wood, L.C., and Hockens, S.N., 1970, Least squares smoothing
+operators: Geophysics, v. 35, no. 6, p. 1005--1019.
 }
 \seealso{
 \code{\link{filter}}, \code{\link{diff}}, \code{\link{movingDiff}}

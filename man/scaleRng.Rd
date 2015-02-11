@@ -31,7 +31,7 @@ and the maximum of \code{x.range} to \code{Max} and uses linear interpolation
 for other values in \code{x}.
 }
 \note{
-Some applications suggest or require data scaled to a consistent range.
+Some applications recommend or require data scaled to a consistent range.
 The function \code{scaleRng} will do that and can be used to back-transform
 the data.
 }

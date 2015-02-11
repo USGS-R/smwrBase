@@ -4,11 +4,13 @@
 #'
 #'The format for \code{max.diff} should be a numeric value followed by a
 #'description of the time span. The time span must be one of "secs," "mins,"
-#'"hours,", "days," or "weeks" for seconds, minutes, hours, days, or weeks.
+#'"hours," "days," or "weeks" for seconds, minutes, hours, days, or weeks,
+#'respectively.
 #'
 #' @param left the left-hand dataset.
 #' @param dates.left the name of the column of dates in the left-hand dataset.
-#' @param all.left include all rows from the left-hand dataset regardless of
+#' @param all.left logical (\code{TRUE} or \code{FALSE}), include all rows from the 
+#'left-hand dataset regardless of
 #'whether there is a matching row in the right-hand dataset?
 #' @param suffix.left the suffix to apply to common column names in the
 #'left-hand dataset.
@@ -16,8 +18,8 @@
 #' @param dates.right the name of the column of dates in the right-hand dataset.
 #' @param suffix.right the suffix to apply to common column names in the
 #'right-hand dataset.
-#' @param Date.noon adjust columns of class "Date" to represent a noon
-#'observation rather than 12 AM?
+#' @param Date.noon logical (\code{TRUE} or \code{FALSE}), adjust columns of 
+#'class "Date" to represent a noon observation rather than 12 AM?
 #' @param max.diff the maximum allowable difference in time for a match. See
 #'\bold{Details}.
 #' @return A data.frame of the merged data with common column names renamed by
@@ -26,7 +28,7 @@
 #'merged with daily flow data or merged with other water-quality data such as
 #'replicate samples or samples of a different medium taken at about the same
 #'time, but having a different time stamp.
-#' @seealso \code{\link{mergeQ}},
+#' @seealso \code{\link{mergeQ}}
 #' @keywords manip
 #' @export
 #' @examples

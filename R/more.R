@@ -16,7 +16,7 @@
 #'Several keyboard commands can be used to view the contents of \code{x}. The 
 #'function \code{more} will display \code{n} lines of \code{x} and wait for 
 #'user input. Any of the following commands can be entered by the user; 
-#'either upper or lower case letters are accepted.
+#'either upper- or lower-case letters are accepted.
 #'
 #'\code{q} Quit
 #'

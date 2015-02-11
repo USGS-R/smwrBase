@@ -14,7 +14,7 @@
 #'mismatches due to computations.\cr The function \code{sub} offers greater
 #'flexibility than \code{recode} for replacing parts of text instead of the
 #'complete text.
-#' @seealso \code{\link{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}},
+#' @seealso \code{\link{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}}
 #' @keywords manip
 #' @examples
 #'XT <- c(1, 2, 0, 4)

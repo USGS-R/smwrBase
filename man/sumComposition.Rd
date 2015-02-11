@@ -19,7 +19,7 @@ A matrix with columns matching all of the data in \code{x} and
 \code{\dots{}} with rows summing to \code{Range}.
 }
 \description{
-Compute percentage or proportion of elements in a composition
+Compute percentage or proportion of elements in a composition.
 }
 \details{
 Missing values are permitted in \code{x} or \code{\dots} and result in missing
@@ -27,7 +27,7 @@ values for the row in the output.
 }
 \note{
 This function is designed to meet a very simple need in some
-applications like constructing data for Piper or trilinear diagrams.
+applications like constructing data for Piper (Piper, 1944) or trilinear diagrams.
 For more in-depth manipulations of compositional data, the user is directed
 to the \code{compositions} or other similar package.
 }
@@ -35,6 +35,10 @@ to the \code{compositions} or other similar package.
 # Create tiny dataset
 TinyCations <- data.frame(Ca=c(32, 47, 28), Mg=c(10,12,15), Na=c(7, 5, 7))
 sumComposition(TinyCations)
+}
+\references{
+Piper, A.M., 1944, A graphical procedure in the geochemical interpretation
+of water analyses: Transactions of the American Geophysical Union, v. 25, p. 914-923.
 }
 \keyword{array}
 \keyword{manip}

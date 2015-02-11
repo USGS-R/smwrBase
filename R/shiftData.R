@@ -8,12 +8,12 @@
 #'Positive values shift data to a higher position and negative values shift
 #'data to a lower position.
 #' @param fill a scalar value like \code{x} used to fill in the first \code{k}
-#'positions or the last -\code{k} positions if \]code{circular}=\code{FALSE}. Ignored if
+#'positions or the last -\code{k} positions if \code{circular}=\code{FALSE}. Ignored if
 #'\code{circular}=\code{TRUE}. The default value is \code{NA}.
-#' @param circular a logical value. If \code{TRUE}, then treat \code{x} as a circular
-#'buffer, rotating values from the end into the beginning if \code{k} is
-#'positive and vice versa if \code{k} is negative. If \code{FALSE}, then use the value
-#'of fill. The default value is \code{FALSE}.
+#' @param circular logical (\code{TRUE} or \code{FALSE}). If \code{TRUE}, then treat 
+#'\code{x} as a circular buffer, rotating values from the end into the beginning 
+#'if \code{k} is positive and vice versa if \code{k} is negative. If \code{FALSE}, 
+#'then use the value of fill. The default value is \code{FALSE}.
 #' @return A vector like \code{x}, with data shifted in position.
 #' @seealso \code{\link{lag}}
 #' @keywords manip

@@ -15,10 +15,10 @@ exportRDB(x, file.name = "data.rdb", col.names = NULL, meta = FALSE,
 in \code{x}.}
 
 \item{meta}{a logical value indicating whether the header should include a
-meta-data template for documentation or not.}
+metadata template for documentation or not.}
 
 \item{code.rule}{an integer value indicating how many unique numeric values
-should be included in the meta-data template for cases where each distinct
+should be included in the metadata template for cases where each distinct
 value has a descriptive meaning rather than a numeric meaning.}
 }
 \value{

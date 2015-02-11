@@ -13,7 +13,7 @@ entry in the line. If \code{FALSE}, then the components are sequentially
 numbered.}
 
 \item{sep}{the separator character for the data in each line. If a blank
-string (the default), then any white space is take as the separator.}
+string (the default), then any white space is taken as the separator.}
 
 \item{nlines}{the number of lines that represent a single collection of data,}
 

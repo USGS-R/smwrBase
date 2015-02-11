@@ -1,10 +1,10 @@
-#'Meta Data
+#'Metadata
 #'
-#'Create a template meta file for a csv file. The meta file is used by
+#'Create a template meta file for a CSV file. The meta file is used by
 #'\code{importCSV} to define column types.
 #'
 #'
-#' @param file.name the name of the csv file, which may include the path.
+#' @param file.name the name of the CSV file, which may include the path.
 #' @return The name of the meta file that was created.
 #' @note The meta file that is created will only contain column types of
 #'character, numeric, integer, and logical. It may need to be edited by the

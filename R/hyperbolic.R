@@ -7,8 +7,8 @@
 #'omitting the missing values and the output vector has a missing value
 #'wherever \code{x} has a missing value.\cr
 #'
-#'The basic equation for the hyberbolic transform is 1/(1 + (10^factor * x)/
-#'scale). The basic equaiton is adjusted to produce fairly consistent values for small changes
+#'The basic equation for the hyberbolic transform is 1/(1 + (10^\code{factor} * \code{x})/
+#'\code{scale}). The basic equaiton is adjusted to produce fairly consistent values for small changes
 #'in \code{factor} and increase for increasing values in \code{x}.\cr
 #'
 #'The function \code{hyperbolic} computes the forward transform and the
