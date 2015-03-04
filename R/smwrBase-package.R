@@ -5,10 +5,10 @@
 #'
 #'\tabular{ll}{ Package: \tab smwrBase\cr 
 #'Type: \tab Package\cr 
-#'Version: \tab 1.0.2\cr 
-#'Date: \tab 2015-02-25\cr 
+#'Version: \tab 1.0.3\cr 
+#'Date: \tab 2015-03-4\cr 
 #'License: \tab File LICENSE\cr 
-#'Depends: \tab stat, lubridate, methods\cr }
+#'Depends: \tab methods,memoise,digest,lubridate\cr }
 #'
 #'This package contains functions that import, manage, or manipipulate hydrologic data and 
 #'functions that apply specialized transforms used in hydrologic analyses amd modeling.
