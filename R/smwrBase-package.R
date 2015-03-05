@@ -5,10 +5,10 @@
 #'
 #'\tabular{ll}{ Package: \tab smwrBase\cr 
 #'Type: \tab Package\cr 
-#'Version: \tab 1.0.2\cr 
-#'Date: \tab 2015-02-25\cr 
+#'Version: \tab 1.0.3\cr 
+#'Date: \tab 2015-03-4\cr 
 #'License: \tab File LICENSE\cr 
-#'Depends: \tab stat, lubridate, methods\cr }
+#'Depends: \tab methods,memoise,digest,lubridate\cr }
 #'
 #'This package contains functions that import, manage, or manipipulate hydrologic data and 
 #'functions that apply specialized transforms used in hydrologic analyses amd modeling.
@@ -100,6 +100,7 @@
 #'2015-XXXX, ? p.
 #' @keywords package
 #% Check citation too
+NULL
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage("Although this software program has been used by the U.S. Geological Survey (USGS), no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.")
 }
