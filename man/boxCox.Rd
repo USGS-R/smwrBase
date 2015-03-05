@@ -47,16 +47,9 @@ dimensional units of the original data as described in section 13.2 by
 Draper and Smith (1998).
 }
 \examples{
-boxCox(1:3)
-## Should return
-# [1] 0 1 2
-# attr(,"GM")
-# [1] 1.817121
-boxCox(1:3, lambda=0)
-## Should return
-#[1] 0.000000 1.259532 1.996311
-#attr(,"GM")
-#[1] 1.817121
+X.test <- c(1,4,9,16,25,36,49)
+boxCox(X.test)
+boxCox(X.test, lambda=0)
 IboxCox(boxCox(1:3, lambda=0), lambda=0) # verify the back-transform
 ## Should return
 # [1] 1 2 3

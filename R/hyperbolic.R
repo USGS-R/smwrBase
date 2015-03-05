@@ -39,12 +39,10 @@
 #'v. 5, no. 6, p. 1353-1363.
 #' @keywords manip
 #' @examples
-#'
-#'hyperbolic(1:3) # accept the defaults
-#'## Should return
-#'# [1] 1.333333 2.000000 2.400000
-#'# attr(,"scale")
-#'# [1] 2
+#'X.test <- c(1,4,9,16,25,36,49)
+#'hyperbolic(X.test) # accept the defaults
+#'hyperbolic(X.test, factor=1)
+#'hyperbolic(X.test, factor=-1)
 #' @export
 hyperbolic <- function(x, factor = 0, scale = mean(x, na.rm=TRUE)) {
   ## Coding history:

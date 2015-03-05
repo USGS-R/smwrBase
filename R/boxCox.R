@@ -35,17 +35,9 @@
 #'John Wiley and Sons, 706 p.
 #' @keywords manip
 #' @examples
-#'
-#'boxCox(1:3)
-#'## Should return
-#'# [1] 0 1 2
-#'# attr(,"GM")
-#'# [1] 1.817121
-#'boxCox(1:3, lambda=0)
-#'## Should return
-#'#[1] 0.000000 1.259532 1.996311
-#'#attr(,"GM")
-#'#[1] 1.817121
+#'X.test <- c(1,4,9,16,25,36,49)
+#'boxCox(X.test)
+#'boxCox(X.test, lambda=0)
 #' @export
 boxCox <- function(x, lambda=1, GM, alpha=0) {
   ## Coding history:

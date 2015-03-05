@@ -3,10 +3,12 @@
 \alias{dectime2Date}
 \title{Date Conversion}
 \usage{
-dectime2Date(x)
+dectime2Date(x, Date.noon = TRUE)
 }
 \arguments{
 \item{x}{the decimal date to convert.}
+
+\item{Date.noon}{correct from noon correction for \code{dectime}.}
 }
 \value{
 A vector of class "Date" cooresponding to each value in \code{x}.
@@ -22,9 +24,7 @@ the data were converted from date and time data.
 \examples{
 dectime("02/07/2013", date.format="\%m/\%d/\%Y")
 # Convert back the printed result:
-dectime2Date(2013.101)
-# Convert a more precise value:
-dectime2Date(2013.1013699)
+dectime2Date(2013.103)
 }
 \seealso{
 \code{\link{dectime}}, \code{\link{as.Date}}

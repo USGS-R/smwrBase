@@ -47,11 +47,10 @@ When used with the default value for \code{scale}, \code{factor} values
 outside the range of +/- 3 have very little effect on the transform.
 }
 \examples{
-hyperbolic(1:3) # accept the defaults
-## Should return
-# [1] 1.333333 2.000000 2.400000
-# attr(,"scale")
-# [1] 2
+X.test <- c(1,4,9,16,25,36,49)
+hyperbolic(X.test) # accept the defaults
+hyperbolic(X.test, factor=1)
+hyperbolic(X.test, factor=-1)
 }
 \references{
 The use of a variable hyperbolic transform to help model the

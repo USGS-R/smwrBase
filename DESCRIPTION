@@ -1,25 +1,26 @@
 Package: smwrBase
 Version: 1.0.3
-Date: 2015-02-25
+Date: 2015-03-05
 Title: Functions to import and manipulate hydrologic data
 Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Dave Lorenz <lorenz@usgs.gov>
 Depends:
-    methods,
-    memoise,
-    digest,
     lubridate (>= 1.3)
 Imports:
-    stats
+    methods,
+    stats,
+    digest,
+    memoise
 Suggests:
     smwrData (>= 0.6),
     dataRetrieval (>= 2.0.1),
-    RODBC
+    RODBC,
+    testthat
 Description: This package has data import and export functions for specialized
     formats used within the U.S. Geological Survey. It also contains
     several functions that are useful for managing or manipulating
     hydrologic and other data.
-License: file LICENSE
+License: CC0
 LazyLoad: yes
 Collate:
     'timeDay-class.R'
