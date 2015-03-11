@@ -14,16 +14,12 @@ This software is provided "AS IS."
 Installation
 ----------
 
-**for windows**:
 ```R
 install.packages("smwrBase", 
-    repos=c("http://owi.usgs.gov/R","http://cran.us.r-project.org"), 
-    dependencies=TRUE)
+    repos=c("http://owi.usgs.gov/R",
+    "http://cran.us.r-project.org"), 
+    dependencies = TRUE)
 ```
 
-**for mac**:
-```R
-install.packages("smwrBase", 
-    repos=c("http://owi.usgs.gov/R","http://cran.us.r-project.org"), 
-    dependencies=TRUE, type = "both")
-```
+Linux: [![travis](https://travis-ci.org/USGS-R/smwrBase.svg?branch=master)](https://travis-ci.org/USGS-R/smwrBase)
+
