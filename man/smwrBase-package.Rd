@@ -12,8 +12,8 @@ manipulating hydrologic data.
 \details{
 \tabular{ll}{ Package: \tab smwrBase\cr
 Type: \tab Package\cr
-Version: \tab 1.0.3\cr
-Date: \tab 2015-03-04\cr
+Version: \tab 1.0.4\cr
+Date: \tab 2015-03-12\cr
 License: \tab File CC0\cr
 Depends: \tab methods,memoise,digest,lubridate\cr }
 
@@ -103,7 +103,7 @@ Maintainer: Dave Lorenz <lorenz@usgs.gov>
 }
 \references{
 Lorenz, D.L., 2015, smwrBase---an R package for managing
-hydrologic data, version 1.0.3: U.S. Geological Survey Open File Report
+hydrologic data, version 1.0.4: U.S. Geological Survey Open File Report
 2015-XXXX, ? p.
 }
 \seealso{

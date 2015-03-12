@@ -1,7 +1,7 @@
 citHeader("Suggested citation for smwrBase:")
 
 citEntry(entry = "TechReport",
-  title        = "smwrBase--An R Package for Managing Hydrologic Data, Version 1.0.3",
+  title        = "smwrBase--An R Package for Managing Hydrologic Data, Version 1.0.4",
   author       = personList(as.person("David L. Lorenz")),
   institution  = "U.S. Geological Survey",
   series       = "Open-File Report",
@@ -11,5 +11,5 @@ citEntry(entry = "TechReport",
 
   textVersion  =
   paste("Lorenz, D.L., 2015,",
-        "smwrBase---An R Package for Managing Hydrologic Data, Version 1.0.3: U.S. Geological Survey Open-File Report 2015-XXXX, p.")
+        "smwrBase---An R Package for Managing Hydrologic Data, Version 1.0.4: U.S. Geological Survey Open-File Report 2015-XXXX, p.")
 )

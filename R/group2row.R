@@ -72,12 +72,12 @@ group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   }
   ## The get.col.type function:
   get.col.type <- function(Col) {
-  Type <- data.class(Col)
-  if(Type %in% c("factor", "ordered")) # get levels
-    return(list(Type=Type, Levels=levels(Col)))
-  if(Type == "numeric") # get storage mode
-    Type <- storage.mode(Col)
-  return(list(Type=Type))
+    Type <- data.class(Col)
+    if(Type %in% c("factor", "ordered")) # get levels
+      return(list(Type=Type, Levels=levels(Col)))
+    if(Type == "numeric") # get storage mode
+      Type <- storage.mode(Col)
+    return(list(Type=Type))
   }
   ##
   ## Identify original classes of the carryColumns
@@ -99,7 +99,8 @@ group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   ## indexed by group.table
   ##
   ## Next, make an index of the splitColumn
-  Columns <- unique(data[[splitColumn]])
+  Columns <- as.character(unique(data[[splitColumn]]))
+  Columns <- Columns[!is.na(Columns)]
   column.index <- match(data[[splitColumn]], Columns)
   ##
   ## Now, create a data.frame of of the groups and convert back to
@@ -122,18 +123,18 @@ group2row <- function(data, carryColumns, splitColumn, collectColumns) {
   ##
   ## For each of collectColumns, create a matrix of NAs, populate it and
   ## cbind it to the data frame
-  newnames <- character(0L)
   for(i in collectColumns) {
-    temp.mat <- matrix(nrow=length(group.table), ncol=length(Columns))
-    temp.mat[mat.index] <- data[[i]]
-    if(is.factor(data[[i]]))
-      temp.mat <- matrix(factor(temp.mat, levels=1:length(levels(data[[i]])) , labels=levels(data[[i]])), ncol=length(Columns))
+    temp.mat <- matrix(NA_integer_, nrow=length(group.table), ncol=length(Columns))
+    temp.mat[mat.index] <- seq(along=data[[i]])
     temp.mat <- as.data.frame(temp.mat, stringsAsFactors=FALSE)
-    names(temp.mat) <- paste(as.character(Columns), i, sep=".")
-    newnames <- rbind(newnames, paste(as.character(Columns), i, sep="."))
+    # This should work for any kind of data, not just simple vectors
+    # as long as data.frame operations work for the data type.
+    for(k in seq(length(temp.mat))) {
+      temp.mat[[k]] <- data[[i]][temp.mat[[k]]]
+    }
+    names(temp.mat) <- paste(Columns, i, sep=".")
     df <- cbind(df, temp.mat)
   }
-  df <- df[, c(carryColumns, newnames)]
   names(df) <- make.names(names(df))
   df
 }
