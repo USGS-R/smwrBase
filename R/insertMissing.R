@@ -14,6 +14,21 @@
 #'in the sequence for plotting the data.
 #' @seealso \code{\link{fillMissing}}, \code{\link{screenData}}
 #' @keywords manip
+#' @examples
+#'\dontrun{
+#'library(smwrData)
+#'data(Q05078470)
+#'# Plot the original data
+#'with(Q05078470[100:120, ], plot(DATES, FLOW, type="l"))
+#'# Remove 3 rows from the data set
+#'Q05078470 <- Q05078470[-(109:111), ]
+#'# Plot the data--line drawn throught the missing record
+#'with(Q05078470[100:117, ], lines(DATES, FLOW, col="green"))
+#'# Insert a missing record
+#'Q05078470 <- insertMissing(Q05078470, "DATES")
+#'# Now plot to show gap in line
+#'with(Q05078470[100:118, ], lines(DATES, FLOW, col="blue"))
+#'}
 #' @export
 insertMissing <- function(x, col, fill=FALSE) {
   ## Coding history:
