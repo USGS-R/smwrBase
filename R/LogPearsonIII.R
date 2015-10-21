@@ -21,10 +21,13 @@
 #' @return Either the density (\code{dlpearsonIII}), cumulative probability
 #'(\code{plpearsonIII}), quantile (\code{qlpearsonIII}), or random sample
 #'(\code{rlpearsonIII}) for the described distribution.
-#' @note The log-Pearson Type III distribution is used extensitvely in 
+#' @note The log-Pearson Type III distribution is used extensively in 
 #'flood-frequency analysis in the United States.
 #' @export
-#' @seealso \code{\link{dpearsonIII}}, \code{\link{dlnorm}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link{dpearsonIII}}, \code{\link[stats]{dlnorm}}
+#\code{\link{dpearsonIII}}, \code{dlnorm} (in stats package)
 #' @keywords manip distribution
 #' @examples
 #'

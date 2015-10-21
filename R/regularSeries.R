@@ -34,10 +34,8 @@
 #'season includes dates strictly less than this date.}
 #'\item{Value}{the value from \code{x} for the corresponding season number.}
 #'\item{ValueDate}{the date from \code{times} for the corresponding season
-#'number if \code{which} was one of "earliest," "middle," or "latest;"
+#'number if \code{which} was one of "earliest," "middle," or "latest";
 #'otherwise missing.}
-#' @seealso Refer to the documentation for \code{seaken} in the smwrStats
-#'package if it is installed.
 #' @keywords manip
 #' @examples
 #'\dontrun{
@@ -59,17 +57,18 @@ regularSeries <- function(x, times, period="month", which = "middle",
   ## 
   ## Force times to POSIXlt format
   times <- as.POSIXlt(times)
+  tzone <- attr(times, "tzone")
   if(missing(begin)) {
     begin <- floor_date(min(times, na.rm=TRUE), unit=period)
   } else
-    begin <- as.POSIXlt(begin)
+    begin <- as.POSIXlt(begin, tz=tzone)
   if(missing(end)) {
     end <- floor_date(max(times, na.rm=TRUE), unit=period)
     ## This construct is needed because there is no way to represent a difftime in units
     ## of a month or a year (differing number of seconds in those periods).
     end <- seq(end, by=period, length=k.period+1)[k.period+1]
   } else
-    end <- as.POSIXlt(end)
+    end <- as.POSIXlt(end, tz=tzone)
   ## Remove the missing values in x from consideration
   drop <- is.na(x)
   if(any(drop)) {

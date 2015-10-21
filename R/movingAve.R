@@ -1,7 +1,7 @@
 #' @title Moving Averages
 #'
-#' @description Impliments the Savitzky-Golay filter on a regular series of data 
-#'to compute a moving average.
+#' @description Implements the Savitzky-Golay (Savitzky and Golay, 1964) filter 
+#'on a regular series of data to compute a moving average.
 #'
 #' @param x the data to be averaged or differenced. Missing values are permitted
 #'but result in missing values in the output.
@@ -14,7 +14,7 @@
 #'the value is the average of the preceding \code{span} values,
 #'and "begin" or "leading" means the value is the average of the
 #'following \code{span} values.
-#' @return A vector of the same legnth as \code{x} containing the averages.
+#' @return A vector of the same length as \code{x} containing the averages.
 #' @note For odd values of \code{span} and \code{pos} equal to "center,"
 #'\code{order} equal to 0 or 1 gives the same result.\cr 
 #'
@@ -26,7 +26,10 @@
 #'The weights for the averages are computed based on linear model theory 
 #'(Savitzky and Golay, 1964; Wood and Hockens, 1970). Wood and Hockens (1970) 
 #'also discuss some artifacts resulting from smoothing.
-#' @seealso \code{\link{filter}}, \code{\link{diff}}, \code{\link{movingDiff}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[stats]{filter}}, \code{\link[base]{diff}}, \code{\link{movingDiff}}
+#\code{filter} (in stats package), \code{diff} (in base package), \code{\link{movingDiff}}
 #' @references 
 #'Savitzky, A., and Golay, M.J.E., 1964, Smoothing and differentiation of data 
 #'by simplified least squares procedures: Analytical Chemistry, v. 36, no. 8, p. 

@@ -4,10 +4,10 @@
 #'
 #'Possible values for \code{ties} include "none," which treats sequential tied values as
 #'individual values; all other values can be thought of as collapsing
-#'sequential tied values--"first," "middle," or "last" identify the first,
-#'middle, or last, respectively of a sequence of ties as the peak if appropriate.
+#'sequential tied values---"first," "middle," or "last" identify the first,
+#'middle, or last, respectively, of a sequence of ties as the peak if appropriate.
 #'
-#' @param x any numeric vector. Missing values are permitted, but supress
+#' @param x any numeric vector. Missing values are permitted, but suppress
 #'identifying peaks within \code{span}.
 #' @param span The window width, the default value is 3, meaning compare each
 #'value to both of its neighbors. The value for \code{span} must be odd and if
@@ -15,13 +15,16 @@
 #' @param ties a character indicating how to handle ties. See \bold{Details}.
 #' @param ends a logical value indicating whether or not to include either the
 #'first or last observations in the sequence if it is a local maximum.
-#' @return A vector matching \code{x} of logical values indicating wether the
+#' @return A vector matching \code{x} of logical values indicating whether the
 #'corresponding element is a local maximum or not.
 #' @note A peak is defined as an element in a sequence that is strictly greater
 #'than all other elements within a window of width \code{span} centered at that
 #'element. As such, setting \code{ties} to "none" has the effect of not
 #'identifying peaks with sequential tied values.
-#' @seealso \code{\link{max}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{max}}
+#\code{max} (in base package)
 #' @keywords manip
 #' @export
 #' @examples

@@ -2,7 +2,7 @@
 #'
 #' Display the contents of an object by pages.
 #'
-#' @param x any valid object, generally a data frame, matrix or table.
+#' @param x any valid object, generally a data frame, matrix, or table.
 #' @param n a positive integer indicating how many lines to print for a page.
 #' @param \dots additional arguments to be passed to methods for \code{head} or
 #'\code{tail}.
@@ -16,7 +16,7 @@
 #'Several keyboard commands can be used to view the contents of \code{x}. The 
 #'function \code{more} will display \code{n} lines of \code{x} and wait for 
 #'user input. Any of the following commands can be entered by the user; 
-#'either upper- or lower-case letters are accepted.
+#'either upper- or lowercase letters are accepted.
 #'
 #'\code{q} Quit
 #'
@@ -39,7 +39,10 @@
 #'Searching for a pattern in a column uses \code{grep} to search for the
 #'specified pattern in the character representation of the data in the column.
 #'This makes it possible to search columns that are not type character.
-#' @seealso \code{\link{head}}, \code{\link{tail}}, \code{\link{grep}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[utils]{head}}, \code{\link[utils]{tail}}, \code{\link[base]{grep}}
+#\code{head} and \code{tail} (both in utils package), \code{grep} (in base package)
 #' @keywords print
 #' @export
 more <- function(x, n=20L, ...) {

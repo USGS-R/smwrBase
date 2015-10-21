@@ -5,7 +5,7 @@
 #'
 #' @param x the decimal date to convert.
 #' @param Date.noon correct from noon correction for \code{dectime}.
-#' @return A vector of class "Date" cooresponding to each value in \code{x}.
+#' @return A vector of class "Date" corresponding to each value in \code{x}.
 #' @note A small value, representing about 1 minute, is added to each value in \code{x}
 #'to prevent truncation errors in the conversion. This can cause some errors if
 #'the data were converted from date and time data.

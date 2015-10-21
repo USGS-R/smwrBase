@@ -12,7 +12,10 @@
 #' @note The water year is defined as the period from October 1 to September 30.
 #'The water year is designated by the calendar year in which it ends. Thus, the
 #'year ending September 30, 1999, is the "1999 water year."
-#' @seealso \code{\link{year}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[lubridate]{year}}
+#\code{year} (in lubridate package)
 #' @export
 #' @keywords manip
 #' @examples

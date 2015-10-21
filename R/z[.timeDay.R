@@ -7,7 +7,10 @@
 #' @param i an index specifying elements to extract. See \code{\link{Extract}}
 #'for details.
 #' @return The subset of \code{x} indicated by \code{i}.
-#' @seealso \code{\link{Extract}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{Extract}}
+#\code{Extract} (in base package)
 #' @keywords manip
 #' @method [ timeDay
 #' @export

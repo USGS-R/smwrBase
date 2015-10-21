@@ -13,8 +13,11 @@
 #'preceding \code{span} value and the current value, and "begin" or "leading" 
 #'means that value is the difference between the current value and the 
 #'following \code{span} value.
-#' @return A vector of the same legnth as \code{x} containing the differences.
-#' @seealso \code{\link{filter}}, \code{\link{diff}}, \code{\link{movingAve}}
+#' @return A vector of the same length as \code{x} containing the differences.
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[stats]{filter}}, \code{\link[base]{diff}}, \code{\link{movingAve}}
+#\code{filter} (in stats package), \code{diff} (in base package), \code{\link{movingAve}}
 #' @keywords manip
 #' @export
 #' @examples

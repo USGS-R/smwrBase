@@ -10,9 +10,12 @@
 #'string (the default), then any white space is taken as the separator.
 #' @param nlines the number of lines that represent a single collection of data,
 #' @param convert character string indicating how to convert the data. Must be
-#'a valid value for the \code{Class} arguemnt of \code{as}.
+#'a valid value for the \code{Class} argument of \code{as}.
 #' @return A list with one component for each \code{nlines} in the input file.
-#' @seealso \code{\link{as}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[methods]{as}}
+#\code{as} (in methods package)
 #' @keywords manip IO
 #' @export
 #' @examples

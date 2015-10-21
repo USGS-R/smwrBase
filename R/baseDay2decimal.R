@@ -3,7 +3,7 @@
 #'Computes the decimal time representation of the base day of the year.
 #'
 #'
-#' @param x a vector of baseDay values, character or factors of the form month 
+#' @param x a vector of baseDay values, character, or factors of the form month 
 #'abbreviation and day number, generally created from \code{baseDay}. Missing 
 #'values are permitted and result in missing values in the output. Unmatched 
 #'values also result in missing values in the output.

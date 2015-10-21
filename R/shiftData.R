@@ -9,13 +9,17 @@
 #'data to a lower position.
 #' @param fill a scalar value like \code{x} used to fill in the first \code{k}
 #'positions or the last -\code{k} positions if \code{circular}=\code{FALSE}. Ignored if
-#'\code{circular}=\code{TRUE}. The default value is \code{NA}.
+#'\code{circular}=\code{TRUE}. The default value is \code{NA}. If \code{x} is class
+#'"factor," then \code{fill} must be \code{NA} or a valid level in \code{x}.
 #' @param circular logical (\code{TRUE} or \code{FALSE}). If \code{TRUE}, then treat 
 #'\code{x} as a circular buffer, rotating values from the end into the beginning 
 #'if \code{k} is positive and vice versa if \code{k} is negative. If \code{FALSE}, 
 #'then use the value of fill. The default value is \code{FALSE}.
 #' @return A vector like \code{x}, with data shifted in position.
-#' @seealso \code{\link{lag}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[stats]{lag}}
+#\code{lag} (in stats package)
 #' @keywords manip
 #' @export
 #' @examples
@@ -43,6 +47,14 @@ shiftData <- function(x, k=1, fill=NA, circular=FALSE) {
   fill.temp <- fill
   fill <- x[1L]
   fill[1L] <- fill.temp
+  # required for factors
+  ckfact <- inherits(x, "factor")
+  if(ckfact) { # preserve the info
+    xlevs <- levels(x)
+    xclass <- class(x)[1L] # ordered has 2
+    x <- as.character(x)
+    fill <- as.character(fill)
+  }
   ## OK do it
   k <- as.integer(k)
   if(k == 0L) return(x)
@@ -59,6 +71,14 @@ shiftData <- function(x, k=1, fill=NA, circular=FALSE) {
       x <- c(x[skip], x[-skip])
     else
       x <- c(x[skip], rep(fill, -k))
+  }
+  # restore factors if necessary
+  if(ckfact) {
+    if(xclass == "factor") {
+      x <- factor(x, levels=xlevs)
+    } else { # ordered
+      x <- ordered(x, levels=xlevs)
+    }
   }
   return(x)
 }

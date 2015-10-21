@@ -1,7 +1,7 @@
 #'Event Processing
 #'
 #'Computes the event number \code{eventNum}, the length of events
-#'\code{eventLen} or the sequence number for individual observations within an
+#'\code{eventLen}, or the sequence number for individual observations within an
 #'event \code{eventSeq}.
 #'
 #' @rdname eventProcessing
@@ -24,7 +24,7 @@
 #'each event if \code{summary} is \code{TRUE}.\cr
 #'
 #'The function \code{eventSeq} returns an integer vector the same length as
-#'\code{eventno} indicating the sequence number of each element in the the
+#'\code{eventno} indicating the sequence number of each element in the
 #'event.
 #' @keywords manip
 #' @export

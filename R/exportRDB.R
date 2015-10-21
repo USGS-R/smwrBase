@@ -8,7 +8,7 @@
 #'
 #' @param x the data frame to be written.
 #' @param file.name a character string naming the file for output.
-#' @param col.names a vector of colum names to use instead of the column names
+#' @param col.names a vector of column names to use instead of the column names
 #'in \code{x}.
 #' @param meta a logical value indicating whether the header should include a
 #'metadata template for documentation or not.
@@ -16,7 +16,9 @@
 #'should be included in the metadata template for cases where each distinct
 #'value has a descriptive meaning rather than a numeric meaning.
 #' @return The file name is returned.
-#' @seealso \code{\link{write.table}}, \code{\link{importRDB}}
+#Flip for production/manual
+#'\code{\link[utils]{write.table}}, \code{\link{importRDB}}
+#\code{write.table} (in utils package), \code{\link{importRDB}}
 #' @keywords manip IO
 #' @export
 exportRDB <- function(x, file.name="data.rdb", col.names=NULL, meta=FALSE,

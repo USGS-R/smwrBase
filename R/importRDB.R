@@ -10,13 +10,13 @@
 #'no separator.\cr
 #'
 #'If a valid \code{date.format} is supplied, then the data are imported using
-#'\code{as.POSIXct}, and time information can be included in the the data. If
+#'\code{as.POSIXct}, and time information can be included in the data. If
 #'\code{date.format} is "none," then conversion of the date information is
-#'supressed and the data are retained as character strings.\cr
+#'suppressed and the data are retained as character strings.\cr
 #'
 #'The value for \code{tz} should be a valid "Olson" format consisting typically 
 #'of a continent and city. See \code{\link{timezone}} for a description of 
-#'timezones. For the United States, use these time-zone specifications where
+#'time zones. For the United States, use these time-zone specifications where
 #'daylight savings time is used:
 #'\tabular{ll}{Eastern \tab "America/New_York" \cr
 #'Central \tab "America/Chicago" \cr
@@ -30,7 +30,7 @@
 #'Mountain \tab "America/Phoenix" \cr
 #'Pacific \tab "America/Metlakatla" \cr}
 #'
-#' @param file.name a character string specifying the name of the realtional database 
+#' @param file.name a character string specifying the name of the relational database 
 #'(RDB) file containing the data to be imported. 
 #' @param date.format a character string specifying the format of all date
 #'columns. Required for columns that contain date and time. The default value,
@@ -38,7 +38,7 @@
 #'formats "none," which suppresses date conversion; and "varies," which can be 
 #'used when the date data included time data sometimes and sometimes not. 
 #'For the latter special format, the date and time data must be in POSIX format
-#'(YYYY-mm-dd HH:MM) with optional seconds. For dates that areamissing time data, the time 
+#'(YYYY-mm-dd HH:MM) with optional seconds. For dates that are missing time data, the time 
 #'will be set to midnight in the specified or local time zone.
 #' @param tz the time zone information of the data.
 #' @param convert.type logical \code{TRUE} or \code{FALSE}, convert data according 
@@ -56,9 +56,12 @@
 #'in numeric columns. \code{NaN} values are treated like \code{NA} values but can 
 #'be identified using the \code{is.nan} function.
 #'
-#' @seealso \code{\link{scan}},
-#'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}},
-#'\code{\link{comment}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[utils]{read.table}}, \code{\link[base]{as.Date}}, \code{\link[base]{as.POSIXct}},
+#'\code{\link[base]{comment}}
+#\code{read.table} (in utils package), \code{as.Date}, \code{as.POSIXct}, 
+#\code{comment} (remainder in base package)
 #' @keywords manip IO
 #' @export
 #' @examples

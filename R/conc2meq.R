@@ -1,6 +1,6 @@
 #'Concentrations to Milliequivalents
 #'
-#'Convert concentrations in milligrams per liter (mg/L) to milliequivalents per
+#'Convert concentrations in milligrams per liter (mg/L) to milli-equivalents per
 #'liter.
 #'
 #'
@@ -12,12 +12,12 @@
 #'"phosphorus as p," "potassium," "sodium," "sulfate," or "sulfide." There must
 #'be enough characters in the name to uniquely identify the constituent. The
 #'case of the input name is ignored.
-#' @return Vector containing the milliequivalent values. Missing values
+#' @return Vector containing the milli-equivalent values. Missing values
 #'(\code{NA}s) are returned if the constituent name is invalid.
-#' @note The user must verify that the units of concentration are mg/L. Only
-#'those constituents that are typically reported in mg/L (rather than
+#' @note The user must verify that the units of concentration are milligrams per liter. Only
+#'those constituents that are typically reported in milligrams per liter (rather than
 #'micrograms per liter) are provided in this function. Aluminum, iron, and
-#'manganese and possibly sulfide are sometimes reported in micrograms per
+#'manganese (and possibly sulfide) are sometimes reported in micrograms per
 #'liter. Such values should be divided by 1000.0 before using this function.
 #'
 #'The conversion for iron assumes that the dissolved iron is iron II.
@@ -29,7 +29,7 @@
 #'available conversion factors are stored in the list created by \code{conc.meq} in
 #'smwrBase.\cr
 #' @references Hem, J.D., 1985, Study and interpretation of the chemical
-#'characteristics of natural water: U.S. Gelogical Survey Water-Supply Paper 2254, 263 p.
+#'characteristics of natural water: U.S. Geological Survey Water-Supply Paper 2254, 263 p.
 #' @keywords manip
 #' @export
 #' @examples

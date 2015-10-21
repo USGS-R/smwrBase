@@ -10,7 +10,10 @@
 #' @return A character string that represents that data in \code{x} in a compact
 #'form. If \code{x} is empty, then "" is returned.
 #' @note This function is commonly used to express years in a compact form.
-#' @seealso \code{\link{paste}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{paste}}
+#\code{paste} (in base package)
 #' @keywords manip
 #' @export
 #' @examples
@@ -21,7 +24,7 @@
 #'seqCollapse(1968:1992)
 #'# A collection of continuous and individual values
 #'seqCollapse(c(1968:1992, 1998, 2002, 2006:2012))
-seqCollapse <- function(x, sequential="-", skips=",") {
+seqCollapse <- function(x, sequential="-", skips=", ") {
   ## Coding history:
   ##    2007May03 DLLorenz Original Coding
   ##    2012Jun20 DLLorenz Conversion to R

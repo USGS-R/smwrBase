@@ -2,8 +2,8 @@
 #'
 #'Valid conversions for function \code{as.timeDay}.
 #'
-#'Inconsistent formats for \code{time} will result in an error. Missing values in 
-#'\code{time} will result in missing values in the output.
+#'Inconsistent formats for \code{time} will result in an error. Missing values 
+#'or empty strings in \code{time} will result in missing values in the output.
 #'
 #' @name as.timeDay
 #' @rdname as.timeDay
@@ -38,6 +38,8 @@ setMethod("as.timeDay", signature(time="character", format="character"),
 #'@rdname as.timeDay
 setMethod("as.timeDay", signature(time="character", format="missing"),
           function(time, format) {
+            # set empty strings to NA
+            time[!nzchar(time)] <- NA_character_
             ckfmt <- unique(nchar(time[!is.na(time)]))
             if(length(ckfmt) != 1L)
               stop("format for time is not consistent")

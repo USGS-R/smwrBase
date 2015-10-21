@@ -15,7 +15,10 @@
 #'The function \code{quadratic} differs
 #'from \code{poly} in that the data are not scaled, so the regression
 #'coefficients are directly interpretable in terms of the units of \code{x}.
-#' @seealso \code{\link{poly}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[stats]{poly}}
+#\code{poly} (in stats package)
 #' @references Cohn, T.A., Caulder, D.L., Gilroy, E.J., Zynjuk, L.D., and
 #'Summers, R.M., 1992, The validity of a simple statistical model for
 #'estimating fluvial constituent loads---An empirical study involving nutrient

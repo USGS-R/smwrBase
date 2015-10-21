@@ -20,10 +20,13 @@
 #'(\code{ppearsonIII}), quantile (\code{qpearsonIII}), or random sample
 #'(\code{rpearsonIII}) for the described distribution.
 #' @export
-#' @note The log-Pearson Type III distribution is used extensitvely in flood-frequency 
+#' @note The log-Pearson Type III distribution is used extensively in flood-frequency 
 #'analysis in the United States. The Pearson Type III forms the basis
 #'for that distribution.
-#' @seealso \code{\link{dlpearsonIII}}, \code{\link{dnorm}}
+#' @seealso
+#Flip for production/manual
+#'\code{\link{dlpearsonIII}}, \code{\link[stats]{dnorm}}
+#\code{\link{dlpearsonIII}}, \code{dnorm} (in stats package)
 #' @keywords manip distribution
 #' @examples
 #'## Simple examples

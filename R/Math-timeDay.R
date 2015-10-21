@@ -1,7 +1,7 @@
 #' @title Mathematical Functions for \code{timeDay} objects
 #'
-#' @description No mathematic functions, such as \code{log} or \code{exp} are allowed 
-#'on time-of-day data. An error results when trying to use any mathematic function 
+#' @description No mathematical functions, such as \code{log} or \code{exp} are allowed 
+#'on time-of-day data. An error results when trying to use any mathematical function 
 #'on objects of class "timeDay."
 #'
 #' @name Math-timeDay

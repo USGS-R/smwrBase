@@ -40,17 +40,20 @@
 #'If the data have gaps rather than missing values, then fillMissing will return
 #'a vector longer than \code{x} if \code{Dates} is given and the return data
 #'cannot be inserted into the original data frame. If \code{Dates} is not given,
-#'then it will not recognize the gap and not fill the sequence. The function
+#'then the gap will be recognized and not be filled. The function
 #'\code{insertMissing} can be used to create a data frame with the complete
 #'sequence of dates.
-#' @seealso \code{\link{tsSmooth}}, \code{\link{StructTS}}, \code{\link{insertMissing}}
+#' @seealso
+#Flip for production/manual
+#'\code{\link[stats]{tsSmooth}}, \code{\link[stats]{StructTS}}, \code{\link{insertMissing}}
+#\code{tsSmooth} (in stats package), \code{StructTS} (in stats package), \code{\link{insertMissing}}
 #' @references Beauchamp, J.J., 1989, Comparison of regression and time-series
 #'methods for synthesizing missing streamflow records: Water Resources
-#'Bulletin, v. 25, no. 5, p. 961-975.\cr
+#'Bulletin, v. 25, no. 5, p. 961--975.\cr
 #'
 #'Elshorbagy, A.A., Panu, U.S., and Simonovic, S.P., 2000, Group-based estimation
 #'of missing hydrological data, I. Approach and general methodology:
-#'Hydrological Sciences Journal, v. 45, no. 6, p. 849-866.
+#'Hydrological Sciences Journal, v. 45, no. 6, p. 849--866.
 #' @export
 #' @keywords manip
 #' @examples

@@ -17,7 +17,7 @@
 #'All datasets must be sorted by date.
 #' @param Qdata a data frame containing daily-flow values.
 #' @param Prefix a character string indicating the prefix of the names of
-#'datasets containing daily flow values.
+#'datasets containing daily-flow values.
 #' @param Plot a logical value indicating whether to plot the joint distribution
 #'of sampled flows and observed flows.  See \bold{Notes} for a description of
 #'the plot. Used only if a single column is specified in \code{FLOW}.
@@ -26,7 +26,7 @@
 #' @return A data frame like \code{QWdata} with an attached flow column(s).
 #' @note The station-identifier columns must be of class character.\cr
 #'
-#'The are fours ways to merge flow and water-quality data:\cr
+#'There are fours ways to merge flow and water-quality data:\cr
 #'
 #'A dataset that contains data for a single site does not require
 #'a \code{STAID} column.  \code{Qdata} must be supplied. This case must be used if

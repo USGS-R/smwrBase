@@ -11,7 +11,10 @@
 #' @param \dots not used, required for other methods.
 #' @param nm the column name to create for \code{x}.
 #' @return A data frame is created containing the data in \code{x}.
-#' @seealso \code{\link{as.data.frame}}
+#' @seealso
+#Flip for production/manual
+#'\code{\link[base]{as.data.frame}}
+#\code{as.data.frame} (in base package)
 #' @keywords manip
 #' @method as.data.frame timeDay
 #' @export

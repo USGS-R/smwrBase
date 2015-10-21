@@ -16,13 +16,16 @@
 #'permitted and produce corresponding missing values in the output.
 #' @param time.format format to convert \code{times}. See \bold{Details}.
 #' @param date.format format to convert \code{dates} is character.
-#' @param Date.noon set time to noon for \code{dates} of class "Date?"
-#'See \bold{Details}.
-#' @param year.type a charcter string indicating the type of year to determine the
+#' @param Date.noon logical, if \code{TRUE} and \code{dates} is class "Date," then
+#'set set the time to noon, otherwise no time adjustment is made. See \bold{Details}.
+#' @param year.type a character string indicating the type of year to determine the
 #'offset, must be one of "calendar," "water," or "climate."
 #' @return A vector representation of the data in decimal format--year and
 #'decimal fraction.
-#' @seealso \code{\link{hm}}, \code{\link{strptime}}
+#' @seealso
+#Flip for production/manual
+#'\code{\link[lubridate]{hm}}, \code{\link[base]{strptime}}
+#\code{hm} (in lubridate package), \code{strptime} (in base package)
 #' @keywords manip
 #' @examples
 #'

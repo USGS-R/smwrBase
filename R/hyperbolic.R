@@ -8,7 +8,7 @@
 #'wherever \code{x} has a missing value.\cr
 #'
 #'The basic equation for the hyberbolic transform is 1/(1 + (10^\code{factor} * \code{x})/
-#'\code{scale}). The basic equaiton is adjusted to produce fairly consistent values for small changes
+#'\code{scale}). The basic equation is adjusted to produce fairly consistent values for small changes
 #'in \code{factor} and increase for increasing values in \code{x}.\cr
 #'
 #'The function \code{hyperbolic} computes the forward transform and the
@@ -36,7 +36,7 @@
 #'Johnson, N.M., Likens, G.E., Borman, F.H., Fisher, D.W., and Pierce, R.S.,
 #'1969, A working model for the variation in stream water chemistry at the
 #'Hubbard Brook Experimental Forest, New Hampshire: Water Resources Research,
-#'v. 5, no. 6, p. 1353-1363.
+#'v. 5, no. 6, p. 1353--1363.
 #' @keywords manip
 #' @examples
 #'X.test <- c(1,4,9,16,25,36,49)

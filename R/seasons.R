@@ -9,10 +9,13 @@
 #' @param breaks either month names of the end of the seasons or specific days
 #'in the form of "mm/dd," where mm is the 2-digit month and dd is the 2-digit
 #'day. Breaks in the form of "mm/dd" indicate the last day of each season.
-##Breaks must be in calendar order.
+#'Breaks must be in calendar order.
 #' @param Names optional names for the seasons.
 #' @return A factor of seasonal categories.
-#' @seealso \code{\link{month}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[lubridate]{month}}
+#\code{month} (in lubridate package)
 #' @keywords chron manip category
 #' @export
 #' @examples

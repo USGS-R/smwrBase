@@ -17,7 +17,10 @@
 #' @note The output for this function can be used for input to contingency table
 #'analysis functions that require a data frame rather than a contingency table.
 #'To convert a column from factor to ordered, use the ordered function.
-#' @seealso \code{\link{ordered}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{ordered}}
+#\code{ordered} (in base package)
 #' @export
 #' @keywords manip
 #' @examples

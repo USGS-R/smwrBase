@@ -5,13 +5,13 @@
 #'
 #'\tabular{ll}{ Package: \tab smwrBase\cr 
 #'Type: \tab Package\cr 
-#'Version: \tab 1.0.4\cr 
-#'Date: \tab 2015-03-12\cr 
+#'Version: \tab 1.1.0\cr 
+#'Date: \tab 2015-10-21\cr 
 #'License: \tab File CC0\cr 
 #'Depends: \tab methods,memoise,digest,lubridate\cr }
 #'
-#'This package contains functions that import, manage, or manipipulate hydrologic data and 
-#'functions that apply specialized transforms used in hydrologic analyses amd modeling.
+#'This package contains functions that import, manage, or manipulate hydrologic data and 
+#'functions that apply specialized transformations used in hydrologic analyses amd modeling.
 #'A listing of the functions and their description is in the following table.
 #'
 #'\tabular{ll}{Function \tab Description\cr 
@@ -22,8 +22,8 @@
 #'baseDay \tab Computes the "base" day of the year, a reference value that can be used to \cr
 #' \tab group days for the computation of summary statistics.\cr
 #'boxCox \tab Apply a Box-Cox power transformation.\cr
-#'coalesce \tab Merge a matrix or list of vectors selecting the first non missing value.\cr
-#'conc.meq \tab Support function---produces a list of conversions read by \code{conc2meq}.\cr
+#'coalesce \tab Merge a matrix or list of vectors selecting the first non-missing value.\cr
+#'conc.meq \tab A list containing necessary information for the function \code{conc2meq}.\cr
 #'conc2meq \tab Convert concentration in milligrams per liter to milli-equivalents per liter.\cr
 #'daysInMonth \tab The number of days in a month.\cr
 #'dectime \tab Convert dates and times to decimal time in years. \cr
@@ -50,9 +50,9 @@
 #'index.coalesce \tab Return the index column number instead of the values for the first non-missing value.\cr
 #'isCharLike \tab Determine whether the data be treated like character data.\cr
 #'IsCurve  \tab Apply the inverse s-curve transformation.\cr
-#'isDateLike \tab Deterimne whether the data be treated like date data.\cr
-#'isGroupLike \tab Determine whether the data be treated like grouping data.\cr
-#'isNumberLike \tab Determine whether the data be treated as numeric data.\cr
+#'isDateLike \tab Deterimne whether the data can be treated like date data.\cr
+#'isGroupLike \tab Determine whether the data can be treated like grouping data.\cr
+#'isNumberLike \tab Determine whether the data can be treated as numeric data.\cr
 #'makeMeta \tab Create a template meta file for a comma-separated values file.\cr
 #'mergeNearest \tab Merge two datasets by the nearest date and time.\cr
 #'mergeQ \tab Merge flow data with water-quality data.\cr
@@ -67,7 +67,7 @@
 #'ppearsonIII \tab Compute the cumulative probability of the Pearson Type III distribution.\cr
 #'qlpearsonIII \tab Compute the quantile of the log-Pearson Type III distribution.\cr
 #'qpearsonIII \tab Compute the quantile of the Pearson Type III distribution.\cr
-#'quadratic \tab Compute a basis for an orthogonal second order polynomial.\cr
+#'quadratic \tab Compute a basis for an orthogonal second-order polynomial.\cr
 #'readList \tab Import data arranged on lines into a list.\cr
 #'recode \tab Recode distinct values.\cr
 #'regularSeries \tab Put data collected at arbitrary times into a regular time series.\cr
@@ -82,8 +82,8 @@
 #'setTZ \tab Set the time zone information for dates and times.\cr
 #'shiftData \tab Shift time-series data forward or backward.\cr
 #'sumComposition \tab Compute the percentages of data within a matrix.\cr
-#'timeDay \tab Various arithmetic methods for manipulating time-of-day data, including signature, \cr
-#' \tab as.character.timeDay, etc.\cr
+#'timeDay \tab Various methods for manipulating time-of-day data, including conversion to and\cr
+#' \tab from character, addition, and others.\cr
 #'untable \tab Expand a 2-dimensional table into the raw values.\cr
 #'waterYear \tab Compute the water year of date data. The water year ends on September 30 of the year.\cr
 #'whichRowCol \tab Identify the row and column indexes for TRUE values in a logical matrix.\cr
@@ -96,10 +96,9 @@
 #'Maintainer: Dave Lorenz <lorenz@@usgs.gov>
 #' @seealso \code{\link[smwrData:smwrData-package]{smwrData}}
 #' @references Lorenz, D.L., 2015, smwrBase---an R package for managing
-#'hydrologic data, version 1.0.4: U.S. Geological Survey Open File Report
-#'2015-XXXX, ? p.
+#'hydrologic data, version 1.1.1: U.S. Geological Survey Open File Report
+#'2015-1202, ? p.
 #' @keywords package
-#% Check citation too
 NULL
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage("This information is preliminary or provisional and is subject to revision. It is being provided to meet the need for timely best science. The information has not received final approval by the U.S. Geological Survey (USGS) and is provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the information. Although this software program has been used by the USGS, no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.")}

@@ -7,9 +7,9 @@
 #' @param type character string identifying the new suffix.
 #' @param replace logical (\code{TRUE} or \code{FALSE}): replace the current suffix?
 #' @return A character string like \code{filename} but with a new suffix.
-#' @note This function is designed as a support function for many USGS
+#' @note This function is designed as a support function for many
 #'functions.
-#' @author Dave Lorenz, original coding by Jim Slack, retired.
+#' @author Dave Lorenz, original coding by Jim Slack, U.S. Geological Survey retired.
 #' @keywords MANIP
 #' @examples
 #'# Replace the .dat suffix with .txt

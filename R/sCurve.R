@@ -1,6 +1,6 @@
 #' S-Curve Transform
 #'
-#' Functions for transforming and back-transforming data using a s-shaped
+#' Functions for transforming and back-transforming data using an s-shaped
 #'curve.
 #'
 #' The basic equation for the s-curve is \emph{z}/(1 + abs(\emph{z})^\code{shape})^(1/\code{shape}),
@@ -16,7 +16,7 @@
 #' @param location the transition point in the s-curve transform.
 #' @param scale the scaling factor for the data, the slope at the transition
 #'point in the s-curve transform. Must be greater than 0.
-#' @param shape a value which determines how quickly the curve approaches the
+#' @param shape a value that determines how quickly the curve approaches the
 #'limits of -1 or 1. Must be greater than 0.
 #' @return A numeric vector of the transformed or back-transformed values in
 #'\code{x}.

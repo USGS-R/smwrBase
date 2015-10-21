@@ -8,7 +8,10 @@
 #'supported format information.
 #' @param \dots not used, required for other methods.
 #' @return A vector of character strings representing the time of day values in \code{x}.
-#' @seealso \code{\link{strptime}}
+#' @seealso
+#Flip for production/manual
+#'\code{\link[base]{strptime}}
+#\code{strptime} (in base package)
 #' @keywords manip
 #' @method format timeDay
 #' @export

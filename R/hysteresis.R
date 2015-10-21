@@ -8,7 +8,7 @@
 #' @param step the number of previous observations to use to compute the local
 #'mean. See \bold{Note}.
 #' @return A numeric vector that approximates the local trend in \code{x}.
-#' @note The basis for estimating hysterisis is the current value \code{x} minus
+#' @note The basis for estimating hysteresis is the current value \code{x} minus
 #'the mean of the previous \code{step} values. The first \code{step} values in
 #'the output will be missing, and each missing value will result in \code{step}
 #'plus 1 missing values. This approximates the trend in \code{x}; if \code{x} is
@@ -16,7 +16,7 @@
 #'and the greater the relative increase, the larger the output.
 #' @seealso \code{\link{anomalies}}
 #' @references 
-#' The use of hysterisis to help model the realtions between stream water chemistry
+#' The use of hysteresis to help model the relations between stream water chemistry
 #'and flow are described in:\cr
 #'
 #' Garrett, J.D., 2012, Concentrations, loads, and yields of select constituents 

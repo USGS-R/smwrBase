@@ -9,7 +9,10 @@
 #'expression.
 #' @return A vector the same length as \code{x} of logical values indicating
 #'whether \code{pattern} is found in the element of \code{x} or not.
-#' @seealso \code{\link{\%in\%}}, \code{\link{regexpr}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{\%in\%}}, \code{\link[base]{regexpr}}
+#\code{\%in\%}, \code{regexpr} (both in base package)
 #' @keywords manip
 #' @examples
 #'

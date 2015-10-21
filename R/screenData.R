@@ -1,6 +1,7 @@
 #' Screen Data for Completeness
 #'
-#' Screens data for completeness, by calendar or water year.
+#' Screens data to determine if a value is reported for each date 
+#'by calendar or water year.
 #'
 #' Missing values are permitted in either \code{dates} or \code{values}. 
 #'Those missing values are tallied in the completeness of record.
@@ -12,16 +13,16 @@
 #'The whole text is required, but not case sensitive.
 #' @param year the type of year: "calendar" or "water," which begins on October 1
 #'of the previous calendar year and ends on September 30.
-#' @param printit logical (\code{TRUE} or \code{FALSE}), print the results in a pretty format?
+#' @param printit logical, if \code{TRUE}, then print the results in an
+#easily readable format. If \code{FALSE}, then no special printing format is used.
 #' @return For \code{type} = "DV," a matrix of the counts of \emph{missing} values,
 #'either coded as \code{NA} or not in the dataset, for each month and each
 #'year within the range of \code{dates}.
 #'
-#'For \code{type} = "DV," a matrix of the counts of \emph{observed} values 
+#'For \code{type} = "IV," a matrix of the counts of \emph{observed} values 
 #'for each month and each year within the range of \code{dates}. 
 #' @references This function is based on the screen program described in:\cr
-#' 
-#' Rutledge, A.T., 2007, Program user guide for RECESS:
+#' Rutledge, A.T., 2007, Program user guide for RECESS: \emph{at}
 #'\url{http://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
 #' @keywords missing
 #' @export

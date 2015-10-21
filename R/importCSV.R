@@ -1,6 +1,6 @@
 #'Import Files
 #'
-#'Imports a comma separated variable file to a data frame.
+#'Imports a comma-separated variable file to a data frame.
 #'
 #'All of the dates in a date column must have the same format as the first
 #'non-blank date in the column. Any date with a format different from that of
@@ -10,7 +10,7 @@
 #'no separator. Time and date data are imported as class "POSIXct" and
 #'assumes the standard POSIX format for date and time.\cr
 #'
-#' @param file.name a character string specifying the name of the comma separated variable 
+#' @param file.name a character string specifying the name of the comma-separated variable 
 #'(CSV) file containing the data to be imported; \code{importCSV} requires \code{file.name}
 #'to be a readable file on the computer.
 #' @param tz a character string indicating the time-zone information for data
@@ -18,8 +18,12 @@
 #' @return A data frame with one column for each data column in the CSV
 #'file.
 #' @note A NULL data frame is created if there are no data in the file.\cr
-#' @seealso \code{\link{read.csv}}, \code{\link{scan}},
-#'\code{\link{read.table}}, \code{\link{as.Date}}, \code{\link{as.POSIXct}}
+#' @seealso
+#Flip for production/manual
+#'\code{\link[utils]{read.csv}}, \code{\link[utils]{read.table}}, \code{\link[base]{scan}},
+#'\code{\link[base]{as.Date}}, \code{\link[base]{as.POSIXct}}
+#\code{read.csv}, \code{read.table} (both in utils package), \code{scan}, 
+#\code{as.Date}, \code{as.POSIXct} (remainder in base package)
 #' @keywords manip IO
 #' @export
 #' @examples

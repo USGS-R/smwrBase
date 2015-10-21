@@ -1,6 +1,6 @@
 #'Merge Datasets
 #'
-#'Merge two dataset based on the the nearest date between each observation.
+#'Merge two datasets based on the the nearest date between each observation.
 #'
 #'The format for \code{max.diff} should be a numeric value followed by a
 #'description of the time span. The time span must be one of "secs," "mins,"
@@ -19,10 +19,10 @@
 #' @param suffix.right the suffix to apply to common column names in the
 #'right-hand dataset.
 #' @param Date.noon logical (\code{TRUE} or \code{FALSE}), adjust columns of 
-#'class "Date" to represent a noon observation rather than 12 AM?
+#'class "Date" to represent a noon observation rather than 12 a.m.?
 #' @param max.diff the maximum allowable difference in time for a match. See
 #'\bold{Details}.
-#' @return A data.frame of the merged data with common column names renamed by
+#' @return A data frame of the merged data with common column names renamed by
 #'the \code{suffix} arguments to avoid conflict.
 #' @note Water-quality data taken at a specific time frequently need to be
 #'merged with daily flow data or merged with other water-quality data such as

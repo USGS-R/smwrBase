@@ -4,12 +4,12 @@
 #'This function will construct a regular series from randomly spaced events.
 #'
 #'If there is no observation during a period, then that value
-#'is set to 0 if \code{which} is "sum" and the value previous period if
+#'is set to 0 if \code{which} is "sum" or the value for the previous period if
 #'\code{which} is "cumsum." The initial value of the series is always 0.
 #'
 #' @param times a date-like vector corresponding to data.
-#' @param period character string that is valid input to the the POSIXct method
-#'for the \code{seq} function is accepable, specifying the spacing between 
+#' @param period character string that is valid input to the POSIXct method
+#'for the \code{seq} function is acceptable, specifying the spacing between 
 #'successive periods. For example "year," "month," or "day."
 #' @param which a character string indicating the method to use. 
 #'See \bold{Details} for options.
@@ -20,11 +20,9 @@
 #' @return The function \code{eventSeries} returns a data frame with two columns:
 #'\item{DateTime}{the date and time.}
 #'\item{Sum}{the sum of the number of events in the period if \code{which}
-#'is "sum" or}
+#'is "sum."}
 #'\item{CumSum}{the cumulative sum of the number of events up to and
 #'including the period if \code{which} is "cumsum."}
-#' @seealso Refer to the documentation for \code{seaken} in the USGSstats
-#'package if it is installed.
 #' @keywords manip
 #' @examples
 #'\dontrun{

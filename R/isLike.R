@@ -17,9 +17,13 @@
 #'\code{FALSE} if it does not.
 #' @note This function is most useful within other functions to control how that
 #'function handles a particular argument.
-#' @seealso \code{\link{class}}, \code{\link{is.numeric}},
-#'\code{\link{is.factor}}, \code{\link{is.character}},
-#'\code{\link{is.integer}}, \code{\link{is.logical}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{class}}, \code{\link[base]{is.numeric}},
+#'\code{\link[base]{is.factor}}, \code{\link[base]{is.character}},
+#'\code{\link[base]{is.integer}}, \code{\link[base]{is.logical}}
+#\code{class}, \code{is.numeric}, \code{is.factor}, \code{is.character},
+#\code{is.integer}, \code{is.logical} (all in base package)
 #' @rdname isLike
 #' @examples
 #'

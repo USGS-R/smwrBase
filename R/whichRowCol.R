@@ -11,7 +11,10 @@
 #' @note Some comparisons, \code{\%in\%} for example, will return a vector rather
 #'than a matrix and cause whichRowCol to fail.
 #'
-#' @seealso \code{\link{row}}, \code{\link{col}}, \code{\link{which}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{row}}, \code{\link[base]{col}}, \code{\link[base]{which}}
+#\code{row}, \code{col}, \code{which} (all in base package)
 #' @keywords manip
 #' @export
 #' @examples

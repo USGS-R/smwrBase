@@ -23,7 +23,10 @@
 #'See \bold{Examples}. It is different from \code{switch} in that the value
 #'selected from the possible alternatives is selected by the values in
 #'\code{test} rather than by a single value.
-#' @seealso \code{\link{ifelse}}, \code{\link{switch}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{ifelse}}, \code{\link[base]{switch}}
+#\code{ifelse}, \code{switch} (both in base package)
 #' @keywords manip
 #' @export
 #' @examples

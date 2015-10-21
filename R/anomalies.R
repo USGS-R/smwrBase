@@ -28,7 +28,7 @@
 #'\emph{B1}, \emph{B2}, and \emph{B3} are regression coefficients (numerically different from the
 #'simple coefficients). \emph{Qbar} is a constant and is not needed for the regression.\cr
 #'
-#'Anomalies are computed sequentially. First the mean of \code{x} is computed and
+#'Anomalies are computed sequentially. First, the mean of \code{x} is computed and
 #'subtracted from the data. Then for each anomaly, the running mean of the
 #'specified period is computed (the anomaly) and is subtracted from the data.
 #'The remainder is the HFV. This procedure ensures that the sum of the
@@ -46,7 +46,7 @@
 #' @note The output matrix contains missing values in the beginning,
 #'corresponding to the length of the longest anomaly.\cr
 #'
-#'A long time-frame anomaly that users may be interested, include the 5-year
+#'A long time-frame anomaly that is often of interest, is the 5-year
 #'anomaly, which is 1,826 days.
 #' @references Vecchia, A.V., 2000, Water-quality trend analysis and sampling
 #'design for the Souris River, Saskatchewan, North Dakota, and Manitoba: U.S.

@@ -15,7 +15,7 @@
 #'back-transformed by \code{IboxCox}. Must be strictly positive for the
 #'forward trasnformation---the argument
 #'\code{alpha} can be used to force positive values. Missing values are
-#'allowed and result in corresponding missing value in the output. See \bold{Details}.
+#'allowed and result in corresponding missing values in the output. See \bold{Details}.
 #' @param lambda the power term in the Box-Cox transformation. The value of 1 is
 #'a linear transform, the value of 0 results in a natural log transform.
 #' @param GM the value to use for the geometric mean of \code{x}. If not
@@ -30,8 +30,8 @@
 #'Draper and Smith (1998).
 #' @seealso \code{\link{hyperbolic}}
 #' @references Box, G.E.P., and Cox, D.R., 1964, An analysis of transformations:
-#'Journal of the Royal Statistical Society, v. 26, Series B, p. 211-243.\cr
-#'Draper, N.R., and Smith, H., 1998, Applied regression analysis: New York, NY, 
+#'Journal of the Royal Statistical Society, v. 26, Series B, p. 211--243.\cr
+#'Draper, N.R., and Smith, H., 1998, Applied regression analysis: New York,
 #'John Wiley and Sons, 706 p.
 #' @keywords manip
 #' @examples

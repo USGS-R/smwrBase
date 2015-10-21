@@ -4,17 +4,20 @@
 #'
 #' @aliases recode recode.factor recode.integer recode.character
 #'recode.numeric
-#' @param x a vector. Missing values \code{NA}s are allowed.
+#' @param x a vector. Missing values (\code{NA}s) are allowed.
 #' @param from the target value to match and replace.
 #' @param to the replacement value.
 #' @return An object like vector with each target value replaced by the
 #'specified value.
 #' @note When used on numeric (type "double"), the recode
-#'function uses an approximate match, within a small tolerance range to avoid
+#'function uses an approximate match within a small tolerance range to avoid
 #'mismatches due to computations.\cr The function \code{sub} offers greater
 #'flexibility than \code{recode} for replacing parts of text instead of the
 #'complete text.
-#' @seealso \code{\link{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link[base]{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}}
+#\code{sub} (in base package), \code{\link{na2miss}}, \code{\link{miss2na}}
 #' @keywords manip
 #' @examples
 #'XT <- c(1, 2, 0, 4)

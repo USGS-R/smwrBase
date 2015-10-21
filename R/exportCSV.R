@@ -5,9 +5,12 @@
 #' @param x the data frame to be written.
 #' @param file.name a character string naming the file for output.
 #' @return The file name is returned.
-#' @note The function \code{exportCSV} also writes a meta file that contins
+#' @note The function \code{exportCSV} also writes a meta file that contains
 #'information about column formatting.
-#' @seealso \code{\link{write.table}}, \code{\link{importCSV}}
+#' @seealso
+#Flip for production/manual
+#'\code{\link[utils]{write.table}}, \code{\link{importCSV}}
+#\code{write.table} (in utils package), \code{\link{importCSV}}
 #' @keywords manip IO
 #' @export
 exportCSV <- function(x, file.name="") {

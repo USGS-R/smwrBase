@@ -22,7 +22,7 @@
 #'with(Q05078470[100:120, ], plot(DATES, FLOW, type="l"))
 #'# Remove 3 rows from the data set
 #'Q05078470 <- Q05078470[-(109:111), ]
-#'# Plot the data--line drawn throught the missing record
+#'# Plot the data--line drawn through the missing record
 #'with(Q05078470[100:117, ], lines(DATES, FLOW, col="green"))
 #'# Insert a missing record
 #'Q05078470 <- insertMissing(Q05078470, "DATES")

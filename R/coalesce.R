@@ -6,17 +6,17 @@
 #' @aliases coalesce index.coalesce
 #' @param mat a vector or matrix.
 #' @param \dots additional vectors or matrices, must have the same number of
-#'rows as mat. The last argument can be a constant that would substitute for
+#'rows as \code{mat}. The last argument can be a constant that would substitute for
 #'all remaining missing values.
 #' @return For \code{coalesce}, a vector in which each element is determined by
 #'selecting the first non-missing value in the order in which they are
 #'specified in the argument list. The first step is to construct a matrix from
-#'all arguments. The output is initially set to column 1, for any missing values
+#'all arguments. The output is initially set to column 1; for any missing values
 #'in the column, the data from column 2 are used and so on until all columns have
 #'been searched or all missing values replaced.\cr
 #'
 #'For \code{index.coalesce}, an integer vector indicating which column from mat or
-#'vector or constant produced the result in coalesce.
+#'from the vectors or constant specified for \dots produced the result in coalesce.
 #' @note This function is most useful for creating a column in a dataset from
 #'related columns that represent different methods. For example, a single
 #'column of alkalinity may be desired when there are multiple columns of
