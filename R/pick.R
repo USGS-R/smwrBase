@@ -56,7 +56,9 @@ pick <- function(test,..., .pass=test, na=NA) {
   test <- as.vector(test)
   dots <- list(...)
   dots <- lapply(dots, function(x, N) rep(x, length.out=N), N=length(test))
+  dn <- names(dots)
   dots <- as.data.frame(dots, stringsAsFactors=FALSE)
+  names(dots) <- dn
   ## make test an index to the column in dots
   if(is.factor(test))
     test <- as.character(test)

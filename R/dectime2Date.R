@@ -9,7 +9,10 @@
 #' @note A small value, representing about 1 minute, is added to each value in \code{x}
 #'to prevent truncation errors in the conversion. This can cause some errors if
 #'the data were converted from date and time data.
-#' @seealso \code{\link{dectime}}, \code{\link{as.Date}}
+#' @seealso 
+#Flip for production/manual
+#'\code{\link{dectime}}, \code{\link[base]{as.Date}}
+#\code{\link{dectime}}, \code{as.Date} (in base package)
 #' @keywords manip
 #' @export
 #' @examples

@@ -28,7 +28,7 @@ dectime("02/07/2013", date.format="\%m/\%d/\%Y")
 dectime2Date(2013.103)
 }
 \seealso{
-\code{\link{dectime}}, \code{\link{as.Date}}
+\code{\link{dectime}}, \code{\link[base]{as.Date}}
 }
 \keyword{manip}
 

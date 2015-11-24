@@ -5,8 +5,8 @@
 #'
 #'\tabular{ll}{ Package: \tab smwrBase\cr 
 #'Type: \tab Package\cr 
-#'Version: \tab 1.1.0\cr 
-#'Date: \tab 2015-10-21\cr 
+#'Version: \tab 1.1.1\cr 
+#'Date: \tab 2015-11-24\cr 
 #'License: \tab File CC0\cr 
 #'Depends: \tab methods,memoise,digest,lubridate\cr }
 #'
@@ -96,9 +96,7 @@
 #'Maintainer: Dave Lorenz <lorenz@@usgs.gov>
 #' @seealso \code{\link[smwrData:smwrData-package]{smwrData}}
 #' @references Lorenz, D.L., 2015, smwrBase---an R package for managing
-#'hydrologic data, version 1.1.1: U.S. Geological Survey Open File Report
-#'2015-1202, ? p.
+#'hydrologic data, version 1.1.1: U.S. Geological Survey Open-File Report
+#'2015--1202, 7 p.
 #' @keywords package
 NULL
-.onAttach <- function(libname, pkgname) {
-  packageStartupMessage("This information is preliminary or provisional and is subject to revision. It is being provided to meet the need for timely best science. The information has not received final approval by the U.S. Geological Survey (USGS) and is provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the information. Although this software program has been used by the USGS, no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.")}
