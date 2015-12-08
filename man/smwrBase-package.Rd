@@ -13,8 +13,8 @@ manipulating hydrologic data.
 \details{
 \tabular{ll}{ Package: \tab smwrBase\cr
 Type: \tab Package\cr
-Version: \tab 1.1.1\cr
-Date: \tab 2015-11-24\cr
+Version: \tab 1.1.2\cr
+Date: \tab 2015-12-08\cr
 License: \tab File CC0\cr
 Depends: \tab methods,memoise,digest,lubridate\cr }
 

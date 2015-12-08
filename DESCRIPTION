@@ -1,6 +1,6 @@
 Package: smwrBase
-Version: 1.1.1
-Date: 2015-11-24
+Version: 1.1.2
+Date: 2015-12-08
 Title: Functions to import and manipulate hydrologic data
 Author: Dave Lorenz <lorenz@usgs.gov>
 Maintainer: Laura DeCicco <ldecicco@usgs.gov>

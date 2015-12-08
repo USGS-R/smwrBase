@@ -47,17 +47,10 @@
 #' @export
 regularSeries <- function(x, times, period="month", which = "middle",
                           begin, end, k.period=1) {
-  ## Coding history:
-  ##    2005Jul14 DLLorenz Initial dated version
-  ##    2008Dec05 DLLorenz Bug fix and added to USGS library
-  ##    2011May27 DLLorenz Conversion to R
-  ##    2012Aug11 DLLorenz Integer fixes
-  ##    2013Feb02 DLLorenz Use POSIXlt rather than ct
-  ##    2013Sep05 DLLorenz Bug fix of begin and end
   ## 
   ## Force times to POSIXlt format
   times <- as.POSIXlt(times)
-  tzone <- attr(times, "tzone")
+  tzone <- attr(times, "tzone")[1L] # protect against length 3 in POSIXlt
   if(missing(begin)) {
     begin <- floor_date(min(times, na.rm=TRUE), unit=period)
   } else
