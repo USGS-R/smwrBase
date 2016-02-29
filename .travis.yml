@@ -22,10 +22,7 @@ before_install:
 
 install:
   - ./travis-tool.sh install_deps
-
-
-r_github_packages:
-  - USGS-R/smwrData
+  - ./travis-tool.sh github_package USGS-R/smwrData
 
 script: ./travis-tool.sh run_tests
 
