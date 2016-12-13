@@ -33,7 +33,7 @@ To install the `smwrBase` package:
   ```
   
 
-6. Update often. Next time you update your packages, `rloadest` will automatically update:
+6. Update often. Next time you update your packages, `smwrBase` will automatically update:
 
    ![update](images/update.png)
 
