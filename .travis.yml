@@ -4,32 +4,47 @@
 # see the wiki:
 #   https://github.com/craigcitro/r-travis/wiki
 
-language: objective-c
-sudo: required
+language: r
+cache: packages
+dist: trusty
+
+matrix:
+  include:
+    - os: linux
+      r: release
+    - os: linux
+      r: devel
+      env: R_CODECOV=true
+
+addons:
+  apt:
+    packages:
+    - libcurl4-openssl-dev
 
 env:
    global:
-     - R_LIBS="http://cran.rstudio.com"
      - R_BUILD_ARGS="--no-build-vignettes --no-manual"
      - R_CHECK_ARGS="--no-build-vignettes --no-manual --as-cran"
-     - BOOTSTRAP_LATEX=""
      - NOT_CRAN="true"
+     - _R_CHECK_FORCE_SUGGESTS_=false
+     
+repos:
+  CRAN: https://cran.rstudio.com
+  GRAN: https://owi.usgs.gov/R 
 
-before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
+script: 
+  - |
+    R CMD build .
+    travis_wait 20 R CMD check smwrBase*tar.gz
 
-install:
-  - ./travis-tool.sh install_deps
-  - ./travis-tool.sh github_package USGS-R/smwrData
+r_github_packages:
+  - jimhester/covr
 
-script: ./travis-tool.sh run_tests
-
-after_failure:
-  - ./travis-tool.sh dump_logs
-
+after_success:
+  - if [[ "${R_CODECOV}" ]]; then R -e 'covr::coveralls()'; fi
+  
 notifications:
   email:
     on_success: change
     on_failure: change
+
