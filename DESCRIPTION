@@ -21,6 +21,7 @@ Description: This package has data import and export functions for specialized
     several functions that are useful for managing or manipulating
     hydrologic and other data.
 License: CC0
+URL: http://pubs.er.usgs.gov/publication/ofr20151202
 BugReports: https://github.com/USGS-R/smwrBase/issues
 LazyLoad: yes
 RoxygenNote: 6.0.1
