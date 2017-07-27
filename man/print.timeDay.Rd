@@ -24,8 +24,8 @@ in \code{as.timeDay}.
 \section{Side Effect}{
  The object \code{x} is printed.
 }
+
 \seealso{
 \code{\link{timeDay-class}}, \code{\link{as.timeDay}}
 }
 \keyword{print}
-

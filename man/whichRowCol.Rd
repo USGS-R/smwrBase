@@ -37,4 +37,3 @@ whichRowCol(sapply(MenomineeMajorIons, is.na))
 \code{\link[base]{row}}, \code{\link[base]{col}}, \code{\link[base]{which}}
 }
 \keyword{manip}
-

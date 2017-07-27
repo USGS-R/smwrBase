@@ -51,4 +51,3 @@ Hem, J.D., 1985, Study and interpretation of the chemical
 characteristics of natural water: U.S. Geological Survey Water-Supply Paper 2254, 263 p.
 }
 \keyword{manip}
-

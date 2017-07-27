@@ -32,4 +32,3 @@ dectime2Date(2013.103)
 \code{\link{dectime}}, \code{\link[base]{as.Date}}
 }
 \keyword{manip}
-

@@ -32,4 +32,3 @@ setFileType("TestName.dat", "txt", replace=TRUE)
 Dave Lorenz, original coding by Jim Slack, U.S. Geological Survey retired.
 }
 \keyword{MANIP}
-

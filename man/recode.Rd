@@ -2,9 +2,13 @@
 % Please edit documentation in R/recode.R
 \name{recode}
 \alias{recode}
-\alias{recode.character}
 \alias{recode.factor}
 \alias{recode.integer}
+\alias{recode.character}
+\alias{recode.numeric}
+\alias{recode.factor}
+\alias{recode.integer}
+\alias{recode.character}
 \alias{recode.numeric}
 \title{Recode Data}
 \usage{
@@ -47,4 +51,3 @@ recode(XT, 0, 3)
 \code{\link[base]{sub}}, \code{\link{na2miss}}, \code{\link{miss2na}}
 }
 \keyword{manip}
-

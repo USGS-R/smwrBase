@@ -50,4 +50,3 @@ with(QW05078470, eventSeries(DATES, "month", which="sum"))
 }
 }
 \keyword{manip}
-

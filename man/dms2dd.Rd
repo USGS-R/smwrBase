@@ -40,4 +40,3 @@ dms2dd("98:32", split=":") # Note seconds not included in text
 # should be [1] 98.53333
 }
 \keyword{manip}
-

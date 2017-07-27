@@ -56,4 +56,3 @@ This makes it possible to search columns that are not type character.
 \code{\link[utils]{head}}, \code{\link[utils]{tail}}, \code{\link[base]{grep}}
 }
 \keyword{print}
-

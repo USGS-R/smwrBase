@@ -52,4 +52,3 @@ Rutledge, A.T., 2007, Program user guide for RECESS: \emph{at}
 \url{http://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
 }
 \keyword{missing}
-

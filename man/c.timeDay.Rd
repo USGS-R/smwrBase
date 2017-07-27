@@ -7,10 +7,10 @@
 \method{c}{timeDay}(..., recursive = FALSE)
 }
 \arguments{
-\item{recursive}{not used, required for other methods.}
-
 \item{\dots}{any number of objects that can be converted to class "timeDay."
 The first must be a time-of-day object.}
+
+\item{recursive}{not used, required for other methods.}
 }
 \value{
 A single vector of class "timeDay."
@@ -22,4 +22,3 @@ Combine time-of-day data into a single vector.
 c(as.timeDay("10:00"), as.timeDay("3 PM", format="\%I \%p"))
 }
 \keyword{manip}
-

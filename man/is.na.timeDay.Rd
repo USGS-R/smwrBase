@@ -20,4 +20,3 @@ Indicate which elements are missing.
 is.na(as.timeDay(c("10:30", "11:00")))
 }
 \keyword{manip}
-

@@ -2,8 +2,8 @@
 % Please edit documentation in R/show-methods.R
 \docType{methods}
 \name{show-methods}
-\alias{show,timeDay-method}
 \alias{show-methods}
+\alias{show,timeDay-method}
 \title{Methods for Function \code{show} for Time-of-Day Objects}
 \usage{
 \S4method{show}{timeDay}(object)
@@ -18,4 +18,3 @@ The object is printed and returned invisibly.
 Display the time of day.
 }
 \keyword{methods}
-

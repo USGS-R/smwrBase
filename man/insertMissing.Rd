@@ -47,4 +47,3 @@ with(Q05078470[100:118, ], lines(DATES, FLOW, col="blue"))
 \code{\link{fillMissing}}, \code{\link{screenData}}
 }
 \keyword{manip}
-

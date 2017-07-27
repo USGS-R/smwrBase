@@ -18,4 +18,3 @@ The values in \code{x} converted to a character representation.
 Convert the time-of-day object to a character string.
 }
 \keyword{character}
-

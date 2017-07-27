@@ -2,11 +2,11 @@
 % Please edit documentation in R/Arith-timeDay.R
 \docType{methods}
 \name{Arith-timeDay}
-\alias{Arith,Date,timeDay-method}
+\alias{Arith-timeDay}
+\alias{Arith,timeDay,POSIXt-method}
 \alias{Arith,POSIXt,timeDay-method}
 \alias{Arith,timeDay,Date-method}
-\alias{Arith,timeDay,POSIXt-method}
-\alias{Arith-timeDay}
+\alias{Arith,Date,timeDay-method}
 \title{Arithmetic Operators for \code{timeDay} objects}
 \usage{
 \S4method{Arith}{timeDay,POSIXt}(e1, e2)
@@ -40,4 +40,3 @@ QW05078470$DATES + as.timeDay(QW05078470$TIMES)
 }
 \keyword{manip}
 \keyword{methods}
-

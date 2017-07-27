@@ -38,4 +38,3 @@ diff(movingData)
 \code{\link[stats]{filter}}, \code{\link[base]{diff}}, \code{\link{movingAve}}
 }
 \keyword{manip}
-

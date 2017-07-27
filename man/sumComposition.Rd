@@ -10,10 +10,10 @@ sumComposition(x, ..., Range = 100)
 \item{x}{any numeric vector, matrix, or data frame containing only numeric
 columns.}
 
+\item{\dots}{any additional vectors or matrices.}
+
 \item{Range}{the output range, generally 100 for percentages 
 (the default) or 1 for proportions.}
-
-\item{\dots}{any additional vectors or matrices.}
 }
 \value{
 A matrix with columns matching all of the data in \code{x} and
@@ -44,4 +44,3 @@ of water analyses: Transactions of the American Geophysical Union, v. 25, p. 914
 }
 \keyword{array}
 \keyword{manip}
-

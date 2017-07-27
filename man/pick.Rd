@@ -10,13 +10,13 @@ pick(test, ..., .pass = test, na = NA)
 \item{test}{a logical, numeric, or character vector that indicates which value
 to select from the data supplied in \code{\dots} See \bold{Details}.}
 
+\item{\dots}{the values to be selected.}
+
 \item{.pass}{the value to return for any element of \code{test} that does not
 match an argument name in \dots Useful only when the class of \code{test}
 is "character" or "factor."}
 
 \item{na}{the value to return for any element of \code{test} is \code{NA}.}
-
-\item{\dots}{the values to be selected.}
 }
 \value{
 A vector of the same length as \code{test} and data values from the
@@ -59,4 +59,3 @@ pick(testpick, a=1, b=3, c=5)
 \code{\link[base]{ifelse}}, \code{\link[base]{switch}}
 }
 \keyword{manip}
-

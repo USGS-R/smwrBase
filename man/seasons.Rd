@@ -45,4 +45,3 @@ transform(QW05078470, Seas=seasons(DATES, breaks=c("June", "December")))
 \keyword{category}
 \keyword{chron}
 \keyword{manip}
-

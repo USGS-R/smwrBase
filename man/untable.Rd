@@ -44,4 +44,3 @@ untable(mdat)
 \code{\link[base]{ordered}}
 }
 \keyword{manip}
-

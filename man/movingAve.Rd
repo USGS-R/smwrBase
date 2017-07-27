@@ -61,4 +61,3 @@ operators: Geophysics, v. 35, no. 6, p. 1005--1019.
 \code{\link[stats]{filter}}, \code{\link[base]{diff}}, \code{\link{movingDiff}}
 }
 \keyword{manip}
-

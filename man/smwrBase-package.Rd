@@ -2,9 +2,9 @@
 % Please edit documentation in R/smwrBase-package.R
 \docType{package}
 \name{smwrBase-package}
+\alias{smwrBase-package}
 \alias{smrwBase-package}
 \alias{smwrBase}
-\alias{smwrBase-package}
 \title{Data import, export and manipulation functions}
 \description{
 This package has specialized functions for importing, managing, or
@@ -97,11 +97,6 @@ waterYear \tab Compute the water year of date data. The water year ends on Septe
 whichRowCol \tab Identify the row and column indexes for TRUE values in a logical matrix.\cr
 }
 }
-\author{
-Dave Lorenz <lorenz@usgs.gov>
-
-Maintainer: Dave Lorenz <lorenz@usgs.gov>
-}
 \references{
 Lorenz, D.L., 2015, smwrBase---an R package for managing
 hydrologic data, version 1.1.1: U.S. Geological Survey Open-File Report
@@ -110,5 +105,7 @@ hydrologic data, version 1.1.1: U.S. Geological Survey Open-File Report
 \seealso{
 \code{\link[smwrData:smwrData-package]{smwrData}}
 }
+\author{
+Dave Lorenz
+}
 \keyword{package}
-

@@ -16,9 +16,9 @@ the data frame. Missing values are not allowed.}
 \item{optional}{logical. If \code{TRUE}, setting row names and converting
 column names to syntactic names is optional.}
 
-\item{nm}{the column name to create for \code{x}.}
-
 \item{\dots}{not used, required for other methods.}
+
+\item{nm}{the column name to create for \code{x}.}
 }
 \value{
 A data frame is created containing the data in \code{x}.
@@ -30,4 +30,3 @@ Convert an object to class "data.frame."
 \code{\link[base]{as.data.frame}}
 }
 \keyword{manip}
-

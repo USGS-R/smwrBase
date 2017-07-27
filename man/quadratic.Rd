@@ -44,4 +44,3 @@ loads entering Chesapeake Bay: Water Resources Research, v. 28, no. 5, p.
 \code{\link[stats]{poly}}
 }
 \keyword{manip}
-
