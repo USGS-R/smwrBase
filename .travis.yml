@@ -32,11 +32,6 @@ repos:
   CRAN: https://cran.rstudio.com
   GRAN: https://owi.usgs.gov/R 
 
-script: 
-  - |
-    R CMD build .
-    travis_wait 20 R CMD check smwrBase*tar.gz
-
 r_github_packages:
   - jimhester/covr
 
