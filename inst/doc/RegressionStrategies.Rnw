@@ -224,7 +224,7 @@ The names of the coefficients can be cumbersome, but they are derived from the n
 \begin{thebibliography}{9}
 
 \bibitem{HH2}
-Helsel, D.R., and Hirsch, R.M., 2002, Statistical methods in water resources: U.S. Geological Survey Techniques of Water-Resources Investigations, book 4, chap. A3, 522 p. [Also available at: http://pubs.usgs.gov/twri/twri4a3/pdf/twri4a3-new.pdf.]
+Helsel, D.R., and Hirsch, R.M., 2002, Statistical methods in water resources: U.S. Geological Survey Techniques of Water-Resources Investigations, book 4, chap. A3, 522 p. [Also available at: https://pubs.usgs.gov/twri/twri4a3/pdf/twri4a3-new.pdf.]
 
 \bibitem{JO}
 Johnson, N.M., Likens, G.E., Borman, F.H., Fisher, D.W., and Pierce, R.S., 1969, A working model for the variation in stream water chemistry at the Hubbard Brook Experimental Forest, New Hampshire: Water Resources Research, v. 5, no. 6, p. 1353-1363.

@@ -7,7 +7,7 @@ citEntry(entry = "TechReport",
   series       = "Open-File Report 2015-1202",
   year         = "2015",
   pages        = "7",
-  url          = "http://pubs.er.usgs.gov/publication/ofr20151202",
+  url          = "https://pubs.er.usgs.gov/publication/ofr20151202",
 
   textVersion  =
   paste("Lorenz, D.L., 2015,",

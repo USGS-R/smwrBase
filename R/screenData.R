@@ -23,7 +23,7 @@
 #'for each month and each year within the range of \code{dates}. 
 #' @references This function is based on the screen program described in:\cr
 #' Rutledge, A.T., 2007, Program user guide for RECESS: \emph{at}
-#'\url{http://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
+#'\url{https://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
 #' @keywords missing
 #' @export
 #' @examples
