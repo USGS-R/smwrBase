@@ -46,4 +46,3 @@ TestPart <- importCSV(file.path(TestDir, "TestPart.csv"))
 }
 \keyword{IO}
 \keyword{manip}
-

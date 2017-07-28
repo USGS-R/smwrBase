@@ -90,4 +90,3 @@ Hydrological Sciences Journal, v. 45, no. 6, p. 849--866.
 \code{\link[stats]{tsSmooth}}, \code{\link[stats]{StructTS}}, \code{\link{insertMissing}}
 }
 \keyword{manip}
-

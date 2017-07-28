@@ -28,4 +28,3 @@ c("abc", "def") \%cn\% "c"
 \code{\link[base]{\%in\%}}, \code{\link[base]{regexpr}}
 }
 \keyword{manip}
-

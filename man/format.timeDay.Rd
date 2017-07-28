@@ -24,4 +24,3 @@ Format an object of class "timeDay."
 \code{\link[base]{strptime}}
 }
 \keyword{manip}
-

@@ -22,4 +22,3 @@ Extract elements of a time-of-day object.
 \code{\link[base]{Extract}}
 }
 \keyword{manip}
-

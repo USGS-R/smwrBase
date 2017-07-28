@@ -41,4 +41,3 @@ shiftData(1:5, k=1, circ=TRUE)
 \code{\link[stats]{lag}}
 }
 \keyword{manip}
-

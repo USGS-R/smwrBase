@@ -51,4 +51,3 @@ loads: Journal of Hydraulic Engineering, v. 134, no. 10, p. 1,527--1,531.
 \code{\link{anomalies}}
 }
 \keyword{manip}
-

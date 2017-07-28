@@ -3,10 +3,10 @@
 \docType{methods}
 \name{as.timeDay}
 \alias{as.timeDay}
+\alias{as.timeDay,timeDay,missing-method}
+\alias{as.timeDay,numeric,missing-method}
 \alias{as.timeDay,character,character-method}
 \alias{as.timeDay,character,missing-method}
-\alias{as.timeDay,numeric,missing-method}
-\alias{as.timeDay,timeDay,missing-method}
 \title{Methods for Function \code{as.timeDay}}
 \usage{
 as.timeDay(time, format)
@@ -38,4 +38,3 @@ as.timeDay("3 PM", format="\%I \%p")
 }
 \keyword{manip}
 \keyword{methods}
-

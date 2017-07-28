@@ -110,4 +110,3 @@ mergeQ(QWall, "05078470"=Q05078470, "05078770"=Q05078770, Plot=FALSE)
 \code{\link{mergeNearest}}
 }
 \keyword{manip}
-

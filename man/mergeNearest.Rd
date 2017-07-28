@@ -67,4 +67,3 @@ mergeNearest(QW05078470, right=Q05078470, Date.noon=FALSE)
 \code{\link{mergeQ}}
 }
 \keyword{manip}
-

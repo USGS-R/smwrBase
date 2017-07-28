@@ -37,4 +37,3 @@ waterYear(QW05078470$DATES)
 \code{\link[lubridate]{year}}
 }
 \keyword{manip}
-

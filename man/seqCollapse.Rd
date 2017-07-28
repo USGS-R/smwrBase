@@ -38,4 +38,3 @@ seqCollapse(c(1968:1992, 1998, 2002, 2006:2012))
 \code{\link[base]{paste}}
 }
 \keyword{manip}
-

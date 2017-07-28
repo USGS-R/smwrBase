@@ -26,4 +26,3 @@ information about column formatting.
 }
 \keyword{IO}
 \keyword{manip}
-

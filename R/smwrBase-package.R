@@ -91,9 +91,8 @@
 #' @name smwrBase-package
 #' @aliases smrwBase-package smwrBase
 #' @docType package
-#' @author Dave Lorenz <lorenz@@usgs.gov>
+#' @author Dave Lorenz
 #'
-#'Maintainer: Dave Lorenz <lorenz@@usgs.gov>
 #' @seealso \code{\link[smwrData:smwrData-package]{smwrData}}
 #' @references Lorenz, D.L., 2015, smwrBase---an R package for managing
 #'hydrologic data, version 1.1.1: U.S. Geological Survey Open-File Report

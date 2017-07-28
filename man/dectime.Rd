@@ -49,4 +49,3 @@ dectime(1988:1990)
 \code{\link[lubridate]{hm}}, \code{\link[base]{strptime}}
 }
 \keyword{manip}
-

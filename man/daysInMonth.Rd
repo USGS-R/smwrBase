@@ -31,4 +31,3 @@ year to the end of the month.
 daysInMonth(c(2,2), c(2000, 2001))
 }
 \keyword{manip}
-

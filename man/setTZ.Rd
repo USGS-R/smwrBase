@@ -53,4 +53,3 @@ setTZ(TestDts, c("PDT", "CST"))
 }
 \keyword{chron}
 \keyword{manip}
-

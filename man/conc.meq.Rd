@@ -21,4 +21,3 @@ same name (conc.meq) to be able to change or add to the list.
 \code{\link{conc2meq}}
 }
 \keyword{list}
-

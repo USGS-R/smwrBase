@@ -86,4 +86,3 @@ TestFull <- importRDB(file.path(TestDir, "TestFull.rdb"))
 }
 \keyword{IO}
 \keyword{manip}
-

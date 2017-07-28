@@ -75,4 +75,3 @@ design for the Souris River, Saskatchewan, North Dakota, and Manitoba: U.S.
 Geological Survey Water-Resources Investigations Report 00-4019, 77 p.
 }
 \keyword{manip}
-

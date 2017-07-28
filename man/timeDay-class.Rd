@@ -15,14 +15,15 @@ The data are stored as seconds since midnight.
 
 \item{\code{format}}{a character string indicating the format to display the time of day.}
 }}
+
 \section{Objects from the Class}{
  Objects can be created by calls of the form
 \code{as.timeDay(time, format)}.
 }
+
 \examples{
 
 showClass("timeDay")
 
 }
 \keyword{classes}
-

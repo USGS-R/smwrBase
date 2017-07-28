@@ -20,4 +20,3 @@ Get the length of a time-of-day object.
 length(as.timeDay(c("10:30", "11:00")))
 }
 \keyword{attribute}
-

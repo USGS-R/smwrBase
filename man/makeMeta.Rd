@@ -26,4 +26,3 @@ columns of class "Date," "POSIXct," or "factor."
 \code{\link{importCSV}}
 }
 \keyword{IO}
-

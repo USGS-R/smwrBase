@@ -3,6 +3,7 @@
 \name{coalesce}
 \alias{coalesce}
 \alias{index.coalesce}
+\alias{index.coalesce}
 \title{Replace missing values}
 \usage{
 coalesce(mat, ...)
@@ -45,4 +46,3 @@ coalesce(c(1,NA,NA,3), c(2,2,NA,2), 0)
 # should be: [1] 1 2 0 3
 }
 \keyword{manip}
-

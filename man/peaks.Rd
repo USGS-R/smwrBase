@@ -51,4 +51,3 @@ peaks(c(1:6,6,6,5,4,3,4,6,9), ties="none")
 \code{\link[base]{max}}
 }
 \keyword{manip}
-

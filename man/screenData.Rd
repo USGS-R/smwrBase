@@ -49,7 +49,6 @@ with(Q05078770, screenData(DATES, FLOW, year="w"))
 \references{
 This function is based on the screen program described in:\cr
 Rutledge, A.T., 2007, Program user guide for RECESS: \emph{at}
-\url{http://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
+\url{https://water.usgs.gov/ogw/recess/UserManualRECESS.pdf}.
 }
 \keyword{missing}
-

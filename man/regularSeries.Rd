@@ -64,4 +64,3 @@ with(QW05078470, regularSeries(P00665, DATES))
 }
 }
 \keyword{manip}
-

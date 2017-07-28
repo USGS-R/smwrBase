@@ -58,4 +58,3 @@ fourier(2002 + (0:3)/4, 2)
 \code{\link{dectime}}
 }
 \keyword{manip}
-
