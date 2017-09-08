@@ -72,10 +72,10 @@ movingAve <- function(x, span=3, order=0, pos="center") {
   if(span > length(x)) # need to protect against failure in filter
     retval <- rep(NA_real_, length(x))
   else if(pos == "center")
-    retval <- filter(x, filMat[span + 1 - trunc((span + 1)/2),])
+    retval <- stats::filter(x, filMat[span + 1 - trunc((span + 1)/2),])
   else if(pos == "begin")
-    retval <- rev(filter(rev(x), filMat[1L,], sides=1))
+    retval <- rev(stats::filter(rev(x), filMat[1L,], sides=1))
   else # Must be end
-    retval <- filter(x, filMat[1L,], sides=1)
+    retval <- stats::filter(x, filMat[1L,], sides=1)
   return(as.vector(retval))
 }
