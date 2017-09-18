@@ -92,6 +92,10 @@
 #' @aliases smrwBase-package smwrBase
 #' @docType package
 #' @author Dave Lorenz
+#' @importFrom graphics abline par plot title
+#' @importFrom stats StructTS approx dgamma dnorm mahalanobis na.omit pgamma pnorm poly qgamma
+#' @importFrom stats qnorm qqplot rgamma rnorm runif tsSmooth
+#' @importFrom utils head read.csv tail type.convert write.csv write.table 
 #'
 #' @seealso \code{\link[smwrData:smwrData-package]{smwrData}}
 #' @references Lorenz, D.L., 2015, smwrBase---an R package for managing
