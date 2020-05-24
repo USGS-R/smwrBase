@@ -26,43 +26,13 @@ Follow `@USGS_R` on Twitter for updates on USGS R packages:
 We want to encourage a warm, welcoming, and safe environment for contributing to this project. See the [code of conduct](https://github.com/USGS-R/smwrBase/blob/master/CONDUCT.md) for more information.
 
 ## Package Installation
-To install the `smwrBase` package:
-
-USGS R Installation Instructions: [https://owi.usgs.gov/R/training-curriculum/installr/](https://owi.usgs.gov/R/training-curriculum/installr/)
+To install the `smwrBase` package, first install the "remotes" package. Then, using the remotes package, install "smwrData", then "smwrBase":
 
 
-1. Install R (version 3.0 or greater) from: [https://cran.r-project.org/](https://cran.r-project.org/)
-
-2. Install RStudio from: [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
-
-3. Add the USGS R repository to your "Rprofile" to get automatic updates. Run the following code:
-  
-  ```r
-  rprofile_path = file.path(Sys.getenv("HOME"), ".Rprofile")
-  write('\noptions(repos=c(getOption(\'repos\'),
-    CRAN=\'https://cloud.r-project.org\',
-    USGS=\'https://owi.usgs.gov/R\'))\n',
-      rprofile_path, 
-      append =  TRUE)
-
-  cat('Your Rprofile has been updated to include GRAN.
-    Please restart R for changes to take effect.')
-  ```
-
-4. Restart R!
-
-5. In the RStudio "Console" window (usually left or lower-left), run the following command:
-
-  ```r
-  install.packages("smwrBase")
-  ```
-  
-
-6. Update often. Next time you update your packages, `smwrBase` will automatically update:
-
-   ![update](images/update.png)
-
-7. Make sure to keep your version of R up-to-date. CRAN and the USGS repository will only update packages for the most recent version of R, and one version behind that.
+```r
+remotes::install_github("USGS-R/smwrData")
+remotes::install_github("USGS-R/smwrBase")
+```
 
 ## Disclaimer
 
