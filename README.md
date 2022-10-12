@@ -3,36 +3,29 @@ smwrBase
 
 Base R functions to support statistical methods in water resources.
 
-
-## Package Status
-
-### Current build tests:
-
-|Linux|Test Coverage| USGS Status |
-|----------|------------|------------|
-| [![travis](https://travis-ci.org/USGS-R/smwrBase.svg?branch=master)](https://travis-ci.org/USGS-R/smwrBase)|[![Coverage Status](https://coveralls.io/repos/github/USGS-R/smwrBase/badge.svg?branch=master)](https://coveralls.io/github/USGS-R/smwrBase?branch=master)|[![status](https://img.shields.io/badge/USGS-Research-blue.svg)](https://owi.usgs.gov/R/packages.html#research)|
-
 ### Reporting bugs
 
 Please consider reporting bugs and asking questions on the Issues page:
-[https://github.com/USGS-R/smwrBase/issues](https://github.com/USGS-R/smwrBase/issues)
-
-Follow `@USGS_R` on Twitter for updates on USGS R packages:
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/USGS_R.svg?style=social&label=Follow%20USGS_R)](https://twitter.com/USGS_R)
+[https://code.usgs.gov/water/analysis-tools/smwrBase/-/issues](https://code.usgs.gov/water/analysis-tools/smwrBase/-/issues)
 
 ## Code of Conduct
 
-We want to encourage a warm, welcoming, and safe environment for contributing to this project. See the [code of conduct](https://github.com/USGS-R/smwrBase/blob/master/CONDUCT.md) for more information.
+We want to encourage a warm, welcoming, and safe environment for contributing to this project. See the [code of conduct](https://code.usgs.gov/water/analysis-tools/smwrBase/-/blob/main/CONDUCT.md) for more information.
 
 ## Package Installation
-To install the `smwrBase` package, first install the "remotes" package. Then, using the remotes package, install "smwrData", then "smwrBase":
+
+Those within the USGS network can ask to have the prod-legacy R Package Manager added to their R enviornment. Installation and updates are done using the standard `install.packages` command.
+
+External to the USGS network, first install the "remotes" package. Then, using the remotes package, install "smwrData", then "smwrBase":
 
 
 ```r
-remotes::install_github("USGS-R/smwrData")
-remotes::install_github("USGS-R/smwrBase")
+remotes::install_gitlab("water/analysis-tools/smwrData",
+                        host = "code.usgs.gov")
+remotes::install_gitlab("water/analysis-tools/smwrBase",
+                        host = "code.usgs.gov")
 ```
+
 
 ## Disclaimer
 
@@ -41,7 +34,3 @@ This software is in the public domain because it contains materials that origina
 Although this software program has been used by the U.S. Geological Survey (USGS), no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.
 
 This software is provided "AS IS."
-
-
-Linux: [![travis](https://travis-ci.org/USGS-R/smwrBase.svg?branch=master)](https://travis-ci.org/USGS-R/smwrBase)
-
